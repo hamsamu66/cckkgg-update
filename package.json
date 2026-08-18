@@ -1,0 +1,20 @@
+{
+  "name": "microsoftengine",
+  "productName": "Alat Bantu CKG",
+  "version": "1.0.0",
+  "description": "Aplikasi Otomasi CKG",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Lihan",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "electron": "^43.2.0"
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.9"
+  }
+}

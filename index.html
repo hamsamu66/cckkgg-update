@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alat Bantu CKG - Dashboard</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+        /* ==========================================
+           STYLE IKLAN SLIDER & WA ADMIN
+           ========================================== */
+        .promo-container {
+            width: 100%;
+            height: 140px;
+            /* Tinggi banner iklan */
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            background: var(--bg-app);
+            border: 1px solid var(--border-color);
+            margin-bottom: 12px;
+        }
+
+        .promo-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            /* Efek geser mulus */
+        }
+
+        .promo-slide {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .promo-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Mencegah gambar gepeng */
+            pointer-events: none;
+            /* Iklan tidak bisa diklik/diseret */
+        }
+
+        /* Garis Indikator ala Instagram Story */
+        .promo-indicators {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            display: flex;
+            gap: 4px;
+            z-index: 2;
+        }
+
+        .indicator-bar {
+            flex: 1;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .indicator-progress {
+            height: 100%;
+            width: 0%;
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        /* Tombol WA Hijau */
+        .btn-wa {
+            background: #25D366;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .btn-wa:hover {
+            background: #128C7E;
+        }
+
+        :root {
+            --bg-app: #0f172a;
+            --bg-sidebar: #1e293b;
+            --bg-panel: #1e293b;
+            --bg-input: #0f172a;
+            --border-color: #334155;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-blue: #3b82f6;
+            --accent-blue-hover: #2563eb;
+            --accent-green: #10b981;
+            --accent-green-hover: #059669;
+            --accent-red: #ef4444;
+            --accent-red-hover: #dc2626;
+            --accent-yellow: #f59e0b;
+            --accent-yellow-hover: #d97706;
+            --accent-gold: #f59e0b;
+            --bg-gold-light: rgba(245, 158, 11, 0.1);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: var(--text-main);
+            overflow: hidden;
+        }
+
+        .app-layout {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .sidebar {
+            width: 300px;
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            flex-shrink: 0;
+            overflow-y: auto;
+        }
+
+        .workspace {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+            background-color: #0f172a;
+        }
+
+        .bot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+            gap: 25px;
+            align-items: start;
+        }
+
+        @media (max-width: 900px) {
+            .app-layout {
+                flex-direction: column;
+                height: auto;
+                min-height: 100vh;
+                overflow-y: auto;
+            }
+
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                height: auto;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+
+            .workspace {
+                padding: 20px;
+                overflow-y: visible;
+            }
+
+            body {
+                overflow: auto;
+            }
+        }
+
+        .app-header {
+            margin-bottom: 30px;
+        }
+
+        .app-header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 0 4px 0;
+            letter-spacing: -0.5px;
+            color: var(--text-main);
+        }
+
+        .app-header p {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin: 0;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .sidebar-section {
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .donation-card {
+            margin-top: auto;
+            background: var(--bg-gold-light);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .donation-card h4 {
+            color: var(--accent-gold);
+            margin: 0 0 8px 0;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .donation-card p {
+            color: var(--text-muted);
+            font-size: 12px;
+            margin: 0 0 15px 0;
+            line-height: 1.5;
+        }
+
+        .norek-display {
+            background: var(--bg-input);
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px dashed var(--accent-gold);
+            font-family: 'Fira Code', monospace;
+            font-size: 15px;
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .profile-bar {
+            background: var(--bg-panel);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 15px 25px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .bot-panel {
+            background: var(--bg-panel);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .locked-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(5px);
+            z-index: 10;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .bot-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .bot-header h2 {
+            font-size: 18px;
+            margin: 0;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .form-group-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .input-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .input-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        input,
+        select {
+            padding: 10px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-input);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            transition: 0.2s;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+        }
+
+        input[readonly] {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--accent-blue);
+            font-weight: 600;
+            cursor: not-allowed;
+            border-style: dashed;
+        }
+
+        .captcha-section {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 15px;
+            align-items: center;
+            background: rgba(15, 23, 42, 0.5);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px dashed var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .captcha-img-box {
+            background: var(--bg-input);
+            height: 45px;
+            width: 130px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .captcha-img-box img {
+            max-width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+        button {
+            padding: 10px 16px;
+            border-radius: 6px;
+            border: 1px solid transparent;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        .btn-primary {
+            background: var(--accent-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-blue-hover);
+        }
+
+        .btn-success {
+            background: var(--accent-green);
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: var(--accent-green-hover);
+        }
+
+        .btn-danger {
+            background: var(--accent-red);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: var(--accent-red-hover);
+        }
+
+        .btn-warning {
+            background: var(--accent-yellow);
+            color: white;
+        }
+
+        .btn-warning:hover {
+            background: var(--accent-yellow-hover);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border-color: var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            background: var(--bg-input);
+        }
+
+        .btn-gold {
+            background: var(--accent-gold);
+            color: #000;
+        }
+
+        .btn-gold:hover {
+            background: var(--accent-yellow-hover);
+        }
+
+        .action-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .execution-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 12px;
+        }
+
+        .monitor-panel {
+            background: var(--bg-input);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            margin-top: 25px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            background: var(--bg-panel);
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border-color);
+            font-size: 13px;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+        }
+
+        .stat-lbl {
+            color: var(--text-muted);
+        }
+
+        .stat-val {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .val-sukses {
+            color: var(--accent-green);
+        }
+
+        .val-gagal {
+            color: var(--accent-red);
+        }
+
+        .progress-container {
+            width: 100%;
+            background: var(--bg-panel);
+            border-radius: 4px;
+            height: 8px;
+            margin: 15px 0;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--accent-blue);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .mini-log {
+            background: var(--bg-app);
+            color: var(--text-muted);
+            padding: 10px;
+            height: 80px;
+            overflow-y: auto;
+            border-radius: 6px;
+            font-size: 11px;
+            font-family: 'Fira Code', monospace;
+            border: 1px solid var(--border-color);
+            line-height: 1.6;
+        }
+
+        .mini-log::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .mini-log::-webkit-scrollbar-track {
+            background: var(--bg-input);
+        }
+
+        .mini-log::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 3px;
+        }
+
+        .badge {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .badge-idle {
+            background: rgba(148, 163, 184, 0.1);
+            color: var(--text-muted);
+        }
+
+        .badge-running {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent-green);
+        }
+
+        .badge-error {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--accent-red);
+        }
+
+        .badge-paused {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent-yellow);
+        }
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-wrapper input {
+            padding-right: 35px;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 32px;
+            cursor: pointer;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        #toast-container {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .cyber-toast {
+            min-width: 250px;
+            padding: 14px 18px;
+            background: var(--bg-panel);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-main);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: toastIn 0.3s ease forwards;
+        }
+
+        .cyber-toast.error {
+            border-left: 4px solid var(--accent-red);
+        }
+
+        .cyber-toast.warn {
+            border-left: 4px solid var(--accent-yellow);
+        }
+
+        .cyber-toast.success {
+            border-left: 4px solid var(--accent-green);
+        }
+
+        @keyframes toastIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes toastOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="app-header">
+                <h1>Alat Bantu CKG.</h1>
+                <p>Enterprise Automation System</p>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">📁 Download Template</div>
+                <select id="kategori-template" style="margin-bottom: 10px;">
+                    <option value="ckgumum">Excel CKG Umum</option>
+                    <option value="ckgsekolah">Excel CKG Anak Sekolah</option>
+                    <option value="ckgbalita">Excel CKG Balita</option>
+                </select>
+                <button id="btn-download" class="btn-success w-full">⬇ Unduh Template</button>
+            </div>
+
+            <!-- ==========================================
+                 AREA IKLAN & WHATSAPP
+                 ========================================== -->
+            <div class="sidebar-section" style="padding: 12px; background: transparent; border: none;">
+                <!-- Wadah Gambar Slider -->
+                <div class="promo-container">
+                    <div class="promo-indicators" id="promo-indicators"></div>
+                    <div class="promo-track" id="promo-track">
+                        <!-- Default Jika Loading / Gagal Internet -->
+                        <div class="promo-slide">
+                            <div style="font-size: 11px; color: var(--text-muted);">Memuat Info Promo...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tombol WA Admin -->
+                <button onclick="bukaWhatsAppAdmin()" class="btn-wa w-full">💬 Chat Admin WhatsApp untuk Upgrade
+                    lisensi</button>
+            </div>
+
+            <div class="donation-card">
+                <h4>Traktir Ngopi hehe</h4>
+                <p>Dukungan kalian memperpanjang nyawa server dan mempercepat update sistem!</p>
+                <div class="norek-display" id="norek-text">762957606100</div>
+                <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 12px;">Bank CIMB Niaga (Muhammad
+                    Maslihan)</div>
+                <button onclick="copyNorek()" class="btn-gold w-full">📋 Salin Rekening</button>
+            </div>
+        </aside>
+
+        <!-- WORKSPACE KANAN -->
+        <main class="workspace">
+
+            <!-- PROFIL USER TOP BAR -->
+            <div class="profile-bar">
+                <div>
+                    <div style="font-size: 12px; color: var(--text-muted);">Masuk Sebagai:</div>
+                    <div style="font-size: 18px; font-weight: 700; color: var(--accent-blue);" id="display-username">
+                        Loading...</div>
+                </div>
+                <div style="display: flex; gap: 20px; text-align: right;">
+                    <div>
+                        <div style="font-size: 12px; color: var(--text-muted);">Status Lisensi</div>
+                        <div style="font-size: 15px; font-weight: 700; color: var(--accent-yellow);"
+                            id="display-status">-</div>
+                    </div>
+                    <div style="border-left: 1px solid var(--border-color); padding-left: 20px;">
+                        <div style="font-size: 12px; color: var(--text-muted);">Sisa Kuota Hari Ini</div>
+                        <div style="font-size: 15px; font-weight: 700; color: var(--accent-green);" id="display-limit">-
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bot-grid">
+                <!-- ====== PANEL WORKER 01 ====== -->
+                <div class="bot-panel">
+                    <div class="bot-header">
+                        <h2>🤖 Worker 01</h2>
+                        <span id="badge-1" class="badge badge-idle">STANDBY</span>
+                    </div>
+
+                    <div class="form-group-grid" style="align-items: flex-start;">
+                        <!-- Kolom Kiri -->
+                        <div class="input-wrapper">
+                            <span class="input-label">Email / Username Web</span>
+                            <input type="text" id="user-1" readonly placeholder="Membaca Lisensi...">
+                        </div>
+
+                        <!-- Kolom Kanan -->
+                        <div style="display: flex; flex-direction: column; width: 100%;">
+                            <div class="input-wrapper password-wrapper" style="margin-bottom: 0;">
+                                <span class="input-label">Kata Sandi Web Target</span>
+                                <input type="password" id="pass-1" placeholder="••••••••" autocomplete="new-password">
+                                <span class="toggle-password" onclick="togglePassword('pass-1', this)">👁️</span>
+                            </div>
+                            <!-- Checkbox & Tombol Hapus ditaruh sejajar -->
+                            <div
+                                style="display: flex; align-items: center; justify-content: space-between; margin-top: 6px; padding-left: 2px;">
+                                <div style="display: flex; align-items: center; gap: 6px;">
+                                    <input type="checkbox" id="simpan-pass-1"
+                                        style="width: 13px; height: 13px; margin: 0; cursor: pointer;">
+                                    <label for="simpan-pass-1"
+                                        style="font-size: 11px; color: var(--text-muted); cursor: pointer; user-select: none;">Simpan
+                                        Sandi</label>
+                                </div>
+                                <!-- 🔥 INI TOMBOL HAPUSNYA -->
+                                <span id="btn-hapus-pass-1"
+                                    style="font-size: 11px; color: var(--accent-red); cursor: pointer; user-select: none;">🗑️
+                                    Hapus</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="captcha-section">
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <button class="btn-outline w-full" id="btn-get-1" style="font-size: 11px; padding: 6px;">1.
+                                Ambil Captcha</button>
+                            <div class="captcha-img-box">
+                                <span id="loading-cap-1"
+                                    style="font-size: 10px; color: var(--text-muted);">Menunggu...</span>
+                                <img id="img-cap-1" src="">
+                            </div>
+                        </div>
+                        <div
+                            style="display: flex; flex-direction: column; gap: 8px; justify-content: flex-end; height: 100%;">
+                            <input type="text" id="input-cap-1" placeholder="Ketik Captcha Disini..."
+                                style="text-align: center;">
+                            <button class="btn-primary w-full" id="btn-submit-1">2. Eksekusi Login Web</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group-grid">
+                        <div class="input-wrapper">
+                            <span class="input-label">Target Form</span>
+                            <select id="kategori-1">
+                                <option value="ckgumum">CKG Umum</option>
+                                <option value="ckgsekolah">CKG Anak Sekolah</option>
+                                <option value="ckgbalita">CKG Balita</option>
+                            </select>
+                        </div>
+                        <div class="input-wrapper">
+                            <span class="input-label">Mode Eksekusi</span>
+                            <select id="headless-1">
+                                <option value="false">Visual (UI On)</option>
+                                <option value="true">Background (UI Off)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="action-grid">
+                        <button class="btn-outline" id="btn-upload-1">📁 Upload Excel</button>
+                        <button class="btn-outline" id="btn-download-hasil-1">⬇️ Sedot Hasil</button>
+                    </div>
+                    <div class="execution-grid">
+                        <button class="btn-success" id="btn-run-1">▶ RUN AUTO</button>
+                        <button class="btn-warning" id="btn-pause-1">⏸ Pause</button>
+                        <button class="btn-danger" id="btn-stop-1">⏹ Stop</button>
+                    </div>
+
+                    <div class="monitor-panel">
+                        <div
+                            style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 10px;">
+                            <span style="color: var(--text-muted);">Subjek: <strong id="val-nama-1"
+                                    style="color: var(--text-main);">-</strong></span>
+                            <span style="color: var(--text-muted);">NIK: <strong id="val-nik-1"
+                                    style="color: var(--text-main);">-</strong></span>
+                        </div>
+                        <div style="font-size: 12px; color: var(--accent-blue); margin-bottom: 10px; min-height: 18px;"
+                            id="val-proses-1">Sistem bersiap...</div>
+                        <div class="progress-container">
+                            <div id="progress-bar-1" class="progress-bar"></div>
+                        </div>
+                        <div class="stats-grid">
+                            <div>
+                                <div class="stat-row"><span class="stat-lbl">Data:</span> <span id="val-data-1"
+                                        class="stat-val">0/0</span></div>
+                                <div class="stat-row"><span class="stat-lbl">Estimasi:</span> <span id="val-eta-1"
+                                        class="stat-val">-</span></div>
+                            </div>
+                            <div style="border-left: 1px solid var(--border-color); padding-left: 15px;">
+                                <div class="stat-row"><span class="stat-lbl">Sukses:</span> <span id="val-sukses-1"
+                                        class="stat-val val-sukses">0</span></div>
+                                <div class="stat-row"><span class="stat-lbl">Gagal:</span> <span id="val-gagal-1"
+                                        class="stat-val val-gagal">0</span></div>
+                            </div>
+                        </div>
+                        <div id="status-log-1" class="mini-log">> [SYS] Worker 01 Online...</div>
+                    </div>
+                </div>
+
+                <!-- ====== PANEL WORKER 02 ====== -->
+                <div class="bot-panel" id="panel-robot-2">
+                    <!-- OVERLAY GEMBOK (Otomatis muncul kalau bukan DEVELOPER) -->
+                    <div id="overlay-bot-2" class="locked-overlay">
+                        <span style="font-size: 50px; margin-bottom: 15px;">🔒</span>
+                        <h3 style="color: var(--accent-yellow); margin: 0 0 5px 0;">Akses Terkunci</h3>
+                        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 0;">Robot 2
+                            (Multi-Thread)
+                            eksklusif hanya untuk pengguna lisensi <strong>DEVELOPER</strong>.<br>Hubungi Admin
+                            untuk
+                            upgrade.</p>
+                    </div>
+
+                    <div class="bot-header">
+                        <h2>🤖 Worker 02</h2>
+                        <span id="badge-2" class="badge badge-idle">STANDBY</span>
+                    </div>
+
+                    <div class="form-group-grid" style="align-items: flex-start;">
+                        <!-- Kolom Kiri -->
+                        <div class="input-wrapper">
+                            <span class="input-label">Email / Username Web</span>
+                            <input type="text" id="user-2" readonly placeholder="Membaca Lisensi...">
+                        </div>
+
+                        <!-- Kolom Kanan -->
+                        <div style="display: flex; flex-direction: column; width: 100%;">
+                            <div class="input-wrapper password-wrapper" style="margin-bottom: 0;">
+                                <span class="input-label">Kata Sandi Web Target</span>
+                                <input type="password" id="pass-2" placeholder="••••••••" autocomplete="new-password">
+                                <span class="toggle-password" onclick="togglePassword('pass-2', this)">👁️</span>
+                            </div>
+                            <!-- Checkbox & Tombol Hapus ditaruh sejajar -->
+                            <div
+                                style="display: flex; align-items: center; justify-content: space-between; margin-top: 6px; padding-left: 2px;">
+                                <div style="display: flex; align-items: center; gap: 6px;">
+                                    <input type="checkbox" id="simpan-pass-2"
+                                        style="width: 13px; height: 13px; margin: 0; cursor: pointer;">
+                                    <label for="simpan-pass-2"
+                                        style="font-size: 11px; color: var(--text-muted); cursor: pointer; user-select: none;">Simpan
+                                        Sandi</label>
+                                </div>
+                                <!-- 🔥 INI TOMBOL HAPUSNYA -->
+                                <span id="btn-hapus-pass-2"
+                                    style="font-size: 11px; color: var(--accent-red); cursor: pointer; user-select: none;">🗑️
+                                    Hapus</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="captcha-section">
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <button class="btn-outline w-full" id="btn-get-2" style="font-size: 11px; padding: 6px;">1.
+                                Ambil Captcha</button>
+                            <div class="captcha-img-box">
+                                <span id="loading-cap-2"
+                                    style="font-size: 10px; color: var(--text-muted);">Menunggu...</span>
+                                <img id="img-cap-2" src="">
+                            </div>
+                        </div>
+                        <div
+                            style="display: flex; flex-direction: column; gap: 8px; justify-content: flex-end; height: 100%;">
+                            <input type="text" id="input-cap-2" placeholder="Ketik Captcha Disini..."
+                                style="text-align: center;">
+                            <button class="btn-primary w-full" id="btn-submit-2">2. Eksekusi Login Web</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group-grid">
+                        <div class="input-wrapper">
+                            <span class="input-label">Target Form</span>
+                            <select id="kategori-2">
+                                <option value="ckgumum">CKG Umum</option>
+                                <option value="ckgsekolah">CKG Anak Sekolah</option>
+                                <option value="ckgbalita">CKG Balita</option>
+                            </select>
+                        </div>
+                        <div class="input-wrapper">
+                            <span class="input-label">Mode Eksekusi</span>
+                            <select id="headless-2">
+                                <option value="false">Visual (UI On)</option>
+                                <option value="true">Background (UI Off)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="action-grid">
+                        <button class="btn-outline" id="btn-upload-2">📁 Upload Excel</button>
+                        <button class="btn-outline" id="btn-download-hasil-2">⬇️ Sedot Hasil</button>
+                    </div>
+                    <div class="execution-grid">
+                        <button class="btn-success" id="btn-run-2">▶ RUN AUTO</button>
+                        <button class="btn-warning" id="btn-pause-2">⏸ Pause</button>
+                        <button class="btn-danger" id="btn-stop-2">⏹ Stop</button>
+                    </div>
+
+                    <div class="monitor-panel">
+                        <div
+                            style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 10px;">
+                            <span style="color: var(--text-muted);">Subjek: <strong id="val-nama-2"
+                                    style="color: var(--text-main);">-</strong></span>
+                            <span style="color: var(--text-muted);">NIK: <strong id="val-nik-2"
+                                    style="color: var(--text-main);">-</strong></span>
+                        </div>
+                        <div style="font-size: 12px; color: var(--accent-blue); margin-bottom: 10px; min-height: 18px;"
+                            id="val-proses-2">Sistem bersiap...</div>
+                        <div class="progress-container">
+                            <div id="progress-bar-2" class="progress-bar"></div>
+                        </div>
+                        <div class="stats-grid">
+                            <div>
+                                <div class="stat-row"><span class="stat-lbl">Data:</span> <span id="val-data-2"
+                                        class="stat-val">0/0</span></div>
+                                <div class="stat-row"><span class="stat-lbl">Estimasi:</span> <span id="val-eta-2"
+                                        class="stat-val">-</span></div>
+                            </div>
+                            <div style="border-left: 1px solid var(--border-color); padding-left: 15px;">
+                                <div class="stat-row"><span class="stat-lbl">Sukses:</span> <span id="val-sukses-2"
+                                        class="stat-val val-sukses">0</span></div>
+                                <div class="stat-row"><span class="stat-lbl">Gagal:</span> <span id="val-gagal-2"
+                                        class="stat-val val-gagal">0</span></div>
+                            </div>
+                        </div>
+                        <div id="status-log-2" class="mini-log">> [SYS] Worker 02 Online...</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <input type="file" id="file-upload-1" accept=".xlsx, .xls" style="display: none;">
+        <input type="file" id="file-upload-2" accept=".xlsx, .xls" style="display: none;">
+    </div>
+
+    <div id="toast-container"></div>
+
+    <script>
+        const { ipcRenderer } = require('electron');
+        const { spawn, exec } = require('child_process');
+        const fs = require('fs');
+        const path = require('path');
+        const os = require('os');
+        const { webUtils } = require('electron');
+
+        let windowSession = null;
+        let stats = { 1: { success: 0, error: 0, startTime: null }, 2: { success: 0, error: 0, startTime: null } };
+        let prosesAkun = { 1: null, 2: null };
+        let isPaused = { 1: false, 2: false };
+
+        // ==========================================
+        // INISIALISASI SAAT APLIKASI DIBUKA (SESSION)
+        // ==========================================
+        window.onload = async () => {
+            // Ambil Data Sesi dari Main Process
+            windowSession = await ipcRenderer.invoke('get-session');
+
+            if (windowSession) {
+                // 1. Update UI Top Bar Profil
+                document.getElementById('display-username').innerText = windowSession.username;
+                document.getElementById('display-status').innerText = windowSession.status;
+                document.getElementById('display-limit').innerText = windowSession.sisaLimit;
+
+                // 2. Kunci Kolom Username di Robot 1 dan 2
+                document.getElementById('user-1').value = windowSession.username;
+                document.getElementById('user-2').value = windowSession.username;
+
+                // 3. Logika "Gembok Robot 2" & Hak Akses
+                if (windowSession.status === 'DEVELOPER') {
+                    document.getElementById('user-1').removeAttribute('readonly');
+                    document.getElementById('user-2').removeAttribute('readonly');
+                    document.getElementById('overlay-bot-2').style.display = 'none';
+                } else {
+                    document.getElementById('user-1').setAttribute('readonly', true);
+                    document.getElementById('user-2').setAttribute('readonly', true);
+                    document.getElementById('overlay-bot-2').style.display = 'flex';
+                }
+
+                // 🔥 SETUP SIMPAN SANDI DIJALANKAN DI SINI SETELAH SEMUA SIAP 🔥
+                setupSimpanSandi(1);
+                setupSimpanSandi(2);
+            }
+        };
+
+        // Fungsi Refresh Angka Limit di Layar
+        async function refreshSisaLimit() {
+            const sess = await ipcRenderer.invoke('get-session');
+            if (sess) document.getElementById('display-limit').innerText = sess.sisaLimit;
+        }
+
+        // ==========================================
+        // FUNGSI UTILITIES BAWAAN UMAK
+        // ==========================================
+        function setBadge(id, text, typeClass) {
+            const badge = document.getElementById(`badge-${id}`);
+            badge.className = `badge ${typeClass}`;
+            badge.innerText = text;
+        }
+
+        function appendMiniLog(id, msg) {
+            const logBox = document.getElementById(`status-log-${id}`);
+            logBox.innerHTML += `<br>${msg}`;
+            logBox.scrollTop = logBox.scrollHeight;
+        }
+
+        function resetDashboard(id) {
+            stats[id] = { success: 0, error: 0, startTime: Date.now() };
+            document.getElementById(`val-nama-${id}`).innerText = "-";
+            document.getElementById(`val-nik-${id}`).innerText = "-";
+            document.getElementById(`val-proses-${id}`).innerHTML = "Menginisialisasi script...";
+            document.getElementById(`val-proses-${id}`).style.color = "var(--accent-yellow)";
+            document.getElementById(`val-data-${id}`).innerText = "0/0";
+            document.getElementById(`val-eta-${id}`).innerText = "Menghitung...";
+            document.getElementById(`val-sukses-${id}`).innerText = "0";
+            document.getElementById(`val-gagal-${id}`).innerText = "0";
+            document.getElementById(`progress-bar-${id}`).style.width = "0%";
+            document.getElementById(`status-log-${id}`).innerHTML = "> [SYS] Memulai proses eksekusi...";
+        }
+
+        function kalkulasiWaktu(id, current, total) {
+            if (current > 0 && current <= total && stats[id].startTime) {
+                const elapsedMs = Date.now() - stats[id].startTime;
+                const waktuPerData = elapsedMs / current;
+                const sisaData = total - current;
+                const sisaWaktuMs = sisaData * waktuPerData;
+                let sisaDetikTotal = Math.floor(sisaWaktuMs / 1000);
+                let menit = Math.floor(sisaDetikTotal / 60);
+                let detik = sisaDetikTotal % 60;
+                let teksEstimasi = "";
+                if (menit > 0) teksEstimasi += `${menit}m `;
+                teksEstimasi += `${detik}s`;
+                document.getElementById(`val-eta-${id}`).innerText = teksEstimasi;
+            }
+        }
+
+        function updateMonitoring(id, message) {
+            const lines = message.toString().split('\n');
+            for (let line of lines) {
+                let msgStr = line.trim();
+                if (!msgStr) continue;
+                const elProses = document.getElementById(`val-proses-${id}`);
+
+                if (msgStr.includes('KERJA|')) {
+                    const startIndex = msgStr.indexOf('KERJA|');
+                    const strKerja = msgStr.substring(startIndex);
+                    const parts = strKerja.split('|');
+
+                    if (parts.length >= 5) {
+                        if (elProses) {
+                            elProses.dataset.lastProses = parts[4].trim();
+                            elProses.innerText = parts[4].trim();
+                            elProses.style.color = "var(--accent-blue)";
+                        }
+                        const elNama = document.getElementById(`val-nama-${id}`);
+                        const elNik = document.getElementById(`val-nik-${id}`);
+                        if (elNama) elNama.innerText = parts[1] || '-';
+                        if (elNik) elNik.innerText = parts[2] || '-';
+
+                        const progressStr = parts[3] || '0/0';
+                        const elData = document.getElementById(`val-data-${id}`);
+                        if (elData) elData.innerText = progressStr;
+
+                        const progParts = progressStr.split('/');
+                        if (progParts.length === 2 && parseInt(progParts[1]) > 0) {
+                            const percent = Math.min((parseInt(progParts[0]) / parseInt(progParts[1])) * 100, 100);
+                            document.getElementById(`progress-bar-${id}`).style.width = `${percent}%`;
+                            kalkulasiWaktu(id, parseInt(progParts[0]), parseInt(progParts[1]));
+                        }
+                    }
+                }
+                else if (msgStr.includes('SUKSES') || msgStr.includes('BERHASIL')) {
+                    if (stats[id]) {
+                        stats[id].success++;
+                        document.getElementById(`val-sukses-${id}`).innerText = stats[id].success;
+                    }
+                    if (elProses) {
+                        elProses.innerText = `${elProses.dataset.lastProses || "Proses"} -> Tersimpan ✅`;
+                        elProses.style.color = "var(--accent-green)";
+                    }
+                    appendMiniLog(id, `<span class="val-sukses">✔️ ${msgStr}</span>`);
+
+                    ipcRenderer.invoke('kurangi-limit').then(() => refreshSisaLimit());
+                }
+                else if (msgStr.includes('GAGAL|') || msgStr.includes('GAGAL |')) {
+                    if (stats[id]) {
+                        stats[id].error++;
+                        document.getElementById(`val-gagal-${id}`).innerText = stats[id].error;
+                    }
+                    if (elProses) {
+                        elProses.innerText = `${elProses.dataset.lastProses || "Proses"} -> Gagal ❌`;
+                        elProses.style.color = "var(--accent-red)";
+                    }
+                    appendMiniLog(id, `<span class="val-gagal">❌ ${msgStr}</span>`);
+
+                    ipcRenderer.invoke('kurangi-limit').then(() => refreshSisaLimit());
+                }
+                else if (msgStr.toLowerCase().includes('error')) {
+                    appendMiniLog(id, `<span class="val-gagal">> ${msgStr}</span>`);
+                }
+                else {
+                    appendMiniLog(id, `> ${msgStr}`);
+                }
+            }
+        }
+
+        function showNotification(pesan, tipe = "error") {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            let ikon = tipe === "error" ? "❌" : tipe === "success" ? "✅" : "🔔";
+            toast.className = `cyber-toast ${tipe}`;
+            toast.innerHTML = `<span>${ikon}</span> <span>${pesan}</span>`;
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.style.animation = "toastOut 0.3s forwards";
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        function copyNorek() {
+            navigator.clipboard.writeText("1234567890").then(() => {
+                showNotification('Nomor Rekening berhasil disalin!', 'success');
+            });
+        }
+
+        function togglePassword(inputId, icon) {
+            const input = document.getElementById(inputId);
+            if (input.type === 'password') { input.type = 'text'; icon.textContent = '🙈'; }
+            else { input.type = 'password'; icon.textContent = '👁️'; }
+        }
+
+        // Fungsi pemutar suara lokal
+        function putarSuaraSelesai() {
+            const audioPath = path.join(__dirname, 'assets', 'notifselesai.mp3');
+            const psCommand = `Add-Type -AssemblyName presentationCore; $player = New-Object system.windows.media.mediaplayer; $player.open('${audioPath}'); $player.play(); Start-Sleep -s 3`;
+            exec(`powershell -c "${psCommand}"`, (error) => {
+                if (error) console.log("Gagal memutar suara sistem:", error);
+            });
+        }
+
+        // DOWNLOAD TEMPLATE
+        document.getElementById('btn-download').addEventListener('click', () => {
+            document.getElementById('kategori-template').blur(); document.getElementById('btn-download').blur();
+            const kategoriPilihan = document.getElementById('kategori-template').value;
+            let namaFile = kategoriPilihan === 'ckgumum' ? 'Template_CKGUmum.xlsx' : (kategoriPilihan === 'ckgsekolah' ? 'Template_CKGSekolah.xlsx' : 'Template_CKGBalita.xlsx');
+            const sourcePath = path.join(__dirname, 'Templates', namaFile);
+            const destPath = path.join(os.homedir(), 'Downloads', namaFile);
+            try {
+                if (fs.existsSync(sourcePath)) {
+                    fs.copyFileSync(sourcePath, destPath);
+                    fs.utimesSync(destPath, new Date(), new Date());
+                    showNotification(`MANTAP! File ${namaFile} masuk folder Downloads.`, 'success');
+                } else showNotification(`File asli ${namaFile} tidak ketemu.`, 'error');
+            } catch (err) { showNotification(`ERROR SEDOT TEMPLATE! ${err.message}`, 'error'); }
+        });
+
+        // ==========================================
+        // FUNGSI SETUP AKUN (ROBOT 1 & 2)
+        // ==========================================
+        function setupAkun(id) {
+            const btnGet = document.getElementById(`btn-get-${id}`);
+            const btnSubmit = document.getElementById(`btn-submit-${id}`);
+            const inputCap = document.getElementById(`input-cap-${id}`);
+            const passInput = document.getElementById(`pass-${id}`);
+
+            btnGet.addEventListener('click', async () => {
+                const limitCheck = await ipcRenderer.invoke('cek-limit');
+                if (!limitCheck.allowed) return showNotification(limitCheck.message, 'error');
+
+                const pass = passInput.value;
+                if (!pass) return showNotification("Password Web wajib diisi!", "warn");
+
+                // ❌ BARIS KODE HANTU (savedPassLocal) SUDAH SAYA HAPUS DARI SINI!
+
+                setBadge(id, 'MINTA CAPTCHA...', 'badge-idle');
+                document.getElementById(`img-cap-${id}`).style.display = 'none';
+                document.getElementById(`loading-cap-${id}`).style.display = 'block';
+                inputCap.value = '';
+
+                const proc = spawn('node', ['setuplogin.js', id.toString(), windowSession.username, pass]);
+                prosesAkun[id] = proc;
+
+                proc.stdout.on('data', (data) => {
+                    const pesan = data.toString().trim();
+                    if (pesan.includes(`CAPTCHA_IMAGE_${id}|`)) {
+                        document.getElementById(`loading-cap-${id}`).style.display = 'none';
+                        document.getElementById(`img-cap-${id}`).src = pesan.split('|')[1].trim();
+                        document.getElementById(`img-cap-${id}`).style.display = 'inline-block';
+                        setBadge(id, 'KETIK CAPTCHA', 'badge-idle');
+                    }
+                    else if (pesan.includes(`LOGIN_SUCCESS_${id}`)) {
+                        setBadge(id, 'ONLINE / SUKSES', 'badge-running');
+                        showNotification('Akses Diterima! Pintu Web Terbuka.', 'success');
+                        appendMiniLog(id, `<span class="val-sukses">> [SYSTEM] Web siap digunakan.</span>`);
+                        document.getElementById(`val-proses-${id}`).textContent = "Akses Terbuka";
+                        document.getElementById(`val-proses-${id}`).style.color = "var(--accent-green)";
+                    }
+                    else if (pesan.includes(`LOGIN_FAILED_${id}|`)) {
+                        setBadge(id, 'LOGIN GAGAL', 'badge-error');
+                        showNotification(`Gagal: ${pesan.split('|')[1].trim()}`, 'error');
+                        appendMiniLog(id, `<span class="val-gagal">> [ERROR] ${pesan.split('|')[1].trim()}</span>`);
+                        document.getElementById(`val-proses-${id}`).textContent = "Akses Ditolak";
+                        document.getElementById(`val-proses-${id}`).style.color = "var(--accent-red)";
+                    }
+                    else if (pesan !== '') appendMiniLog(id, `> ${pesan}`);
+                });
+                proc.on('close', (code) => {
+                    if (code !== 0) {
+                        appendMiniLog(id, `<span class="val-gagal">> ⚠️ Browser tertutup (Kode: ${code}).</span>`);
+                        setBadge(id, 'DISCONNECTED', 'badge-error');
+                    }
+                });
+            });
+
+            btnSubmit.addEventListener('click', () => {
+                const textCaptcha = inputCap.value;
+                if (!prosesAkun[id]) return showNotification('Ambil captcha dulu!', 'error');
+                if (!textCaptcha) return showNotification('Captcha kosong!', 'warn');
+
+                showNotification('Mengeksekusi Login...', 'success');
+                setBadge(id, 'PROSES LOGIN...', 'badge-idle');
+                prosesAkun[id].stdin.write(textCaptcha + '\n');
+            });
+
+            const fileUpload = document.getElementById(`file-upload-${id}`);
+            let namaFileAsliAkun = `Data${id}.xlsx`;
+            document.getElementById(`btn-upload-${id}`).addEventListener('click', () => fileUpload.click());
+
+            fileUpload.addEventListener('change', (event) => {
+                const file = event.target.files[0];
+                if (file) {
+                    try {
+                        const folderData = path.join(process.cwd(), 'Data');
+                        if (!fs.existsSync(folderData)) fs.mkdirSync(folderData, { recursive: true });
+                        const realPath = webUtils.getPathForFile(file);
+                        if (!realPath) return showNotification("Gagal membaca jalur asli file.", "error");
+
+                        namaFileAsliAkun = file.name;
+                        fs.copyFileSync(realPath, path.join(folderData, `Data${id}.xlsx`));
+                        appendMiniLog(id, `> 📄 Data masuk: ${file.name}`);
+                        showNotification('File Excel berhasil di-load!', 'success');
+                    } catch (error) { showNotification("Error Upload: " + error.message, "error"); }
+                }
+                event.target.value = '';
+            });
+
+            document.getElementById(`btn-download-hasil-${id}`).addEventListener('click', () => {
+                document.getElementById(`btn-download-hasil-${id}`).blur();
+                const sourcePath = path.join(process.cwd(), 'Data', `Data${id}.xlsx`);
+                let namaFileBaru = `${path.basename(namaFileAsliAkun, path.extname(namaFileAsliAkun))}_Hasil_Akun_${id}${path.extname(namaFileAsliAkun)}`;
+                const destPath = path.join(os.homedir(), 'Downloads', namaFileBaru);
+
+                try {
+                    if (fs.existsSync(sourcePath)) {
+                        fs.copyFileSync(sourcePath, destPath);
+                        fs.utimesSync(destPath, new Date(), new Date());
+                        showNotification(`MANTAP! File ${namaFileBaru} disedot ke Downloads.`, 'success');
+                    } else showNotification(`Belum ada file hasil di Akun ${id}.`, 'warn');
+                } catch (err) { showNotification(`ERROR SEDOT HASIL! ${err.message}`, 'error'); }
+            });
+
+            const btnRun = document.getElementById(`btn-run-${id}`);
+            const btnPause = document.getElementById(`btn-pause-${id}`);
+
+            btnRun.addEventListener('click', async () => {
+                const limitCheck = await ipcRenderer.invoke('cek-limit');
+                if (!limitCheck.allowed) return showNotification(limitCheck.message, 'error');
+
+                const scriptDipilih = document.getElementById(`kategori-${id}`).value + '.js';
+                const isHeadless = document.getElementById(`headless-${id}`).value;
+
+                resetDashboard(id);
+                setBadge(id, 'RUNNING', 'badge-running');
+
+                const proc = spawn('node', [scriptDipilih, id.toString(), isHeadless]);
+                prosesAkun[id] = proc;
+                isPaused[id] = false;
+                btnPause.innerHTML = '⏸ Pause';
+
+                proc.stdout.on('data', (data) => updateMonitoring(id, data));
+                proc.stderr.on('data', (data) => updateMonitoring(id, `<span class="val-gagal">[Oops] ${data}</span>`));
+                proc.on('close', (code) => {
+                    prosesAkun[id] = null;
+                    if (code === 0) {
+                        setBadge(id, 'SELESAI', 'badge-idle');
+                        document.getElementById(`val-proses-${id}`).innerText = "Semua Selesai!";
+                        document.getElementById(`val-eta-${id}`).innerText = "0s";
+                        putarSuaraSelesai()
+                    } else {
+                        setBadge(id, 'CRASH', 'badge-error');
+                        document.getElementById(`val-proses-${id}`).innerText = "Terhenti!, ulangi login";
+                        document.getElementById(`val-proses-${id}`).style.color = "var(--accent-red)";
+                    }
+                });
+            });
+
+            btnPause.addEventListener('click', () => {
+                btnPause.blur();
+                if (!prosesAkun[id]) return showNotification(`Bot Akun ${id} belum jalan.`, 'warn');
+                isPaused[id] = !isPaused[id];
+                if (isPaused[id]) {
+                    btnPause.innerHTML = '▶ Lanjut';
+                    prosesAkun[id].stdin.write('PAUSE\n');
+                    setBadge(id, 'PAUSED', 'badge-paused');
+                    document.getElementById(`val-proses-${id}`).innerText = "Sedang di-Pause...";
+                } else {
+                    btnPause.innerHTML = '⏸ Pause';
+                    prosesAkun[id].stdin.write('RESUME\n');
+                    setBadge(id, 'RUNNING', 'badge-running');
+                    document.getElementById(`val-proses-${id}`).innerText = "Lanjut eksekusi...";
+                }
+            });
+
+            document.getElementById(`btn-stop-${id}`).addEventListener('click', () => {
+                document.getElementById(`btn-stop-${id}`).blur();
+                if (!prosesAkun[id]) return showNotification(`Bot Akun ${id} tidak jalan.`, 'warn');
+                prosesAkun[id].kill('SIGKILL');
+                prosesAkun[id] = null;
+                isPaused[id] = false;
+                document.getElementById(`btn-pause-${id}`).innerHTML = '⏸ Pause';
+                setBadge(id, 'STOPPED', 'badge-error');
+                document.getElementById(`val-proses-${id}`).innerText = "Di-Stop Paksa!";
+                document.getElementById(`val-proses-${id}`).style.color = "var(--accent-red)";
+                document.getElementById(`val-eta-${id}`).innerText = "-";
+                showNotification(`Proses Akun ${id} berhasil dihentikan.`, 'success');
+            });
+        }
+
+        // ==========================================
+        // FITUR SIMPAN & HAPUS SANDI YANG SUDAH BERSIH
+        // ==========================================
+        function setupSimpanSandi(id) {
+            const inputPass = document.getElementById(`pass-${id}`);
+            const checkboxSimpan = document.getElementById(`simpan-pass-${id}`);
+            const btnHapus = document.getElementById(`btn-hapus-pass-${id}`);
+            const kunciStorage = `saved_password_worker_${id}`;
+
+            // 1. Cek memori saat aplikasi baru dibuka
+            const sandiTersimpan = localStorage.getItem(kunciStorage);
+            if (sandiTersimpan) {
+                inputPass.value = sandiTersimpan;
+                checkboxSimpan.checked = true;
+            } else {
+                inputPass.value = '';
+                checkboxSimpan.checked = false;
+            }
+
+            // 2. Simpan otomatis jika ada ketikan baru dan statusnya tercentang
+            inputPass.addEventListener('input', () => {
+                if (checkboxSimpan.checked && inputPass.value !== '') {
+                    localStorage.setItem(kunciStorage, inputPass.value);
+                }
+            });
+
+            // 3. Logika saat Checkbox di-klik
+            checkboxSimpan.addEventListener('change', (e) => {
+                if (e.target.checked && inputPass.value !== '') {
+                    localStorage.setItem(kunciStorage, inputPass.value);
+                }
+            });
+
+            // 4. 🔥 LOGIKA SAAT TOMBOL "HAPUS" DIKLIK (Sekarang 100% Manjur!)
+            btnHapus.addEventListener('click', () => {
+                localStorage.removeItem(kunciStorage);
+                inputPass.value = '';
+                checkboxSimpan.checked = false;
+                showNotification(`Sandi Akun ${id} berhasil dihapus!`, 'success');
+            });
+        }
+
+        // ==========================================
+        // FUNGSI SLIDER IKLAN & WHATSAPP
+        // ==========================================
+
+        // 🔥 LINK KE FILE JSON DI GITHUB UMAK (WAJIB PAKAI FORMAT 'RAW')
+        // Contoh isi file promo.json nanti: {"iklan": ["link1.jpg", "link2.jpg"], "durasi_detik": 5}
+        const URL_PROMO_GITHUB = 'https://raw.githubusercontent.com/hamsamu66/cckkgg-update/main/promoo.json';
+
+        let promoIndex = 0;
+        let promoTimer = null;
+
+        async function initPromoSlider() {
+            const track = document.getElementById('promo-track');
+            const indicators = document.getElementById('promo-indicators');
+
+            try {
+                // Tarik data dari GitHub (tambah timestamp agar tidak kena cache browser)
+                const response = await fetch(`${URL_PROMO_GITHUB}?t=${new Date().getTime()}`);
+                const data = await response.json();
+
+                // Pastikan datanya ada dan formatnya benar
+                if (data && data.iklan && data.iklan.length > 0) {
+                    track.innerHTML = '';
+                    indicators.innerHTML = '';
+
+                    // Masukkan gambar dan indikator ke HTML
+                    data.iklan.forEach((imgUrl, i) => {
+                        track.innerHTML += `<div class="promo-slide"><img src="${imgUrl}" alt="Promo"></div>`;
+                        indicators.innerHTML += `<div class="indicator-bar"><div class="indicator-progress" id="prog-${i}"></div></div>`;
+                    });
+
+                    const durasi = (data.durasi_detik || 5) * 1000;
+
+                    // Logika Geser Gambar dan Garis Loading
+                    function showSlide(index) {
+                        const total = data.iklan.length;
+                        promoIndex = index % total; // Kembali ke 0 kalau sudah habis
+
+                        // Geser track gambar
+                        track.style.transform = `translateX(-${promoIndex * 100}%)`;
+
+                        // Reset semua garis indikator
+                        for (let i = 0; i < total; i++) {
+                            const prog = document.getElementById(`prog-${i}`);
+                            prog.style.transition = 'none';
+                            prog.style.width = i < promoIndex ? '100%' : '0%';
+                        }
+
+                        // Jalankan animasi loading di garis yang sedang aktif
+                        setTimeout(() => {
+                            const activeProg = document.getElementById(`prog-${promoIndex}`);
+                            activeProg.style.transition = `width ${durasi}ms linear`;
+                            activeProg.style.width = '100%';
+                        }, 50);
+                    }
+
+                    // Mulai sistem otomatisnya
+                    showSlide(0);
+                    promoTimer = setInterval(() => {
+                        showSlide(promoIndex + 1);
+                    }, durasi);
+
+                } else {
+                    throw new Error("Data JSON Kosong");
+                }
+            } catch (error) {
+                console.log("Tidak dapat memuat Iklan dari GitHub:", error);
+                // Jika GitHub error atau offline, tampilkan teks kosong yang elegan
+                track.innerHTML = `<div class="promo-slide"><div style="font-size: 11px; color: var(--text-muted); text-align: center;">Space Iklan Tersedia<br>Hubungi Admin</div></div>`;
+            }
+        }
+
+        // Panggil fungsi iklannya jalan otomatis begitu aplikasi dibuka
+        document.addEventListener('DOMContentLoaded', () => {
+            initPromoSlider();
+        });
+
+        // Logika Buka WA pakai Browser Eksternal (agar tidak terjebak di dalam aplikasi Electron)
+        function bukaWhatsAppAdmin() {
+            const { shell } = require('electron');
+
+            // 🔥 GANTI DENGAN NOMOR WA UMAK
+            const noWA = "6281949983095";
+
+            // 🔥 GANTI PESAN PEMBUKANYA SESUAI SELERA
+            const pesan = encodeURIComponent("Halo Admin, saya mau bertanya mengenai sistem / upgrade Lisensi.");
+
+            // Buka link langsung ke browser PC user
+            shell.openExternal(`https://wa.me/${noWA}?text=${pesan}`);
+        }
+
+        // Jalankan pendaftaran akun UI
+        setupAkun(1);
+        setupAkun(2);
+    </script>
+</body>
+
+</html>
