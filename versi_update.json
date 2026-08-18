@@ -1,5 +1,7 @@
 {
-  "licenseVersion": 1,
-  "automationVersion": 1,
-  "templateVersion": 2
+  "ckgumum.js": 1,
+  "ckgsekolah.js": 1,
+  "ckgbalita.js": 1,
+  "login.html": 1
+  "main.js":1
 }
