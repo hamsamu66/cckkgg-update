@@ -1,1 +1,334 @@
-function _0x3440(){const _0x1e0dab=['qKvsseftsuW','uNvsqwq','yxbWBhK','4P2mifnLC3nPB24GDgLKywSGzgL0zw11A2fUisbkywXHBMTHBIaIBM9KzsbZzxr1CeXVz2LUlMPZiIb0zxjSzwjPAcbKywH1BhuU','zgL2lNrYywnRAw5NlxDPzgu6AgfZlxrLEhqOiLbPBgLOiIK','Aw5WDxrBBMfTzt0ItM9TB3iGv2HHDhnHChaIxq','lM14lwj0BI1Py29UlxjPz2H0','BM93','tK9Fv0e','Aw5WDxrBBMfTzt0ItKLliL0','zgL2lM1VzgfSlwnVBNrLBNqGyNv0Dg9UoMHHCY10zxH0kcjIzwX1BsiP','BgvUz3rO','vwzPuve','Ahr0Chm6lY9ZzwHHDgLUzg9UzxnPywT1lMTLBwTLCY5NBY5Pzc9JA2CTCgvUzgfMDgfYyw4TAw5KAxzPzhu','nZG5odCYzxfwq3DQ','yNLYA3a','A3HAwwu','y29UC29Szq','nJKWotq1AMz2sLHU','w2LKpsjuyw5Nz2fSieXHAgLYiL0','zxjYB3i','wwTpzvG','w+kwTU+4J10GtwvTChjVC2vZie5jsZOG','yKT5whu','vefor0Dbtf9mquHjuL9xquXj','tgfRAs1SywTP','nde0ohnNwNHIAW','ugvYzw1WDwfU','veDewuy','ve5IChO','veLnru9vva','AM9PBG','Dw5KzwzPBMvK','C2nYB2XSsw50B1zPzxDjzK5LzwrLza','rgf0ysbWzxnLCNrHigf0yxuGD2fSAsb0AwrHAYb2ywXPza','z2v0tw9UDgG','B2f3v2i','sfrsu1a','q1LUzeS','q2fYAsblywj1Cgf0zw4Vs290yq','q1nmwLO','lMnLBgWUDg9KyxK','zxHPC3rZu3LUyW','AxnwAxnPyMXL','mZm5ndeWBhPdC2zZ','tMHctvO','ufjgvw4','s0vdqu1bvefo','s09uqq','z290BW','y3ftz0u','uhvisLq','sxbXAfy','rM9YBsbosuSGv2fSAsb0AwrHAYbTDw5JDwW','BwvZC2fNzq','mtiXotiZn2nPtKHMAW','y29UC3rYDwn0B3i','u1Hnt2O','yMLUza','lNbUzW','quH6wMu','Dgv4Dd0Isw5KAxzPzhuGC3vKywGGBwvUzxjPBweGBgf5yw5HBIi','rffXz0W','y2f0y2G','ELrwweW','lM14lwj0BI1Py29UlwXLzNq','Dgv4Dd0Irgf0ysbWzxnLCNrHihzHBgLKiG','yNv0Dg9UoMHHCY10zxH0kcjeywz0yxjRyw4GzgvUz2fUie5jsYiP','sKv0zMu','zxHPDa','zgf0yv9WzxnLCNrHlNHSC3G','q2nnDeO','Ew9ZD1K','AwPzDwC','D1LWCwC','yvrvC3m','i2rLDgfPBc1KB21PC2LSAq','y2HYB21L','DhjPBq','D2fPDezVCLrPBwvVDxq','EerJCvC','8j+tHsbnzw5NAxnPifrHBMDNywWGtgfOAxiGugvUzgfMDgfYoIa','sKvosvnFs0vmqu1jtL9xquXj','zMLSDgvY','Dg9vChbLCKnHC2u','Bg9JyxrVCG','BgLIqKS','z2v0rNvSBfLLyxi','wuvZCve','BMv3ugfNzq','8j+AQcbtrvntsu9oievyueLsruqHie1LBMDOzw50AwTHBIbWCM9ZzxmU','wNrpA0O','Dgv4Dd0Irgf0ysbWzxnLCNrHigf0yxuGD2fSAsb0AwrHAYb2ywXPzci','u0vtu0LptL9fwfbjuKvexW','v2ThqLe','Dgv4Dd0IqMvYAgfZAwWGrgfMDgfYiG','q2fYAsbqCM92Aw5ZAq','CMfJzq','AejHrhq','DMLZAwjSzq','C2nYzwvUC2HVDa','sfHHvgu','Aw5WDxrBBMfTzt0ItMfTysbmzw5NA2fWifDHBgKIxq','sKvosvnFs0vmqu1jtG','Aw5WDxqJCgHVBMuTC2fTyvT0ExbLpsjJAgvJA2jVEcjD','lI91DgLSCY9SB2DNzxi','q3v0wMi','zgL2lNrYywnRAw5NlxDPzgu6AgfZlxrLEhqOiKXHBMP1DgTHBIiP','ywjZ','BMv0D29YA2LKBgu','4O+Zie1LBNvUz2D1ihzHBgLKyxnPihnLCNzLCI4UlG','D2fYBG','y2XVC2u','yNv0Dg9UoMHHCY10zxH0kcjeywz0yxiGqMfYDsiP','sxjZr3q','DgfIBgu','vfDJu2G','s1rywLq','s1ruvKG','w/cFMObDie1LBxvSywKGrw5NAw5LienlrYbbDxrVBwf0Aw9UlI4U','zgL2lNrYywnRAw5NlxDPzgu6AgfZlxrLEhqOiLr1DhvWiIK','ihWG','zgL2oNrLEhqTAxmOiG','ufjpvKLou0K','zKzkAeG','w/cFKObDienssvrjq0fmievsuK9soG','zgL2lM1VzgfSlwnVBNrLBNqGyNv0Dg9UoMHHCY10zxH0kci','ugvUzgfMDgfYyw4Gu3vRC2vZ','vefor0Dbtf9quK9trvm','ChjVDg90ExbL','mtqWotK1mMvozNnjEa','uevtqu5Frvjst1i','zxHJzxb0Aw9U','y2XPy2S','uhjns00','qNvRyw4GyMfSAxrHic8GvxnPysb0AwrHAYbTzw1LBNvOAsbZEwfYyxq','vfHHAwe','Bgf1BMnO','DgHLBG','cLVWN46jxsbqCM9ZzxmGu2vSzxnHAse','z2v0rgf0zq','C3bHBG','ysnTzw51x2nHCMLCl2rHzNrHCMTHBL9PBMrPDMLKDq','sxf2vwC','zKDyExO','ruXkvvm','u1rbvfvt','quTLC1a','zgL2','u1vequHFtefzqu5btG','iIKP','z2DeqMq','vefor0Dbtf9mquHjuG','DhnwsuG','C3rVCMfNzvn0yxrLlMPZB24','u09Nz0u','mZaWmJuZmvjwsw16BW','zMLSBa','Aw5UzxjuzxH0','4O+Zie1LBNvUz2D1igzVCM0GCgvUzgfMDgfYyw4GyMfYDsbTDw5JDwWGzgKGBgf5yxiUlI4','nJm5Bu95BMzh','zvnfELC','BMDQqLq','AxzfB0e','EgDKEKm','DxjS','Ae5Atxm','Aw5WDxrBCgXHy2vOB2XKzxi9iKnHCMKGCgvRzxjQywfUiL0','tKLl','4PYn77Ipie1LBwLSAwGGsMvUAxmGs2vSyw1PBIbxywXPlI4U','C3bSAxq','sw5KAxzPzhuGC3vKywGGBwvUzxjPBweGBgf5yw5HBG','tujjBum','nKjYzLftBa','Ag1jsge','qLD3sLm','y2HLy2S','lM14lwj0BI1Py29UlwrVDwjSzs1Szwz0','tw9Ot24','tKfnqv9xquXj','DgqUy2vSBdPUB3qOlM5VDc1JDxjYzw50lw1VBNrOksbKAxy6Dgv4Dc1PCYGI','r0fhquW','u3vKywGGzgLWzxjPA3nHihbHzge6ia','yNv0Dg9UoMHHCYHZCgfUlMzVBNqTyM9SzdP0zxH0lwLZkci','Aw5WDxrBBMfTzt0Izw1HAwWIxq','t1rwAgu','Bg9N','BMv3q29UDgv4Da','AgLqvwS','8j+tHsbnzw5NAxnPifrHBMDNywWGtgfOAxiGv2fSAtOG','cJ09pt09pt09pt09pt09pt09pt09pt09pt09pt09pt09pt09pt09','CMvWBgfJzq','D2fPDezVCLnLBgvJDg9Y','lI91DgLSCY9LEgnLBe1HBMfNzxi','veLequTFvKfmsuq','Aw5WDxrBBMfTzt0ItKLlihDHBgKIxq','rfrJA3O','u1rbvfvtx1bfuK5js0fiqu4','rhDSrw0','whzmA1a','BwTKAxjtEw5J','ndmYme1jt1LUCa','CNLmAgm','q2fYAsblzwnHBwf0yw4','Aw5WDxrBCgXHy2vOB2XKzxi9iG','AhvStuy','rNrez3i','qLvlqu5FqKfmsvrb','s0vurvjbtKDbtG','tKLlx1DbteK','zMLYC3q','rxjYB3iGDgvRBMLZl2vSzw1LBIb0AwrHAYbKAxrLBxvRyw4','BgfZDa','A1z1D3u','vKfmsuq','refuqv9usurbs19wquXjra','Dg9tDhjPBMC','tKfnqv9mru5hs0fq','rLntBMy','A2v5yM9HCMq'];_0x3440=function(){return _0x1e0dab;};return _0x3440();}const _0x30055f=_0x1f25;(function(_0x3a8aa7,_0x19d34d){const _0x7eb0a=_0x1f25,_0x30bae3=_0x3a8aa7();while(!![]){try{const _0x14d2f9=-parseInt(_0x7eb0a(0x72))/0x1+-parseInt(_0x7eb0a(0xbd))/0x2+-parseInt(_0x7eb0a(0x129))/0x3+parseInt(_0x7eb0a(0x131))/0x4*(parseInt(_0x7eb0a(0x104))/0x5)+-parseInt(_0x7eb0a(0xe8))/0x6*(parseInt(_0x7eb0a(0xd7))/0x7)+-parseInt(_0x7eb0a(0x125))/0x8+parseInt(_0x7eb0a(0xdb))/0x9*(parseInt(_0x7eb0a(0x143))/0xa);if(_0x14d2f9===_0x19d34d)break;else _0x30bae3['push'](_0x30bae3['shift']());}catch(_0x11d2eb){_0x30bae3['push'](_0x30bae3['shift']());}}}(_0x3440,0x983e0));const {chromium}=require('playwright'),path=require('path'),fs=require('fs'),{bacaExcel,simpanBarisExcel,getWaktuSekarang}=require(_0x30055f(0xfc)),{tulisLog}=require(_0x30055f(0xa4)),TARGET_URL=_0x30055f(0x124),FILE_EXCEL=path[_0x30055f(0x136)](__dirname,'data',_0x30055f(0x81)),STATE_PATH=path[_0x30055f(0x136)](__dirname,'state',_0x30055f(0xd5)),SCREENSHOT_DIR=path['join'](__dirname,'screenshots');if(!fs[_0x30055f(0x141)](SCREENSHOT_DIR))fs[_0x30055f(0x103)](SCREENSHOT_DIR);async function main(){const _0x486a90=_0x30055f,_0x314a88={'OTVhe':function(_0xc75f71,_0x144c46){return _0xc75f71(_0x144c46);},'NhBMZ':function(_0x4a83c7){return _0x4a83c7();},'kxZYe':_0x486a90(0xf5),'bKyXu':_0x486a90(0xaa),'DQqgL':'info','SOggE':_0x486a90(0x12b),'ELJUS':_0x486a90(0xbf),'TNbpz':_0x486a90(0xae),'ubzde':'trace','ngjBT':function(_0x569653,_0x83fb5c){return _0x569653<_0x83fb5c;},'ryLhc':_0x486a90(0x140),'KTTVH':function(_0x5c8383,_0x15ea43,_0x3c2fb5){return _0x5c8383(_0x15ea43,_0x3c2fb5);},'FSSnf':_0x486a90(0xb2),'CYndK':function(_0x5efe7c,_0x3848e7){return _0x5efe7c(_0x3848e7);},'Uklnv':_0x486a90(0x88),'ggDBd':_0x486a90(0xf3),'AKesP':_0x486a90(0x95),'zTVXL':function(_0x4652a3,_0x104bdb){return _0x4652a3<_0x104bdb;},'TGDYF':function(_0x37c4f4,_0x4f9e2d){return _0x37c4f4===_0x4f9e2d;},'YEsqQ':_0x486a90(0x117),'oawWb':_0x486a90(0xf0),'hNZMs':'button:has-text(\x22CKG\x20Umum\x22)','TwqkL':_0x486a90(0xc9),'hBaDt':_0x486a90(0xda),'hmIHa':_0x486a90(0x120),'PRFUn':'input[name=\x22Nama\x22]','byrkp':_0x486a90(0x12a),'weEOT':function(_0x4c04af,_0x4b565b,_0x4de7f8,_0x5d7b69){return _0x4c04af(_0x4b565b,_0x4de7f8,_0x5d7b69);},'yMdRX':_0x486a90(0xc8),'FtDgr':_0x486a90(0x11c),'aTUss':function(_0x34fcd6,_0x56e2a2){return _0x34fcd6(_0x56e2a2);},'IpqhV':_0x486a90(0xfe),'xgdzC':_0x486a90(0xa1),'BWwJS':'✍️\x20Memasukkan\x20NIK\x20Wali...','hulMF':function(_0x465c29,_0x841765,_0x4b1d7d,_0x5e5c9e){return _0x465c29(_0x841765,_0x4b1d7d,_0x5e5c9e);},'PuHJT':function(_0x2095b2,_0x2fcf54){return _0x2095b2===_0x2fcf54;},'hiPUk':function(_0x2afc1f,_0x460b2a){return _0x2afc1f(_0x460b2a);},'YAHTG':_0x486a90(0x132),'azKLH':'✅\x20Mencentang\x20opsi\x20\x22Sama\x20dengan\x20pendaftar\x22...','UfiQQ':'div.tracking-wide:has-text(\x22Selanjutnya\x22)','tsVIH':_0x486a90(0xa9),'fFJhH':_0x486a90(0x7d),'RuRAd':_0x486a90(0x78),'xDcqW':function(_0x44fcc2,_0x4d4f41){return _0x44fcc2===_0x4d4f41;},'LrWsp':_0x486a90(0xfd),'PwVww':_0x486a90(0x112),'CcMtJ':_0x486a90(0xd0),'uzCYo':'div:has-text(\x22Tanggal\x20pemeriksaan:\x22)\x20+\x20div','JEtfe':'Timeout:\x20Pop-up\x20validasi\x20tidak\x20muncul','ZtOkJ':'span:has-text(\x22Pilih\x20status\x20pernikahan\x22)','XvLkP':_0x486a90(0xcf),'CSLZZ':_0x486a90(0xe2),'lOuOp':function(_0x7300c7,_0x48a67e){return _0x7300c7(_0x48a67e);},'DTckz':_0x486a90(0x121),'PrMKM':function(_0x163522,_0x5e0bfa,_0x452a6e,_0x29b3b3){return _0x163522(_0x5e0bfa,_0x452a6e,_0x29b3b3);},'YkOeX':_0x486a90(0x9b),'eSEzW':function(_0x294633,_0x4fbb33,_0x2003a2,_0x4d59f7){return _0x294633(_0x4fbb33,_0x2003a2,_0x4d59f7);},'HXaTe':function(_0x7e5694,_0x2d23d8,_0x7a5bc5,_0x15fac6){return _0x7e5694(_0x2d23d8,_0x7a5bc5,_0x15fac6);},'rItFX':_0x486a90(0x87),'LFrnp':_0x486a90(0x11b),'SEiWB':_0x486a90(0x7e),'HTRSP':_0x486a90(0x9a),'IrsGt':_0x486a90(0xba),'FTdIK':function(_0x3d41b6,_0x3c6fc0){return _0x3d41b6===_0x3c6fc0;},'TXaia':_0x486a90(0x10a),'libBK':_0x486a90(0x14c),'vPsWi':function(_0xd4992d,_0x1a7799){return _0xd4992d===_0x1a7799;},'MohOn':_0x486a90(0x139),'kVuwu':function(_0x2e931e,_0x5ec498){return _0x2e931e===_0x5ec498;},'tSxiq':_0x486a90(0xe6),'DwlEm':_0x486a90(0x10e),'KTXZT':_0x486a90(0xa8),'gShGq':function(_0x1430ea,_0x1b377c,_0x52ed65,_0x23eb22,_0x6f108b,_0xfbb2a9){return _0x1430ea(_0x1b377c,_0x52ed65,_0x23eb22,_0x6f108b,_0xfbb2a9);},'tVvWW':_0x486a90(0xb8),'TWcSh':_0x486a90(0xc6)},_0x125b69=(function(){let _0x3cfd43=!![];return function(_0x3fe0c6,_0x3d911e){const _0x4f60f5=_0x3cfd43?function(){const _0x3ef856=_0x1f25;if(_0x3d911e){const _0x37d506=_0x3d911e[_0x3ef856(0x119)](_0x3fe0c6,arguments);return _0x3d911e=null,_0x37d506;}}:function(){};return _0x3cfd43=![],_0x4f60f5;};}()),_0x4e2d11=_0x314a88[_0x486a90(0xb1)](_0x125b69,this,function(){const _0x266163=_0x486a90,_0x2e2041={'IqvUg':function(_0x38ea86,_0x3a3214){const _0x18676a=_0x1f25;return _0x314a88[_0x18676a(0xf4)](_0x38ea86,_0x3a3214);},'MBImC':'return\x20(function()\x20'},_0x385037=function(){const _0x4b2204=_0x1f25;let _0x4888b1;try{_0x4888b1=_0x2e2041[_0x4b2204(0xca)](Function,_0x2e2041[_0x4b2204(0xe7)]+'{}.constructor(\x22return\x20this\x22)(\x20)'+');')();}catch(_0xc71f51){_0x4888b1=window;}return _0x4888b1;},_0xe94c2a=_0x314a88[_0x266163(0x144)](_0x385037),_0x32566d=_0xe94c2a[_0x266163(0x128)]=_0xe94c2a[_0x266163(0x128)]||{},_0xe24142=[_0x314a88[_0x266163(0x127)],_0x314a88[_0x266163(0x12e)],_0x314a88[_0x266163(0x79)],_0x314a88[_0x266163(0xd6)],_0x314a88[_0x266163(0xcc)],_0x314a88[_0x266163(0x134)],_0x314a88['ubzde']];for(let _0x2c8fe7=0x0;_0x314a88[_0x266163(0xdd)](_0x2c8fe7,_0xe24142[_0x266163(0x122)]);_0x2c8fe7++){const _0x1c1212=_0x125b69[_0x266163(0x73)][_0x266163(0xbc)][_0x266163(0x75)](_0x125b69),_0x3db02c=_0xe24142[_0x2c8fe7],_0x5b1c28=_0x32566d[_0x3db02c]||_0x1c1212;_0x1c1212['__proto__']=_0x125b69[_0x266163(0x75)](_0x125b69),_0x1c1212['toString']=_0x5b1c28['toString'][_0x266163(0x75)](_0x5b1c28),_0x32566d[_0x3db02c]=_0x1c1212;}});_0x314a88[_0x486a90(0x144)](_0x4e2d11),console[_0x486a90(0xf5)](_0x314a88[_0x486a90(0x115)]);!fs[_0x486a90(0x141)](STATE_PATH)&&(console[_0x486a90(0x12b)](_0x486a90(0x11a)),process[_0x486a90(0x80)](0x1));const {workbook:_0x3a15c7,sheetName:_0x4b09e0,data:_0x52d4dd}=_0x314a88[_0x486a90(0x13d)](bacaExcel,FILE_EXCEL),_0x135532=await chromium[_0x486a90(0xc4)]({'headless':![],'channel':_0x314a88['Uklnv']}),_0x25e030=await _0x135532[_0x486a90(0xf6)]({'storageState':STATE_PATH}),_0x3a8ad3=await _0x25e030[_0x486a90(0x94)]();_0x3a8ad3['setDefaultTimeout'](0x3a98);try{await _0x3a8ad3[_0x486a90(0x148)](TARGET_URL,{'waitUntil':_0x486a90(0xa8)});const _0x53891a=await _0x3a8ad3[_0x486a90(0x90)](_0x314a88[_0x486a90(0xd2)])[_0x486a90(0x142)]({'timeout':0x1388})[_0x486a90(0x7a)](()=>![]);_0x53891a&&(console[_0x486a90(0x12b)](_0x314a88[_0x486a90(0xce)]),await _0x3a8ad3[_0x486a90(0x9f)]({'path':path['join'](SCREENSHOT_DIR,_0x486a90(0x98)+Date[_0x486a90(0x11e)]()+_0x486a90(0x76))}),process[_0x486a90(0x80)](0x1));for(let _0x38e4ca=0x0;_0x314a88[_0x486a90(0x7b)](_0x38e4ca,_0x52d4dd[_0x486a90(0x122)]);_0x38e4ca++){const _0xa091e1=_0x52d4dd[_0x38e4ca];if(!_0xa091e1[_0x486a90(0xe3)]||_0x314a88[_0x486a90(0x133)](_0xa091e1[_0x486a90(0xcd)],_0x314a88[_0x486a90(0x93)]))continue;console[_0x486a90(0xf5)](_0x486a90(0xf9)),console[_0x486a90(0xf5)](_0x486a90(0x12d)+_0xa091e1['NIK']+_0x486a90(0xb4)+_0xa091e1[_0x486a90(0x114)]);let _0x329266=_0x314a88[_0x486a90(0x13b)],_0x1e223a='',_0xd4a8e4='';try{await _0x3a8ad3[_0x486a90(0xc0)](_0x314a88[_0x486a90(0xe1)]),await _0x3a8ad3[_0x486a90(0x8a)](0x1f4),await _0x3a8ad3[_0x486a90(0xc0)](_0x314a88['TwqkL']),await _0x3a8ad3[_0x486a90(0xc0)](_0x486a90(0xac)),console[_0x486a90(0xf5)](_0x314a88[_0x486a90(0x9d)]),await _0x3a8ad3[_0x486a90(0xfb)](_0x314a88[_0x486a90(0xe9)],{'state':_0x486a90(0x9e),'timeout':0x2710}),await _0x3a8ad3[_0x486a90(0x8a)](0x1f4),await _0x3a8ad3[_0x486a90(0xd8)](_0x314a88[_0x486a90(0xe9)],_0x314a88['CYndK'](String,_0xa091e1['NIK'])),await _0x3a8ad3[_0x486a90(0xd8)](_0x314a88[_0x486a90(0x145)],String(_0xa091e1[_0x486a90(0x114)])),await _0x3a8ad3[_0x486a90(0x8a)](0x12c),console[_0x486a90(0xf5)](_0x486a90(0x8c)+_0xa091e1[_0x486a90(0xd3)]);const _0x21d7a2=_0x3a8ad3[_0x486a90(0x90)](_0x314a88[_0x486a90(0x126)])[_0x486a90(0x10d)]();await _0x314a88['weEOT'](isiDatepicker,_0x3a8ad3,_0x21d7a2,String(_0xa091e1['TANGGAL_LAHIR'])),await _0x3a8ad3[_0x486a90(0x90)](_0x314a88['yMdRX'],{'hasText':/Pilih Jenis Kelamin/i})['first']()['click']()[_0x486a90(0x7a)](()=>{}),await _0x3a8ad3[_0x486a90(0x8a)](0x12c);const _0x38bf15=_0x314a88[_0x486a90(0x133)](_0x314a88[_0x486a90(0xf4)](String,_0xa091e1[_0x486a90(0xa2)])['trim']()[_0x486a90(0x8f)](),'L')?_0x486a90(0x130):_0x486a90(0x132);await _0x3a8ad3[_0x486a90(0x90)](_0x486a90(0xb5)+_0x38bf15+'\x22)')['filter']({'visible':!![]})['first']()[_0x486a90(0xc0)](),await _0x3a8ad3[_0x486a90(0xd8)](_0x314a88[_0x486a90(0x109)],_0x314a88[_0x486a90(0x86)](String,_0xa091e1[_0x486a90(0x11f)])),await _0x3a8ad3[_0x486a90(0x8a)](0x3e8);const _0x391317=await _0x3a8ad3[_0x486a90(0x90)](_0x314a88[_0x486a90(0x14b)])[_0x486a90(0x142)]({'timeout':0xfa0});if(!_0x391317)throw new Error(_0x486a90(0x10a));await _0x3a8ad3[_0x486a90(0xd8)](_0x314a88[_0x486a90(0x14b)],_0x314a88[_0x486a90(0x13d)](String,_0xa091e1[_0x486a90(0x10c)])),await _0x3a8ad3[_0x486a90(0xd8)](_0x314a88['xgdzC'],_0x314a88['OTVhe'](String,_0xa091e1['NAMA_WALI'])),console['log'](_0x314a88[_0x486a90(0xea)]),await _0x3a8ad3[_0x486a90(0xd8)](_0x486a90(0xfe),_0x314a88[_0x486a90(0x13d)](String,_0xa091e1[_0x486a90(0x10c)])),await _0x3a8ad3['fill'](_0x314a88[_0x486a90(0xdf)],String(_0xa091e1[_0x486a90(0xee)])),await _0x3a8ad3['waitForTimeout'](0x1f4),console[_0x486a90(0xf5)](_0x486a90(0xf8)+_0xa091e1[_0x486a90(0x12f)]);const _0x464bfe=_0x3a8ad3[_0x486a90(0x90)](_0x486a90(0x12a))[_0x486a90(0x10f)]();await _0x464bfe[_0x486a90(0x138)](),await _0x3a8ad3[_0x486a90(0x8a)](0x1f4),await _0x314a88[_0x486a90(0x108)](isiDatepicker,_0x3a8ad3,_0x464bfe,_0x314a88[_0x486a90(0xf4)](String,_0xa091e1[_0x486a90(0x12f)])),console[_0x486a90(0xf5)](_0x486a90(0xe4));const _0x4aada9=_0x3a8ad3[_0x486a90(0x90)](_0x314a88['yMdRX'],{'hasText':/Pilih Jenis Kelamin/i})['last']();await _0x4aada9['scrollIntoViewIfNeeded'](),await _0x3a8ad3['waitForTimeout'](0x1f4),await _0x4aada9[_0x486a90(0xc0)](),await _0x3a8ad3[_0x486a90(0x8a)](0x12c);const _0xa4e62b=_0x314a88[_0x486a90(0x14a)](_0x314a88[_0x486a90(0xf7)](String,_0xa091e1[_0x486a90(0x8d)])[_0x486a90(0x89)]()[_0x486a90(0x8f)](),'L')?_0x486a90(0x130):_0x314a88['YAHTG'],_0x21b8de=_0x3a8ad3[_0x486a90(0x90)](_0x486a90(0xb5)+_0xa4e62b+'\x22)')[_0x486a90(0x8e)]({'visible':!![]})[_0x486a90(0x10f)]();await _0x21b8de[_0x486a90(0x138)](),await _0x21b8de[_0x486a90(0xc0)](),console[_0x486a90(0xf5)](_0x314a88['azKLH']);const _0x57ca30=_0x3a8ad3[_0x486a90(0x90)](_0x486a90(0xa3))[_0x486a90(0x10f)]();await _0x57ca30[_0x486a90(0xeb)]({'force':!![]}),await _0x3a8ad3[_0x486a90(0x8a)](0x3e8);const _0x4072e1=new Date()[_0x486a90(0xc7)]()['toString']();await _0x3a8ad3[_0x486a90(0x90)](_0x486a90(0xf2)+_0x4072e1+_0x486a90(0xd1))[_0x486a90(0xc0)]()[_0x486a90(0x7a)](async()=>{const _0x5262af=_0x486a90;await _0x3a8ad3[_0x5262af(0x90)](_0x314a88[_0x5262af(0x105)])[_0x5262af(0xc0)]()[_0x5262af(0x7a)](()=>{});}),await _0x3a8ad3['click'](_0x314a88[_0x486a90(0x123)]),console[_0x486a90(0xf5)](_0x314a88[_0x486a90(0xd4)]);const _0xb7e804=await Promise[_0x486a90(0x9c)]([_0x3a8ad3['waitForSelector'](_0x314a88[_0x486a90(0xb7)],{'timeout':0x1f40})[_0x486a90(0xc5)](()=>_0x486a90(0x111)),_0x3a8ad3['waitForSelector'](_0x486a90(0x97),{'timeout':0x1f40})[_0x486a90(0xc5)](()=>_0x486a90(0xfd)),_0x3a8ad3[_0x486a90(0xfb)](_0x314a88[_0x486a90(0x118)],{'timeout':0x1f40})['then'](()=>_0x486a90(0xd0)),_0x3a8ad3[_0x486a90(0x8a)](0x1f40)[_0x486a90(0xc5)](()=>_0x486a90(0x135))]);if(_0x314a88[_0x486a90(0x8b)](_0xb7e804,_0x314a88['LrWsp']))throw new Error(_0x314a88['PwVww']);else{if(_0xb7e804===_0x314a88[_0x486a90(0x82)]){const _0x4019f9=await _0x3a8ad3[_0x486a90(0x90)](_0x314a88['uzCYo'])[_0x486a90(0xd9)]();_0xd4a8e4=_0x486a90(0xf1)+_0x4019f9['trim']();throw new Error(_0x486a90(0xd0));}else{if(_0x314a88[_0x486a90(0x8b)](_0xb7e804,'TIMEOUT'))throw new Error(_0x314a88[_0x486a90(0x7f)]);}}await _0x3a8ad3['click'](_0x486a90(0xa6)),await _0x3a8ad3[_0x486a90(0xc0)](_0x314a88[_0x486a90(0x96)]),await _0x3a8ad3['locator'](_0x314a88[_0x486a90(0x102)],{'hasText':_0x314a88[_0x486a90(0x86)](String,_0xa091e1[_0x486a90(0x100)])})['first']()['click'](),await _0x3a8ad3[_0x486a90(0xd8)](_0x314a88[_0x486a90(0x13f)],_0x314a88['lOuOp'](String,_0xa091e1['PEKERJAAN'])),await _0x3a8ad3[_0x486a90(0x8a)](0x1f4),await _0x3a8ad3[_0x486a90(0x116)]['press']('Enter'),await _0x3a8ad3[_0x486a90(0xc0)](_0x314a88[_0x486a90(0xff)])[_0x486a90(0x7a)](()=>{}),await _0x314a88[_0x486a90(0xc1)](isiDropdown,_0x3a8ad3,_0x314a88[_0x486a90(0x12c)],_0x314a88['OTVhe'](String,_0xa091e1[_0x486a90(0xb6)])),await _0x314a88[_0x486a90(0x108)](isiDropdown,_0x3a8ad3,_0x486a90(0x13e),_0x314a88['lOuOp'](String,_0xa091e1[_0x486a90(0x147)])),await _0x314a88[_0x486a90(0xdc)](isiDropdown,_0x3a8ad3,_0x486a90(0x106),String(_0xa091e1[_0x486a90(0x146)])),await _0x314a88[_0x486a90(0xa0)](isiDropdown,_0x3a8ad3,'Cari\x20Kelurahan',String(_0xa091e1['KELURAHAN'])),await _0x3a8ad3[_0x486a90(0xd8)](_0x314a88['rItFX'],String(_0xa091e1['ALAMAT'])),await _0x3a8ad3['click'](_0x314a88[_0x486a90(0x123)]),await _0x3a8ad3[_0x486a90(0xc0)](_0x314a88['LFrnp']),await _0x3a8ad3['click'](_0x314a88['SEiWB']),await _0x3a8ad3[_0x486a90(0xfb)](_0x314a88[_0x486a90(0x13c)],{'timeout':0x2710}),await _0x3a8ad3[_0x486a90(0xc0)](_0x486a90(0xb3))['catch'](()=>{}),_0x329266=_0x486a90(0x117),_0xd4a8e4=_0x314a88[_0x486a90(0xad)];}catch(_0x3bd248){_0x329266=_0x314a88[_0x486a90(0x13b)];if(_0x314a88['FTdIK'](_0x3bd248[_0x486a90(0x71)],_0x314a88[_0x486a90(0xc3)]))_0x1e223a=_0x314a88[_0x486a90(0x91)],_0xd4a8e4=_0x486a90(0xc2);else{if(_0x314a88['vPsWi'](_0x3bd248['message'],'DATA_TIDAK_VALID'))_0x1e223a=_0x314a88[_0x486a90(0xed)],_0xd4a8e4='Gagal\x20Validasi\x20Dukcapil';else _0x314a88[_0x486a90(0x110)](_0x3bd248[_0x486a90(0x71)],_0x314a88[_0x486a90(0x82)])?_0x1e223a=_0x314a88['tSxiq']:(_0x1e223a=_0x3bd248[_0x486a90(0x71)][_0x486a90(0xe5)]('\x0a')[0x0],_0xd4a8e4=_0x314a88[_0x486a90(0x101)]);}console['error']('[❌]\x20'+_0x1e223a);const _0x7f8a7e=_0xa091e1[_0x486a90(0xe3)]+'_'+_0xa091e1['NAMA_LENGKAP'][_0x486a90(0xfa)](/[^a-zA-Z0-9]/g,'')+'_'+Date[_0x486a90(0x11e)]()+'.png';await _0x3a8ad3['screenshot']({'path':path[_0x486a90(0x136)](SCREENSHOT_DIR,_0x7f8a7e)}),await _0x3a8ad3['goto'](TARGET_URL,{'waitUntil':_0x314a88[_0x486a90(0xb0)]});}const {tanggal:_0x38a84e,jam:_0x1860cd}=getWaktuSekarang();_0x52d4dd[_0x38e4ca][_0x486a90(0xcd)]=_0x329266,_0x52d4dd[_0x38e4ca][_0x486a90(0xbb)]=_0x38a84e,_0x52d4dd[_0x38e4ca]['JAM_PROSES']=_0x1860cd,_0x52d4dd[_0x38e4ca][_0x486a90(0xbe)]=_0x1e223a,_0x52d4dd[_0x38e4ca][_0x486a90(0x10b)]=_0xd4a8e4,simpanBarisExcel(FILE_EXCEL,_0x3a15c7,_0x4b09e0,_0x52d4dd),_0x314a88['gShGq'](tulisLog,_0xa091e1['NIK'],_0xa091e1['NAMA_LENGKAP'],_0x329266,_0x1e223a,_0x3a8ad3[_0x486a90(0xe0)]());}}catch(_0x31ee59){console[_0x486a90(0x12b)](_0x314a88['tVvWW'],_0x31ee59[_0x486a90(0x71)]);}finally{console['log'](_0x314a88[_0x486a90(0xaf)]),await _0x135532[_0x486a90(0xab)]();}}function _0x1f25(_0x11d490,_0x5424f2){_0x11d490=_0x11d490-0x71;const _0x1d90f4=_0x3440();let _0x3ffe7b=_0x1d90f4[_0x11d490];if(_0x1f25['rAfCFI']===undefined){var _0x908840=function(_0x8d655e){const _0xb84e7b='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x124dc2='',_0x418ddf='';for(let _0x3c2784=0x0,_0x3f480a,_0xfb7691,_0x10c937=0x0;_0xfb7691=_0x8d655e['charAt'](_0x10c937++);~_0xfb7691&&(_0x3f480a=_0x3c2784%0x4?_0x3f480a*0x40+_0xfb7691:_0xfb7691,_0x3c2784++%0x4)?_0x124dc2+=String['fromCharCode'](0xff&_0x3f480a>>(-0x2*_0x3c2784&0x6)):0x0){_0xfb7691=_0xb84e7b['indexOf'](_0xfb7691);}for(let _0x247f45=0x0,_0x4c66da=_0x124dc2['length'];_0x247f45<_0x4c66da;_0x247f45++){_0x418ddf+='%'+('00'+_0x124dc2['charCodeAt'](_0x247f45)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x418ddf);};_0x1f25['HpxTyZ']=_0x908840,_0x1f25['YlGAlv']={},_0x1f25['rAfCFI']=!![];}const _0x32247b=_0x1d90f4[0x0],_0x34401b=_0x11d490+_0x32247b,_0x1f2552=_0x1f25['YlGAlv'][_0x34401b];return!_0x1f2552?(_0x3ffe7b=_0x1f25['HpxTyZ'](_0x3ffe7b),_0x1f25['YlGAlv'][_0x34401b]=_0x3ffe7b):_0x3ffe7b=_0x1f2552,_0x3ffe7b;}async function isiDropdown(_0x50e861,_0x36e85f,_0x7376db){const _0x19fdb0=_0x30055f,_0x4861a1=_0x50e861[_0x19fdb0(0x90)](_0x19fdb0(0x107)+_0x36e85f+'\x22]');await _0x4861a1['fill'](_0x7376db),await _0x50e861['waitForTimeout'](0x3e8),await _0x50e861[_0x19fdb0(0x90)](_0x19fdb0(0xb9)+_0x7376db+'\x22)',{'ignoreCase':!![]})[_0x19fdb0(0x10d)]()[_0x19fdb0(0xc0)]()[_0x19fdb0(0x7a)](async()=>{const _0x2cf035=_0x19fdb0;await _0x50e861[_0x2cf035(0x90)]('div',{'hasText':_0x7376db})[_0x2cf035(0x10d)]()[_0x2cf035(0xc0)]();});}async function isiDatepicker(_0x4f518b,_0x2dc778,_0x5e96b7){const _0x2d6007=_0x30055f,_0x1aa1b2={'iBgZp':function(_0x46f717,_0x25d480){return _0x46f717===_0x25d480;},'yoswY':_0x2d6007(0x137),'gFUoq':'Data\x20tanggal\x20kosong\x20atau\x20nama\x20kolom\x20di\x20Excel\x20salah!','YqECw':function(_0x1bb0b5,_0x202d96){return _0x1bb0b5(_0x202d96);},'ijYug':function(_0x2971db,_0x1903b0,_0x4f58de){return _0x2971db(_0x1903b0,_0x4f58de);},'VQDOa':function(_0x13f3c2,_0x4a2065){return _0x13f3c2<_0x4a2065;},'cqSgE':function(_0x2e79cf,_0x1a566b){return _0x2e79cf>_0x1a566b;},'Dpgeo':function(_0x5a1f4b,_0x4fd3bb){return _0x5a1f4b-_0x4fd3bb;},'ivEoA':function(_0x33ed86,_0x815b4b){return _0x33ed86>_0x815b4b;},'wYpqg':function(_0x12d9c5,_0x197552){return _0x12d9c5<_0x197552;},'AHzZe':_0x2d6007(0xec),'GboTm':function(_0x3fae29,_0x115c3f){return _0x3fae29<_0x115c3f;},'SXMOj':function(_0x56c236,_0x282bf0){return _0x56c236-_0x282bf0;},'WkGBQ':function(_0x40c98d,_0x44d759){return _0x40c98d<_0x44d759;},'fGXyz':_0x2d6007(0x11d),'CutZb':function(_0xc810ac,_0x5ef79a){return _0xc810ac<_0x5ef79a;},'jHQWP':_0x2d6007(0x7c)};if(!_0x5e96b7||_0x1aa1b2['iBgZp'](_0x5e96b7,_0x1aa1b2[_0x2d6007(0x83)]))throw new Error(_0x1aa1b2['gFUoq']);const _0x4bf24c=_0x1aa1b2['YqECw'](String,_0x5e96b7)[_0x2d6007(0xfa)](/\//g,'-')[_0x2d6007(0x89)](),_0x14678f=_0x4bf24c['split']('-');if(_0x14678f[_0x2d6007(0x122)]!==0x3)throw new Error('Format\x20tanggal\x20tidak\x20valid\x20(Harus\x20DD-MM-YYYY):\x20'+_0x5e96b7);const _0xa9ec8d=parseInt(_0x14678f[0x0],0xa)[_0x2d6007(0x113)](),_0xe43352=parseInt(_0x14678f[0x1],0xa);let _0x266e12=_0x1aa1b2[_0x2d6007(0x84)](parseInt,_0x14678f[0x2],0xa);_0x1aa1b2['VQDOa'](_0x266e12,0x64)&&(_0x266e12+=_0x1aa1b2[_0x2d6007(0x149)](_0x266e12,0x32)?0x76c:0x7d0);const _0x231dd8=new Date(),_0x38ca91=_0x231dd8[_0x2d6007(0x92)](),_0x51f523=_0x231dd8[_0x2d6007(0x13a)]()+0x1;await _0x2dc778['click'](),await _0x4f518b['waitForTimeout'](0x190);const _0x58674a=_0x1aa1b2['Dpgeo'](_0x38ca91,_0x266e12);if(_0x1aa1b2[_0x2d6007(0xde)](_0x58674a,0x0))for(let _0x48c79c=0x0;_0x1aa1b2['wYpqg'](_0x48c79c,_0x58674a);_0x48c79c++){await _0x4f518b[_0x2d6007(0x90)](_0x1aa1b2[_0x2d6007(0x77)])['first']()[_0x2d6007(0xc0)](),await _0x4f518b[_0x2d6007(0x8a)](0x28);}else{if(_0x1aa1b2[_0x2d6007(0x85)](_0x58674a,0x0))for(let _0x1d364e=0x0;_0x1aa1b2['GboTm'](_0x1d364e,Math[_0x2d6007(0xa7)](_0x58674a));_0x1d364e++){await _0x4f518b[_0x2d6007(0x90)]('.mx-btn-icon-double-right')[_0x2d6007(0x10d)]()[_0x2d6007(0xc0)](),await _0x4f518b[_0x2d6007(0x8a)](0x28);}}const _0x225e8d=_0x1aa1b2[_0x2d6007(0x74)](_0xe43352,_0x51f523);if(_0x225e8d>0x0)for(let _0x1ddfeb=0x0;_0x1aa1b2[_0x2d6007(0x99)](_0x1ddfeb,_0x225e8d);_0x1ddfeb++){await _0x4f518b[_0x2d6007(0x90)](_0x1aa1b2[_0x2d6007(0xcb)])['first']()[_0x2d6007(0xc0)](),await _0x4f518b[_0x2d6007(0x8a)](0x28);}else{if(_0x1aa1b2[_0x2d6007(0xa5)](_0x225e8d,0x0))for(let _0x9c8986=0x0;_0x9c8986<Math[_0x2d6007(0xa7)](_0x225e8d);_0x9c8986++){await _0x4f518b[_0x2d6007(0x90)](_0x1aa1b2['jHQWP'])[_0x2d6007(0x10d)]()[_0x2d6007(0xc0)](),await _0x4f518b[_0x2d6007(0x8a)](0x28);}}const _0x1aacab=_0x2d6007(0xef)+_0xa9ec8d+'\x22)';await _0x4f518b[_0x2d6007(0x90)](_0x1aacab)[_0x2d6007(0x10d)]()[_0x2d6007(0xc0)](),await _0x4f518b[_0x2d6007(0x8a)](0x12c);}main();
+const { chromium } = require('playwright');
+const path = require('path');
+const fs = require('fs');
+const { bacaExcel, simpanBarisExcel, getWaktuSekarang } = require('./utils/excelManager');
+const { tulisLog } = require('./utils/logger');
+
+// --- KONFIGURASI ---
+const TARGET_URL = 'https://sehatindonesiaku.kemkes.go.id/ckg-pendaftaran-individu';
+const FILE_EXCEL = path.join(__dirname, 'data', 'data_peserta.xlsx');
+const STATE_PATH = path.join(__dirname, 'state', 'storageState.json');
+const SCREENSHOT_DIR = path.join(__dirname, 'screenshots');
+
+if (!fs.existsSync(SCREENSHOT_DIR)) fs.mkdirSync(SCREENSHOT_DIR);
+
+async function main() {
+    console.log('[🚀] Memulai Engine CKG Automation...');
+
+    // Cek Session
+    if (!fs.existsSync(STATE_PATH)) {
+        console.error('❌ Session tidak ditemukan! Jalankan "node setupLogin.js" terlebih dahulu.');
+        process.exit(1);
+    }
+
+    const { workbook, sheetName, data } = bacaExcel(FILE_EXCEL);
+// Buka Browser secara visual (Headed) menggunakan Google Chrome asli
+    const browser = await chromium.launch({ headless: false, channel: 'chrome' });
+    const context = await browser.newContext({ storageState: STATE_PATH });
+    const page = await context.newPage();
+    page.setDefaultTimeout(15000); // Set timeout standar 15 detik
+
+    try {
+        await page.goto(TARGET_URL, { waitUntil: 'networkidle' });
+
+        // Validasi Session Expired
+        const isLoginRequired = await page.locator('input[name="email"]').isVisible({ timeout: 5000 }).catch(() => false);
+        if (isLoginRequired) {
+            console.error('🚨 SESSION EXPIRED! Menghentikan proses.');
+            await page.screenshot({ path: path.join(SCREENSHOT_DIR, `SESSION_EXPIRED_${Date.now()}.png`) });
+            process.exit(1);
+        }
+
+        // --- LOOP PROSES BARIS EXCEL ---
+        for (let i = 0; i < data.length; i++) {
+            const row = data[i];
+
+            // Auto-Recovery: Skip data yang sudah berhasil
+            if (!row.NIK || row.STATUS === "BERHASIL") continue;
+
+            console.log(`\n======================================`);
+            console.log(`[▶️] Memproses NIK: ${row.NIK} | ${row.NAMA_LENGKAP}`);
+
+            let status = "GAGAL";
+            let pesanError = "";
+            let keterangan = "";
+
+            try {
+               // 1. Masuk ke Form Pendaftaran
+                await page.click('button:has-text("CKG Umum")');
+                await page.waitForTimeout(500);
+                await page.click('a#menu_cari\\/daftarkan_individu');
+                await page.click('button:has-text("Daftar Baru")');
+
+                // ============================================================
+                // 🛑 DINDING PEMBATAS: Wajib tunggu form pendaftaran muncul murni
+                // ============================================================
+                console.log('⏳ Menunggu form pendaftaran baru muncul di layar...');
+                await page.waitForSelector('input[name="NIK"]', { state: 'visible', timeout: 10000 });
+                await page.waitForTimeout(500); // Jeda tambahan stabilitas animasi
+
+                // 2. Input Data Anak
+                await page.fill('input[name="NIK"]', String(row.NIK));
+                await page.fill('input[name="Nama"]', String(row.NAMA_LENGKAP));
+                await page.waitForTimeout(300); 
+
+                // --- EKSEKUSI DATEPICKER TANGGAL LAHIR PENDAFTAR (ANAK) ---
+                console.log(`📅 Mengisi Tanggal Lahir Pendaftar: ${row.TANGGAL_LAHIR}`);
+                
+                // PERBAIKAN: Mengunci langsung ke ID milik elemen kalender sesuai UI Vision
+                const elTglAnak = page.locator('[id="Tanggal Lahir"]').first();
+                await isiDatepicker(page, elTglAnak, String(row.TANGGAL_LAHIR));
+
+                // Gender Anak
+                await page.locator('span', { hasText: /Pilih Jenis Kelamin/i }).first().click().catch(()=>{});
+                await page.waitForTimeout(300);
+                const genderAnak = String(row.JENIS_KELAMIN).trim().toUpperCase() === 'L' ? 'Laki-laki' : 'Perempuan';
+                await page.locator(`div:text-is("${genderAnak}")`).filter({ visible: true }).first().click();
+
+                await page.fill('input[name="Nomor Whatsapp"]', String(row.NO_WA));
+                
+                await page.waitForTimeout(1000); // Rem Tangan UI
+
+                // 3. Validasi Form Balita
+                const formWaliMuncul = await page.locator('input[name="NIK wali"]').isVisible({ timeout: 4000 });
+                if (!formWaliMuncul) {
+                    throw new Error("BUKAN_BALITA");
+                }
+
+                // 4. Input Data Wali
+                await page.fill('input[name="NIK wali"]', String(row.NIK_WALI));
+                await page.fill('input[name="Nama Lengkap Wali"]', String(row.NAMA_WALI));
+
+               // --- DATA WALI ---
+                console.log('✍️ Memasukkan NIK Wali...');
+                await page.fill('input[name="NIK wali"]', String(row.NIK_WALI));
+                await page.fill('input[name="Nama Lengkap Wali"]', String(row.NAMA_WALI));
+                
+                await page.waitForTimeout(500); 
+
+                // --- EKSEKUSI DATEPICKER TANGGAL LAHIR WALI ---
+                console.log(`📅 Mengisi Tanggal Lahir Wali: ${row.TANGGAL_LAHIR_WALI}`);
+                
+                // PERBAIKAN: Mengunci ke ID posisi terakhir (milik Wali)
+                const elTglWali = page.locator('[id="Tanggal Lahir"]').last();
+                await elTglWali.scrollIntoViewIfNeeded();
+                await page.waitForTimeout(500); 
+                
+                await isiDatepicker(page, elTglWali, String(row.TANGGAL_LAHIR_WALI));
+                // --- JENIS KELAMIN WALI (DENGAN AUTO-SCROLL) ---
+                console.log('✍️ Memilih Jenis Kelamin Wali...');
+                
+                // Cari elemen tombol dropdown
+                const btnPilihKelaminWali = page.locator('span', { hasText: /Pilih Jenis Kelamin/i }).last();
+                
+                // FORCE SCROLL: Paksa layar turun sampai elemen ini muncul di mata robot
+                await btnPilihKelaminWali.scrollIntoViewIfNeeded();
+                await page.waitForTimeout(500); // Jeda setelah scroll agar tidak "slide-out"
+                
+                // Klik tombolnya
+                await btnPilihKelaminWali.click();
+                
+                await page.waitForTimeout(300);
+                const kelaminWali = String(row.JENIS_KELAMIN_WALI).trim().toUpperCase() === 'L' ? 'Laki-laki' : 'Perempuan';
+                
+                // Klik pilihan Laki/Perempuan (Pastikan scroll juga ke sini kalau perlu)
+                const pilihanKelamin = page.locator(`div:text-is("${kelaminWali}")`).filter({ visible: true }).last();
+                await pilihanKelamin.scrollIntoViewIfNeeded();
+                await pilihanKelamin.click();
+               // --- PERBAIKAN FINAL: CENTANG WA SAMA (KHUSUS CHECKBOX) ---
+                console.log('✅ Mencentang opsi "Sama dengan pendaftar"...');
+                
+                // Kunci langsung ke elemen <input> yang bertipe checkbox, ambil yang paling bawah
+                const inputCheckboxWa = page.locator('input#phone-sama[type="checkbox"]').last();
+                
+                // Gunakan .check() alih-alih .click()
+                // { force: true } memaksa centang dari balik layar, dan .check() otomatis membangunkan Vue.js!
+                await inputCheckboxWa.check({ force: true });
+                
+                // Rem tangan 1 detik agar tombol Selanjutnya (Next) berubah jadi biru/aktif
+                await page.waitForTimeout(1000);
+                
+                // Klik Tanggal Hari Ini
+                const today = new Date().getDate().toString();
+                await page.locator(`button:has(span.font-bold:text-is("${today}"))`).click().catch(async () => {
+                    await page.locator('.cell.today').click().catch(()=>{});
+                });
+
+                // Submit Tahap 1
+                await page.click('div.tracking-wide:has-text("Selanjutnya")');
+
+                // 5. Penanganan Pop-up Validasi (Race Condition)
+                console.log('⏳ Menunggu validasi server...');
+                const hasilValidasi = await Promise.race([
+                    page.waitForSelector('text="Data peserta valid"', { timeout: 8000 }).then(() => 'VALID'),
+                    page.waitForSelector('text="Data peserta atau wali tidak valid"', { timeout: 8000 }).then(() => 'TIDAK_VALID'),
+                    page.waitForSelector('text="Individu sudah menerima layanan"', { timeout: 8000 }).then(() => 'SUDAH_LAYANAN'),
+                    page.waitForTimeout(8000).then(() => 'TIMEOUT')
+                ]);
+
+                if (hasilValidasi === 'TIDAK_VALID') {
+                    throw new Error("DATA_TIDAK_VALID");
+                } else if (hasilValidasi === 'SUDAH_LAYANAN') {
+                    // Ekstrak tanggal pemeriksaan dari HTML
+                    const tglPeriksa = await page.locator('div:has-text("Tanggal pemeriksaan:") + div').innerText();
+                    keterangan = `Sudah diperiksa pada: ${tglPeriksa.trim()}`;
+                    throw new Error("SUDAH_LAYANAN");
+                } else if (hasilValidasi === 'TIMEOUT') {
+                    throw new Error("Timeout: Pop-up validasi tidak muncul");
+                }
+
+                // 6. Tahap 2: Lokasi & Pekerjaan
+                await page.click('div.tracking-wide:has-text("Lanjutkan")');
+                
+                await page.click('span:has-text("Pilih status pernikahan")');
+                await page.locator('div', { hasText: String(row.STATUS_PERNIKAHAN) }).first().click();
+
+                await page.fill('input[placeholder="Cari pekerjaan"]', String(row.PEKERJAAN));
+                await page.waitForTimeout(500);
+                await page.keyboard.press('Enter');
+                await page.click('div.modal-content button:has-text("belum")').catch(()=>{}); // Selector dinamis klik pilihan pertama
+
+                await isiDropdown(page, 'Cari Provinsi', String(row.PROVINSI));
+                await isiDropdown(page, 'Cari Kabupaten/Kota', String(row.KOTA));
+                await isiDropdown(page, 'Cari Kecamatan', String(row.KECAMATAN));
+                await isiDropdown(page, 'Cari Kelurahan', String(row.KELURAHAN));
+                
+                await page.fill('#detail-domisili', String(row.ALAMAT));
+                await page.click('div.tracking-wide:has-text("Selanjutnya")');
+                await page.click('div.tracking-wide:has-text("Pilih")');
+                await page.click('button:has-text("Daftarkan dengan NIK")');
+
+                // Konfirmasi Sukses
+                await page.waitForSelector('text="Berhasil Daftar"', { timeout: 10000 });
+                await page.click('div.tracking-wide:has-text("Tutup")').catch(()=>{});
+                
+                status = "BERHASIL";
+                keterangan = "Pendaftaran Sukses";
+
+            } catch (err) {
+                status = "GAGAL";
+                
+                // Klasifikasi Error
+                if (err.message === "BUKAN_BALITA") {
+                    pesanError = "Form NIK Wali tidak muncul";
+                    keterangan = "Bukan balita / Usia tidak memenuhi syarat";
+                } else if (err.message === "DATA_TIDAK_VALID") {
+                    pesanError = "Data peserta atau wali tidak valid";
+                    keterangan = "Gagal Validasi Dukcapil";
+                } else if (err.message === "SUDAH_LAYANAN") {
+                    pesanError = "Individu sudah menerima layanan";
+                } else {
+                    pesanError = err.message.split('\n')[0]; // Ambil baris pertama error
+                    keterangan = "Error teknis/elemen tidak ditemukan";
+                }
+
+                console.error(`[❌] ${pesanError}`);
+
+                // Ambil Screenshot jika error teknis
+                const ssName = `${row.NIK}_${row.NAMA_LENGKAP.replace(/[^a-zA-Z0-9]/g, '')}_${Date.now()}.png`;
+                await page.screenshot({ path: path.join(SCREENSHOT_DIR, ssName) });
+
+                // Refresh halaman agar DOM kembali bersih
+                await page.goto(TARGET_URL, { waitUntil: 'networkidle' });
+            }
+
+            // --- AUTO SAVE & LOGGING PER BARIS ---
+            const { tanggal, jam } = getWaktuSekarang();
+            data[i].STATUS = status;
+            data[i].TANGGAL_PROSES = tanggal;
+            data[i].JAM_PROSES = jam;
+            data[i].PESAN_ERROR = pesanError;
+            data[i].KETERANGAN = keterangan;
+
+            simpanBarisExcel(FILE_EXCEL, workbook, sheetName, data);
+            tulisLog(row.NIK, row.NAMA_LENGKAP, status, pesanError, page.url());
+        }
+
+    } catch (globalErr) {
+        console.error('[💀] CRITICAL ERROR:', globalErr.message);
+    } finally {
+        console.log('\n[🎉] Proses Selesai!');
+        await browser.close();
+    }
+}
+
+// --- FUNGSI HELPER UI ---
+async function isiDropdown(page, placeholderText, valueToType) {
+    const inputArea = page.locator(`input[placeholder="${placeholderText}"]`);
+    await inputArea.fill(valueToType);
+    await page.waitForTimeout(1000); 
+    await page.locator(`div.modal-content button:has-text("${valueToType}")`, { ignoreCase: true }).first().click().catch(async () => {
+        // Fallback jika button tidak terbaca, klik element div biasa
+        await page.locator('div', { hasText: valueToType }).first().click();
+    });
+}
+
+// ============================================================================
+// FUNGSI HELPER: PEMBOBOL DATEPICKER (VERSI 1 KOLOM EXCEL)
+// ============================================================================
+async function isiDatepicker(page, locatorDatepicker, tanggalLahirExcel) {
+    if (!tanggalLahirExcel || tanggalLahirExcel === "undefined") {
+        throw new Error("Data tanggal kosong atau nama kolom di Excel salah!");
+    }
+
+    // Ubah garis miring "/" jadi setrip "-" dan hapus spasi
+    const strTanggal = String(tanggalLahirExcel).replace(/\//g, '-').trim();
+    const bagian = strTanggal.split('-'); 
+    if (bagian.length !== 3) {
+        throw new Error(`Format tanggal tidak valid (Harus DD-MM-YYYY): ${tanggalLahirExcel}`);
+    }
+
+    // Bersihkan angka (Contoh: "05" jadi "5")
+    const targetHari = parseInt(bagian[0], 10).toString(); 
+    const targetBulan = parseInt(bagian[1], 10);
+    let targetTahun = parseInt(bagian[2], 10);
+
+    // Proteksi tahun 2 digit (misal 98 jadi 1998)
+    if (targetTahun < 100) {
+        targetTahun += (targetTahun > 50 ? 1900 : 2000); 
+    }
+
+    const currentDate = new Date();
+    const currentTahun = currentDate.getFullYear();
+    const currentBulan = currentDate.getMonth() + 1;
+
+    // Buka popup kalender
+    await locatorDatepicker.click();
+    await page.waitForTimeout(400);
+
+    // SINKRONISASI TAHUN
+    const selisihTahun = currentTahun - targetTahun;
+    if (selisihTahun > 0) {
+        for (let i = 0; i < selisihTahun; i++) {
+            await page.locator('.mx-btn-icon-double-left').first().click();
+            await page.waitForTimeout(40);
+        }
+    } else if (selisihTahun < 0) {
+        for (let i = 0; i < Math.abs(selisihTahun); i++) {
+            await page.locator('.mx-btn-icon-double-right').first().click();
+            await page.waitForTimeout(40);
+        }
+    }
+
+    // SINKRONISASI BULAN
+    const selisihBulan = targetBulan - currentBulan;
+    if (selisihBulan > 0) {
+        for (let i = 0; i < selisihBulan; i++) {
+            await page.locator('.mx-btn-icon-right').first().click();
+            await page.waitForTimeout(40);
+        }
+    } else if (selisihBulan < 0) {
+        for (let i = 0; i < Math.abs(selisihBulan); i++) {
+            await page.locator('.mx-btn-icon-left').first().click();
+            await page.waitForTimeout(40);
+        }
+    }
+
+    // KLIK TANGGAL BERSIH
+    const selectorTanggal = `td.cell:not(.not-current-month) div:text-is("${targetHari}")`;
+    await page.locator(selectorTanggal).first().click();
+    
+    await page.waitForTimeout(300);
+}
+
+main();
