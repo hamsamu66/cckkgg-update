@@ -11,5 +11,7 @@
   "Templates/Template_CKGSekolah.xlsx": 1,
   "Templates/Template_CKGBalita.xlsx": 1,
   "Utils/excelManager.js": 1,
-  "Utils/Logger.js": 1
-  }
+  "Utils/Logger.js": 1,
+  "package-lock.json": 1,
+  "package.json": 1
+}
