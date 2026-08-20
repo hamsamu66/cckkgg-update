@@ -802,7 +802,7 @@
                             <select id="kategori-1">
                                 <option value="ckgumum">CKG Umum</option>
                                 <option value="ckgsekolah">CKG Anak Sekolah</option>
-                                <option value="ckgbalita">CKG Balita</option>
+                                <option value="ckgbalita">CKG Balita (ON PROSES)</option>
                             </select>
                         </div>
                         <div class="input-wrapper">
@@ -1216,6 +1216,10 @@
             const inputCap = document.getElementById(`input-cap-${id}`);
             const passInput = document.getElementById(`pass-${id}`);
 
+            // 🌟 TAMBAHAN: Ambil elemen kotak username-nya
+            // (Pastikan ID 'user-' ini sama dengan ID input username di HTML Umak, misal id="user-1")
+            const userInput = document.getElementById(`user-${id}`);
+
             btnGet.addEventListener('click', async () => {
                 const limitCheck = await ipcRenderer.invoke('cek-limit');
                 if (!limitCheck.allowed) return showNotification(limitCheck.message, 'error');
@@ -1223,14 +1227,17 @@
                 const pass = passInput.value;
                 if (!pass) return showNotification("Password Web wajib diisi!", "warn");
 
-                // ❌ BARIS KODE HANTU (savedPassLocal) SUDAH SAYA HAPUS DARI SINI!
+                // 🌟 TAMBAHAN: Ambil teks yang sedang diketik di kotak username
+                const usernameYangDiketik = userInput.value;
+                if (!usernameYangDiketik) return showNotification("Username Web wajib diisi!", "warn");
 
                 setBadge(id, 'MINTA CAPTCHA...', 'badge-idle');
                 document.getElementById(`img-cap-${id}`).style.display = 'none';
                 document.getElementById(`loading-cap-${id}`).style.display = 'block';
                 inputCap.value = '';
 
-                const proc = spawn('node', ['setuplogin.js', id.toString(), windowSession.username, pass]);
+                // 🌟 PERBAIKAN FATAL: Kirim 'usernameYangDiketik', BUKAN 'windowSession.username'
+                const proc = spawn('node', ['setuplogin.js', id.toString(), usernameYangDiketik, pass]);
                 prosesAkun[id] = proc;
 
                 proc.stdout.on('data', (data) => {
@@ -1257,6 +1264,7 @@
                     }
                     else if (pesan !== '') appendMiniLog(id, `> ${pesan}`);
                 });
+
                 proc.on('close', (code) => {
                     if (code !== 0) {
                         appendMiniLog(id, `<span class="val-gagal">> ⚠️ Browser tertutup (Kode: ${code}).</span>`);
@@ -1264,6 +1272,9 @@
                     }
                 });
             });
+
+            // ... (lanjutan kode btnSubmit jika ada)
+
 
             btnSubmit.addEventListener('click', () => {
                 const textCaptcha = inputCap.value;
