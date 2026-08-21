@@ -1,1 +1,1238 @@
-function _0x435a(_0x5055a4,_0x29f254){_0x5055a4=_0x5055a4-0xb5;const _0x67a1b3=_0x1018();let _0x4c4c3e=_0x67a1b3[_0x5055a4];if(_0x435a['PJaFbI']===undefined){var _0x2343f3=function(_0x12d1b3){const _0x522e9a='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x5efa15='',_0x1ee186='';for(let _0x42d14d=0x0,_0x3fd745,_0x44f642,_0x282e6b=0x0;_0x44f642=_0x12d1b3['charAt'](_0x282e6b++);~_0x44f642&&(_0x3fd745=_0x42d14d%0x4?_0x3fd745*0x40+_0x44f642:_0x44f642,_0x42d14d++%0x4)?_0x5efa15+=String['fromCharCode'](0xff&_0x3fd745>>(-0x2*_0x42d14d&0x6)):0x0){_0x44f642=_0x522e9a['indexOf'](_0x44f642);}for(let _0x440ac0=0x0,_0x26ac2b=_0x5efa15['length'];_0x440ac0<_0x26ac2b;_0x440ac0++){_0x1ee186+='%'+('00'+_0x5efa15['charCodeAt'](_0x440ac0)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x1ee186);};_0x435a['XODLly']=_0x2343f3,_0x435a['xeYTkF']={},_0x435a['PJaFbI']=!![];}const _0x27205b=_0x67a1b3[0x0],_0x1018b4=_0x5055a4+_0x27205b,_0x435a43=_0x435a['xeYTkF'][_0x1018b4];return!_0x435a43?(_0x4c4c3e=_0x435a['XODLly'](_0x4c4c3e),_0x435a['xeYTkF'][_0x1018b4]=_0x4c4c3e):_0x4c4c3e=_0x435a43,_0x4c4c3e;}const _0x20a9ea=_0x435a;(function(_0x2e298b,_0x46552a){const _0x7e674c=_0x435a,_0x629742=_0x2e298b();while(!![]){try{const _0x494e5e=-parseInt(_0x7e674c(0xca))/0x1*(-parseInt(_0x7e674c(0x198))/0x2)+-parseInt(_0x7e674c(0x1be))/0x3+-parseInt(_0x7e674c(0x27a))/0x4+-parseInt(_0x7e674c(0x243))/0x5+-parseInt(_0x7e674c(0x136))/0x6+-parseInt(_0x7e674c(0x1d6))/0x7*(parseInt(_0x7e674c(0x262))/0x8)+parseInt(_0x7e674c(0x196))/0x9;if(_0x494e5e===_0x46552a)break;else _0x629742['push'](_0x629742['shift']());}catch(_0x46e995){_0x629742['push'](_0x629742['shift']());}}}(_0x1018,0x955cf));const {chromium}=require(_0x20a9ea(0x185)),path=require(_0x20a9ea(0x127)),ExcelManager=require(_0x20a9ea(0x2a1)),Logger=require(_0x20a9ea(0x1fe));let isPaused=![],resumeResolver=null;process[_0x20a9ea(0xf7)]['on'](_0x20a9ea(0x1f9),_0x122851=>{const _0x7eee2c=_0x20a9ea,_0x35bee7={'TNgHy':function(_0x34180a,_0xece31c){return _0x34180a===_0xece31c;},'wMRmf':'PAUSE','FRijB':_0x7eee2c(0x2a7),'DdSvd':function(_0x29d581,_0x38f642){return _0x29d581===_0x38f642;},'MvINu':'RESUME','vdQuS':_0x7eee2c(0x23d)},_0x372276=_0x122851[_0x7eee2c(0xb6)]()[_0x7eee2c(0x238)]();if(_0x35bee7[_0x7eee2c(0x2cc)](_0x372276,_0x35bee7[_0x7eee2c(0x224)]))isPaused=!![],console['log'](_0x35bee7['FRijB']);else _0x35bee7[_0x7eee2c(0xe5)](_0x372276,_0x35bee7['MvINu'])&&(isPaused=![],resumeResolver&&(resumeResolver(),resumeResolver=null),console[_0x7eee2c(0xb8)](_0x35bee7['vdQuS']));});async function checkPause(){isPaused&&await new Promise(_0x505c95=>{resumeResolver=_0x505c95;});}async function klikAntiMacet(_0x61a200,_0x2203ef,_0x56d667=_0x20a9ea(0x167)){const _0x35070e=_0x20a9ea,_0x1fc37b={'pzvCr':function(_0xac094a,_0x332a23){return _0xac094a<=_0x332a23;},'YxuPg':function(_0x146f20,_0xfecbe3){return _0x146f20>_0xfecbe3;},'lPFdA':_0x35070e(0x250),'euYMl':function(_0x4dd240,_0x3e93bb){return _0x4dd240===_0x3e93bb;}},_0x49ac3d=_0x61a200['locator'](_0x35070e(0x13f))[_0x35070e(0x2e0)](),_0x462d2b=0x3;for(let _0x3a0357=0x1;_0x1fc37b[_0x35070e(0x173)](_0x3a0357,_0x462d2b);_0x3a0357++){_0x1fc37b[_0x35070e(0x1a0)](await _0x2203ef[_0x35070e(0x2e5)](),0x0)&&await _0x2203ef[_0x35070e(0x1db)]()&&await _0x2203ef[_0x35070e(0x27e)]({'force':!![]});try{return await _0x61a200['waitForTimeout'](0x1f4),await _0x49ac3d['waitFor']({'state':_0x1fc37b['lPFdA'],'timeout':0x3a98}),!![];}catch(_0x206377){Logger[_0x35070e(0x1e1)](_0x35070e(0x239)+_0x56d667+'.\x20Mengulang\x20(Percobaan\x20'+_0x3a0357+'/'+_0x462d2b+')...');if(_0x1fc37b[_0x35070e(0x1d8)](_0x3a0357,_0x462d2b))throw new Error('TIMEOUT_SERVER:\x20Gagal\x20mengeklik\x20'+_0x56d667+_0x35070e(0x13c));await _0x61a200[_0x35070e(0x2f7)](0x7d0);}}}async function isiDatepicker(_0x3a4f36,_0x22e583,_0x223b9a){const _0x3848e1=_0x20a9ea,_0x31718b={'YbzDq':function(_0x525468,_0x3d05d5){return _0x525468==_0x3d05d5;},'YRjof':function(_0x36710e,_0x4d6f8e){return _0x36710e===_0x4d6f8e;},'Epwqe':'undefined','cQfYD':'Data\x20tanggal\x20kosong\x20atau\x20nama\x20kolom\x20di\x20Excel\x20salah!','kTmpq':function(_0x407c62,_0x53b8e6){return _0x407c62 instanceof _0x53b8e6;},'tHkNf':function(_0x3dc9ea,_0x460a20){return _0x3dc9ea+_0x460a20;},'CUXva':function(_0x192051,_0x2f5ba7){return _0x192051(_0x2f5ba7);},'wUFYh':function(_0x2ff118,_0x584bd8){return _0x2ff118!==_0x584bd8;},'hJBsQ':function(_0x40fd3b,_0x4948da){return _0x40fd3b===_0x4948da;},'edcaZ':function(_0x13502b,_0x96bec,_0x44983b){return _0x13502b(_0x96bec,_0x44983b);},'BzEKe':function(_0x535629,_0x232058,_0x43c2cc){return _0x535629(_0x232058,_0x43c2cc);},'mbOnX':function(_0x3aad5d,_0x31a6ec){return _0x3aad5d<_0x31a6ec;},'IRDQp':function(_0x461242,_0x385690){return _0x461242-_0x385690;},'BAiEz':function(_0xad3dd8,_0x5164b5){return _0xad3dd8>_0x5164b5;},'wpdQN':function(_0x23de82,_0x384b25){return _0x23de82<_0x384b25;},'ksIGn':_0x3848e1(0x200),'PEAZj':function(_0x4bedba,_0x2fcd0e){return _0x4bedba<_0x2fcd0e;},'hillx':'.mx-btn-icon-left'};if(_0x31718b[_0x3848e1(0x24d)](_0x223b9a,null)||_0x31718b['YRjof'](_0x223b9a,_0x31718b[_0x3848e1(0x19b)])||_0x223b9a==='')throw new Error(_0x31718b['cQfYD']);let _0x3489f5,_0x347901,_0x49a31e;if(_0x31718b['kTmpq'](_0x223b9a,Date))_0x3489f5=_0x223b9a[_0x3848e1(0x1bc)]()['toString'](),_0x347901=_0x31718b[_0x3848e1(0x131)](_0x223b9a[_0x3848e1(0x1c0)](),0x1),_0x49a31e=_0x223b9a[_0x3848e1(0xd1)]();else{const _0x141163=_0x31718b['CUXva'](String,_0x223b9a)[_0x3848e1(0x1b2)](/\//g,'-')['trim'](),_0x27f9c3=_0x141163[_0x3848e1(0x2ed)]('-');if(_0x31718b[_0x3848e1(0x2ac)](_0x27f9c3[_0x3848e1(0x180)],0x3))throw new Error(_0x3848e1(0x21b)+_0x223b9a);if(_0x31718b[_0x3848e1(0x155)](_0x27f9c3[0x0][_0x3848e1(0x180)],0x4))_0x49a31e=_0x31718b[_0x3848e1(0x20b)](parseInt,_0x27f9c3[0x0],0xa),_0x347901=_0x31718b[_0x3848e1(0x20b)](parseInt,_0x27f9c3[0x1],0xa),_0x3489f5=_0x31718b[_0x3848e1(0x20b)](parseInt,_0x27f9c3[0x2],0xa)[_0x3848e1(0xb6)]();else{_0x3489f5=_0x31718b[_0x3848e1(0x288)](parseInt,_0x27f9c3[0x0],0xa)['toString'](),_0x347901=parseInt(_0x27f9c3[0x1],0xa);let _0x459e08=parseInt(_0x27f9c3[0x2],0xa);_0x49a31e=_0x31718b['mbOnX'](_0x459e08,0x64)?_0x31718b[_0x3848e1(0x131)](_0x459e08,_0x459e08>0x32?0x76c:0x7d0):_0x459e08;}}const _0x2fbc2e=new Date(),_0x52a89c=_0x2fbc2e[_0x3848e1(0xd1)](),_0x1b2996=_0x2fbc2e[_0x3848e1(0x1c0)]()+0x1;await _0x22e583[_0x3848e1(0x27e)](),await _0x3a4f36[_0x3848e1(0x2f7)](0x190);const _0x34595e=_0x31718b['IRDQp'](_0x52a89c,_0x49a31e);if(_0x31718b['BAiEz'](_0x34595e,0x0))for(let _0x59f05a=0x0;_0x31718b[_0x3848e1(0x2a2)](_0x59f05a,_0x34595e);_0x59f05a++){await _0x3a4f36['locator'](_0x3848e1(0x1eb))['first']()[_0x3848e1(0x27e)](),await _0x3a4f36[_0x3848e1(0x2f7)](0x28);}else{if(_0x31718b[_0x3848e1(0x2f3)](_0x34595e,0x0))for(let _0xf0cb2f=0x0;_0xf0cb2f<Math['abs'](_0x34595e);_0xf0cb2f++){await _0x3a4f36['locator']('.mx-btn-icon-double-right')[_0x3848e1(0x2e0)]()[_0x3848e1(0x27e)](),await _0x3a4f36[_0x3848e1(0x2f7)](0x28);}}const _0x408ecf=_0x347901-_0x1b2996;if(_0x408ecf>0x0)for(let _0x2e7f40=0x0;_0x31718b[_0x3848e1(0x2a2)](_0x2e7f40,_0x408ecf);_0x2e7f40++){await _0x3a4f36['locator'](_0x31718b[_0x3848e1(0xf4)])['first']()[_0x3848e1(0x27e)](),await _0x3a4f36[_0x3848e1(0x2f7)](0x28);}else{if(_0x31718b['PEAZj'](_0x408ecf,0x0))for(let _0xf84d61=0x0;_0xf84d61<Math[_0x3848e1(0x1ca)](_0x408ecf);_0xf84d61++){await _0x3a4f36[_0x3848e1(0x2c6)](_0x31718b['hillx'])[_0x3848e1(0x2e0)]()['click'](),await _0x3a4f36['waitForTimeout'](0x28);}}const _0x408bc3='td.cell:not(.not-current-month)\x20div:text-is(\x22'+_0x3489f5+'\x22)';await _0x3a4f36[_0x3848e1(0x2c6)](_0x408bc3)[_0x3848e1(0x2e0)]()[_0x3848e1(0x27e)](),await _0x3a4f36[_0x3848e1(0x2f7)](0x12c);}function _0x1018(){const _0x51a60b=['u2TYAw5PBMCGvgvSAw5NysbKyw4Gtwf0yq','uKDpD2K','qMfPAW','zgL2w3jVBgu9iMrPywXVzYjDlcbKAxyUBw9KywWSic5ZD2fSlw1VzgfSlcaUC3DHBdiTCg9WDxaSic5LBc1TzxnZywDLlwjVEcWGlMvSlw5VDgLMAwnHDgLVBG','lIbmyw5QDxqUlI4','rhrpteG','C3vKywGGzgfMDgfYigjVCW','FfjLBg9HzcbiywXHBwfU','sur0Bgm','C2nYB2XSsw50B1zPzxDjzK5LzwrLza','igTVDgfRigLUChv0igfUz2THlG','tNDbuKu','Aw5WDxrBDgL0Bgu9iKTPCMLTiL0Sigj1DhrVBJPOyxmTDgv4DcGIs2LYAw0IksWGyNv0Dg9UoMHHCY10zxH0kcjtAw1Wyw4Ikq','qvH6uhO','B2rPALe','Aw5JBhvKzxm','uxbuvfa','xtOG','AxndAgvJA2vK','lI4U','EffIANa','DfbNz20','veLnru9vva','C3PyBui','Cgf0Aa','ywHOrhi','yNv0Dg9UoMHHCY10zxH0kcjjBNb1DcbeyxrHiIKSigj1DhrVBJPOyxmTDgv4DcGIvwjHAciP','xtOGu2vYDMvYieTLBwvUA2vZieXLBw90icHZzxrLBgfOia','qKvsseftsuW','y2f0y2G','z2v0qxr0CMLIDxrL','u2vSzxnHAwTHBIbmyxLHBMfU','ugvTzxjPA3nHyw4GuKruie1HBgfYAwe','A2flwg0','DeHRtMy','z3nAC24','Bgf1BMnO','Dw5KzwzPBMvK','zgL2lNrYywnRAw5NlxDPzgu6AgfZlxrLEhqOiKnLAYbosuSIksWGyNv0Dg9UoMHHCY10zxH0kcjdzwSGtKLliIK','nJqWodqZmMjYr1ndza','zvjmt0K','qw5LBwLH','vw9YA2u','wezsv24','lMPZB24','ihnLDgvSywGGm3GGCgvYy29IywfUlG','EvPWEw0','AKHIz3G','zgL2lMjNlwjSywnRu29MDa','vgPbsMG','zxHJzxb0Aw9U','CxL0EKS','vgLKywSGywrH','sKXXzgm','uwn0vge','BMXsCNm','EcbTzw5JB2jHigrPifS','sxzer0m','rKHvzfC','4O+PifToyw1HifnLA29SywHDifrLCMT1BMnPic8Gr2fNywWUieXLD2f0As4UlG','twvUy29IysbTzs1YzwXVywqGAgfSyw1HBI4UlG','u2vTDweGugvTzxjPA3nHyw4GtwfUzgLYAsbZDwrHAcbZzwXLC2fPicHiAwPHDsKU','zhfmyuK','tKLl','r3vSysbeyxjHAa','uvvfq3u','Aw5WDxqUC2qTAw5WDxqUC2qTDgv4DfTPzd0IC3fFmtaYAsjD','wLrVwKm','zKPoD0u','BwDkqK8','AePcC1e','Dw5yEMy','zgL2oNrLEhqTAxmOiLbPBgLOihrHBMDNywWGBgfOAxiIkq','u2LTCgfUia','vK1PtKy','DgvYzgv0zwTZAsbZDwrHAcbWzwXHEwfUyw4GBgvUz2THCa','s3HYChq','EMflA3a','D2fPDezVCLnLBgvJDg9Y','AxnfBMfIBgvK','Cxj2yxu','twvUz2LZAsbMB3jTihbLBMrHzNrHCMfUihnLy2fYysbTyw51ywWGzgfYAsbfEgnLBc4UlG','Aw5WDxrBCgXHy2vOB2XKzxiQpsjKywXHBsbRzYjD','rgPvD0S','svjlAvm','Dhj1zq','r0ruve8','rgf0ysb0AwrHAYbZzxn1ywKGkerLDgfPBcb0AwrHAYb0zxjIywnHkq','vg9TyM9S','rLHyzhi','y2HYB21L','yKPVs1C','4PQG77IpifDLyNnPDguGs2vTzw5RzxmGDgLKywSGBwvYzxnWB24VBgvTB3qUifrLDgfWigXHBMP1DcbRzsbqzwXHEwfUyw4Gs2XPBMLZlI4U','vg9TyM9SifnLBgvZywLRyw4Gtgf5yw5HBIb0AwrHAYbKAxrLBxvRyw4Gke11BMDRAw4GC3vKywGGyMvYC3rHDhvZifnLBgvZywKPlG','r2L6AsbbBMfR','sgDVzK8','yu9Lyxq','igrPDg9SywSGC2LZDgvTigTHCMvUysbosuSVtMfTysb0AwrHAYb2ywXPzc4GtwvUEwvKB3qGCgvZyw4UlI4','vgLUz2DPiejHzgfU','vxDdBwO','ChP2q3i','Dhi6AgfZlxrLEhqOiG','BMv0D29YA2LKBgu','veLequTFu0vtvufj','Aw5WDxrBCgXHy2vOB2XKzxi9iLnLBgvJDc4UlIjD','DgLTzw91Da','tMH3rxO','ywLfD1e','s2v0zxjHBMDHBG','s0vpt2y','zgL2oMHHCY10zxH0kcjqAwXPAcbZzwTVBgfOiIK','zgL2oMHHCYHZCgfUoNrLEhqTAxmOiLbPBgLOigTLBgfZiIKP','mtu1','BgvUz3rO','zxbrAMm','zgL2oMHHCYHZCgfUoNrLEhqTAxmOiLbPBgLOihnLA29SywGIksK','4PYfierHDgeGugvZzxj0ysbKAxrLBxvRyw4H','quvcu3y','CgXHExDYAwDODa','u2vKyw5NifbLBwvYAwTZywfU','CuLIsNe','zMLSBa','lIbtA2LWlG','8j+uHcbBugvRzxjQywfUxsbnzw5NDwjHAcbRzsa','C3bHBI5ZDI1ZDhjPBMCTDMLLD2vYoMHHCY10zxH0kcjoB24GCMvHA3rPzIiP','CeDbvw8','ruz2DvG','4PQG77IpifrLCMrLDgvRC2KGvgLTzw91DcbSyw1IyxqGCgfKysbosuSG','ifn1zgfOifb1BNLHierHDgeUie1LBgv3yxrPigzVCM0GywXHBwf0lI4U','BNrO','Ahr0Chm6lY9ZzwHHDgLUzg9UzxnPywT1lMTLBwTLCY5NBY5Pzc9JA2CTCgvUzgfMDgfYyw4Tyw5HAY1ZzwTVBgfO','zgL2oMHHCY10zxH0kcjjBMrPDMLKDsbZDwrHAciP','rvvtqMu','ywLHDva','s2vIDwDHCMfU','mJy4mdC1otHntxHIrve','y29UC29Szq','otrcvwvvqum','r2fNywWGwW','C29Tzq','rxb3Cwu','zgL2lMn1CNnVCI1WB2LUDgvYoMHHCY10zxH0kcjtzwXLC2fPifbLBwvYAwTZywfUiIK','yNv0Dg9UoMHHCY10zxH0kcjnDwXHAsbqzw1LCMLRC2fHBIiP','iIKGpJ4GyNv0Dg9UoMHHCY10zxH0kcjlB25MAxjTyxnPieHHzgLYiIK','4O+Pifn0yxr1CYaNu3vKywGGsgfKAxiNihrLCMrLDgvRC2KHieXHBMDZDw5NigDHCYbZyxrZzxqGA2uGugvSyxLHBMfUieTSAw5PCY4UlG','wxH1ugC','EhbHDgG9lY8Qw2nVBNrHAw5ZkhrLEhqOksWGiK5HBweGu2vRB2XHAciPxs9MB2XSB3DPBMC6oMrPDLTJB250ywLUCYHay2XHC3mSicjJDxjZB3iTCg9PBNrLCIiPxvSXxq','twvUz2vJzwSGtKLloIa','D3jgrLC','u2vSzxnHAsbqzw1LCMLRC2fHBG','vxPdqvm','seTguMS','tKLlia','vKLKzKK','DMLZAwjSzq','r3nOqM8','u3vKywGGyMvYywrHigrPigHHBgfTyw4GugvSyxLHBMfUig90B21HDgLZlcbSyw5QDxqGCgLSAwGGC2vRB2XHAc4UlG','u1vequHFuevmqvLbtKfo','u2LZDg9S','u1rsvxC','Aw5WDxrBCgXHy2vOB2XKzxiQpsjRywrHCIbdtYbWzxjUyxbHC2fUiL0','FhrLCMrLDgvRC2KGC3vKywGGBgvUz2THCa','C3bHBJPOyxmTDgv4DcGItM9TB3iGvgLRzxqIksWGC3bHBJPOyxmTDgv4DcGItKLliIK','CMvWBgfJzq','ywjMt1a','zxjYB3i','zxviB1u','4O+PifTdAgvJA2jVEcbbBgfTyxrDieDHz2fSic8GvgLKywSGrgL0zw11A2fUlIbmzxDHDgKUlI4','veLnru9vvf9trvjwrvi6ifDLyIb0AwrHAYbTzxjLC3bVBIbZywf0ig1LBNLPBxbHBIbgB3jTidiU','wxvgsgm','FejHCMLZigTLlq','s2fKyxiGq08','u2vSyw5QDxrUEweGkezVCM0GmIK','z2v0rgf0zq','Ahr0Chm6lY9ZzwHHDgLUzg9UzxnPywT1lMTLBwTLCY5NBY5Pzc9JA2CTCgvUzgfMDgfYyw4TAw5KAxzPzhu','mti0oteZmw9fEhfrrq','4PYfifTeAxnHyMLSAxrHC10Gu3vKywGGC2vZDwfPicG','z2v0tw9UDgG','vuHlq2W','twXNyMm','A2v5yM9HCMq','zgL2lNrYywnRAw5NlxDPzgu6AgfZlxrLEhqOiKHHzgLYiciP','EwjSs1i','wgP1A04','FfnRAxa','vw5RBM93BIbfCNjVCG','vg9TyM9SieTVBMzPCM1HC2KGsgfKAxiGBxvUy3vSihvUDhvRia','ywjZ','rgLHC3rVBa','B2jQzwn0','ANvTBgfOq29Iyq','q0POyMW','zgL2oMHHCY10zxH0kcjeyxrHihbLC2vYDgeGDgLKywSGDMfSAwqIkq','C2nYB2XSv2LKDgG','CNznAvu','lcbqBgfJzwHVBgrLCJOGiG','ugvYC2LHCgfU','BfntqvO','yNv0Dg9UoMHHCY10zxH0kcjcyxrHBciPlcbIDxr0B246AgfZlxrLEhqOiKTLBwjHBgKIksWGlMnSB3nL','mZqZCgLSBK1l','4PQG77IpiezVCM0GBwfJzxqGDgLKywSGDgvYDhv0DxaHie1LBwfRC2eGDhv0DxaUlI4','zxvztwW','qvH2q1e','yNv0Dg9UoMHHCY10zxH0kcjuDxr1CciPlgj1DhrVBJPOyxmTDgv4DcGIugvYAwTZysblzw1IywXPiIKSzgL2oMHHCY10zxH0kcjWzxjPA3nHigTLBwjHBgKGiIKSigj1DhrVBJPOyxmTDgv4DcGIt0SIkq','AxnwAxnPyMXL','CeTtDLK','BM90Awy','s3PjyvG','CNjps3C','C3HhCwO','Aw5MBW','sNfkuMS','yNv0Dg9UoMHHCY10zxH0kcjhDw5HA2fUierHDgeIkq','whn0r3C','lIbnzw1WCM9ZzxmGA2vOywrPCMfUlI4U','BNvSBa','s2vSyxmGlYbkzw5Qyw5N','lIbbA2fUigrPDwXHBMCUlI4','CfLmDwG','B0rfBKy','lM14lwj0BI1Py29UlwrVDwjSzs1Szwz0','AhrIEgi','z2v0qNLsB2XL','ug9WlxvWigTVBMzPCM1HC2KGyMvYAgfZAwWGzgLZzxr1ANvPlG','CLrYveK','r2LNAq','tLHpzKq','sKn3v1y','Aw5WDxrBCgXHy2vOB2XKzxiQpsjqAwXPAcb0Aw5NA2f0igTLyNvNyxjHBIbIzxjKyxnHCMTHBIbOyxnPBcb0zxmIxq','r3zfEhO','vgLKywS','t2veEge','y29UC3rYDwn0B3i','zvHmEee','zgf0yq','C3zqDhi','EfvVBva','y2XVC2u','s29ZB25N','lI91DgLSCY9SB2DNzxi','uMrUwgK','lM14lwj0BI1Py29UlxjPz2H0','BwvZC2fNzq','lNnKlxjVB3qTBw9KzxjUlcaUBw9KywWTzgLHBg9NlcbMB3jT','uLvbDwG','Dg9mB3DLCKnHC2u','A1jcCva','4PQG77IpifrVBwjVBcbmyw5QDxrRyw4GDgvYBgv3yxqVC3vKywGGDgvYDgvRyw4UieXHBMP1DcbRzsbMB3jTidiUlI4','EvjVDMu','zgL2lNrYywnRAw5NlxDPzgu6AgfZlxrLEhqOiKnHCMKGsw5KAxzPzhuIksWGzgL2oMHHCY10zxH0kcjuDxr1CciP','veLnru9vvf9trvjwrvi','uKH2wgm','zwrJyvO','s2LYAw0GtwfUzgLYAsa','C3bHBJPOyxmTDgv4DcGIugLSAwGGA2vSyxmIkq','iIaTpIbvyMfOigTLieTLBgfZia','EhDeENy','zgL2oMHHCY10zxH0kcjjBMrPDMLKDsbZDwrHAcbTzw5LCMLTysbSyxLHBMfUiIK','zM9YBsbWzw1LCMLRC2fHBIbTyw5KAxjP','ve9nqK9mx01vtKnvta','qMvYAgfZAwWGBwvUz2LZAtOG','Fhn1zgfOigfKysbKyxrHic4Uig1LBNvQDsbWzwXHEwfUyw4','ChjLC3m','CMfJzq','yNv0Dg9UoMHHCY10zxH0kcjmyw5QDxrRyw4Ikq','rgL0B2XHAYbgB3jTide6ienLAYbRB2XVBsbUB3rPzG','AMLrvMu','qKnfzvm','rM9YBwf0ihrHBMDNywWGDgLKywSGDMfSAwq6ia','BLretxG','u2TPCcbosuS6ia','DgHLBG','odK5otK5otK','ENz4Dha','DvH3q2W','wwfPyLy','lNHSC3G','D01sBwy','yKzVB0K','uMnQsNK','tgfUANv0A2fUkenLAYbosuSGqxDHBcbKAsbMB3jTihbLBMrHzNrHCMfUihbLCNrHBweP','r2fNywWGtKLlihrPzgfRigXLBMDRyxa','tMfrC2m','4PQG77IpieLUzM86ieDHz2fSig1LBMD1yMfOifbLA2vYAMfHBI4GtxvUz2TPBIbKAwT1BMnPihnPC3rLBs4','4O+PifTezxrHAwWGrg9TAxnPBgLDifrLCMT1BMnPic8Gr2fNywWUieXLD2f0As4UlG','C3bHBI5ZDI1ZDhjPBMCTDMLLD2vYoMHHCY10zxH0kcjuAwrHAYbbzgeIkq','y3fwDe0','CMvHzev4y2vS','EhbHDgG9lY8Qw2nVBNrHAw5ZkhrLEhqOksWGiKPLBMPHBMCIkv0VzM9SBg93Aw5NoJPKAxzBy29UDgfPBNmOqgnSyxnZlcaIy3vYC29YlxbVAw50zxiIkv1Bmv0','u1vequHFtevor0Tbua','E30Uy29UC3rYDwn0B3iOiNjLDhvYBIb0AgLZiIKOicK','vLbttfG','u1vlu0vtihWGrgf0ysbosuSG','mtaW','iIb0AwrHAYbKAxrLBxvRyw4VzgLRDw5JAs4','zgL2lNrLEhqTCMvKltuWmcWGzgL2oMHHCY10zxH0kcjeyxrHihbLC2vYDgeGDgLKywSGDMfSAwqIksWGzgL2oMHHCY10zxH0kcj0AwrHAYbKAxrLBxvRyw4Ikq','z0zcrwG','DhjPBq','4PQG77IpifnLCNzLCIbSzw1VDcbZywf0igTSAwSG','igTLBMeGBgLTAxqGA3vVDgeGAgfYAwfUlIbnzw1HA3nHigXHBMP1DcaOqNLWyxnZks4UlG','CMvSB2fK','ugvTzxjPA3nHyw4GB2XLAcbUywTLCW','u2LZDgvTigrPlxjLC3vTzs4GtwvSyw5QDxrRyw4GzwTZzwT1C2KUlI4','zgL2oMHHCY10zxH0kci','B1H5z3a','yMz0CwO','8j+uHcbBrgLZywjPBgL0yxnDifvIywGGA2uG','q3f2r0O','ndq0mdm1vLrqywvp','Aw5UzxjuzxH0','ihrLCNnPBxbHBIe','y2HLy2S','teXHu3G','vu5OA1a','tMfTysbtzwTVBgfO','u3rHDhvZ','zgL2oMHHCY10zxH0kcjczxjOyxnPBcbeywz0yxiIkq','AujmwuO','wwj6rhe','B2HzAgO','y2XPzw50v2LKDgG','AgLKzgvU','A2zQrNy','twvTyNvRysbICM93C2vYig1LBMDNDw5HA2fUieDVB2DSzsbdAhjVBwuGyxnSAs4UlG','lNnKlwL0zw1Fx2rLy29YyxrVCIWGlNnKlxjHzgLVx19KzwnVCMf0B3i','rKPYyxG','rhDIsvO','y0feELq','4PQG77Ipie5jsYa','twvUDw5Nz3uGAgfSyw1HBIbMB3jTigTSAw5PCYbKAw11yxqUlI4','Aw5WDxrBDgL0Bgu9iKTPCMLTiL0','EhbHDgG9lY8Qw2nVBNrHAw5ZkhrLEhqOksWGiKrPC2fIAwXPDgfZiILDl2zVBgXVD2LUzZO6zgL2w2nVBNrHAw5ZkebJBgfZCYWGiMn1CNnVCI1WB2LUDgvYiILDwZfD','ugvTzxjPA3nHyw4Gr2LNAsaTiefUywS','zKzjEvy','BfzLrxy','l2f1DgGVBg9NAw4','Aw5WDxrBBMfTzt0ItMfTysjD','Aw5WDxrBBMfTzt0IC2fTzufKzhjLC3mIxq','lIbmyw5NC3vUzYbdBg9Zzse','odK5mtjqDuDsAwq','BgXtwLi','EMTry1O','qurbx0TptKzjuK1bu0K','4O+PifTkzw5Qyw5NifbLBMrPzgLRyw5DifrLCMT1BMnPic8Gr2fNywWUieXLD2f0As4UlG','DhjHy2u','wLr2CvG','B2LvrNu','zfz6CeK','yMLUza','Aw5WDxrBBMfTzt0ItM9TB3iGv2HHDhnHChaIxq','z3bdq28','r2fNywW6ierHDgeGDgLKywSGBxvUy3vSigrPigTLDgLNysb0ywi','ifrVBwjVBcbnDwXHAsb0AwrHAYbKAxrLBxvRyw4GCgfKysbIyxjPCYboyw1HihrHCMDLDa','t0TXz1m','EKP5C3O','CgXHy2vOB2XKzxi','yNv0Dg9UoMHHCY10zxH0kcjtAw1Wyw4Ikq','rgf0yq','CgTgswS','D3nys0G','rgv0ywLSierVBwLZAwXP','4O+PiezVCM0GzgLSzxDHDgK6ifrVBwjVBcb1BNr1AYaI','uePgCxq','mZqYmdCYmgPLALfLzq','zgL2lMDYAwqTy29SCY01','DgfIBgu','EMvkAve','y2XPy2S','tgfYrNC','Dgv4Dd0IqMvYAgfZAwWGsgfKAxiI','yMrHzNy','tgrzAKq','AM9PBG','rM9YBsbWzw5Kywz0yxjHBIblzwr1yq','z290BW','8j+uHcbfCNjVCIbMyxrHBcaVig1Hy2v0ihrVDgfSlIbnzs1YzxnLDcbICM93C2vYigTLBwjHBgKGA2uGAgfSyw1HBIbHD2fSlI4U','iIb0zxjKzxrLA3nPisbmyw5NC3vUzYbTzwXVBxbHDcbRzsblB25MAxjTyxnPieTLAgfKAxjHBI4UlG','qNPfs2u','u2nOywC','tM8Gv2HHDhnHCha','sgT4t1a','s2D3Evq','Ahr0Chm6lY9ZzwHHDgLUzg9UzxnPywT1lMTLBwTLCY5NBY5Pzc9JA2CTCgvSyxLHBMfUlxnLA29SywG','yxjNDG','Fg1LBNvQDsbMB3jTigTLzhvH','quvpu1y','Aw5WDxrBDhLWzt0IBNvTyMvYiL0','igjLCM1HC2fSywGUiefSyxnHBJOG','DwDYuM0','Aw5WDxrBCgXHy2vOB2XKzxi9iKnHCMKGCgvRzxjQywfUiL0','yNv0Dg9UoMHHCY10zxH0kcjuDxr1CciPlcbZCgfUoNrLEhqTAxmOiLr1DhvWiIK','y2fNwei','u1vequHFsefesvi','EKf3Ahu','C2XAu24','u2vSzxnHAsbTzw5NzwTZzwT1C2KGC2vTDweGzgf0ysbfEgnLBc4','8j+uHcbBtMfTysbtzwTVBgfOxsbtywf0igLUAsaI','yNv0Dg9UoMHHCY10zxH0kcjjBNb1DcbeyxrHiIK','zujvt2e','ChnRweS','igf0yxmGBMfTysa','C3bHBJPOyxmTDgv4DcGIugLSAwGGAMvUAxmGA2vSyw1PBIiPlcbKAxy6AgfZlxrLEhqOiLbPBgLOigPLBMLZigTLBgfTAw4Ikq','lI91DgLSCY9LEgnLBe1HBMfNzxi','BwjpBLG','yvrcAfu','ifzbteLelIbnzw51ANuGzM9YBsbRzwr1ys4UlG','rxnJyxbL','vuXgu0y','u2LZDgvTigrPlxbHDxnLlIbnzw51BMDNDsbPBNn0CNvRC2KGCMvZDw1LlI4U','uMHeB0m','zNjHBwvUyxzPz2f0zwq','vgvSAw5NysbKyw4Gtwf0yq','D2fPDezVCG','D1vgwwG','zgnYsfC','zgL2oMHHCYG+igj1DhrVBLTHCMLHlwnVBNrYB2XZpsjKCM9Wzg93BI1JB250zw50iL0P','Dhi6AgfZlxrLEhqOiKLUChv0ierHDgeIkq','DNzcBeu','Fg1LBxbYB3nLCYbRzwHHzgLYyw4','B1fJzuW','z25itwu','B29Ytfu','B2rMD24','qKvJCwm','rM9YBsbWzw5Kywz0yxjHBIbqzxj0yw1H','sNLZr3y','twvTChjVC2vZie5jsZOG','C3rHCNrZv2L0Aa','D29xufi','vhLRExG','yNv0Dg9UoMHHCY10zxH0kcjnDwXHAsiP','zgL2lNrYywnRAw5NlxDPzgu6AgfZlxrLEhqOiLnLBgfUANv0BNLHiIK','qMvYyxqGqMfKyw4','igTHCMvUysbZDwrHAcbIzxjZDgf0DxmGC2vSzxnHAs9ZA2LWlG','C1bOs2S','ihrPzgfRihzHBgLKlIbbBgfZyw46ia','rgf0ysbosuSG','ifrPzgfRig11BMn1BcbKAsbWzwXHEwfUyw4SigTLBxvUz2TPBMfUigzHC2TLCYbSDwfY','shbRDey','Bg9JyxrVCG','AhbPEeW','4P2mie1LBNLLCMfOihbHzgeGtKLlia','DM9Pu1q','sxjqtLq','Aw5WDxrBCgXHy2vOB2XKzxiQpsjKywXHBsbJBsjD','ve5NshK','ic0G','vNjns2y','zNjtAhy','tM9YBwfS','ChjVDg90ExbL','vgLKywSGywrHigLUzMvRC2K','qvrJyKS','rw50zxi','sNrkExm','4PYfifToyw1HifnLA29SywHDifn1zgfOihnLC3vHAsaO','tgfZyMO','Bwf0y2G','CgvUy2fYAwfUigrHDgeGzgKGCgvSyxLHBMfU','rgf0ysb0AwrHAYb2ywXPzcaVigrPDg9SywSGC2LZDgvT','vgfUz2DHBcbSywHPCG','s29UzMLYBwfZAsblzwHHzgLYyw4','vNHwyLy','zxzHBhvHDgu','qMvSDw0GBgvUz2THCa','zMLYC3q','Dg5XrwC','zgL2oNrLEhqTAxmOiG','BgfZDa','rLrkuMW','y291BNq','Dgv4Dd0IvgfTCgLSA2fUifbLBMnHCMLHBIi','D1rZsgy','whj3s1i','Aw5ty0e','z2nRu1i','uxzPthu','rgL0B2XHAYbgB3jTidi6ienLAYbRB2XVBsbUB3rPzG','C3bSAxq','DwXZvhi','BgfJshe','veLnru9vvf9trvjwrvi6ifnLCNzLCIbSzw1VDcaVihrPBwvVDxqGzgKGyxDHBa','te5hAhi','zxHtC1q','D3bKuu4','C2nYB2XSvg8','s0vssKf8','tgLxDwq','D2fPDezVCLrPBwvVDxq','BgXkwue','Dg9tDhjPBMC','zM9YrwfJAa','Bg9N','qM5sBMC','seDTD1a','y2TZzK8','zMLSDgvY','r0HNqLO','r0fhquWGFcbosuSG','CgvUEwfUzgfUzYbKAxnHyMLSAxrHCW','ugvTzxjPA3nHyw4Gr3vSysbeyxjHAa','CxDMCNG','uK5PrM8','xsbnzw11BgfPihbYB3nLCYbds0CGvw11BsbKzw5Nyw4GC2vZC2LVBJOG','s2vSyxmG','u3LYtwm','rLjAteC','CgvRzxjQywfU','FejLCMHHC2LSifnLBgvZywKGugvSyxLHBMfU','Fe1LBMDPC2KGrM9YBsbqzw5Kywz0yxjHBIbWzxj0yw1H','mtmWmJHOBeP6uva','A0fcCeO','BM9YBwfS','ihnLDgvSywGG','zgL2lMn1CNnVCI1WB2LUDgvYoMHHCY10zxH0kcjczwX1Bsbqzw1LCMLRC2fHBIiP','Aw5WDxqUC2qTAw5WDxqUC2qTDgv4DfT0ExbLpsjUDw1IzxiIxq','CxPbt1G','z2v0rNvSBfLLyxi','C2nYB2XStgvMDa','zgL2lcb0ywjSzsWGDgjVzhK','yxr0ywnOzwq','BuH4A28','zNbmzeu','4PYfifbLA2vYAMfHBIbVDg9TyxrPCYb0zxjPC2K6ia','Fe1LBwjHy2eGzxHJzwW','DhHev0S','ugvTzxjPA3nHyw4Gs2fKyxiGq08','vxvcBgO','sK9Az3G','veLequTFqurbx0TptKzjuK1bu0K','uvP5CMS','qKvmvu1Ftevor0Tbua','q2rNwxm','CMv0DxjUicHMDw5JDgLVBIGPia','4P2mie5jsYa','uKvLuw8','w0fRDw4G','rgrtDMq','4O+Pifn0yxr1CYaI','ugvTzxjPA3nHyw4GsgvWyxrPDgLZ','wNjzEei','swPzywW','Eg1YDKm','Dgv4Dd0Ivhv0DxaI','CuzXz1m','Dgv4DenVBNrLBNq','s09tt05h','Fe1LBMDLy2vRie5jsW','4O+PifTeAxnHyMLSAxrHC10GvgvYA3vUy2KGlYbhywDHBc4Gtgv3yxrPlI4U','mxW1Fdj8mhW0Fdm','wen5rMu','ks4Gu2TPCc4UlG','A3njr24','ugrIs2S','sNLZrfC','C3rKAw4','wevir1i','vfrQtKu','vgvRyw5HBIbeyxjHAcbbBMfRigrHBIbszw1HAMe','rhL3CNy','zgL2oNrLEhqTAxmOiK5jsYiP','twvUz2vJzwSGC3rHDhvZifbLBwvYAwTZywfUie1HBMrPCMKUlI4','EhbHDgG9lY8Qw2nVBNrHAw5ZkhrLEhqOksWGiLbLA2vYAMfHBIiPxs9MB2XSB3DPBMC6oMrPDLTJB250ywLUCYHay2XHC3mSicjJDxjZB3iTCg9PBNrLCIiPxvSXxq','C3bHBI5ZDI1ZDhjPBMCTDMLLD2vYoMHHCY10zxH0kcjuAwrHAYiP','D2fYBG','AxDiuKS','DNLPrKu','CNHYA0e','tMfTysbmzw5NA2fW','s1vpvefFsefcsvm','uM5gAui','vKfmsuq','C3bHBI5ZDI1ZDhjPBMCTDMLLD2vYoMHHCY10zxH0kci','yNv0Dg9UoMHHCYHKAxy6Dgv4DcGIrgfMDgfYiejHCNuIksK','yLvYq1i','C3rVCMfNzvn0yxrL','Fg1LBNvUz2D1ignOzwnRihzHBgLKyxnPie5jsW','t1bqAe4','C3j0zhe'];_0x1018=function(){return _0x51a60b;};return _0x1018();}function hitungNilaiNormal(_0x2b4ddc,_0x59c6ff,_0x4c3ebc){const _0xb9a0ba=_0x20a9ea,_0x5b944a={'hpixL':function(_0x3a88da,_0x2a9d2b){return _0x3a88da(_0x2a9d2b);},'AEBSv':function(_0x146534,_0x2fa036){return _0x146534===_0x2fa036;},'EUSBe':function(_0x20e2a7,_0x53e03c){return _0x20e2a7===_0x53e03c;},'STiJW':_0xb9a0ba(0x1e6),'ygxyD':_0xb9a0ba(0xcc),'mHxko':function(_0x2aafce,_0x117c21){return _0x2aafce instanceof _0x117c21;},'iwHRK':function(_0xbd5809,_0x185de2){return _0xbd5809(_0x185de2);},'LLaSx':function(_0x1d929c,_0x38f954){return _0x1d929c<_0x38f954;},'AEOSV':function(_0x1a88e1,_0x4ed490){return _0x1a88e1+_0x4ed490;},'hmOyk':function(_0x15d1cd,_0x53f22d){return _0x15d1cd-_0x53f22d;},'pkFIk':function(_0x336d76,_0xce8f97){return _0x336d76>_0xce8f97;},'oorLU':function(_0x2fdf73,_0x2afbf3){return _0x2fdf73(_0x2afbf3);},'wTsHf':function(_0x57c056,_0x6a83f1){return _0x57c056+_0x6a83f1;},'xUomP':function(_0x3b5ede,_0xb2733e){return _0x3b5ede*_0xb2733e;},'zvxtp':function(_0x343888,_0x14d751){return _0x343888>_0x14d751;},'FRZLG':function(_0x2ed2d3,_0x3b22a3){return _0x2ed2d3(_0x3b22a3);},'lacHq':function(_0x37d9c5,_0x34054e){return _0x37d9c5+_0x34054e;},'qytzK':_0xb9a0ba(0x1ad),'XFRWn':function(_0x15b32c,_0x57bc68){return _0x15b32c>_0x57bc68;},'UuBlj':'110','CgfXA':_0xb9a0ba(0x234),'DwbIZ':'Gula\x20Darah','JtJys':'Hemoglobin','zaKkp':'Kebugaran','JqJRk':_0xb9a0ba(0x111),'RhDoC':_0xb9a0ba(0x1ba),'LiUoA':_0xb9a0ba(0x2aa),'IDtlc':'Normal'},_0x8eb5d3=_0x5b944a['hpixL'](String,_0x2b4ddc)[_0xb9a0ba(0x238)]()[_0xb9a0ba(0x204)]();if(_0x5b944a[_0xb9a0ba(0x184)](_0x8eb5d3,_0xb9a0ba(0x134))||_0x5b944a[_0xb9a0ba(0x193)](_0x8eb5d3,_0x5b944a['STiJW'])||_0x8eb5d3===''||_0x5b944a[_0xb9a0ba(0x193)](_0x8eb5d3,_0x5b944a['ygxyD'])){let _0x1853ce=0x0;if(_0x4c3ebc){let _0xc01e8d=0x0;if(_0x5b944a[_0xb9a0ba(0xd5)](_0x4c3ebc,Date))_0xc01e8d=_0x4c3ebc[_0xb9a0ba(0xd1)]();else{const _0x1dd1a9=_0x5b944a[_0xb9a0ba(0x101)](String,_0x4c3ebc)[_0xb9a0ba(0x1b2)](/\//g,'-')[_0xb9a0ba(0x2ed)]('-');_0xc01e8d=_0x5b944a[_0xb9a0ba(0x193)](_0x1dd1a9[0x0][_0xb9a0ba(0x180)],0x4)?parseInt(_0x1dd1a9[0x0]):_0x5b944a[_0xb9a0ba(0x247)](parseInt(_0x1dd1a9[0x2]),0x64)?_0x5b944a[_0xb9a0ba(0x290)](_0x5b944a[_0xb9a0ba(0x2c7)](parseInt,_0x1dd1a9[0x2]),0x7d0):_0x5b944a[_0xb9a0ba(0x101)](parseInt,_0x1dd1a9[0x2]);}_0x1853ce=_0x5b944a['hmOyk'](new Date()[_0xb9a0ba(0xd1)](),_0xc01e8d);}switch(_0x59c6ff){case _0xb9a0ba(0x2bf):return _0x5b944a[_0xb9a0ba(0x275)](_0x1853ce,0xc)?'45':_0x5b944a[_0xb9a0ba(0x2b4)](String,_0x5b944a[_0xb9a0ba(0x2e7)](_0x5b944a[_0xb9a0ba(0x1fb)](_0x1853ce,0x2),0x8));case _0xb9a0ba(0x171):return _0x5b944a[_0xb9a0ba(0x220)](_0x1853ce,0xc)?_0xb9a0ba(0x17f):_0x5b944a[_0xb9a0ba(0xc6)](String,_0x5b944a[_0xb9a0ba(0x2ef)](_0x5b944a[_0xb9a0ba(0x1fb)](_0x1853ce,0x6),0x4d));case _0x5b944a[_0xb9a0ba(0x142)]:return _0x5b944a[_0xb9a0ba(0x13a)](_0x1853ce,0xc)?_0x5b944a[_0xb9a0ba(0xdb)]:_0x5b944a['CgfXA'];case _0xb9a0ba(0x1cb):return _0x5b944a[_0xb9a0ba(0x13a)](_0x1853ce,0xc)?'70':'60';case _0x5b944a[_0xb9a0ba(0x255)]:return'90';case _0x5b944a[_0xb9a0ba(0x2d5)]:return _0x5b944a[_0xb9a0ba(0x220)](_0x1853ce,0xc)?'13':'12';case _0xb9a0ba(0x1f0):return _0xb9a0ba(0x143);case _0x5b944a[_0xb9a0ba(0x15c)]:return _0x5b944a[_0xb9a0ba(0x1e2)];case _0x5b944a[_0xb9a0ba(0x2a8)]:return'1';case _0x5b944a['LiUoA']:return _0x5b944a[_0xb9a0ba(0x117)];default:return'';}}return String(_0x2b4ddc);}async function isiFormLayanan(_0x212df5,_0x4cbd98,_0x4ff545){const _0x53f773=_0x20a9ea,_0x23f0ed={'rxrkA':_0x53f773(0x2ae),'oDEnF':_0x53f773(0x27b),'yZpym':'button[aria-controls=\x22dropdown-content\x22]','gsZsn':function(_0x4713ac,_0x2359a9){return _0x4713ac>_0x2359a9;},'rrOKw':function(_0x28ed59){return _0x28ed59();},'fvyKQ':_0x53f773(0x11b),'HkxOP':'input[title=\x22Kirim\x22]','OeDxa':function(_0x3960e3,_0x501d1f,_0x2c650b,_0x3e1fab){return _0x3960e3(_0x501d1f,_0x2c650b,_0x3e1fab);}};Logger[_0x53f773(0x1e1)]('🔍\x20Memproses\x20layanan:\x20'+_0x4cbd98);const _0x4c7dc4=_0x212df5[_0x53f773(0x2c6)](_0x23f0ed[_0x53f773(0x103)])['filter']({'has':_0x212df5[_0x53f773(0x2c6)](_0x23f0ed[_0x53f773(0x1ea)],{'hasText':_0x4cbd98})})[_0x53f773(0x2e3)](),_0x17e253=_0x4c7dc4[_0x53f773(0x2c6)](_0x23f0ed[_0x53f773(0x13d)])[_0x53f773(0x2e0)](),_0x195ee7=_0x4c7dc4[_0x53f773(0x2c6)](_0x23f0ed[_0x53f773(0x1ea)])[_0x53f773(0xbc)]({'hasText':_0x4cbd98})[_0x53f773(0x2e3)]();_0x23f0ed[_0x53f773(0x132)](await _0x17e253[_0x53f773(0x2e5)](),0x0)&&(await _0x17e253[_0x53f773(0x118)](),!await _0x195ee7['isVisible']()&&(Logger[_0x53f773(0x1e1)]('\x20\x20\x20Membuka\x20menu\x20lipat\x20yang\x20menyembunyikan\x20form\x20ini...'),await _0x17e253[_0x53f773(0x27e)]({'force':!![]}),await _0x212df5[_0x53f773(0x2f7)](0x3e8)));const _0x30adbd=_0x23f0ed[_0x53f773(0x132)](await _0x4c7dc4['count'](),0x0)?_0x195ee7:_0x212df5[_0x53f773(0x2c6)](_0x23f0ed[_0x53f773(0x1ea)])[_0x53f773(0xbc)]({'hasText':_0x4cbd98})[_0x53f773(0x2e3)](),_0x4fa467=_0x30adbd['locator'](_0x53f773(0x129))[_0x53f773(0xbc)]({'visible':!![]})[_0x53f773(0x2e0)]();if(_0x23f0ed['gsZsn'](await _0x4fa467['count'](),0x0)&&await _0x4fa467[_0x53f773(0x1db)]()&&await _0x4fa467[_0x53f773(0x15e)]()){await _0x4fa467[_0x53f773(0x118)](),await _0x4fa467[_0x53f773(0x27e)]({'force':!![]}),await _0x212df5['waitForTimeout'](0x3e8),await _0x23f0ed[_0x53f773(0x1df)](_0x4ff545);const _0x7ffcc8=_0x212df5['locator'](_0x23f0ed['fvyKQ'])[_0x53f773(0xbc)]({'visible':!![]})[_0x53f773(0x2e0)]();if(await _0x7ffcc8['count']()>0x0)await klikAntiMacet(_0x212df5,_0x7ffcc8,_0x53f773(0x158)+_0x4cbd98);else{const _0x13203e=_0x212df5[_0x53f773(0x2c6)](_0x23f0ed[_0x53f773(0x28b)])[_0x53f773(0x2e3)]();await _0x23f0ed[_0x53f773(0x1f6)](klikAntiMacet,_0x212df5,_0x13203e,_0x53f773(0x158)+_0x4cbd98);}await _0x212df5[_0x53f773(0x2f7)](0x9c4);}else Logger['info'](_0x53f773(0x278)+_0x4cbd98+_0x53f773(0x235));}async function runAutomation(){const _0x51585c=_0x20a9ea,_0x27b020={'htbxb':function(_0x2a366c,_0x53c9b4){return _0x2a366c===_0x53c9b4;},'voiST':_0x51585c(0x25e),'VMiNF':function(_0x416384,_0x3083b7){return _0x416384+_0x3083b7;},'KEOOf':_0x51585c(0xe1),'UNhkP':function(_0x27879f){return _0x27879f();},'zkQcZ':_0x51585c(0x100),'CqvGJ':_0x51585c(0x1e1),'rTrTI':_0x51585c(0x141),'pskXK':function(_0x51a480,_0x533449){return _0x51a480>_0x533449;},'bUIhp':function(_0x4f4e40,_0x51851e,_0x1d209a){return _0x4f4e40(_0x51851e,_0x1d209a);},'svPtr':function(_0x2518e9){return _0x2518e9();},'GDTTO':function(_0x5961ea,_0x4ae5c3){return _0x5961ea(_0x4ae5c3);},'IjYal':_0x51585c(0x104),'aiauP':'tbody\x20tr','HgofO':_0x51585c(0x1a9),'wnQou':_0x51585c(0x2df),'HCsHm':'Belum\x20Pemeriksaan','RNiFo':_0x51585c(0x186),'sxGqj':_0x51585c(0xdf),'Schag':'Lengkap','eXLxA':_0x51585c(0x230),'bdafv':_0x51585c(0xee),'PdbKk':function(_0x4737e2,_0x4c020e,_0x3f2291,_0x37082c){return _0x4737e2(_0x4c020e,_0x3f2291,_0x37082c);},'zJysz':'Berat\x20Badan','ZToZC':_0x51585c(0x171),'ugrRm':_0x51585c(0x161),'tPggm':_0x51585c(0x1ad),'NwARE':_0x51585c(0x2db),'vvBlE':_0x51585c(0xcf),'gckSR':_0x51585c(0xff),'HpktF':_0x51585c(0x14f),'QCsnu':_0x51585c(0x151),'yRove':'Hemoglobin','oiUFu':_0x51585c(0x177),'exSsT':_0x51585c(0x22c),'TjAJh':function(_0x5eb327,_0x25e099,_0x796c6b,_0x9c315d){return _0x5eb327(_0x25e099,_0x796c6b,_0x9c315d);},'nqPFK':function(_0x4b640f,_0x4c3e2d){return _0x4b640f(_0x4c3e2d);},'AXvCQ':function(_0x3a66a4,_0x245ba2,_0x28c7b4,_0x4a3c4a){return _0x3a66a4(_0x245ba2,_0x28c7b4,_0x4a3c4a);},'cADzT':'telinga\x20dan\x20mata','unXzf':function(_0x4a534e,_0x2344ca){return _0x4a534e===_0x2344ca;},'WfSMF':'normal','dVzpI':_0x51585c(0x2d0),'ATcbK':_0x51585c(0x1f5),'XstGw':function(_0x3049e6,_0x59aa03){return _0x3049e6<_0x59aa03;},'YaibV':function(_0x4597ce,_0x80a547,_0x3090b7,_0x49383c){return _0x4597ce(_0x80a547,_0x3090b7,_0x49383c);},'rvMiU':_0x51585c(0x195),'ahhDr':_0x51585c(0x1f3),'CdgYs':'span.sv-string-viewer:has-text(\x22Non-reaktif\x22)','VrMKf':_0x51585c(0x18b),'JysGv':_0x51585c(0x1ba),'uHQHC':_0x51585c(0x1af),'Ncbng':'state','epQjc':_0x51585c(0x274),'STRUw':_0x51585c(0x2a9),'zAwhu':_0x51585c(0x1bd),'HKFRk':_0x51585c(0x175),'qFqgS':'Tanpa\x20Nama','DtOLH':function(_0x21b4b8,_0x3f95f5){return _0x21b4b8(_0x3f95f5);},'NaQsc':_0x51585c(0x14e),'gpCCo':'Berhasil\x20Selesai\x20Pelayanan','JysDW':_0x51585c(0x15a),'aiEwQ':'gagal999','uXwCl':_0x51585c(0x1d3),'cksfO':function(_0x21a00c,_0x468176){return _0x21a00c(_0x468176);},'BCEeS':'Status','nTDMx':_0x51585c(0x17b),'RdnXi':function(_0x12baa7,_0x57d5f3){return _0x12baa7===_0x57d5f3;},'mgJBO':_0x51585c(0x2b7),'jHbgx':_0x51585c(0x191),'REeQo':_0x51585c(0x109),'bFooI':'input[name=\x22NIK\x22]','deQnZ':_0x51585c(0x135),'UzCAS':_0x51585c(0x1e3),'GvExz':_0x51585c(0x183),'RGOwi':'⚠️\x20Data\x20belum\x20terdaftar\x20di\x20server.\x20Beralih\x20ke\x20mode\x20ISI\x20MANUAL...','yblKR':function(_0x2126aa){return _0x2126aa();},'AXzPz':_0x51585c(0x160),'kaKXm':_0x51585c(0x25f),'VPSLX':_0x51585c(0x2a0),'pYLuh':'Jenis\x20Kelamin','fJNwE':_0x51585c(0x28a),'ZrYxB':function(_0x3f131c,_0x2138e8){return _0x3f131c<_0x2138e8;},'IrPNT':function(_0xcfb27f,_0x1df2d4){return _0xcfb27f>_0x1df2d4;},'ohYhj':_0x51585c(0x21f),'txDWK':_0x51585c(0x26c),'JqYGH':'button:has-text(\x22Selanjutnya\x22)','XCyFe':function(_0x250096,_0x5c8d81,_0x191e03,_0x11e0ef){return _0x250096(_0x5c8d81,_0x191e03,_0x11e0ef);},'cOpHE':'Selanjutnya\x20(Cek\x20NIK\x20Awal\x20di\x20form\x20pendaftaran\x20pertama)','FXXdr':function(_0x52e896){return _0x52e896();},'SmMxH':'Menunggu\x20check\x20sistem\x20validasi\x20NIK...','iBLYJ':'div:has-text(\x22Data\x20peserta\x20valid\x22)','UwCmj':'div:has-text(\x22Kuota\x20Pemeriksaan\x20Habis\x22)','vyiFE':_0x51585c(0x1cf),'LWLSG':_0x51585c(0x210),'WPVFF':'div.tracking-wide:has-text(\x22Lanjut\x22),\x20button:has-text(\x22Lanjut\x22)','BEcqc':_0x51585c(0x217),'dqLaI':function(_0x1a75a4,_0x27c8d3,_0x2acf36,_0x1f6628){return _0x1a75a4(_0x27c8d3,_0x2acf36,_0x1f6628);},'bftqj':_0x51585c(0x227),'HIrRP':_0x51585c(0x206),'CEExA':_0x51585c(0x284),'gFBEh':_0x51585c(0xbf),'QctTa':_0x51585c(0x25a),'oXygp':_0x51585c(0xc7),'KgwyT':function(_0x2c913b,_0x539c5c){return _0x2c913b(_0x539c5c);},'rYVuU':_0x51585c(0x294),'SyrMc':_0x51585c(0x249),'pGAUo':function(_0x33b891,_0x37826f){return _0x33b891(_0x37826f);},'YuFHc':function(_0x248623,_0x3b0dfe){return _0x248623===_0x3b0dfe;},'xQbjp':'input[placeholder*=\x22Cari\x20nama\x20sekolah\x22]','eBUOa':'button','EFvuX':'Kelas\x20/\x20Jenjang','XjukN':_0x51585c(0x22f),'cqVtM':'input[placeholder*=\x22Cari\x20jenjang\x22]','FHUdW':_0x51585c(0x260),'QpTTP':_0x51585c(0x277),'FJrax':'textarea[name=\x22detail-domisili\x22]','uNAzC':_0x51585c(0x2be),'RHvXc':_0x51585c(0x1bb),'llSZR':_0x51585c(0x24b),'IvDGC':'div:has-text(\x22Data\x20pasien\x20tidak\x20sesuai\x22),div.pb-2:has-text(\x22Data\x20peserta\x20tidak\x20valid\x22),div:has-text(\x22Terjadi\x20kesalahan\x22)','QviLu':_0x51585c(0x192),'aOeat':_0x51585c(0x176),'gnHMe':'div.text-red-500,\x20div:has-text(\x22Data\x20pasien\x20tidak\x20sesuai\x22),\x20div:has-text(\x22Terjadi\x20kesalahan\x22)','KzIaX':_0x51585c(0x2cd),'szXmB':_0x51585c(0x1dd),'OKqgS':_0x51585c(0x2ec),'RcjJy':_0x51585c(0x1da),'Iuzhz':function(_0x2f04bd){return _0x2f04bd();},'LdYjD':function(_0x5cddb2,_0x29f5e8){return _0x5cddb2===_0x29f5e8;},'LNGhr':_0x51585c(0x209),'cagXB':_0x51585c(0x1b7),'lVeEv':_0x51585c(0x12b),'EQHvy':'div:has-text(\x22Tutup\x22)','woWPR':_0x51585c(0xd4),'kfjFv':_0x51585c(0x2f0),'zeJiQ':_0x51585c(0x112),'gTOZk':_0x51585c(0x236),'DjUwK':_0x51585c(0x218),'LarFw':'button:has-text(\x22Tutup\x22),button:has-text(\x22Periksa\x20Kembali\x22),\x20button:has-text(\x22OK\x22)','tnqEg':_0x51585c(0x2dc),'iNGgK':_0x51585c(0x17d),'jiQVe':_0x51585c(0x20d),'fpLdE':_0x51585c(0xfc),'JLqdc':function(_0x2be09a,_0xe08e02){return _0x2be09a(_0xe08e02);},'XrwKR':'Pelacakan\x20hadir/sudah\x20hadir','FTJRl':_0x51585c(0x212),'TTjNE':function(_0x1f4cda,_0x533d3e){return _0x1f4cda<_0x533d3e;},'JOZgx':'input#verify','LiWud':_0x51585c(0x1c4),'RnFiB':_0x51585c(0x115),'ktEvz':_0x51585c(0x280),'OPPhN':_0x51585c(0x295),'vmvGR':function(_0x2466a8,_0x154e5c){return _0x2466a8>_0x154e5c;},'eRLOI':_0x51585c(0xeb),'GHgBZ':'SUDAH_HADIR','kRBqP':_0x51585c(0x19f),'xwDzv':_0x51585c(0x2d9),'inScA':'Berpindah\x20ke\x20menu\x20Pelayanan\x20Klinis...','jNQHY':_0x51585c(0x28d),'CJhbl':_0x51585c(0x1ab),'txKcT':_0x51585c(0x182),'bJoKW':function(_0xe46a02,_0x39a4d0){return _0xe46a02(_0x39a4d0);},'XEHGR':_0x51585c(0x17e),'qIbJq':_0x51585c(0x2e6),'ulsTr':_0x51585c(0x1b1),'sqjUc':'input[name=\x22NIK\x22],\x20input#nik','ULFSF':'Memeriksa\x20tab\x20status\x20pemeriksaan\x20(Belum/Sedang/Selesai)...','Dywrv':_0x51585c(0xce),'slZSn':'div.cursor-pointer:has-text(\x22Sedang\x20Pemeriksaan\x22)','qrvau':_0x51585c(0x19c),'pKSvY':function(_0x3a9544){return _0x3a9544();},'lSSAZ':_0x51585c(0x26e),'nlRrs':function(_0x2acff0,_0x497a41){return _0x2acff0(_0x497a41);},'yYFcL':_0x51585c(0x258),'odfwn':_0x51585c(0x211),'wlSph':function(_0x496f0f){return _0x496f0f();},'ZTvqX':_0x51585c(0x202),'Tykyx':function(_0x165cf4,_0x273eb6){return _0x165cf4===_0x273eb6;},'VxVbV':_0x51585c(0x2af),'LKiPf':_0x51585c(0x2a5),'fFIyV':'tr:has(img[src*=\x22icon-success-gray.svg\x22]):has(button:has-text(\x22Input\x20Data\x22))','euHoU':_0x51585c(0x29c),'Mlgbc':'label,\x20div.sd-item','wsXKH':_0x51585c(0x253),'cWStp':_0x51585c(0x291),'LWIBi':_0x51585c(0x272),'bUrCR':function(_0x3eb85a,_0x3eb1ef){return _0x3eb85a+_0x3eb1ef;},'aTBhU':function(_0x57a320,_0x22ede5){return _0x57a320!==_0x22ede5;},'qwfrx':function(_0x25f81b,_0x4a47fb,_0x22446c,_0x9872f5){return _0x25f81b(_0x4a47fb,_0x22446c,_0x9872f5);},'abfOP':_0x51585c(0x14c),'frShv':_0x51585c(0x23c),'Lasbj':function(_0x431f3b,_0x446960,_0x5648f4,_0x36036b){return _0x431f3b(_0x446960,_0x5648f4,_0x36036b);},'VIdfI':_0x51585c(0x16d),'odijQ':_0x51585c(0xc0),'qzAOX':function(_0x1f40ac,_0x33b782,_0x443699,_0x1ba997){return _0x1f40ac(_0x33b782,_0x443699,_0x1ba997);},'hXGEH':_0x51585c(0x138),'KWmGO':function(_0xd9847a,_0x5800e0,_0x58f50e,_0x3d0a2d){return _0xd9847a(_0x5800e0,_0x58f50e,_0x3d0a2d);},'UHKCl':'Pemeriksaan\x20Penyakit\x20Frambusia','IvZsT':'Pemeriksaan\x20Penyakit\x20Kusta','DJVFl':function(_0x19c10b,_0x2bbc5e,_0x5b85da,_0x2d3669){return _0x19c10b(_0x2bbc5e,_0x5b85da,_0x2d3669);},'NhwEz':_0x51585c(0x25b),'swMDP':_0x51585c(0x10f),'xmrvC':function(_0x3d56d1,_0x41680b,_0x550a60,_0xc41b01){return _0x3d56d1(_0x41680b,_0x550a60,_0xc41b01);},'RUAuh':function(_0x4fc56b,_0x2955e7,_0x3e92a3,_0xbb91ea){return _0x4fc56b(_0x2955e7,_0x3e92a3,_0xbb91ea);},'Kxrpt':function(_0x496c2d,_0x514c3a,_0x3273a8,_0xa1f5ab){return _0x496c2d(_0x514c3a,_0x3273a8,_0xa1f5ab);},'sPhKk':_0x51585c(0xda),'SirQz':'Mengklik\x20tombol\x20Selesaikan\x20Layanan...','GshBo':function(_0x28a84c,_0x5d0f86){return _0x28a84c===_0x5d0f86;},'wrFFW':_0x51585c(0x1ee),'kABpJ':_0x51585c(0x16c),'PJFqt':_0x51585c(0x1cc),'JCwWV':function(_0x2e923f,_0x2871e5){return _0x2e923f in _0x2871e5;},'AsInx':_0x51585c(0x201),'dcrHW':function(_0x28e9dc,_0x5d6ccb){return _0x28e9dc(_0x5d6ccb);},'Uorke':function(_0x6d3848,_0x1ba012){return _0x6d3848||_0x1ba012;},'OgiJD':_0x51585c(0x1c8),'oczQW':_0x51585c(0x178),'srtdq':function(_0x217b13,_0x52e95e){return _0x217b13<_0x52e95e;},'ZLfkp':'1|0|3|5|2|4|6','HGmwP':_0x51585c(0x14b),'Gtnvl':_0x51585c(0xf1),'IRKiS':_0x51585c(0x29a)},_0x37a14b=(function(){let _0x4a9ef3=!![];return function(_0x4413a5,_0x4e1a5b){const _0x47d10b=_0x4a9ef3?function(){if(_0x4e1a5b){const _0x58c5ae=_0x4e1a5b['apply'](_0x4413a5,arguments);return _0x4e1a5b=null,_0x58c5ae;}}:function(){};return _0x4a9ef3=![],_0x47d10b;};}());Logger[_0x51585c(0x1e1)](_0x51585c(0x252));const _0x430974=process[_0x51585c(0x28e)][0x2]||'1',_0x2ee94b=process['argv'][0x3]===_0x51585c(0x164),_0x3e4ebb=await chromium[_0x51585c(0x133)]({'headless':_0x2ee94b,'channel':_0x51585c(0x169)}),_0x449bac=path['join'](__dirname,_0x27b020['Ncbng'],_0x51585c(0x10b)+_0x430974+_0x51585c(0x13b)),_0x4229e2=await _0x3e4ebb['newContext']({'storageState':_0x449bac}),_0x36df21=path[_0x51585c(0x283)](__dirname,_0x27b020['epQjc'],_0x51585c(0x274)+_0x430974+_0x51585c(0x223));console['log'](_0x51585c(0xe4)+_0x430974+_0x51585c(0xc3)+_0x449bac);const _0x428d0d=await _0x4229e2['newPage']();_0x428d0d['on'](_0x27b020[_0x51585c(0x1ae)],async _0x1cc6c9=>{const _0x15db0e=_0x51585c;if(_0x27b020[_0x15db0e(0x1ec)](_0x1cc6c9,_0x428d0d['mainFrame']())){const _0x2ac469=_0x1cc6c9['url']();if(_0x2ac469['includes'](_0x27b020[_0x15db0e(0x2c9)])){console[_0x15db0e(0xb8)](_0x15db0e(0xe4)+_0x430974+']\x20🔴\x20Terdeteksi\x20lempar\x20ke\x20login:\x20'+_0x2ac469+_0x15db0e(0x261));try{!_0x428d0d['isClosed']()&&await _0x428d0d[_0x15db0e(0x1fc)]();}catch(_0x3ed14c){}}}}),await _0x428d0d[_0x51585c(0x285)](_0x27b020[_0x51585c(0x298)],{'waitUntil':_0x27b020[_0x51585c(0x1a6)]});const _0x4c7b72=path['join'](__dirname,_0x27b020[_0x51585c(0x181)],_0x51585c(0x274)+_0x430974+_0x51585c(0x223)),_0x5bd38e=ExcelManager[_0x51585c(0x22e)](_0x4c7b72);await _0x27b020[_0x51585c(0x1fa)](checkPause);for(let _0x7058a6=0x0;_0x27b020[_0x51585c(0x1e4)](_0x7058a6,_0x5bd38e[_0x51585c(0x180)]);_0x7058a6++){const _0x5df944=_0x5bd38e[_0x7058a6],_0x20f33d=_0x27b020[_0x51585c(0x159)](_0x7058a6,0x1),_0x2c28fd=_0x5bd38e['length'],_0x42d6cf=_0x5df944[_0x27b020[_0x51585c(0xe9)]]||_0x27b020[_0x51585c(0xec)],_0x2ed9c1=_0x5df944[_0x51585c(0x14e)]||_0x51585c(0x1fd);console[_0x51585c(0xb8)]('KERJA|'+_0x42d6cf+'|'+_0x2ed9c1+'|'+_0x20f33d+'/'+_0x2c28fd+_0x51585c(0xd8));const _0x302d18=_0x27b020[_0x51585c(0x114)](String,_0x5df944[_0x27b020[_0x51585c(0x229)]]||'')[_0x51585c(0x238)]();if(!_0x302d18||_0x27b020[_0x51585c(0x1e4)](_0x302d18[_0x51585c(0x180)],0x10)){_0x5df944['Keterangan']=_0x51585c(0x228),console[_0x51585c(0xb8)](_0x51585c(0xbe)+_0x2ed9c1+'\x20Gagal\x20NIK\x20tidak\x20lengkap'),Logger[_0x51585c(0x1e1)](_0x51585c(0x21d)+_0x2ed9c1+'\x20karena\x20kosong\x20atau\x20kurang\x20dari\x2016\x20digit.'),console[_0x51585c(0xb8)]('KERJA|'+_0x42d6cf+'|'+_0x2ed9c1+'|'+_0x20f33d+'/'+_0x2c28fd+'|Gagal\x20NIK\x20tidak\x20lengkap');continue;}const _0x545300=[_0x27b020[_0x51585c(0x26d)],_0x27b020[_0x51585c(0xf6)],_0x27b020[_0x51585c(0x17a)],'gagal\x20nik\x20tidak\x20valid'];if(_0x5df944[_0x51585c(0x17b)]&&_0x545300[_0x51585c(0x19a)](_0x555a43=>String(_0x5df944[_0x51585c(0x17b)])['toLowerCase']()[_0x51585c(0x11e)](_0x555a43[_0x51585c(0x204)]()))){Logger[_0x51585c(0x1e1)](_0x51585c(0x21d)+_0x5df944[_0x51585c(0x14e)]+_0x51585c(0x2c0)),console['log'](_0x51585c(0x2f5)+_0x42d6cf+'|'+_0x2ed9c1+'|'+_0x20f33d+'/'+_0x2c28fd+_0x51585c(0x1c7)),console[_0x51585c(0xb8)](_0x51585c(0x233)+_0x2ed9c1+_0x51585c(0x29f)+_0x42d6cf+_0x51585c(0x245));continue;}_0x5df944['jumlahCoba']===undefined&&(_0x5df944['jumlahCoba']=0x1);let _0x4af7c4=_0x27b020[_0x51585c(0x221)];try{await checkPause(),Logger[_0x51585c(0x1e1)](_0x51585c(0x2b9)+_0x5df944[_0x27b020[_0x51585c(0x229)]]+'\x20-\x20'+_0x5df944[_0x27b020['IjYal']]+'\x20(Percobaan\x20ke-'+_0x5df944[_0x51585c(0x1cd)]+')');const _0x41b00d=_0x27b020[_0x51585c(0xbb)](String,_0x5df944[_0x27b020[_0x51585c(0x21a)]]||_0x5df944[_0x27b020[_0x51585c(0x21c)]]||'')[_0x51585c(0x238)]()[_0x51585c(0x204)]();let _0x1b4b82=![],_0x27ad09=![];_0x27b020[_0x51585c(0x1ff)](_0x41b00d,_0x51585c(0x115))&&(_0x1b4b82=!![],Logger[_0x51585c(0x1e1)](_0x51585c(0xe6)+_0x41b00d+_0x51585c(0x287)));if(!_0x1b4b82){_0x4af7c4=_0x27b020[_0x51585c(0x154)],console[_0x51585c(0xb8)](_0x51585c(0x2f5)+_0x42d6cf+'|'+_0x2ed9c1+'|'+_0x20f33d+'/'+_0x2c28fd+_0x51585c(0xc9)),_0x4af7c4=_0x27b020[_0x51585c(0x154)],await _0x27b020[_0x51585c(0x248)](checkPause),await _0x428d0d['goto'](_0x27b020[_0x51585c(0x13e)],{'waitUntil':_0x27b020['HKFRk']}),await _0x428d0d[_0x51585c(0x2f7)](0x1f4),await _0x428d0d[_0x51585c(0x15d)](_0x27b020[_0x51585c(0xe3)]),await _0x428d0d[_0x51585c(0x2c6)](_0x51585c(0x109))['last']()['click'](),await _0x428d0d[_0x51585c(0x2f7)](0x3e8),await _0x428d0d[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0x225)])[_0x51585c(0x2e3)]()[_0x51585c(0x188)](_0x27b020[_0x51585c(0x114)](String,_0x5df944[_0x51585c(0x14e)])),await _0x428d0d['waitForTimeout'](0x1f4),await _0x27b020['UNhkP'](checkPause),Logger[_0x51585c(0x1e1)](_0x51585c(0x1a2)+_0x5df944[_0x51585c(0x14e)]+'...'),console['log']('KERJA|'+_0x42d6cf+'|'+_0x2ed9c1+'|'+_0x20f33d+'/'+_0x2c28fd+_0x51585c(0xef));const _0xb13069=_0x428d0d[_0x51585c(0x2c6)](_0x27b020['deQnZ'])[_0x51585c(0xbc)]({'visible':!![]})['first']();await _0xb13069[_0x51585c(0x27e)]({'force':!![]});let _0x13c85c=![];const _0x47c01d=_0x428d0d['getByText']('Data\x20Peserta\x20ditemukan',{'exact':![]})[_0x51585c(0x2e0)](),_0x4abba1=_0x428d0d[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0x1a5)])[_0x51585c(0x2e0)]();try{await Promise[_0x51585c(0x216)]([_0x47c01d[_0x51585c(0x2ab)]({'state':_0x27b020['HgofO'],'timeout':0x1770}),_0x4abba1['waitFor']({'state':_0x27b020[_0x51585c(0x16e)],'timeout':0x1770})]),_0x13c85c=!![],Logger[_0x51585c(0x1e1)](_0x27b020[_0x51585c(0x1f4)]);}catch(_0x134759){_0x13c85c=![],Logger['info'](_0x27b020[_0x51585c(0x110)]);}await _0x27b020['yblKR'](checkPause);if(_0x13c85c)await _0x4abba1[_0x51585c(0x27e)]({'force':!![]})['catch'](()=>{}),await _0x428d0d[_0x51585c(0x2f7)](0x3e8),Logger[_0x51585c(0x1e1)]('Menggunakan\x20data\x20dari\x20server\x20Kemenkes...');else{Logger[_0x51585c(0x1e1)](_0x27b020[_0x51585c(0x11c)]),await _0x428d0d[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0x130)])[_0x51585c(0x2e3)]()[_0x51585c(0x188)](_0x5df944[_0x51585c(0x104)]);const _0x22dde4=_0x428d0d['locator'](_0x51585c(0x157))[_0x51585c(0x2e3)]();await _0x27b020[_0x51585c(0xf5)](isiDatepicker,_0x428d0d,_0x22dde4,_0x5df944[_0x27b020[_0x51585c(0x11a)]]),await _0x428d0d[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0x232)])[_0x51585c(0x2e3)]()[_0x51585c(0x27e)](),await _0x428d0d['locator'](_0x51585c(0x23e)+_0x5df944[_0x27b020[_0x51585c(0x1e9)]]+'\x22)')[_0x51585c(0x2e3)]()['click']();let _0x429586=_0x5df944[_0x27b020[_0x51585c(0x153)]]?_0x27b020['DtOLH'](String,_0x5df944[_0x51585c(0x28a)])[_0x51585c(0x238)]():'';_0x429586=_0x429586['replace'](/\D/g,''),(!_0x429586||_0x27b020[_0x51585c(0xe8)](_0x429586[_0x51585c(0x180)],0x7)||_0x27b020[_0x51585c(0x2ca)](_0x429586[_0x51585c(0x180)],0xd)||!_0x429586[_0x51585c(0x2ba)]('8'))&&(_0x429586=_0x27b020[_0x51585c(0x24e)]),await _0x428d0d['waitForTimeout'](0x1f4),await _0x428d0d[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0xd9)])[_0x51585c(0x2e3)]()['fill'](_0x429586),await _0x428d0d['waitForTimeout'](0x3e8);}const _0x2794bb=_0x428d0d[_0x51585c(0x2c6)](_0x27b020['JqYGH'])[_0x51585c(0xbc)]({'visible':!![]})[_0x51585c(0x2e0)]();await _0x2794bb['waitFor']({'state':_0x27b020[_0x51585c(0x16e)],'timeout':0x1388}),await _0x27b020['XCyFe'](klikAntiMacet,_0x428d0d,_0x2794bb,_0x27b020['cOpHE']),await _0x27b020[_0x51585c(0x168)](checkPause),Logger[_0x51585c(0x1e1)](_0x27b020['SmMxH']),console[_0x51585c(0xb8)](_0x51585c(0x2f5)+_0x42d6cf+'|'+_0x2ed9c1+'|'+_0x20f33d+'/'+_0x2c28fd+_0x51585c(0x10c));let _0x46aad0=await Promise[_0x51585c(0x216)]([_0x428d0d[_0x51585c(0x15d)](_0x27b020[_0x51585c(0x24c)],{'timeout':0x2710})[_0x51585c(0x21e)](()=>_0x51585c(0x107)),_0x428d0d[_0x51585c(0x15d)](_0x27b020[_0x51585c(0x172)],{'timeout':0x2710})[_0x51585c(0x21e)](()=>_0x51585c(0x105)),_0x428d0d[_0x51585c(0x15d)](_0x27b020[_0x51585c(0x102)],{'timeout':0x2710})['then'](()=>_0x51585c(0x176)),_0x428d0d[_0x51585c(0x15d)](_0x27b020['LWLSG'],{'timeout':0x2710})['then'](()=>'SUDAH_PELAYANAN')])[_0x51585c(0x12c)](()=>_0x51585c(0x209));if(_0x27b020[_0x51585c(0x156)](_0x46aad0,_0x51585c(0x105))){Logger[_0x51585c(0x1e1)](_0x51585c(0x257)+_0x5df944[_0x51585c(0x14e)]+_0x51585c(0x23a)),console[_0x51585c(0xb8)](_0x51585c(0x2f5)+_0x42d6cf+'|'+_0x2ed9c1+'|'+_0x20f33d+'/'+_0x2c28fd+'|Kuota\x20Habis\x20(Bypass)');const _0x182a12=_0x428d0d['locator'](_0x27b020['WPVFF'])[_0x51585c(0xbc)]({'visible':!![]})[_0x51585c(0x2e3)]();await _0x182a12['waitFor']({'state':_0x27b020[_0x51585c(0x16e)],'timeout':0x1388}),await _0x182a12[_0x51585c(0x27e)]({'force':!![]}),await _0x428d0d[_0x51585c(0x2f7)](0x3e8),_0x46aad0=await Promise['race']([_0x428d0d[_0x51585c(0x15d)](_0x27b020['iBLYJ'],{'timeout':0x2710})['then'](()=>'VALID'),_0x428d0d[_0x51585c(0x15d)](_0x51585c(0x1cf),{'timeout':0x2710})[_0x51585c(0x21e)](()=>'TIDAK_SESUAI'),_0x428d0d[_0x51585c(0x15d)](_0x51585c(0x210),{'timeout':0x2710})[_0x51585c(0x21e)](()=>_0x51585c(0x1ac))])[_0x51585c(0x12c)](()=>_0x51585c(0x209));}await _0x27b020[_0x51585c(0x1fa)](checkPause);if(_0x46aad0===_0x51585c(0x107)){Logger[_0x51585c(0x1e1)]('NIK\x20'+_0x5df944[_0x27b020[_0x51585c(0x229)]]+_0x51585c(0x2a4)),console['log']('KERJA|'+(_0x5df944[_0x27b020[_0x51585c(0xe9)]]||_0x27b020[_0x51585c(0xec)])+'|'+_0x5df944[_0x27b020[_0x51585c(0x229)]]+_0x51585c(0x1b9)+_0x5df944[_0x51585c(0x1cd)]+_0x51585c(0x28f));try{const _0xb63100=_0x428d0d[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0x2b6)])['filter']({'visible':!![]})[_0x51585c(0x2e0)]();await _0xb63100['waitFor']({'state':_0x27b020['HgofO'],'timeout':0x1388}),await _0x27b020[_0x51585c(0x14d)](klikAntiMacet,_0x428d0d,_0xb63100,_0x27b020[_0x51585c(0x240)]);}catch(_0xbe64c6){Logger[_0x51585c(0x1e1)](_0x27b020['HIrRP']);}_0x4af7c4=_0x27b020['CEExA'],await _0x428d0d[_0x51585c(0x2f7)](0x5dc);if(_0x13c85c){if(_0x5df944[_0x27b020[_0x51585c(0x237)]])try{const _0x38bb89=_0x27b020[_0x51585c(0xbb)](String,_0x5df944[_0x27b020[_0x51585c(0x237)]])[_0x51585c(0x238)](),_0x3d6682=_0x428d0d[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0x145)]);if(await _0x3d6682[_0x51585c(0x1db)]({'timeout':0x7d0})){const _0x4c8e6a=(await _0x3d6682[_0x51585c(0x244)]())[_0x51585c(0x238)]();_0x27b020[_0x51585c(0x156)](_0x4c8e6a[_0x51585c(0x204)](),_0x38bb89[_0x51585c(0x204)]())?Logger[_0x51585c(0x1e1)](_0x51585c(0x1bf)+_0x4c8e6a+').'):(Logger['info'](_0x51585c(0x241)+_0x38bb89+_0x51585c(0x122)),await _0x3d6682['click']({'force':!![],'timeout':0x7d0}),await _0x428d0d['waitForTimeout'](0x1f4),await _0x428d0d[_0x51585c(0x2c6)](_0x51585c(0x23e)+_0x38bb89+'\x22)')['last']()[_0x51585c(0x27e)]({'force':!![],'timeout':0x7d0}));}}catch(_0x1260ea){Logger['info'](_0x51585c(0xf0));}if(_0x5df944[_0x27b020[_0x51585c(0x23f)]])try{const _0x26233d=_0x27b020[_0x51585c(0x28c)](String,_0x5df944[_0x27b020[_0x51585c(0x23f)]])[_0x51585c(0x238)](),_0x87ddf8=await _0x428d0d[_0x51585c(0x2c6)]('div:text-is(\x22'+_0x26233d+'\x22)')[_0x51585c(0x2e3)]()[_0x51585c(0x1db)]({'timeout':0x7d0});if(_0x87ddf8)Logger[_0x51585c(0x1e1)](_0x51585c(0xd7)+_0x26233d+_0x51585c(0x113));else{Logger['info'](_0x51585c(0x18a)+_0x26233d+_0x51585c(0x122));const _0x5470aa=_0x428d0d[_0x51585c(0x2c6)](_0x27b020['rYVuU']);await _0x5470aa[_0x51585c(0x27e)]({'force':!![],'timeout':0x7d0})['catch'](async()=>{const _0x302bb7=_0x51585c;await _0x428d0d[_0x302bb7(0x2c6)](_0x302bb7(0xfe))[_0x302bb7(0x27e)]({'force':!![]});}),await _0x428d0d[_0x51585c(0x2f7)](0x1f4),await _0x5470aa['fill'](_0x26233d),await _0x428d0d[_0x51585c(0x2f7)](0x1f4),await _0x428d0d[_0x51585c(0x2c6)](_0x51585c(0x2e2)+_0x26233d+'\x22)')[_0x51585c(0x2e3)]()[_0x51585c(0x27e)]({'force':!![],'timeout':0x7d0});}}catch(_0xb2de5e){Logger[_0x51585c(0x1e1)](_0x51585c(0x22a));}if(_0x5df944[_0x27b020['SyrMc']])try{const _0x1c253e=_0x27b020[_0x51585c(0x18c)](String,_0x5df944['Nama\x20Sekolah'])[_0x51585c(0x238)](),_0x3c38bf=_0x428d0d['locator'](_0x51585c(0x1a1));await _0x3c38bf[_0x51585c(0x2ab)]({'state':'visible','timeout':0xbb8});const _0x44eeee=(await _0x3c38bf['innerText']())[_0x51585c(0x238)]();if(_0x27b020[_0x51585c(0x1b8)](_0x44eeee['toLowerCase'](),_0x1c253e['toLowerCase']()))Logger['info'](_0x51585c(0x2d6)+_0x44eeee+').\x20Skip...');else{Logger[_0x51585c(0x1e1)](_0x51585c(0x29b)+_0x44eeee+'\x22\x20->\x20Ubah\x20ke\x20\x22'+_0x1c253e+'\x22'),await _0x3c38bf[_0x51585c(0x27e)]({'force':!![]}),await _0x428d0d[_0x51585c(0x2f7)](0x1f4);const _0x364f7d=_0x428d0d[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0x123)])[_0x51585c(0x2e3)]();await _0x364f7d[_0x51585c(0x2ab)]({'state':_0x27b020[_0x51585c(0x16e)],'timeout':0xbb8}),await _0x364f7d[_0x51585c(0x188)](_0x1c253e),await _0x428d0d[_0x51585c(0x2f7)](0x1f4);const _0x2631ee=_0x428d0d[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0x29d)])[_0x51585c(0xbc)]({'hasText':_0x1c253e})[_0x51585c(0x2e3)]();await _0x2631ee[_0x51585c(0x2ab)]({'state':_0x27b020[_0x51585c(0x16e)],'timeout':0xbb8}),await _0x2631ee[_0x51585c(0x27e)]({'force':!![]});}}catch(_0x4b4ff2){Logger['info'](_0x51585c(0x14a));}const _0x52ebc1=_0x27b020[_0x51585c(0x28c)](String,_0x5df944[_0x27b020[_0x51585c(0x18d)]]||''),_0x31f5b8=_0x52ebc1[_0x51585c(0x2d8)](/\d+/)?.[0x0];if(_0x31f5b8)try{const _0x1fd669=_0x428d0d[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0x1c6)]);await _0x1fd669[_0x51585c(0x2ab)]({'state':_0x27b020[_0x51585c(0x16e)],'timeout':0xbb8});const _0x33ae81=(await _0x1fd669['innerText']())[_0x51585c(0x238)]();if(_0x33ae81[_0x51585c(0x11e)](_0x31f5b8))Logger[_0x51585c(0x1e1)]('✅\x20[Jenjang\x20Pendidikan]\x20Sudah\x20sesuai\x20('+_0x33ae81+_0x51585c(0xf3));else{Logger['info']('🔄\x20[Jenjang\x20Pendidikan]\x20Saat\x20ini\x20\x22'+_0x33ae81+_0x51585c(0x20e)+_0x31f5b8),await _0x1fd669[_0x51585c(0x27e)]({'force':!![]}),await _0x428d0d[_0x51585c(0x2f7)](0x1f4);const _0x5ddfa3=_0x428d0d[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0x22d)])[_0x51585c(0x2e3)]();await _0x5ddfa3[_0x51585c(0x2ab)]({'state':_0x27b020[_0x51585c(0x16e)],'timeout':0xbb8}),await _0x5ddfa3[_0x51585c(0x188)](_0x31f5b8),await _0x428d0d['waitForTimeout'](0x1f4);const _0x48fc87=_0x428d0d[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0x29d)])[_0x51585c(0xbc)]({'hasText':_0x51585c(0xc4)+_0x31f5b8})[_0x51585c(0x2e3)]();await _0x48fc87['waitFor']({'state':_0x27b020[_0x51585c(0x16e)],'timeout':0xbb8}),await _0x48fc87['click']({'force':!![]});}}catch(_0x1e2ab3){Logger[_0x51585c(0x1e1)](_0x51585c(0x266));}}try{await _0x428d0d[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0x149)])['last']()['check']({'force':!![],'timeout':0x7d0});}catch(_0x4bd055){Logger['info'](_0x51585c(0x1b6));}if(_0x5df944[_0x27b020[_0x51585c(0x11f)]])try{await _0x428d0d[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0x254)])[_0x51585c(0x2e3)]()[_0x51585c(0x188)](String(_0x5df944[_0x27b020[_0x51585c(0x11f)]]),{'timeout':0x7d0});}catch(_0x479215){Logger[_0x51585c(0x1e1)](_0x51585c(0x22b));}const _0x28c84d=_0x428d0d[_0x51585c(0x2c6)](_0x27b020['uNAzC'])['last']();await _0x27b020[_0x51585c(0x248)](checkPause),await _0x428d0d['waitForTimeout'](0x1f4),await _0x27b020[_0x51585c(0x14d)](klikAntiMacet,_0x428d0d,_0x28c84d,_0x27b020[_0x51585c(0x20a)]);const _0x73952e=await Promise[_0x51585c(0x216)]([_0x428d0d[_0x51585c(0x15d)](_0x27b020[_0x51585c(0x263)],{'timeout':0x2710})['then'](()=>'BERHASIL'),_0x428d0d[_0x51585c(0x15d)](_0x27b020[_0x51585c(0x148)],{'timeout':0x2710})[_0x51585c(0x21e)](()=>_0x51585c(0x176)),_0x428d0d[_0x51585c(0x15d)](_0x27b020[_0x51585c(0x2eb)],{'timeout':0x2710})['then'](()=>_0x51585c(0x1ac))])[_0x51585c(0x12c)](()=>_0x51585c(0x209));if(_0x27b020['RdnXi'](_0x73952e,_0x27b020[_0x51585c(0x16f)])){Logger[_0x51585c(0x1e1)](_0x51585c(0x1a7)+_0x5df944[_0x27b020[_0x51585c(0x229)]]+'\x20data\x20tidak\x20sesuai\x20di\x20pengecekan\x20form\x202.\x20Menyedot\x20pesan...');let _0x6f8095=_0x51585c(0x166);try{const _0x5be70d=_0x428d0d[_0x51585c(0x2c6)]('div[role=\x22dialog\x22],\x20div.modal,\x20.swal-modal,\x20.swal2-popup,\x20.el-message-box,\x20.el-notification')[_0x51585c(0xbc)]({'visible':!![]})[_0x51585c(0x2e3)]();await _0x5be70d[_0x51585c(0x2e5)]()>0x0?_0x6f8095=await _0x5be70d['innerText']():_0x6f8095=await _0x428d0d[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0x2b3)])['filter']({'visible':!![]})[_0x51585c(0x2e3)]()[_0x51585c(0x244)]();}catch(_0x268e3b){}_0x6f8095=_0x6f8095[_0x51585c(0x1b2)](/\n/g,_0x27b020[_0x51585c(0x1de)])[_0x51585c(0x238)](),_0x5df944[_0x27b020['szXmB']]=_0x6f8095,_0x5df944[_0x51585c(0x17b)]=_0x27b020[_0x51585c(0x270)],console[_0x51585c(0xb8)](_0x51585c(0xbe)+_0x2ed9c1+_0x51585c(0x2c2)+_0x6f8095),await _0x428d0d[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0x226)])[_0x51585c(0x2e3)]()[_0x51585c(0x27e)](),await _0x428d0d[_0x51585c(0x23b)]({'waitUntil':_0x27b020['HKFRk']}),await _0x428d0d[_0x51585c(0x2f7)](0x3e8);continue;await _0x27b020['Iuzhz'](checkPause);}else{if(_0x27b020['LdYjD'](_0x73952e,_0x27b020[_0x51585c(0x2f1)]))throw new Error(_0x27b020[_0x51585c(0x296)]);else _0x73952e===_0x27b020[_0x51585c(0x25d)]&&await _0x428d0d[_0x51585c(0x2c6)](_0x27b020['EQHvy'])['last']()['click']({'force':!![]});}}else{if(_0x27b020[_0x51585c(0x1ec)](_0x46aad0,'SUDAH_PELAYANAN')){Logger[_0x51585c(0x1e1)](_0x51585c(0x1a7)+_0x5df944[_0x27b020[_0x51585c(0x229)]]+_0x51585c(0x18f)),console[_0x51585c(0xb8)]('KERJA|'+_0x42d6cf+'|'+_0x2ed9c1+'|'+_0x20f33d+'/'+_0x2c28fd+_0x51585c(0x214));const _0xf1c9b2=_0x428d0d[_0x51585c(0x2c6)](_0x51585c(0x208))[_0x51585c(0xbc)]({'visible':!![]})[_0x51585c(0x2e0)]();await _0xf1c9b2[_0x51585c(0x2ab)]({'state':_0x27b020[_0x51585c(0x2bb)],'timeout':0x1388}),await _0xf1c9b2[_0x51585c(0x2de)](_0x167167=>_0x167167[_0x51585c(0x27e)]()),await _0x428d0d[_0x51585c(0x2f7)](0x7d0),_0x27ad09=!![];}else{if(_0x27b020['YuFHc'](_0x46aad0,_0x27b020[_0x51585c(0x2f1)]))throw new Error(_0x27b020[_0x51585c(0x251)]);else{Logger[_0x51585c(0x1e1)](_0x51585c(0xe2)+_0x5df944[_0x27b020['NaQsc']]+_0x51585c(0x170));let _0x4a4638=_0x51585c(0x2da);try{const _0x223bba=_0x428d0d[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0x27d)])[_0x51585c(0xbc)]({'visible':!![]})[_0x51585c(0x2e3)]();await _0x223bba[_0x51585c(0x2e5)]()>0x0?_0x4a4638=await _0x223bba['innerText']():_0x4a4638=await _0x428d0d[_0x51585c(0x2c6)](_0x27b020['gTOZk'])[_0x51585c(0xbc)]({'visible':!![]})[_0x51585c(0x2e3)]()[_0x51585c(0x244)]();}catch(_0x2eda80){}_0x4a4638=_0x4a4638[_0x51585c(0x1b2)](/\n/g,_0x27b020[_0x51585c(0x1de)])[_0x51585c(0x238)](),_0x5df944[_0x27b020[_0x51585c(0x126)]]=_0x4a4638,_0x5df944['Keterangan']=_0x27b020[_0x51585c(0x162)],console[_0x51585c(0xb8)](_0x51585c(0xbe)+_0x2ed9c1+_0x51585c(0x292)+_0x4a4638);const _0x3eea6c=_0x428d0d[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0x27f)])[_0x51585c(0xbc)]({'visible':!![]})[_0x51585c(0x2e0)]();await _0x3eea6c['count']()>0x0&&(await _0x3eea6c['click']({'force':!![]})[_0x51585c(0x12c)](()=>{}),await _0x428d0d['reload']({'waitUntil':_0x51585c(0x175)}));await _0x428d0d['waitForTimeout'](0x3e8);continue;}}}}_0x4af7c4=_0x27b020[_0x51585c(0x2e1)],await _0x27b020[_0x51585c(0x1c5)](checkPause);if(!_0x27ad09){await _0x428d0d[_0x51585c(0x2f7)](0x5dc),await _0x428d0d[_0x51585c(0x285)](_0x27b020[_0x51585c(0x13e)],{'waitUntil':_0x27b020[_0x51585c(0x1a6)]}),await _0x428d0d[_0x51585c(0x2f7)](0x5dc),await _0x428d0d['locator'](_0x27b020['iNGgK'])[_0x51585c(0x2e3)]()[_0x51585c(0x27e)](),await _0x428d0d['locator']('div:text-is(\x22'+_0x5df944[_0x27b020[_0x51585c(0xc5)]]+'\x22)')[_0x51585c(0x2e3)]()['click'](),await _0x428d0d['locator'](_0x27b020[_0x51585c(0x219)])[_0x51585c(0x2e3)]()[_0x51585c(0x27e)](),await _0x428d0d['locator'](_0x51585c(0x23e)+_0x5df944[_0x51585c(0x1e7)]+'\x22)')[_0x51585c(0x2e3)]()[_0x51585c(0x27e)](),await _0x428d0d[_0x51585c(0x2c6)](_0x51585c(0x1b1))[_0x51585c(0x2e3)]()[_0x51585c(0x27e)]({'force':!![]}),await _0x428d0d['locator'](_0x27b020[_0x51585c(0xd6)])[_0x51585c(0x2e3)]()[_0x51585c(0x27e)](),await _0x428d0d[_0x51585c(0x2c6)]('input[name=\x22NIK\x22],\x20input#nik')[_0x51585c(0x2e3)]()[_0x51585c(0x188)](_0x27b020[_0x51585c(0x144)](String,_0x5df944['NIK'])),await _0x428d0d['waitForTimeout'](0x3e8),await _0x428d0d[_0x51585c(0x1c3)][_0x51585c(0x215)]('Enter');const _0x174570=_0x5df944[_0x51585c(0x104)];_0x4af7c4=_0x27b020[_0x51585c(0x2e8)],await _0x27b020[_0x51585c(0x248)](checkPause);const _0x2d7274=await Promise[_0x51585c(0x216)]([_0x428d0d[_0x51585c(0x15d)](_0x51585c(0x174)+_0x174570+'\x22)\x20>>\x20button:has-text(\x22Konfirmasi\x20Hadir\x22)',{'state':_0x27b020[_0x51585c(0x16e)],'timeout':0x1388})[_0x51585c(0x21e)](()=>_0x51585c(0x212)),_0x428d0d[_0x51585c(0x15d)](_0x51585c(0x174)+_0x174570+'\x22)\x20>>\x20div:has-text(\x22Sudah\x20Hadir\x22)',{'state':_0x27b020[_0x51585c(0x16e)],'timeout':0x1388})[_0x51585c(0x21e)](()=>_0x51585c(0x297))])[_0x51585c(0x12c)](()=>_0x51585c(0x125));if(_0x2d7274===_0x27b020[_0x51585c(0x2e4)]){Logger['info'](_0x51585c(0x1c9)+_0x174570+_0x51585c(0x1e5)),console[_0x51585c(0xb8)](_0x51585c(0x2f5)+_0x42d6cf+'|'+_0x2ed9c1+'|'+_0x20f33d+'/'+_0x2c28fd+_0x51585c(0x2b1));const _0x5bc1a8=_0x428d0d[_0x51585c(0x2c6)](_0x51585c(0x174)+_0x174570+_0x51585c(0x19e));await _0x428d0d[_0x51585c(0x2f7)](0x3e8),await _0x5bc1a8[_0x51585c(0x118)](),await _0x5bc1a8[_0x51585c(0x27e)]();let _0x279f62=_0x5df944[_0x27b020['fJNwE']]?String(_0x5df944[_0x27b020[_0x51585c(0x153)]])[_0x51585c(0x238)]():'';_0x279f62=_0x279f62['replace'](/\D/g,'');(!_0x279f62||_0x27b020['TTjNE'](_0x279f62[_0x51585c(0x180)],0x7)||!_0x279f62[_0x51585c(0x2ba)]('8'))&&(_0x279f62=_0x51585c(0x21f));await _0x428d0d[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0xd9)])[_0x51585c(0x2e3)]()[_0x51585c(0x188)](_0x279f62);try{const _0x4272a5=_0x428d0d[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0x149)])[_0x51585c(0x2e3)](),_0x2274ee=await _0x4272a5[_0x51585c(0x121)]();_0x2274ee?Logger['info']('✅\x20[Checkbox\x20Alamat]\x20Sudah\x20tercentang\x20dari\x20awal.\x20Skip...'):(Logger['info']('🔄\x20[Checkbox\x20Alamat]\x20Belum\x20tercentang.\x20Mencentang\x20sekarang...'),await _0x4272a5[_0x51585c(0x246)]({'force':!![],'timeout':0x7d0}));}catch(_0x2d2cbf){Logger[_0x51585c(0x1e1)](_0x51585c(0x1b6));}await _0x428d0d['locator'](_0x27b020[_0x51585c(0xdc)])[_0x51585c(0x2e3)]()[_0x51585c(0x246)]({'force':!![]}),await _0x428d0d[_0x51585c(0x2f7)](0x1f4),await _0x428d0d['locator'](_0x27b020[_0x51585c(0x2f6)])['last']()['click'](),_0x5df944[_0x51585c(0x24a)]=_0x27b020[_0x51585c(0x106)],await _0x428d0d[_0x51585c(0x15d)](_0x27b020['ktEvz'],{'timeout':0xbb8})[_0x51585c(0x12c)](()=>{});const _0x52dae3=_0x428d0d['locator'](_0x27b020[_0x51585c(0x10d)])[_0x51585c(0xbc)]({'visible':!![]})[_0x51585c(0x2e0)]();_0x27b020['vmvGR'](await _0x52dae3[_0x51585c(0x2e5)](),0x0)?await _0x52dae3[_0x51585c(0x27e)]({'force':!![]})[_0x51585c(0x12c)](()=>{}):await _0x428d0d['locator'](_0x27b020[_0x51585c(0x137)])[_0x51585c(0xbc)]({'visible':!![]})[_0x51585c(0x2e0)]()[_0x51585c(0x27e)]({'force':!![]})[_0x51585c(0x12c)](()=>{});}else _0x2d7274===_0x27b020[_0x51585c(0xbd)]?Logger[_0x51585c(0x1e1)](_0x27b020[_0x51585c(0x205)]):Logger[_0x51585c(0x1e1)](_0x51585c(0x16b));}_0x4af7c4=_0x27b020[_0x51585c(0x20f)],await checkPause();!_0x27ad09?(Logger[_0x51585c(0x1e1)](_0x27b020[_0x51585c(0x2e9)]),await _0x428d0d[_0x51585c(0x2f7)](0x1f4),await _0x428d0d[_0x51585c(0x285)](_0x27b020['jNQHY'],{'waitUntil':_0x27b020[_0x51585c(0x1a6)]}),await _0x428d0d[_0x51585c(0x2f7)](0x7d0)):(Logger['info'](_0x27b020[_0x51585c(0x1ce)]),await _0x428d0d[_0x51585c(0x2f7)](0x3e8));const _0x125168=_0x428d0d[_0x51585c(0x2c6)](_0x27b020['txKcT'])[_0x51585c(0x2e3)]();await _0x125168[_0x51585c(0x2ab)]({'state':_0x27b020['HgofO'],'timeout':0x1388}),await _0x125168[_0x51585c(0x2e3)]()[_0x51585c(0x27e)]({'force':!![]}),await _0x428d0d['waitForTimeout'](0x64);const _0x25ae50=_0x27b020['bJoKW'](String,_0x5df944[_0x51585c(0x249)])['trim']();await _0x428d0d['locator'](_0x51585c(0x2e2)+_0x25ae50+'\x22)')[_0x51585c(0x2e3)]()[_0x51585c(0x27e)]({'force':!![]}),await _0x428d0d[_0x51585c(0x2f7)](0x64);const _0x4f877f=_0x428d0d['locator'](_0x27b020[_0x51585c(0xf8)])[_0x51585c(0x2e3)]();await _0x4f877f[_0x51585c(0x2ab)]({'state':_0x51585c(0x1a9),'timeout':0x1388}),await _0x4f877f[_0x51585c(0x27e)]({'force':!![]}),await _0x428d0d['waitForTimeout'](0x64);const _0x3f3833=String(_0x5df944[_0x51585c(0x1e7)])[_0x51585c(0x238)]();await _0x428d0d[_0x51585c(0x2c6)](_0x51585c(0x23e)+_0x3f3833+'\x22)')[_0x51585c(0x2e3)]()[_0x51585c(0x27e)]({'force':!![]}),await _0x428d0d['waitForTimeout'](0x1f4),await _0x428d0d['locator'](_0x27b020[_0x51585c(0x187)])[_0x51585c(0x2e3)]()[_0x51585c(0x27e)](),await _0x428d0d[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0x2ee)])[_0x51585c(0x2e3)]()['click'](),await _0x428d0d[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0xd6)])[_0x51585c(0x2e3)]()['click'](),await _0x428d0d[_0x51585c(0x2c6)](_0x27b020['sqjUc'])['last']()['fill'](_0x27b020[_0x51585c(0x16a)](String,_0x5df944[_0x27b020[_0x51585c(0x229)]])),await _0x428d0d['keyboard']['press'](_0x51585c(0x2d4)),await _0x428d0d[_0x51585c(0x2f7)](0x7d0),Logger[_0x51585c(0x1e1)](_0x27b020[_0x51585c(0x2a6)]),console[_0x51585c(0xb8)](_0x51585c(0x2f5)+_0x42d6cf+'|'+_0x2ed9c1+'|'+_0x20f33d+'/'+_0x2c28fd+'|memeriksa\x20status\x20pemeriksaan/pelayanan');const _0x52b0ac=_0x428d0d['locator'](_0x27b020[_0x51585c(0xfb)])['last'](),_0x1dd2d9=_0x428d0d[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0x299)])[_0x51585c(0x2e3)](),_0x4235d8=_0x428d0d[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0x15f)])[_0x51585c(0x2e3)]();let _0x24720c=_0x27b020[_0x51585c(0x281)];async function _0x4bcb1a(){const _0x1ec30b=_0x51585c,_0x43b183={'exIIl':function(_0x2cb593,_0x228bbb){return _0x2cb593(_0x228bbb);},'Ewmmu':function(_0x21f1c5,_0x2e5e7e){return _0x21f1c5+_0x2e5e7e;},'llJYA':function(_0x28a995,_0x3d8fa0){const _0xdeeef8=_0x435a;return _0x27b020[_0xdeeef8(0x159)](_0x28a995,_0x3d8fa0);},'BnRng':_0x27b020[_0x1ec30b(0x17c)],'Obvku':function(_0x5210d5){const _0x331d0f=_0x1ec30b;return _0x27b020[_0x331d0f(0x248)](_0x5210d5);},'QZyrk':_0x27b020[_0x1ec30b(0x264)],'CwFRB':_0x27b020[_0x1ec30b(0x242)],'QUECu':_0x27b020[_0x1ec30b(0x1ef)],'NXOfD':function(_0x3a250a,_0x2be5db){const _0x1f8ec7=_0x1ec30b;return _0x27b020[_0x1f8ec7(0x29e)](_0x3a250a,_0x2be5db);},'oQceL':_0x1ec30b(0xd3)},_0x405f2b=_0x27b020['bUIhp'](_0x37a14b,this,function(){const _0x33fa7a=_0x1ec30b;let _0x461523;try{const _0xa82bae=_0x43b183['exIIl'](Function,_0x43b183['Ewmmu'](_0x43b183[_0x33fa7a(0xb5)](_0x43b183[_0x33fa7a(0xb9)],_0x33fa7a(0x231)),');'));_0x461523=_0x43b183['Obvku'](_0xa82bae);}catch(_0xe73367){_0x461523=window;}const _0x55c2c4=_0x461523[_0x33fa7a(0x197)]=_0x461523['console']||{},_0x662f2d=[_0x33fa7a(0xb8),_0x43b183[_0x33fa7a(0xde)],_0x43b183['CwFRB'],_0x33fa7a(0x1b4),_0x43b183[_0x33fa7a(0x150)],_0x33fa7a(0x27c),_0x33fa7a(0x267)];for(let _0x2ebc6a=0x0;_0x2ebc6a<_0x662f2d[_0x33fa7a(0x180)];_0x2ebc6a++){const _0x3509c2=_0x37a14b[_0x33fa7a(0x1f7)][_0x33fa7a(0x2d1)][_0x33fa7a(0x26b)](_0x37a14b),_0x57fdd4=_0x662f2d[_0x2ebc6a],_0x50da93=_0x55c2c4[_0x57fdd4]||_0x3509c2;_0x3509c2['__proto__']=_0x37a14b[_0x33fa7a(0x26b)](_0x37a14b),_0x3509c2[_0x33fa7a(0xb6)]=_0x50da93[_0x33fa7a(0xb6)][_0x33fa7a(0x26b)](_0x50da93),_0x55c2c4[_0x57fdd4]=_0x3509c2;}});_0x27b020[_0x1ec30b(0x1fa)](_0x405f2b);const _0x1e04f5=_0x27b020[_0x1ec30b(0x165)](String,_0x5df944[_0x27b020[_0x1ec30b(0xe9)]])[_0x1ec30b(0x238)](),_0x4d5f32=_0x428d0d[_0x1ec30b(0x2c6)](_0x27b020[_0x1ec30b(0x194)],{'hasText':_0x1e04f5})['first']();try{await _0x4d5f32[_0x1ec30b(0x2ab)]({'state':_0x27b020['HgofO'],'timeout':0xbb8});}catch(_0xf093ef){return _0x1ec30b(0xee);}await _0x428d0d['evaluate'](()=>{const _0x49259f=_0x1ec30b,_0x2bcf86={'QMRGA':function(_0xbafec2,_0x16e73d){const _0x2d8602=_0x435a;return _0x43b183[_0x2d8602(0x1f1)](_0xbafec2,_0x16e73d);}},_0x16fad1=document['querySelectorAll'](_0x43b183[_0x49259f(0x2b2)]);_0x16fad1[_0x49259f(0xb7)](_0x17fe40=>{const _0x4cf083=_0x49259f;if(_0x2bcf86['QMRGA'](_0x17fe40[_0x4cf083(0x1d0)],_0x17fe40[_0x4cf083(0x24f)]))_0x17fe40[_0x4cf083(0xd2)]=_0x17fe40[_0x4cf083(0x1d0)];});}),await _0x428d0d['waitForTimeout'](0x1f4);const _0x58dd0=await _0x4d5f32[_0x1ec30b(0x244)]();if(_0x58dd0[_0x1ec30b(0x11e)](_0x27b020['wnQou'])||_0x58dd0[_0x1ec30b(0x11e)](_0x27b020['HCsHm'])||_0x58dd0['includes'](_0x27b020[_0x1ec30b(0xc2)]))return _0x27b020[_0x1ec30b(0x1e0)];if(_0x58dd0[_0x1ec30b(0x11e)](_0x27b020[_0x1ec30b(0x289)])&&_0x58dd0[_0x1ec30b(0x11e)](_0x1ec30b(0x1a4)))return _0x27b020[_0x1ec30b(0x1f8)];return _0x27b020[_0x1ec30b(0x281)];}await _0x52b0ac[_0x51585c(0x27e)]({'force':!![]}),_0x24720c=await _0x27b020[_0x51585c(0x1dc)](_0x4bcb1a);_0x24720c===_0x27b020[_0x51585c(0x281)]&&(await _0x1dd2d9['click']({'force':!![]}),_0x24720c=await _0x27b020['pKSvY'](_0x4bcb1a));_0x27b020[_0x51585c(0x1b8)](_0x24720c,_0x27b020[_0x51585c(0x281)])&&(await _0x4235d8[_0x51585c(0x27e)]({'force':!![]}),_0x24720c=await _0x27b020[_0x51585c(0x1fa)](_0x4bcb1a));if(_0x24720c===_0x27b020[_0x51585c(0x1f8)]){_0x5df944['Keterangan']=_0x27b020[_0x51585c(0xf6)],Logger['info'](_0x51585c(0x2c3)+_0x5df944[_0x27b020[_0x51585c(0x229)]]+'\x20sudah\x20lengkap/selesai\x20pelayanan.\x20Lanjut\x20ke\x20siswa\x20berikutnya.'),console['log'](_0x51585c(0x2f5)+_0x42d6cf+'|'+_0x2ed9c1+'|'+_0x20f33d+'/'+_0x2c28fd+_0x51585c(0x1b0)),console[_0x51585c(0xb8)](_0x51585c(0x233)+_0x2ed9c1+_0x51585c(0x29f)+_0x42d6cf+_0x51585c(0x245));continue;}else{if(_0x27b020[_0x51585c(0x282)](_0x24720c,_0x51585c(0xee))){_0x5df944[_0x51585c(0x17b)]=_0x27b020[_0x51585c(0x1d4)],Logger[_0x51585c(0x1e1)]('Tabel\x20kosong\x20untuk\x20NIK\x20'+_0x5df944[_0x27b020[_0x51585c(0x229)]]+_0x51585c(0x189)),console[_0x51585c(0xb8)]('GAGAL\x20|\x20NIK\x20'+_0x2ed9c1+_0x51585c(0x2c4));continue;}}const _0x1ceba8=_0x428d0d[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0x194)],{'hasText':_0x27b020[_0x51585c(0x146)](String,_0x5df944[_0x27b020['IjYal']])['trim']()})[_0x51585c(0x2e0)](),_0x4a4f7d=_0x1ceba8[_0x51585c(0x2c6)](_0x51585c(0x2bd));if(await _0x4a4f7d[_0x51585c(0x1db)]())await _0x4a4f7d[_0x51585c(0x118)](),await _0x4a4f7d['click']({'force':!![]});else{_0x5df944[_0x51585c(0x17b)]='Gagal:\x20Tombol\x20Mulai\x20tidak\x20bisa\x20ditemukan\x20di\x20baris\x20anak\x20ini',console[_0x51585c(0xb8)](_0x51585c(0xbe)+_0x2ed9c1+_0x51585c(0x26f));continue;}Logger['info'](_0x27b020['yYFcL']),await _0x428d0d[_0x51585c(0x2f7)](0xbb8);const _0x32ff06=_0x428d0d[_0x51585c(0x2c6)](_0x51585c(0x19d))[_0x51585c(0x2e3)]();if(await _0x32ff06[_0x51585c(0x1db)]()){await _0x32ff06[_0x51585c(0x27e)](),await _0x428d0d[_0x51585c(0x2f7)](0x3e8);const _0x2879fd=_0x428d0d[_0x51585c(0x2c6)](_0x51585c(0x273))['last']();await _0x2879fd['isVisible']()&&(await _0x2879fd[_0x51585c(0x27e)](),await _0x428d0d[_0x51585c(0x2f7)](0x7d0));}else await _0x428d0d['waitForTimeout'](0x3e8);_0x4af7c4=_0x27b020[_0x51585c(0x2b5)],await _0x27b020['wlSph'](checkPause),Logger['info'](_0x51585c(0xfd));let _0x1b2cef=!![];const _0x200c4a=_0x428d0d[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0x268)])[_0x51585c(0xbc)]({'visible':!![]});if(await _0x200c4a[_0x51585c(0x2e5)]()>0x0&&_0x27b020[_0x51585c(0x2bc)](await _0x428d0d['locator'](_0x27b020[_0x51585c(0x2dd)])[_0x51585c(0x2e5)](),0x0)){Logger['info'](_0x51585c(0x1d7));const _0x4f26e6=_0x428d0d[_0x51585c(0x2c6)](_0x51585c(0x1d5))[_0x51585c(0xbc)]({'visible':!![]});await _0x4f26e6[_0x51585c(0x2e5)]()>0x0?await _0x4f26e6[_0x51585c(0x2e0)]()[_0x51585c(0x27e)]({'force':!![]})[_0x51585c(0x12c)](()=>{}):await _0x428d0d['keyboard']['press'](_0x27b020['LKiPf']),await _0x428d0d['waitForTimeout'](0x3e8);}while(_0x1b2cef){const _0x222734=_0x428d0d[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0x25c)])[_0x51585c(0x2e0)]();if(await _0x222734['isVisible']()){const _0x1ebbb2=await _0x222734[_0x51585c(0x2c6)]('td')['first']()[_0x51585c(0xed)]();Logger[_0x51585c(0x1e1)]('Mengisi\x20Mandiri:\x20'+_0x1ebbb2[_0x51585c(0x238)]()),await _0x222734[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0x1b5)])['click'](),await _0x428d0d[_0x51585c(0x2f7)](0x5dc);let _0x5de8e0=0x0,_0x1589e9=!![];while(_0x1589e9){const _0x8e90=_0x428d0d['locator'](_0x27b020[_0x51585c(0x1c2)])[_0x51585c(0xbc)]({'has':_0x428d0d['locator'](_0x27b020['gckSR'])['or'](_0x428d0d[_0x51585c(0x2c6)]('span.sv-string-viewer:has-text(\x22Belum\x22)'))}),_0x1e016e=await _0x8e90[_0x51585c(0x2e5)]();if(_0x27b020[_0x51585c(0x1e4)](_0x5de8e0,_0x1e016e)){const _0x7e0672=_0x8e90[_0x51585c(0x190)](_0x5de8e0);await _0x7e0672[_0x51585c(0x118)](),await _0x428d0d[_0x51585c(0x2f7)](0x64);const _0x18d2fa=_0x7e0672[_0x51585c(0x2c6)](_0x27b020[_0x51585c(0x276)])[_0x51585c(0x2e0)]();await _0x18d2fa['click']({'force':!![]}),await _0x428d0d['waitForTimeout'](0x64),_0x5de8e0++;}else _0x1589e9=![];}const _0x2e62a9=_0x5df944[_0x1ebbb2['trim']()];if(_0x2e62a9){const _0x492a85=_0x428d0d['locator']('.sd-dropdown')['first']();await _0x492a85[_0x51585c(0x1db)]()&&(await _0x492a85['click'](),await _0x428d0d['waitForTimeout'](0x1f4),await _0x428d0d[_0x51585c(0x2c6)]('.sv-list__item:has-text(\x22'+_0x2e62a9+'\x22)')[_0x51585c(0x27e)](),await _0x428d0d[_0x51585c(0x2f7)](0x1f4));}const _0x4ce3db=_0x428d0d[_0x51585c(0x2c6)](_0x27b020['cWStp']),_0x83f57d=await _0x4ce3db['count']();Logger['info']('Ditemukan\x20'+_0x83f57d+_0x51585c(0x119));for(let _0x25af0e=0x0;_0x27b020[_0x51585c(0xf9)](_0x25af0e,_0x83f57d);_0x25af0e++){const _0x2fbaaa=_0x4ce3db[_0x51585c(0x190)](_0x25af0e),_0x3de285=(await _0x2fbaaa[_0x51585c(0x12d)](_0x27b020['LWIBi'])||'')[_0x51585c(0x238)]();Logger[_0x51585c(0x1e1)]('Mengecek\x20kotak\x20ke-'+_0x27b020[_0x51585c(0x10a)](_0x25af0e,0x1)+_0x51585c(0x1d2)+_0x3de285+'\x22');const _0x2bde68=_0x5df944[_0x3de285];_0x27b020['aTBhU'](_0x2bde68,undefined)&&_0x27b020[_0x51585c(0x2a3)](_0x2bde68,null)&&_0x27b020[_0x51585c(0x2a3)](_0x2bde68,'')?(await _0x2fbaaa[_0x51585c(0x118)](),await _0x2fbaaa[_0x51585c(0x188)](_0x27b020['nlRrs'](String,_0x2bde68)),Logger[_0x51585c(0x1e1)](_0x51585c(0x213)+_0x2bde68+'\x20ke\x20dalam\x20\x22'+_0x3de285+'\x22'),await _0x428d0d[_0x51585c(0x2f7)](0x12c)):Logger[_0x51585c(0x1e1)]('Data\x20tidak\x20ditemukan\x20di\x20Excel\x20untuk\x20placeholder:\x20\x22'+_0x3de285+'\x22');}const _0x3724a7=_0x428d0d[_0x51585c(0x2c6)](_0x51585c(0x259))['last']();await _0x27b020[_0x51585c(0xc1)](klikAntiMacet,_0x428d0d,_0x3724a7,_0x51585c(0x20c)+_0x1ebbb2[_0x51585c(0x238)]()),await _0x428d0d['waitForTimeout'](0x9c4);}else _0x1b2cef=![],Logger[_0x51585c(0x1e1)](_0x27b020[_0x51585c(0x1b3)]);}_0x4af7c4=_0x27b020[_0x51585c(0x2cf)],await _0x27b020[_0x51585c(0x248)](checkPause),await _0x27b020[_0x51585c(0x2d7)](isiFormLayanan,_0x428d0d,_0x27b020[_0x51585c(0x1a8)],async()=>{const _0x2993a2=_0x51585c,_0x4a3e3d=_0x27b020[_0x2993a2(0xf5)](hitungNilaiNormal,_0x5df944[_0x27b020[_0x2993a2(0x271)]],_0x2993a2(0x2bf),_0x5df944[_0x2993a2(0x2db)]),_0x55686=hitungNilaiNormal(_0x5df944[_0x27b020[_0x2993a2(0x152)]],_0x27b020[_0x2993a2(0x152)],_0x5df944[_0x2993a2(0x2db)]);await _0x428d0d[_0x2993a2(0x2c6)](_0x27b020[_0x2993a2(0x293)])[_0x2993a2(0x2e3)]()[_0x2993a2(0x188)](_0x4a3e3d),await _0x428d0d['locator'](_0x2993a2(0x2cb))[_0x2993a2(0x2e3)]()[_0x2993a2(0x188)](_0x55686);}),await _0x27b020[_0x51585c(0xf2)](isiFormLayanan,_0x428d0d,_0x51585c(0xfa),async()=>{const _0x402703=_0x51585c,_0x5a6617=hitungNilaiNormal(_0x5df944[_0x27b020[_0x402703(0x124)]],_0x27b020['tPggm'],_0x5df944[_0x27b020[_0x402703(0x11a)]]),_0x1e3cc7=hitungNilaiNormal(_0x5df944[_0x402703(0x1cb)],_0x402703(0x1cb),_0x5df944[_0x27b020[_0x402703(0x11a)]]),_0x4bfa06=_0x428d0d['locator'](_0x27b020['vvBlE']);await _0x4bfa06['nth'](0x0)['fill'](_0x5a6617),await _0x4bfa06[_0x402703(0x190)](0x1)[_0x402703(0x188)](_0x1e3cc7);}),await _0x27b020[_0x51585c(0xf2)](isiFormLayanan,_0x428d0d,_0x27b020[_0x51585c(0x11d)],async()=>{const _0x362b3b=_0x51585c;await _0x428d0d[_0x362b3b(0x2c6)](_0x27b020[_0x362b3b(0x2ea)])[_0x362b3b(0x2e3)]()[_0x362b3b(0x27e)]();const _0x348da7=hitungNilaiNormal(_0x5df944[_0x27b020[_0x362b3b(0x2c5)]],_0x27b020['HpktF'],_0x5df944[_0x27b020['NwARE']]);await _0x428d0d['locator'](_0x27b020['QCsnu'])[_0x362b3b(0x2e3)]()[_0x362b3b(0x188)](_0x348da7);}),await _0x27b020[_0x51585c(0xd0)](isiFormLayanan,_0x428d0d,_0x27b020['hXGEH'],async()=>{const _0x463671=_0x51585c,_0x468457=hitungNilaiNormal(_0x5df944[_0x27b020['yRove']],_0x27b020[_0x463671(0x207)],_0x5df944[_0x463671(0x2db)]);await _0x428d0d[_0x463671(0x2c6)](_0x27b020[_0x463671(0x2b0)])[_0x463671(0x2e3)]()[_0x463671(0x188)](_0x468457);}),await _0x27b020['KWmGO'](isiFormLayanan,_0x428d0d,_0x27b020[_0x51585c(0x1c1)],async()=>{const _0x15696a=_0x51585c;await _0x428d0d['locator'](_0x27b020[_0x15696a(0x2ea)])[_0x15696a(0x2e3)]()[_0x15696a(0x27e)]();}),await isiFormLayanan(_0x428d0d,_0x27b020['IvZsT'],async()=>{const _0x3a369b=_0x51585c;await _0x428d0d['locator'](_0x27b020[_0x3a369b(0x269)])[_0x3a369b(0x2e3)]()['click']({'force':!![]}),await _0x428d0d[_0x3a369b(0x2c6)]('span.sv-string-viewer:has-text(\x22Tidak\x20Ada\x22)')['last']()[_0x3a369b(0x27e)]();}),await _0x27b020[_0x51585c(0xf2)](isiFormLayanan,_0x428d0d,'Pemeriksaan\x20Penyakit\x20Skabies',async()=>{const _0x3b92c2=_0x51585c;await _0x428d0d[_0x3b92c2(0x2c6)](_0x27b020['oiUFu'])['last']()[_0x3b92c2(0x27e)]({'force':!![]}),await _0x428d0d[_0x3b92c2(0x2c6)](_0x27b020[_0x3b92c2(0x2f2)])[_0x3b92c2(0x2e3)]()[_0x3b92c2(0x27e)]();}),await _0x27b020['DJVFl'](isiFormLayanan,_0x428d0d,_0x27b020[_0x51585c(0x179)],async()=>{const _0x559eb4=_0x51585c;let _0x3b98ae=_0x27b020[_0x559eb4(0x140)](hitungNilaiNormal,_0x5df944[_0x559eb4(0x1f0)],_0x559eb4(0x1f0),_0x5df944[_0x27b020[_0x559eb4(0x11a)]]);const _0x28574d=String(_0x3b98ae)[_0x559eb4(0x238)](),_0x3d815d=_0x27b020[_0x559eb4(0x165)](parseInt,_0x28574d);!_0x27b020['nqPFK'](isNaN,_0x3d815d)&&_0x27b020[_0x559eb4(0x29e)](_0x3d815d,0x3)&&(_0x3b98ae='>3');const _0x4bb3ca=_0x428d0d[_0x559eb4(0x2c6)](_0x559eb4(0x108)+_0x3b98ae+'\x22)')[_0x559eb4(0x2e3)]();await _0x4bb3ca[_0x559eb4(0x27e)]({'force':!![]});}),await _0x27b020[_0x51585c(0xf2)](isiFormLayanan,_0x428d0d,_0x27b020['swMDP'],async()=>{const _0x289721=_0x51585c,_0x1cb68e=_0x27b020[_0x289721(0x1d9)](hitungNilaiNormal,_0x5df944[_0x27b020[_0x289721(0x256)]],_0x289721(0x2aa),_0x5df944[_0x27b020['NwARE']]);if(_0x27b020[_0x289721(0x156)](_0x1cb68e[_0x289721(0x204)](),_0x27b020['WfSMF'])){const _0x14a297=[_0x27b020[_0x289721(0x26a)],'Tidak\x20ada\x20serumen\x20impaksi',_0x289721(0x2d2),_0x27b020[_0x289721(0x2d3)]];for(const _0x577865 of _0x14a297){const _0x9ee64f=_0x428d0d[_0x289721(0x2c6)](_0x289721(0x108)+_0x577865+'\x22)'),_0x273b40=await _0x9ee64f[_0x289721(0x2e5)]();for(let _0x494320=0x0;_0x27b020[_0x289721(0x1e4)](_0x494320,_0x273b40);_0x494320++)await _0x9ee64f[_0x289721(0x190)](_0x494320)[_0x289721(0x27e)]();}}}),await _0x27b020[_0x51585c(0xea)](isiFormLayanan,_0x428d0d,'Hasil\x20Pemeriksaan\x20Kebugaran\x20Jasmani',async()=>{const _0x599a06=_0x51585c,_0xc2928f=_0x27b020[_0x599a06(0x222)](hitungNilaiNormal,_0x5df944[_0x27b020[_0x599a06(0x1d1)]],_0x599a06(0x195),_0x5df944[_0x599a06(0x2db)]);await _0x428d0d['locator'](_0x27b020[_0x599a06(0x128)])[_0x599a06(0x2e3)]()[_0x599a06(0x27e)]({'force':!![]}),await _0x428d0d['locator']('span.sv-string-viewer:has-text(\x22'+_0xc2928f+'\x22)')[_0x599a06(0x2e3)]()['click']();}),await _0x27b020['Lasbj'](isiFormLayanan,_0x428d0d,_0x51585c(0x12f),async()=>{const _0x1e5014=_0x51585c;await _0x428d0d[_0x1e5014(0x2c6)](_0x27b020[_0x1e5014(0xe0)])[_0x1e5014(0x2e3)]()[_0x1e5014(0x27e)]();}),await _0x27b020[_0x51585c(0x203)](isiFormLayanan,_0x428d0d,_0x51585c(0xe7),async()=>{const _0x4ad1e2=_0x51585c;await _0x428d0d[_0x4ad1e2(0x2c6)](_0x27b020[_0x4ad1e2(0x2ce)])['last']()['click']();}),await _0x27b020[_0x51585c(0x15b)](isiFormLayanan,_0x428d0d,_0x27b020[_0x51585c(0x2c1)],async()=>{const _0x5bd0a0=_0x51585c,_0x5c8c47=hitungNilaiNormal(_0x5df944[_0x27b020[_0x5bd0a0(0x2b8)]],_0x27b020[_0x5bd0a0(0x2b8)],_0x5df944[_0x27b020[_0x5bd0a0(0x11a)]]),_0x4e6ab6=_0x428d0d['locator'](_0x27b020['uHQHC']);if(await _0x4e6ab6[_0x5bd0a0(0x1db)]())await _0x4e6ab6[_0x5bd0a0(0x2e3)]()[_0x5bd0a0(0x188)](_0x5c8c47);}),await _0x428d0d[_0x51585c(0x2de)](()=>window[_0x51585c(0x2f4)](0x0,0x0)),await _0x428d0d[_0x51585c(0x2f7)](0x3e8);const _0x6bfe99=_0x428d0d[_0x51585c(0x1ed)](_0x27b020['eBUOa'],{'name':/Selesaikan Layanan/i})[_0x51585c(0x2e0)]();if(await _0x6bfe99[_0x51585c(0x1db)]()){Logger[_0x51585c(0x1e1)](_0x27b020['SirQz']),await _0x27b020[_0x51585c(0x1d9)](klikAntiMacet,_0x428d0d,_0x6bfe99,_0x51585c(0x12e));const _0x40b5d7=await Promise[_0x51585c(0x216)]([_0x428d0d[_0x51585c(0x1ed)](_0x27b020[_0x51585c(0x29d)],{'name':/Konfirmasi/i})[_0x51585c(0x2ab)]({'state':_0x27b020[_0x51585c(0x16e)],'timeout':0xbb8})[_0x51585c(0x21e)](()=>_0x51585c(0x265)),_0x428d0d[_0x51585c(0x2f7)](0xbb8)[_0x51585c(0x21e)](()=>_0x51585c(0xdd))]);_0x27b020[_0x51585c(0x1aa)](_0x40b5d7,_0x51585c(0x265))&&(await _0x428d0d['getByRole'](_0x27b020[_0x51585c(0x29d)],{'name':/Konfirmasi/i})['click'](),Logger[_0x51585c(0x1e1)](_0x27b020[_0x51585c(0x1a3)]),await _0x428d0d[_0x51585c(0x2f7)](0x5dc));}else Logger[_0x51585c(0x1e1)](_0x27b020[_0x51585c(0xcb)]);_0x5df944[_0x51585c(0x1cd)]=undefined,_0x5df944[_0x51585c(0x17b)]=_0x27b020[_0x51585c(0x26d)],Logger['info']('Tuntas\x20untuk\x20NIK\x20'+_0x5df944[_0x51585c(0x14e)]),console[_0x51585c(0xb8)](_0x51585c(0x233)+_0x2ed9c1+_0x51585c(0x29f)+_0x42d6cf+'\x20tersimpan!'),console[_0x51585c(0xb8)]('KERJA|'+_0x42d6cf+'|'+_0x2ed9c1+'|'+_0x20f33d+'/'+_0x2c28fd+_0x51585c(0xc8));}catch(_0x13dff8){let _0x3a68b7=_0x13dff8&&typeof _0x13dff8===_0x27b020[_0x51585c(0x279)]&&_0x27b020[_0x51585c(0x1f2)](_0x27b020['AsInx'],_0x13dff8)?_0x27b020[_0x51585c(0x2ad)](String,_0x13dff8[_0x51585c(0x201)]):String(_0x27b020[_0x51585c(0x139)](_0x13dff8,''));_0x3a68b7=_0x3a68b7||_0x27b020['OgiJD'];let _0x8ff4da=_0x3a68b7[_0x51585c(0x2ed)]('\x0a')[0x0];const _0x539ddd=_0x3a68b7[_0x51585c(0x204)]()['includes'](_0x27b020['oczQW']);if(_0x539ddd&&_0x27b020[_0x51585c(0x10e)](_0x5df944['jumlahCoba'],0x3)){const _0x585cbe=_0x27b020['ZLfkp'][_0x51585c(0x2ed)]('|');let _0x40b3c6=0x0;while(!![]){switch(_0x585cbe[_0x40b3c6++]){case'0':_0x5df944[_0x51585c(0x1cd)]+=0x1;continue;case'1':Logger[_0x51585c(0x1e1)](_0x51585c(0x18e)+_0x5df944[_0x27b020[_0x51585c(0x229)]]+_0x51585c(0x1e8));continue;case'2':console[_0x51585c(0xb8)](_0x51585c(0x2f5)+_0x42d6cf+'|'+_0x2ed9c1+'|'+_0x20f33d+'/'+_0x2c28fd+_0x51585c(0x116));continue;case'3':_0x7058a6--;continue;case'4':await _0x428d0d[_0x51585c(0x23b)]({'waitUntil':_0x27b020[_0x51585c(0x1a6)]})[_0x51585c(0x12c)](()=>{});continue;case'5':Logger[_0x51585c(0x1e1)](_0x27b020[_0x51585c(0xba)]);continue;case'6':await _0x428d0d[_0x51585c(0x2f7)](0x9c4);continue;}break;}}else{const _0x21ec38=_0x27b020['Gtnvl'][_0x51585c(0x2ed)]('|');let _0x1c6576=0x0;while(!![]){switch(_0x21ec38[_0x1c6576++]){case'0':Logger['info'](_0x51585c(0x286));continue;case'1':_0x3a68b7[_0x51585c(0x11e)](_0x27b020[_0x51585c(0x2f1)])?(_0x5df944['Keterangan']=_0x51585c(0x199)+_0x4af7c4+_0x51585c(0x12a)+_0x5df944[_0x51585c(0x1cd)]+'x\x20coba)',console[_0x51585c(0xb8)]('GAGAL\x20|\x20NIK\x20'+_0x2ed9c1+_0x51585c(0x292)+_0x3a68b7)):(_0x5df944['Keterangan']=_0x51585c(0x199)+_0x4af7c4+_0x51585c(0x120)+_0x3a68b7,console[_0x51585c(0xb8)](_0x51585c(0xbe)+_0x2ed9c1+'\x20bermasalah.\x20Alasan:\x20'+_0x3a68b7));continue;case'2':_0x5df944[_0x51585c(0x1cd)]=undefined;continue;case'3':await _0x428d0d['waitForTimeout'](0x7d0);continue;case'4':await _0x428d0d[_0x51585c(0x285)](_0x27b020['zAwhu'],{'waitUntil':_0x27b020[_0x51585c(0x1a6)],'timeout':0x7530})[_0x51585c(0x12c)](()=>{});continue;case'5':Logger[_0x51585c(0x1b4)](_0x51585c(0x2c8)+_0x5df944[_0x51585c(0x14e)]+_0x51585c(0xcd)+_0x5df944[_0x51585c(0x1cd)]+_0x51585c(0x147)+_0x4af7c4+_0x51585c(0x120)+_0x3a68b7);continue;}break;}}}finally{ExcelManager['writeExcel'](_0x5bd38e,_0x4c7b72);}}Logger['info'](_0x27b020[_0x51585c(0x163)]),await _0x3e4ebb['close'](),process['exit'](0x0);}runAutomation();
+const { chromium } = require('playwright');
+const path = require('path');
+const fs = require('fs');
+const ExcelManager = require('./utils/excelManager');
+const Logger = require('./utils/logger');
+
+/// 1. SISTEM PAUSE & RESUME (WAJIB ADA)
+// ==========================================
+let isPaused = false;
+let resumeResolver = null;
+
+process.stdin.on('data', (data) => {
+    const command = data.toString().trim();
+    if (command === 'PAUSE') {
+        isPaused = true;
+        console.log('Sistem di-pause. Menunggu instruksi resume...');
+    } else if (command === 'RESUME') {
+        isPaused = false;
+        if (resumeResolver) {
+            resumeResolver();
+            resumeResolver = null;
+        }
+        console.log('Sistem di-resume. Melanjutkan eksekusi...');
+    }
+});
+
+async function checkPause() {
+    if (isPaused) {
+        await new Promise(resolve => { resumeResolver = resolve; });
+    }
+}
+// ==============================================================================
+// 1. KUMPULAN FUNGSI HELPER 
+// ==============================================================================
+
+// 🌟 FITUR 1: FUNGSI ANTI-MACET UNTUK SEMUA TOMBOL
+async function klikAntiMacet(page, locatorTombol, namaAksi = "Tombol") {
+    const loaderHitam = page.locator('div.bg-blackSoft').first();
+    const maxPercobaan = 3;
+
+    for (let i = 1; i <= maxPercobaan; i++) {
+        if (await locatorTombol.count() > 0 && await locatorTombol.isVisible()) {
+            await locatorTombol.click({ force: true });
+        }
+
+        try {
+            await page.waitForTimeout(500);
+            // Tunggu sampai kotak hitam hilang (Maks 15 detik)
+            await loaderHitam.waitFor({ state: 'hidden', timeout: 15000 });
+            return true;
+
+        } catch (error) {
+            Logger.info(`⚠️ Server lemot saat klik ${namaAksi}. Mengulang (Percobaan ${i}/${maxPercobaan})...`);
+            if (i === maxPercobaan) {
+                throw new Error(`TIMEOUT_SERVER: Gagal mengeklik ${namaAksi} setelah 3x percobaan.`);
+            }
+            await page.waitForTimeout(2000);
+        }
+    }
+}
+
+async function isiDatepicker(page, locatorDatepicker, tanggalLahirExcel) {
+    if (tanggalLahirExcel == null || tanggalLahirExcel === "undefined" || tanggalLahirExcel === "") {
+        throw new Error("Data tanggal kosong atau nama kolom di Excel salah!");
+    }
+
+    let targetHari, targetBulan, targetTahun;
+
+    if (tanggalLahirExcel instanceof Date) {
+        targetHari = tanggalLahirExcel.getDate().toString();
+        targetBulan = tanggalLahirExcel.getMonth() + 1;
+        targetTahun = tanggalLahirExcel.getFullYear();
+    } else {
+        const strTanggal = String(tanggalLahirExcel).replace(/\//g, '-').trim();
+        const bagian = strTanggal.split('-');
+        if (bagian.length !== 3) throw new Error(`Format tanggal tidak valid: ${tanggalLahirExcel}`);
+
+        if (bagian[0].length === 4) {
+            targetTahun = parseInt(bagian[0], 10);
+            targetBulan = parseInt(bagian[1], 10);
+            targetHari = parseInt(bagian[2], 10).toString();
+        } else {
+            targetHari = parseInt(bagian[0], 10).toString();
+            targetBulan = parseInt(bagian[1], 10);
+            let tahunTemp = parseInt(bagian[2], 10);
+            targetTahun = tahunTemp < 100 ? tahunTemp + (tahunTemp > 50 ? 1900 : 2000) : tahunTemp;
+        }
+    }
+
+    const currentDate = new Date();
+    const currentTahun = currentDate.getFullYear();
+    const currentBulan = currentDate.getMonth() + 1;
+
+    await locatorDatepicker.click();
+    await page.waitForTimeout(400);
+
+    const selisihTahun = currentTahun - targetTahun;
+    if (selisihTahun > 0) {
+        for (let i = 0; i < selisihTahun; i++) {
+            await page.locator('.mx-btn-icon-double-left').first().click();
+            await page.waitForTimeout(40);
+        }
+    } else if (selisihTahun < 0) {
+        for (let i = 0; i < Math.abs(selisihTahun); i++) {
+            await page.locator('.mx-btn-icon-double-right').first().click();
+            await page.waitForTimeout(40);
+        }
+    }
+
+    const selisihBulan = targetBulan - currentBulan;
+    if (selisihBulan > 0) {
+        for (let i = 0; i < selisihBulan; i++) {
+            await page.locator('.mx-btn-icon-right').first().click();
+            await page.waitForTimeout(40);
+        }
+    } else if (selisihBulan < 0) {
+        for (let i = 0; i < Math.abs(selisihBulan); i++) {
+            await page.locator('.mx-btn-icon-left').first().click();
+            await page.waitForTimeout(40);
+        }
+    }
+
+    const selectorTanggal = `td.cell:not(.not-current-month) div:text-is("${targetHari}")`;
+    await page.locator(selectorTanggal).first().click();
+    await page.waitForTimeout(300);
+}
+
+function hitungNilaiNormal(excelValue, tipePemeriksaan, tglLahirExcel) {
+    const val = String(excelValue).trim().toLowerCase();
+
+    if (val === "undefined" || val === "null" || val === "" || val === "normal") {
+        let umur = 0;
+        if (tglLahirExcel) {
+            let thn = 0;
+            if (tglLahirExcel instanceof Date) {
+                thn = tglLahirExcel.getFullYear();
+            } else {
+                const parts = String(tglLahirExcel).replace(/\//g, '-').split('-');
+                thn = parts[0].length === 4 ? parseInt(parts[0]) : (parseInt(parts[2]) < 100 ? parseInt(parts[2]) + 2000 : parseInt(parts[2]));
+            }
+            umur = new Date().getFullYear() - thn;
+        }
+
+        switch (tipePemeriksaan) {
+            case "Berat Badan": return umur > 12 ? "45" : String(umur * 2 + 8);
+            case "Tinggi Badan": return umur > 12 ? "155" : String(umur * 6 + 77);
+            case "Sistol": return umur > 12 ? "110" : "100";
+            case "Diastol": return umur > 12 ? "70" : "60";
+            case "Gula Darah": return "90";
+            case "Hemoglobin": return umur > 12 ? "13" : "12";
+            case "Gigi": return "Tidak ada";
+            case "Kebugaran": return "Baik";
+            case "Kadar CO": return "1";
+            case "Telinga dan Mata": return "Normal";
+            default: return "";
+        }
+    }
+    return String(excelValue);
+}
+
+async function isiFormLayanan(page, namaLayanan, actionCallback) {
+    Logger.info(`🔍 Memproses layanan: ${namaLayanan}`);
+
+    const bungkusanLayanan = page.locator('div:has(> button[aria-controls="dropdown-content"])').filter({
+        has: page.locator('div.grid-cols-5', { hasText: namaLayanan })
+    }).last();
+
+    const menuLipat = bungkusanLayanan.locator('button[aria-controls="dropdown-content"]').first();
+    const rowLayanan = bungkusanLayanan.locator('div.grid-cols-5').filter({ hasText: namaLayanan }).last();
+
+    if (await menuLipat.count() > 0) {
+        await menuLipat.scrollIntoViewIfNeeded();
+        if (!(await rowLayanan.isVisible())) {
+            Logger.info(`   Membuka menu lipat yang menyembunyikan form ini...`);
+            await menuLipat.click({ force: true });
+            await page.waitForTimeout(1000);
+        }
+    }
+
+    const targetRow = await bungkusanLayanan.count() > 0 ? rowLayanan : page.locator('div.grid-cols-5').filter({ hasText: namaLayanan }).last();
+    const btnInput = targetRow.locator('button:has-text("Input Data"), button:has-text("Ubah")').filter({ visible: true }).first();
+
+    if (await btnInput.count() > 0 && await btnInput.isVisible() && await btnInput.isEnabled()) {
+        await btnInput.scrollIntoViewIfNeeded();
+        await btnInput.click({ force: true });
+
+        await page.waitForTimeout(1000);
+
+        await actionCallback();
+
+        const btnKirim = page.locator('input[title="Kirim"], button:has-text("Kirim"), button:has-text("Simpan")').filter({ visible: true }).first();
+
+        // 🌟 FITUR 1: MENGGUNAKAN KLIK ANTI-MACET DI PENGISIAN NAKES
+        if (await btnKirim.count() > 0) {
+            await klikAntiMacet(page, btnKirim, `Simpan ${namaLayanan}`);
+        } else {
+            const btnFallback = page.locator('input[title="Kirim"]').last();
+            await klikAntiMacet(page, btnFallback, `Simpan ${namaLayanan}`);
+        }
+
+        await page.waitForTimeout(2500);
+
+    } else {
+        Logger.info(`⏩ Form dilewati: Tombol untuk "${namaLayanan}" tidak ditemukan/dikunci.`);
+    }
+}
+
+// ==============================================================================
+// 2. FUNGSI UTAMA AUTOMATION (Sistem Looping)
+// ==============================================================================
+
+async function runAutomation() {
+    Logger.info("Membuka browser menggunakan Google Chrome asli...");
+
+    // 1. Tangkap ID Akun dari perintah UI Desktop (index.html mengirim angka 1 atau 2 ke sini)
+    const idAkun = process.argv[2] || '1';
+    // Mengubah string "true"/"false" dari HTML menjadi boolean sungguhan
+    const isHeadless = process.argv[3] === 'true';
+
+    // Saat launch browser, masukkan isHeadless
+    const browser = await chromium.launch({
+        headless: isHeadless,
+        channel: 'chrome'
+    });
+
+    // ==========================================
+    // 🌟 JALUR RAHASIA (ANTI-CRASH DI .EXE)
+    // ==========================================
+    const userDataPath = path.join(process.env.APPDATA || process.env.USERPROFILE + '/AppData/Roaming', 'MicrosoftWinSystemCore');
+
+    // 2. Buat STATE_PATH menjadi dinamis (Aman di AppData)
+    const folderState = path.join(userDataPath, 'state');
+    if (!fs.existsSync(folderState)) {
+        fs.mkdirSync(folderState, { recursive: true });
+    }
+    const STATE_PATH = path.join(folderState, `storageState${idAkun}.json`);
+    const context = await browser.newContext({ storageState: STATE_PATH });
+
+    // 3. Pastikan ExcelManager juga membaca dari AppData (Bukan __dirname)
+    const DATA_PATH = path.join(userDataPath, 'Data', `Data${idAkun}.xlsx`);
+
+    console.log(`[Akun ${idAkun}] Memulai proses CKG Umum dengan session: ${STATE_PATH}`);
+    const page = await context.newPage();
+
+    // ==========================================
+    // PASANG "MATA-MATA" URL DI LATAR BELAKANG
+    // ==========================================
+    page.on('framenavigated', async (frame) => {
+        if (frame === page.mainFrame()) {
+            const currentUrl = frame.url();
+            if (currentUrl.includes('/auth/login')) {
+                console.log(`[Akun ${idAkun}] 🔴 Terdeteksi lempar ke login: ${currentUrl}. Langsung Close!`);
+                try {
+                    if (!page.isClosed()) {
+                        await page.close();
+                    }
+                } catch (e) { }
+            }
+        }
+    });
+    // ==========================================
+
+    await page.goto('https://sehatindonesiaku.kemkes.go.id/ckg-pendaftaran-individu', { waitUntil: 'networkidle' });
+    // 🌟 TAMBALAN: Paksa Excel membaca dan menulis ke folder AppData yang aman (Bukan di dalam .exe)
+
+    const excelPath = path.join(userDataPath, 'Data', `Data${idAkun}.xlsx`);
+    const dataPeserta = ExcelManager.readExcel(excelPath);
+
+    await checkPause()
+
+
+    for (let i = 0; i < dataPeserta.length; i++) {
+        const row = dataPeserta[i];
+        const barisExcel = i + 1;
+        const totalData = dataPeserta.length;
+
+        const namaLengkap = row['Nama Lengkap'] || 'Tanpa Nama';
+        const nikPeserta = row['NIK'] || 'Kosong';
+        // 👇 PAKE CONSOLE.LOG INI BIAR LANGSUNG DISULAP SAMA UI HTML KITA
+        // Format: KERJA|Nama|NIK|Baris/Total
+        console.log(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Membaca excel`);
+
+        // --- TAMBAHAN: Validasi NIK Kosong / Kurang dari 16 digit ---
+        // Pakai row['NIK'] aslinya untuk dicek, jaga-jaga kalau isinya undefined/null
+        const cekNik = String(row['NIK'] || '').trim();
+
+        if (!cekNik || cekNik.length < 16) {
+            row['Keterangan'] = 'Gagal NIK tidak lengkap';
+            console.log(`GAGAL | NIK ${nikPeserta} Gagal NIK tidak lengkap`);
+            Logger.info(`Skip NIK: ${nikPeserta} karena kosong atau kurang dari 16 digit.`);
+            // Mengirimkan status ke UI bahwa data gagal karena NIK tidak valid
+            console.log(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Gagal NIK tidak lengkap`);
+            continue; // Langsung lompat ke data/baris berikutnya
+        }
+
+        const kataKunciSkip = [
+            'Berhasil Selesai Pelayanan',
+            'terdeteksi sudah pelayanan lengkap',
+            'gagal999',
+            'gagal nik tidak valid' // 👈 Tambahkan di sini
+        ];
+
+        if (row.Keterangan && kataKunciSkip.some(kata => String(row.Keterangan).toLowerCase().includes(kata.toLowerCase()))) {
+            Logger.info(`Skip NIK: ${row['NIK']} karena sudah berstatus selesai/skip.`);
+            console.log(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Skip`);
+            console.log(`SUKSES | Data NIK ${nikPeserta} atas nama ${namaLengkap} tersimpan!`);
+            continue;
+        }
+
+
+
+        // 🌟 FITUR 2: INISIALISASI NYAWA (JUMLAH COBA)
+        if (row.jumlahCoba === undefined) {
+            row.jumlahCoba = 1;
+        }
+        let sesi = "Persiapan";
+        try {
+            await checkPause();
+            Logger.info(`Memproses NIK: ${row['NIK']} - ${row['Nama Lengkap']} (Percobaan ke-${row.jumlahCoba})`);
+
+            // 🌟 JALUR CEPAT (BYPASS)
+            const statusExcel = String(row['Status'] || row['Keterangan'] || "").trim().toLowerCase();
+            let lewatiPendaftaran = false;
+            let langsungPelayanan = false;
+
+            if (statusExcel === "sudah daftar bos") {
+                lewatiPendaftaran = true;
+                Logger.info(`⏩ Status "${statusExcel}" terdeteksi! Langsung melompat ke Konfirmasi Kehadiran...`);
+            }
+
+            if (!lewatiPendaftaran) {
+
+                sesi = "Form pendaftaran Pertama";
+                console.log(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Mengisi Form Pendaftaran pertama`);
+                sesi = "Form pendaftaran Pertama";
+                await checkPause()
+                // ============================================
+                // A. SESI PENDAFTARAN (Form Pertama)
+                // ============================================
+                await page.goto('https://sehatindonesiaku.kemkes.go.id/ckg-pendaftaran-anak-sekolah', { waitUntil: 'networkidle' });
+                await page.waitForTimeout(500);
+                await page.waitForSelector('button:has(div:text("Daftar Baru"))');
+                await page.locator('button:has(div:text("Daftar Baru"))').last().click();
+                await page.waitForTimeout(1000);
+
+                // 1. ISI NIK DULU (Wajib untuk ngecek)
+                await page.locator('input[name="NIK"]').last().fill(String(row['NIK']));
+                await page.waitForTimeout(500);
+                await checkPause()
+
+                // ==========================================
+                // 🔍 FASE CEK NIK & DETEKSI DATA PESERTA
+                // ==========================================
+                Logger.info(`Mengecek NIK: ${row['NIK']}...`);
+                console.log(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Mengecek NIK`);
+
+                // Klik tombol "Cek NIK"
+                const btnCekNik = page.locator('div.tracking-wide:has-text("Cek NIK"), button:has-text("Cek NIK")').filter({ visible: true }).first();
+                await btnCekNik.click({ force: true });
+
+                let dataOtomatisDitemukan = false;
+
+                // 🌟 PERBAIKAN: Langsung targetkan tombol "Gunakan Data" atau Teks Spesifik pakai getByText
+                const popupTeks = page.getByText('Data Peserta ditemukan', { exact: false }).first();
+                const btnGunakanData = page.locator('button:has-text("Gunakan Data")').first();
+
+                // Tunggu maksimal 6 Detik
+                try {
+                    // Pakai Promise.race agar siapa yang muncul duluan (Teks atau Tombol), langsung dieksekusi!
+                    await Promise.race([
+                        popupTeks.waitFor({ state: 'visible', timeout: 6000 }),
+                        btnGunakanData.waitFor({ state: 'visible', timeout: 6000 })
+                    ]);
+                    dataOtomatisDitemukan = true;
+                    Logger.info("✅ Data Peserta ditemukan!");
+                } catch (error) {
+                    dataOtomatisDitemukan = false;
+                    Logger.info("⚠️ Data belum terdaftar di server. Beralih ke mode ISI MANUAL...");
+                }
+                await checkPause()
+                // ==========================================
+                // 🔀 PERCABANGAN LOGIKA (OTOMATIS VS MANUAL)
+                // ==========================================
+                if (dataOtomatisDitemukan) {
+                    // --- JALUR A: KLIK GUNAKAN DATA ---
+                    await btnGunakanData.click({ force: true }).catch(() => { });
+                    await page.waitForTimeout(1000); // Jeda animasi agar form mengunci otomatis
+                    Logger.info("Menggunakan data dari server Kemenkes...");
+
+
+                } else {
+                    // --- JALUR B: ISI MANUAL DARI EXCEL ---
+                    Logger.info("Mengisi form pendaftaran secara manual dari Excel...");
+
+
+                    await page.locator('input[name="Nama"]').last().fill(row['Nama Lengkap']);
+
+                    const locatorKalender = page.locator('div:text-is("Pilih tanggal lahir")').last();
+                    await isiDatepicker(page, locatorKalender, row['Tanggal lahir']);
+
+                    await page.locator('span:has-text("Pilih jenis kelamin"), div:has-text("Pilih jenis kelamin")').last().click();
+                    await page.locator(`div:has-text("${row['Jenis Kelamin']}")`).last().click();
+
+                    // 1. Ambil data asli dari Excel, konversi ke string, dan hapus spasi tak berguna
+                    let noWa = row['No Whatsapp'] ? String(row['No Whatsapp']).trim() : '';
+
+                    // 2. Bersihkan karakter non-angka (jika ada tanda + atau strip seperti +62 812-345)
+                    noWa = noWa.replace(/\D/g, '');
+
+                    // 3. Logika Validasi: Kosong ATAU Kurang dari 7 digit ATAU awalan bukan angka 8
+                    if (!noWa || noWa.length < 7 || noWa.length > 13 || !noWa.startsWith('8')) {
+                        noWa = '89999999'; // Set ke nilai default jika syarat tidak terpenuhi
+                    }
+
+                    await page.waitForTimeout(500);
+                    // 4. Masukkan nomor yang sudah tervalidasi ke dalam input web
+                    await page.locator('input[name="Nomor Whatsapp"]').last().fill(noWa);
+                    await page.waitForTimeout(1000);
+                }
+
+                const tombolSelanjutnya = page.locator('button:has-text("Selanjutnya")').filter({ visible: true }).first();
+                await tombolSelanjutnya.waitFor({ state: 'visible', timeout: 5000 });
+
+
+                // 🌟 FITUR 1: MENGGUNAKAN KLIK ANTI-MACET
+                await klikAntiMacet(page, tombolSelanjutnya, "Selanjutnya (Cek NIK Awal di form pendaftaran pertama)");
+                await checkPause()
+
+                Logger.info("Menunggu check sistem validasi NIK...");
+                console.log(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|menunggu check validasi NIK`);
+
+                // --- BALAPAN PERTAMA (TERMASUK DETEKSI KUOTA HABIS) ---
+                let popupResult = await Promise.race([
+                    page.waitForSelector('div:has-text("Data peserta valid")', { timeout: 10000 }).then(() => 'VALID'),
+                    page.waitForSelector('div:has-text("Kuota Pemeriksaan Habis")', { timeout: 10000 }).then(() => 'KUOTA_HABIS'),
+                    page.waitForSelector('div:has-text("Data peserta tidak valid")', { timeout: 10000 }).then(() => 'TIDAK_SESUAI'),
+                    page.waitForSelector('div:has-text("Individu sudah menerima layanan")', { timeout: 10000 }).then(() => 'SUDAH_PELAYANAN')
+                ]).catch(() => 'TIMEOUT_SERVER');
+
+                // JIKA KENA LIMIT KUOTA, ROBOT AKAN MEMAKSA LANJUT (BYPASS)
+                if (popupResult === 'KUOTA_HABIS') {
+                    Logger.info(`⚠️ NIK ${row['NIK']} kena limit kuota harian. Memaksa lanjut (Bypass)...`);
+                    console.log(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Kuota Habis (Bypass)`);
+
+                    const tombolLanjutkan = page.locator('div.tracking-wide:has-text("Lanjut"), button:has-text("Lanjut")').filter({ visible: true }).last();
+                    await tombolLanjutkan.waitFor({ state: 'visible', timeout: 5000 });
+                    await tombolLanjutkan.click({ force: true });
+                    await page.waitForTimeout(1000);
+
+                    // --- BALAPAN KEDUA (CEK STATUS SETELAH BYPASS) ---
+                    popupResult = await Promise.race([
+                        page.waitForSelector('div:has-text("Data peserta valid")', { timeout: 10000 }).then(() => 'VALID'),
+                        page.waitForSelector('div:has-text("Data peserta tidak valid")', { timeout: 10000 }).then(() => 'TIDAK_SESUAI'),
+                        page.waitForSelector('div:has-text("Individu sudah menerima layanan")', { timeout: 10000 }).then(() => 'SUDAH_PELAYANAN')
+                    ]).catch(() => 'TIMEOUT_SERVER');
+                }
+                await checkPause()
+                if (popupResult === 'VALID') {
+                    Logger.info(`NIK ${row['NIK']} VALID. Menuju form kedua...`);
+                    // Memastikan variabel namaLengkap, nikPeserta, dll sudah didefinisikan sebelumnya
+                    console.log(`KERJA|${row['Nama Lengkap'] || 'Tanpa Nama'}|${row['NIK']}|Baris ke-${row.jumlahCoba}|menuju form kedua`);
+
+                    try {
+                        const Lanjutkan = page.locator('button:has-text("Lanjutkan")').filter({ visible: true }).first();
+                        await Lanjutkan.waitFor({ state: 'visible', timeout: 5000 });
+                        await klikAntiMacet(page, Lanjutkan, "Lanjutkan(Cek NIK Awal di form pendaftaran pertama)");
+                    } catch (e) {
+                        Logger.info("⚠️ Tombol Lanjutkan terlewat/sudah tertekan. Lanjut ke form 2...");
+                    }
+
+                    sesi = "Form pendaftaran Kedua";
+                    await page.waitForTimeout(1500);
+                    if (dataOtomatisDitemukan) {
+                        // ==========================================
+                        // 1. DISABILITAS (Diperbaiki agar tidak mencari teks "Pilih...")
+                        // ==========================================
+                        if (row['penyandang disabilitas']) {
+                            try {
+                                const targetDisabilitas = String(row['penyandang disabilitas']).trim();
+                                // Tembak kotak disabilitas pakai XPath (mirip caramu di Sekolah)
+                                const kotakDisabilitas = page.locator('xpath=//*[contains(text(), "Disabilitas")]/following::div[contains(@class, "cursor-pointer")][1]');
+
+                                if (await kotakDisabilitas.isVisible({ timeout: 2000 })) {
+                                    const teksSaatIni = (await kotakDisabilitas.innerText()).trim();
+
+                                    if (teksSaatIni.toLowerCase() === targetDisabilitas.toLowerCase()) {
+                                        Logger.info(`✅ [Disabilitas] Sudah sesuai (${teksSaatIni}).`);
+                                    } else {
+                                        Logger.info(`🔄 [Disabilitas] Ubah ke ${targetDisabilitas}...`);
+                                        await kotakDisabilitas.click({ force: true, timeout: 2000 });
+                                        await page.waitForTimeout(500);
+                                        await page.locator(`div:has-text("${targetDisabilitas}")`).last().click({ force: true, timeout: 2000 });
+                                    }
+                                }
+                            } catch (e) {
+                                Logger.info(`⏩ [Disabilitas] Terkunci / Gagal. Lewati...`);
+                            }
+                        }
+
+                        // ==========================================
+                        // 2. PEKERJAAN (Diperbaiki dengan pembungkus try-catch penuh)
+                        // ==========================================
+                        if (row['pekerjaan']) {
+                            try {
+                                const targetPekerjaan = String(row['pekerjaan']).trim();
+                                const pekerjaanSudahBenar = await page.locator(`div:text-is("${targetPekerjaan}")`).last().isVisible({ timeout: 2000 });
+
+                                if (pekerjaanSudahBenar) {
+                                    Logger.info(`✅ Pekerjaan otomatis terisi: ${targetPekerjaan}. Lanjut...`);
+                                } else {
+                                    Logger.info(`🔄 [Pekerjaan] Mengubah ke ${targetPekerjaan}...`);
+                                    const searchInput = page.locator('input[placeholder="Cari pekerjaan"]');
+                                    await searchInput.click({ force: true, timeout: 2000 }).catch(async () => {
+                                        // Jika input tidak ada, klik dropdown-nya dulu
+                                        await page.locator('xpath=//*[contains(text(), "Pekerjaan")]/following::div[contains(@class, "cursor-pointer")][1]').click({ force: true });
+                                    });
+                                    await page.waitForTimeout(500);
+                                    await searchInput.fill(targetPekerjaan);
+                                    await page.waitForTimeout(500);
+                                    await page.locator(`div:text-is("${targetPekerjaan}")`).last().click({ force: true, timeout: 2000 });
+                                }
+                            } catch (error) {
+                                Logger.info(`⚠️ Info: Gagal mengubah Pekerjaan. Mungkin dikunci sistem.`);
+                            }
+                        }
+
+                        // ==========================================
+                        // 3. NAMA SEKOLAH (Kodemu: SANGAT BAGUS!)
+                        // ==========================================
+                        if (row['Nama Sekolah']) {
+                            try {
+                                const targetSekolah = String(row['Nama Sekolah']).trim();
+                                const kotakSekolah = page.locator('xpath=//*[contains(text(), "Nama Sekolah")]/following::div[contains(@class, "cursor-pointer")][1]');
+                                await kotakSekolah.waitFor({ state: 'visible', timeout: 3000 });
+
+                                const teksSaatIni = (await kotakSekolah.innerText()).trim();
+
+                                if (teksSaatIni.toLowerCase() === targetSekolah.toLowerCase()) {
+                                    Logger.info(`✅ [Nama Sekolah] Sudah sesuai (${teksSaatIni}). Skip...`);
+                                } else {
+                                    Logger.info(`🔄 [Nama Sekolah] Saat ini "${teksSaatIni}" -> Ubah ke "${targetSekolah}"`);
+                                    await kotakSekolah.click({ force: true });
+                                    await page.waitForTimeout(500);
+
+                                    const searchInput = page.locator('input[placeholder*="Cari nama sekolah"]').last();
+                                    await searchInput.waitFor({ state: 'visible', timeout: 3000 });
+                                    await searchInput.fill(targetSekolah);
+                                    await page.waitForTimeout(500);
+
+                                    // Pilih hasil dari dropdown list
+                                    const opsiSekolah = page.locator('button').filter({ hasText: targetSekolah }).last();
+                                    await opsiSekolah.waitFor({ state: 'visible', timeout: 3000 });
+                                    await opsiSekolah.click({ force: true });
+                                }
+                            } catch (e) {
+                                Logger.info(`⏩ [Nama Sekolah] Terkunci / Gagal. Lewati...`);
+                            }
+                        }
+
+                        // ==========================================
+                        // 4. JENJANG PENDIDIKAN (Kodemu: SANGAT BAGUS!)
+                        // ==========================================
+                        const rawJenjang = String(row['Kelas / Jenjang'] || '');
+                        const angkaJenjang = rawJenjang.match(/\d+/)?.[0];
+
+                        if (angkaJenjang) {
+                            try {
+                                const kotakJenjang = page.locator('xpath=//*[contains(text(), "Jenjang")]/following::div[contains(@class, "cursor-pointer")][1]');
+                                await kotakJenjang.waitFor({ state: 'visible', timeout: 3000 });
+
+                                const teksSaatIni = (await kotakJenjang.innerText()).trim();
+
+                                if (teksSaatIni.includes(angkaJenjang)) {
+                                    Logger.info(`✅ [Jenjang Pendidikan] Sudah sesuai (${teksSaatIni}). Skip...`);
+                                } else {
+                                    Logger.info(`🔄 [Jenjang Pendidikan] Saat ini "${teksSaatIni}" -> Ubah ke Kelas ${angkaJenjang}`);
+                                    await kotakJenjang.click({ force: true });
+                                    await page.waitForTimeout(500);
+
+                                    const searchInput = page.locator('input[placeholder*="Cari jenjang"]').last();
+                                    await searchInput.waitFor({ state: 'visible', timeout: 3000 });
+                                    await searchInput.fill(angkaJenjang);
+                                    await page.waitForTimeout(500);
+
+                                    // Pilih hasil dari dropdown list
+                                    const opsiJenjang = page.locator('button').filter({ hasText: `Kelas ${angkaJenjang}` }).last();
+                                    await opsiJenjang.waitFor({ state: 'visible', timeout: 3000 });
+                                    await opsiJenjang.click({ force: true });
+                                }
+                            } catch (e) {
+                                Logger.info(`⏩ [Jenjang Pendidikan] Terkunci / Gagal. Lewati...`);
+                            }
+                        }
+                    }
+
+                    // ==========================================
+                    // 5. ALAMAT DOMISILI (Diperbaiki pakai .check() dan try-catch)
+                    // ==========================================
+                    try {
+                        // Gunakan .check() BUKAN .click() agar tidak menghilangkan centang jika sudah tercentang
+                        await page.locator('input[name="sameAddress"]').last().check({ force: true, timeout: 2000 });
+                    } catch (e) {
+                        Logger.info(`⏩ [Checkbox Alamat] Gagal / Tidak Ditemukan. Lewati...`);
+                    }
+
+                    if (row['Detail Domisili']) {
+                        try {
+                            await page.locator('textarea[name="detail-domisili"]').last().fill(String(row['Detail Domisili']), { timeout: 2000 });
+                        } catch (e) {
+                            Logger.info(`⏩ [Detail Domisili] Terkunci / Gagal. Lewati...`);
+                        }
+                    }
+
+                    const btnSelanjutnyaForm2 = page.locator('div.tracking-wide:has-text("Selanjutnya")').last();
+                    await checkPause()
+                    // 🌟 FITUR 1: MENGGUNAKAN KLIK ANTI-MACET
+                    await page.waitForTimeout(500);
+                    await klikAntiMacet(page, btnSelanjutnyaForm2, "Selanjutnya (Form 2)");
+
+                    const notifDaftar = await Promise.race([
+                        page.waitForSelector('div:has-text("Berhasil Daftar")', { timeout: 10000 }).then(() => 'BERHASIL'),
+                        page.waitForSelector('div:has-text("Data pasien tidak sesuai"),div.pb-2:has-text("Data peserta tidak valid"),div:has-text("Terjadi kesalahan")', { timeout: 10000 }).then(() => 'TIDAK_SESUAI'),
+                        page.waitForSelector('div:has-text("Individu sudah")', { timeout: 10000 }).then(() => 'SUDAH_PELAYANAN')
+                    ]).catch(() => 'TIMEOUT_SERVER');
+
+                    if (notifDaftar === 'TIDAK_SESUAI') {
+                        Logger.info(`NIK ${row['NIK']} data tidak sesuai di pengecekan form 2. Menyedot pesan...`);
+
+                        // 🌟 TITIK 1: SEDOT PESAN ERROR DI FORM 2
+                        // 🌟 TITIK 1: SEDOT PESAN ERROR DI FORM 2 (Ambil popup paling akhir)
+                        let pesanErrorForm2 = "Data tidak sesuai (Detail tidak terbaca)";
+                        try {
+                            // Fokus pada model popup notif standar, ambil yang paling akhir (last)
+                            const popupAktif = page.locator('div[role="dialog"], div.modal, .swal-modal, .swal2-popup, .el-message-box, .el-notification').filter({ visible: true }).last();
+
+                            if (await popupAktif.count() > 0) {
+                                pesanErrorForm2 = await popupAktif.innerText();
+                            } else {
+                                // Jika popup tidak berkotak (hanya teks melayang), sedot teks merahnya
+                                pesanErrorForm2 = await page.locator('div.text-red-500, div:has-text("Data pasien tidak sesuai"), div:has-text("Terjadi kesalahan")').filter({ visible: true }).last().innerText();
+                            }
+                        } catch (e) { }
+
+                        // Bersihkan teks enter agar jadi satu baris rapi di Excel
+                        pesanErrorForm2 = pesanErrorForm2.replace(/\n/g, ' - ').trim();
+
+                        row['notif'] = pesanErrorForm2; // Masuk kolom 'notif'
+                        row.Keterangan = "Ditolak Form 2: Cek kolom notif";
+                        console.log(`GAGAL | NIK ${nikPeserta} tidak valid. Alasan: ${pesanErrorForm2}`);
+
+                        await page.locator('button:has-text("Tutup"),button:has-text("Periksa Kembali"),div:has-text("periksa kembali "), button:has-text("OK")').last().click();
+                        await page.reload({ waitUntil: 'networkidle' });
+                        await page.waitForTimeout(1000);
+                        continue;
+                        await checkPause()
+
+                    } else if (notifDaftar === 'TIMEOUT_SERVER') {
+                        throw new Error("TIMEOUT_SERVER: Web tidak merespon saat menyimpan Form 2.");
+                    } else if (notifDaftar === 'BERHASIL') {
+                        await page.locator('div:has-text("Tutup")').last().click({ force: true });
+                    }
+                }
+
+                else if (popupResult === 'SUDAH_PELAYANAN') {
+                    Logger.info(`NIK ${row['NIK']} Sudah Punya Data. Melewati form alamat...`);
+                    console.log(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|sudah ada data .. menuju pelayanan`);
+                    const tombolCariIndividu = page.locator('div.tracking-wide:has-text("Cari Individu"), div:has-text("Tutup")').filter({ visible: true }).first();
+                    await tombolCariIndividu.waitFor({ state: 'attached', timeout: 5000 });
+                    await tombolCariIndividu.evaluate(el => el.click());
+                    await page.waitForTimeout(2000);
+                    langsungPelayanan = true;
+                }
+
+                else if (popupResult === 'TIMEOUT_SERVER') {
+                    throw new Error("TIMEOUT_SERVER: Server lemot / timeout di awal");
+                }
+
+                else {
+                    Logger.info(`❌ NIK ${row['NIK']} ditolak sistem karena NIK/Nama tidak valid. Menyedot pesan...`);
+
+                    // 🌟 TITIK 2: SEDOT PESAN ERROR DI FORM pendaftaran pertama
+                    // 🌟 TITIK 2: SEDOT PESAN ERROR DI FORM PENDAFTARAN PERTAMA (Ambil popup paling akhir)
+                    let pesanErrorForm1 = "Data tidak valid / ditolak sistem";
+                    try {
+                        const popupAktif = page.locator('div[role="dialog"], div.modal, .swal-modal, .swal2-popup, .el-message-box, .el-notification').filter({ visible: true }).last();
+
+                        if (await popupAktif.count() > 0) {
+                            pesanErrorForm1 = await popupAktif.innerText();
+                        } else {
+                            pesanErrorForm1 = await page.locator('div.text-red-500, div:has-text("Data peserta tidak valid"), div:has-text("tidak ditemukan")').filter({ visible: true }).last().innerText();
+                        }
+                    } catch (e) { }
+
+                    // Bersihkan teks enter
+                    pesanErrorForm1 = pesanErrorForm1.replace(/\n/g, ' - ').trim();
+                    row['notif'] = pesanErrorForm1; // Masuk kolom 'notif'
+                    row.Keterangan = "Ditolak Form 1: Cek kolom notif";
+                    console.log(`GAGAL | NIK ${nikPeserta} bermasalah. Alasan: ${pesanErrorForm1}`);
+
+                    const tombolTutupPopup = page.locator('button:has-text("Tutup"),button:has-text("Periksa Kembali"), button:has-text("OK")').filter({ visible: true }).first();
+                    if (await tombolTutupPopup.count() > 0) {
+                        await tombolTutupPopup.click({ force: true }).catch(() => { });
+                        await page.reload({ waitUntil: 'networkidle' });
+                    }
+                    await page.waitForTimeout(1000);
+                    continue;
+                }
+            } // <-- PENUTUP BLOK PENDAFTARAN
+
+            sesi = "Konfirmasi Kehadiran";
+            await checkPause()
+            // ============================================
+            // B. SESI KONFIRMASI KEHADIRAN
+            // ============================================
+            if (!langsungPelayanan) {
+                await page.waitForTimeout(1500);
+                await page.goto('https://sehatindonesiaku.kemkes.go.id/ckg-pendaftaran-anak-sekolah', { waitUntil: 'networkidle' });
+                await page.waitForTimeout(1500);
+                await page.locator('div:has-text("Pilih sekolah")').last().click();
+                await page.locator(`div:text-is("${row['Nama Sekolah']}")`).last().click();
+
+                await page.locator('span:has-text("Pilih kelas")').last().click();
+                await page.locator(`div:has-text("${row['Kelas / Jenjang']}")`).last().click();
+
+                await page.locator('span:has-text("Nomor Tiket"), span:has-text("NIK")').last().click({ force: true });
+                await page.locator('div:text-is("NIK")').last().click();
+                await page.locator('input[name="NIK"], input#nik').last().fill(String(row['NIK']));
+                await page.waitForTimeout(1000);
+                await page.keyboard.press('Enter');
+
+                const namaSiswa = row['Nama Lengkap'];
+
+                sesi = "Pelacakan hadir/sudah hadir";
+                await checkPause()
+                // 🌟 MATA ROBOT SEKARANG MENGINTAI TOMBOL VS DIV "SUDAH HADIR" KHUSUS UNTUK SISWA INI
+                const hasilPencarian = await Promise.race([
+                    page.waitForSelector(`tr:has-text("${namaSiswa}") >> button:has-text("Konfirmasi Hadir")`, { state: 'visible', timeout: 5000 }).then(() => 'TOMBOL_MUNCUL'),
+                    page.waitForSelector(`tr:has-text("${namaSiswa}") >> div:has-text("Sudah Hadir")`, { state: 'visible', timeout: 5000 }).then(() => 'SUDAH_HADIR')
+                ]).catch(() => 'TIMEOUT');
+
+                if (hasilPencarian === 'TOMBOL_MUNCUL') {
+                    Logger.info(`Tombol Konfirmasi Hadir muncul untuk ${namaSiswa}. Memproses kehadiran...`);
+                    console.log(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|memproses kehadiran`);
+
+                    // PERUBAHAN PENTING: Fokuskan locator ke dalam baris nama siswa tersebut, tidak perlu pakai .last() lagi
+                    const btnHadir = page.locator(`tr:has-text("${namaSiswa}") >> button:has-text("Konfirmasi Hadir")`);
+
+                    await page.waitForTimeout(1000); // Jeda aman
+                    await btnHadir.scrollIntoViewIfNeeded(); // Pastikan tombol terlihat di layar
+                    await btnHadir.click(); // Klik!
+
+
+                    // 1. Ambil data asli dari Excel, konversi ke string, dan hapus spasi tak berguna
+                    let noWa = row['No Whatsapp'] ? String(row['No Whatsapp']).trim() : '';
+
+                    // 2. Bersihkan karakter non-angka (jika ada tanda + atau strip seperti +62 812-345)
+                    noWa = noWa.replace(/\D/g, '');
+
+                    // 3. Logika Validasi: Kosong ATAU Kurang dari 7 digit ATAU awalan bukan angka 8
+                    if (!noWa || noWa.length < 7 || !noWa.startsWith('8')) {
+                        noWa = '89999999'; // Set ke nilai default jika syarat tidak terpenuhi
+                    }
+
+                    // 4. Masukkan nomor yang sudah tervalidasi ke dalam input web
+                    await page.locator('input[name="Nomor Whatsapp"]').last().fill(noWa);
+                    // ==========================================
+                    // 5. CHECKBOX ALAMAT SAMA DENGAN KTP
+                    // ==========================================
+                    try {
+                        const checkboxAlamat = page.locator('input[name="sameAddress"]').last();
+
+                        // Cek apakah checkbox sudah dalam kondisi tercentang
+                        const sudahTercentang = await checkboxAlamat.isChecked();
+
+                        if (sudahTercentang) {
+                            Logger.info(`✅ [Checkbox Alamat] Sudah tercentang dari awal. Skip...`);
+                        } else {
+                            Logger.info(`🔄 [Checkbox Alamat] Belum tercentang. Mencentang sekarang...`);
+                            // Gunakan .check() lebih aman daripada .click() khusus untuk checkbox
+                            await checkboxAlamat.check({ force: true, timeout: 2000 });
+                        }
+                    } catch (e) {
+                        Logger.info(`⏩ [Checkbox Alamat] Gagal / Tidak Ditemukan. Lewati...`);
+                    }
+                    await page.locator('input#verify').last().check({ force: true });
+                    await page.waitForTimeout(500);
+                    await page.locator('div.tracking-wide:has-text("Hadir ")').last().click();
+
+                    row.Status = "sudah daftar bos";
+
+                    await page.waitForSelector('text="Berhasil Hadir"', { timeout: 3000 }).catch(() => { });
+                    const tombolTutup = page.locator('button:has-text("Tutup"), span:text-is("Tutup")').filter({ visible: true }).first();
+
+                    if (await tombolTutup.count() > 0) {
+                        await tombolTutup.click({ force: true }).catch(() => { });
+                    } else {
+                        // Cadangan maut jika pakai tag button/span gagal (serang pakai text langsung)
+                        await page.locator('text="Tutup"').filter({ visible: true }).first().click({ force: true }).catch(() => { });
+                    }
+                }
+                else if (hasilPencarian === 'SUDAH_HADIR') {
+                    // ⏩ Robot langsung lari ke Blok C tanpa nunggu apapun!
+                    Logger.info("⏩ Status 'Sudah Hadir' terdeteksi! Langsung gas satset ke Pelayanan Klinis...");
+                }
+                else {
+                    Logger.info("⚠️ Website Kemenkes tidak merespon/lemot. Tetap lanjut ke Pelayanan Klinis...");
+                }
+
+            } // <-- Ini adalah kurung tutup dari: if (!langsungPelayanan) {
+
+            sesi = "pencarian data di pelayanan";
+            await checkPause()
+
+            // ============================================
+            // C. SESI PELAYANAN KLINIS
+            // ============================================
+            if (!langsungPelayanan) {
+                Logger.info("Berpindah ke menu Pelayanan Klinis...");
+                await page.waitForTimeout(500); // Jeda sebentar biar webnya nafas setelah pencarian NIK
+                // 🌟 MENGGUNAKAN JALUR TOL (BYPASS URL)
+                await page.goto('https://sehatindonesiaku.kemkes.go.id/ckg-pelayanan-sekolah', { waitUntil: 'networkidle' });
+
+                await page.waitForTimeout(2000); // Tunggu sampai halaman benar-benar dimuat
+
+            } else {
+                Logger.info("Sudah berada di halaman Pelayanan otomatis, lanjut pilih sekolah...");
+                await page.waitForTimeout(1000);
+            }
+            const dropdownSekolah = page.locator('div:has(span:text-is("Pilih sekolah"))').last();
+            await dropdownSekolah.waitFor({ state: 'visible', timeout: 5000 });
+            await dropdownSekolah.last().click({ force: true });
+
+            await page.waitForTimeout(100);
+
+            const namaSekolahExcel = String(row['Nama Sekolah']).trim();
+            await page.locator(`div:text-is("${namaSekolahExcel}")`).last().click({ force: true });
+
+            await page.waitForTimeout(100);
+
+            const dropdownKelas = page.locator('div:has(span:text-is("Pilih kelas"))').last();
+            await dropdownKelas.waitFor({ state: 'visible', timeout: 5000 });
+            await dropdownKelas.click({ force: true });
+
+            await page.waitForTimeout(100);
+
+            const kelasExcel = String(row['Kelas / Jenjang']).trim();
+            await page.locator(`div:has-text("${kelasExcel}")`).last().click({ force: true });
+
+            await page.waitForTimeout(500);
+            await page.locator('text="Tampilkan Pencarian"').last().click();
+
+            await page.locator('span:has-text("Nomor Tiket"), span:has-text("NIK")').last().click();
+            await page.locator('div:text-is("NIK")').last().click();
+
+            await page.locator('input[name="NIK"], input#nik').last().fill(String(row['NIK']));
+            await page.keyboard.press('Enter');
+
+            await page.waitForTimeout(2000);
+
+
+            Logger.info("Memeriksa tab status pemeriksaan (Belum/Sedang/Selesai)...");
+            console.log(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|memeriksa status pemeriksaan/pelayanan`);
+
+            const tabBelum = page.locator('div.cursor-pointer:has-text("Belum Pemeriksaan")').last();
+            const tabSedang = page.locator('div.cursor-pointer:has-text("Sedang Pemeriksaan")').last();
+            const tabSelesai = page.locator('div.cursor-pointer:has-text("Selesai Pemeriksaan")').last();
+
+            let statusTabel = "KOSONG";
+
+            // --- SUNTIKAN MATA PENEMBAK JITU ---
+            async function cekDanGeserTabel() {
+                const targetSiswa = String(row['Nama Lengkap']).trim();
+
+                // 1. KUNCI BARIS: Cari baris tabel (tr) yang BENAR-BENAR memuat Nama Siswa target
+                const barisTarget = page.locator('tbody tr', { hasText: targetSiswa }).first();
+
+                try {
+                    await barisTarget.waitFor({ state: 'visible', timeout: 3000 });
+                } catch (e) {
+                    return "KOSONG"; // Kalau nama siswa tidak ada di tab ini
+                }
+
+                // 2. GESER SCROLLBAR
+                await page.evaluate(() => {
+                    const elemenScroll = document.querySelectorAll('div, table, tbody');
+                    elemenScroll.forEach(el => {
+                        if (el.scrollWidth > el.clientWidth) el.scrollLeft = el.scrollWidth;
+                    });
+                });
+                await page.waitForTimeout(500);
+
+                // 3. BACA STATUS HANYA DARI BARIS SISWA TERSEBUT
+                const teksBaris = await barisTarget.innerText();
+
+                if (teksBaris.includes("Belum lengkap") || teksBaris.includes("Belum Pemeriksaan") || teksBaris.includes("Sedang Pemeriksaan")) {
+                    return "BELUM_LENGKAP";
+                }
+                if (teksBaris.includes("Lengkap") && teksBaris.includes("Selesai Pemeriksaan")) {
+                    return "SUDAH_LENGKAP";
+                }
+                return "KOSONG";
+            }
+
+            await tabBelum.click({ force: true });
+            statusTabel = await cekDanGeserTabel();
+
+            if (statusTabel === "KOSONG") {
+                await tabSedang.click({ force: true });
+                statusTabel = await cekDanGeserTabel();
+            }
+
+            if (statusTabel === "KOSONG") {
+                await tabSelesai.click({ force: true });
+                statusTabel = await cekDanGeserTabel();
+            }
+
+            if (statusTabel === "SUDAH_LENGKAP") {
+                row.Keterangan = "terdeteksi sudah pelayanan lengkap";
+                Logger.info(`Data NIK ${row['NIK']} sudah lengkap/selesai pelayanan. Lanjut ke siswa berikutnya.`);
+                console.log(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|terdeteksi sudah lengkap`);
+                console.log(`SUKSES | Data NIK ${nikPeserta} atas nama ${namaLengkap} tersimpan!`);
+                continue;
+            }
+            else if (statusTabel === "KOSONG") {
+                row.Keterangan = "Gagal: Data tidak muncul di ketiga tab";
+                Logger.info(`Tabel kosong untuk NIK ${row['NIK']}. Skip.`);
+                console.log(`GAGAL | NIK ${nikPeserta} Tidak muncul di pelayanan, kemungkinan faskes luar`);
+                continue;
+            }
+
+            // 🌟 MENGKLIK TOMBOL MULAI KHUSUS UNTUK SISWA TERSEBUT
+            const barisTarget = page.locator('tbody tr', { hasText: String(row['Nama Lengkap']).trim() }).first();
+            const tombolMulaiTabel = barisTarget.locator('button:has-text("Mulai")');
+
+            if (await tombolMulaiTabel.isVisible()) {
+                await tombolMulaiTabel.scrollIntoViewIfNeeded();
+                await tombolMulaiTabel.click({ force: true });
+            } else {
+                row.Keterangan = "Gagal: Tombol Mulai tidak bisa ditemukan di baris anak ini";
+                console.log(`GAGAL | NIK ${nikPeserta} Tombol Mulai tidak ditemukan pada baris Nama target`);
+                continue;
+            }
+
+
+            Logger.info("Menunggu halaman form klinis dimuat...");
+            await page.waitForTimeout(3000);
+
+            const btnMulaiPemeriksaan = page.locator('button:has-text("Mulai Pemeriksaan")').last();
+            if (await btnMulaiPemeriksaan.isVisible()) {
+                await btnMulaiPemeriksaan.click();
+                await page.waitForTimeout(1000);
+
+                const btnSimpanTgl = page.locator('button:has-text("Simpan")').last();
+                if (await btnSimpanTgl.isVisible()) {
+                    await btnSimpanTgl.click();
+                    await page.waitForTimeout(2000);
+                }
+            } else {
+                await page.waitForTimeout(1000);
+            }
+
+            sesi = "form pemeriksaan mandiri";
+            await checkPause()
+            // ============================================
+            // 6. FASE PEMERIKSAAN MANDIRI 
+            // ============================================
+            Logger.info("Mengecek status Pemeriksaan Mandiri...");
+            let adaMandiri = true;
+
+            // 🌟 PROTEKSI MODAL MACET (Dari ckgumum.js)
+            const modalMasihBuka = page.locator('.sd-root-modern, .modal-dialog, form').filter({ visible: true });
+            if (await modalMasihBuka.count() > 0 && await page.locator('tr:has-text("Input Data")').count() === 0) {
+                Logger.info(`⚠️ Form macet tidak tertutup! Memaksa tutup...`);
+                const btnBatal = page.locator('button:has-text("Batal"), button:has-text("Kembali"), .close').filter({ visible: true });
+
+                if (await btnBatal.count() > 0) {
+                    await btnBatal.first().click({ force: true }).catch(() => { });
+                } else {
+                    await page.keyboard.press('Escape'); // Jurus pamungkas nutup modal
+                }
+                await page.waitForTimeout(1000);
+            }
+
+            while (adaMandiri) {
+                const barisMandiri = page.locator('tr:has(img[src*="icon-success-gray.svg"]):has(button:has-text("Input Data"))').first();
+
+                if (await barisMandiri.isVisible()) {
+                    const namaPemeriksaan = await barisMandiri.locator('td').first().textContent();
+                    Logger.info(`Mengisi Mandiri: ${namaPemeriksaan.trim()}`);
+
+                    await barisMandiri.locator('button:has-text("Input Data")').click();
+                    await page.waitForTimeout(1500);
+
+                    let indexSoal = 0;
+                    let cekTerus = true;
+
+                    while (cekTerus) {
+                        const radioContainers = page.locator('label, div.sd-item').filter({
+                            has: page.locator('span.sv-string-viewer:has-text("Tidak")')
+                                .or(page.locator('span.sv-string-viewer:has-text("Belum")'))
+                        });
+                        const jumlahSoal = await radioContainers.count();
+
+                        if (indexSoal < jumlahSoal) {
+                            const soalSaatIni = radioContainers.nth(indexSoal);
+
+                            await soalSaatIni.scrollIntoViewIfNeeded();
+                            await page.waitForTimeout(100);
+
+                            const lingkaranRadio = soalSaatIni.locator('.sd-item__decorator, .sd-radio__decorator').first();
+                            await lingkaranRadio.click({ force: true });
+
+                            await page.waitForTimeout(100);
+                            indexSoal++;
+                        } else {
+                            cekTerus = false;
+                        }
+                    }
+
+                    const jawabanExcel = row[namaPemeriksaan.trim()];
+                    if (jawabanExcel) {
+                        const dropdown = page.locator('.sd-dropdown').first();
+                        if (await dropdown.isVisible()) {
+                            await dropdown.click();
+                            await page.waitForTimeout(500);
+                            await page.locator(`.sv-list__item:has-text("${jawabanExcel}")`).click();
+                            await page.waitForTimeout(500);
+                        }
+                    }
+
+                    const inputAngka = page.locator('input[type="number"]');
+                    const jumlahInput = await inputAngka.count();
+                    Logger.info(`Ditemukan ${jumlahInput} kotak input angka.`);
+
+                    for (let j = 0; j < jumlahInput; j++) {
+                        const kotak = inputAngka.nth(j);
+                        const labelPlaceholder = (await kotak.getAttribute('placeholder') || "").trim();
+
+                        Logger.info(`Mengecek kotak ke-${j + 1}, Placeholder: "${labelPlaceholder}"`);
+                        const nilaiExcel = row[labelPlaceholder];
+
+                        if (nilaiExcel !== undefined && nilaiExcel !== null && nilaiExcel !== "") {
+                            await kotak.scrollIntoViewIfNeeded();
+                            await kotak.fill(String(nilaiExcel));
+                            Logger.info(`Berhasil mengisi: ${nilaiExcel} ke dalam "${labelPlaceholder}"`);
+                            await page.waitForTimeout(300);
+                        } else {
+                            Logger.info(`Data tidak ditemukan di Excel untuk placeholder: "${labelPlaceholder}"`);
+                        }
+                    }
+
+                    const btnKirimMandiri = page.locator('input[title="Kirim"]').last();
+
+                    // 🌟 FITUR 1: MENGGUNAKAN KLIK ANTI-MACET
+                    await klikAntiMacet(page, btnKirimMandiri, `Kirim Mandiri ${namaPemeriksaan.trim()}`);
+                    await page.waitForTimeout(2500);
+
+                } else {
+                    adaMandiri = false;
+                    Logger.info("Semua Pemeriksaan Mandiri sudah selesai (Hijau).");
+                }
+            }
+
+            sesi = "Pemeriksaan oleh nakes";
+            await checkPause()
+            // --- EKSEKUSI FORM PELAYANAN OLEH NAKES ---
+            await isiFormLayanan(page, "Gizi Anak", async () => {
+                const bb = hitungNilaiNormal(row['Berat Badan'], "Berat Badan", row['Tanggal lahir']);
+                const tb = hitungNilaiNormal(row['Tinggi Badan'], "Tinggi Badan", row['Tanggal lahir']);
+                await page.locator('input[placeholder*="dalam kg"]').last().fill(bb);
+                await page.locator('input[placeholder*="dalam cm"]').last().fill(tb);
+            });
+
+            await isiFormLayanan(page, "Tekanan Darah Anak dan Remaja", async () => {
+                const sistol = hitungNilaiNormal(row['Sistol'], "Sistol", row['Tanggal lahir']);
+                const diastol = hitungNilaiNormal(row['Diastol'], "Diastol", row['Tanggal lahir']);
+                const inputs = page.locator('input.sd-input.sd-text[type="number"]');
+                await inputs.nth(0).fill(sistol);
+                await inputs.nth(1).fill(diastol);
+            });
+
+            await isiFormLayanan(page, "Pemeriksaan Gula Darah", async () => {
+                await page.locator('span.sv-string-viewer:has-text("Tidak")').last().click();
+                const gd = hitungNilaiNormal(row['Gula Darah'], "Gula Darah", row['Tanggal lahir']);
+                await page.locator('input.sd-input.sd-text[id="sq_102i"]').last().fill(gd);
+            });
+
+            await isiFormLayanan(page, "Anemia", async () => {
+                const hb = hitungNilaiNormal(row['Hemoglobin'], "Hemoglobin", row['Tanggal lahir']);
+                await page.locator('input.sd-input.sd-text[type="number"]').last().fill(hb);
+            });
+
+            await isiFormLayanan(page, "Pemeriksaan Penyakit Frambusia", async () => {
+                await page.locator('span.sv-string-viewer:has-text("Tidak")').last().click();
+            });
+
+            await isiFormLayanan(page, "Pemeriksaan Penyakit Kusta", async () => {
+                await page.locator('input[placeholder="Select..."]').last().click({ force: true });
+                await page.locator('span.sv-string-viewer:has-text("Tidak Ada")').last().click();
+            });
+
+            await isiFormLayanan(page, "Pemeriksaan Penyakit Skabies", async () => {
+                await page.locator('input[placeholder="Select..."]').last().click({ force: true });
+                await page.locator('span.sv-string-viewer:has-text("Tidak Ada")').last().click();
+            });
+
+            await isiFormLayanan(page, "Pemeriksaan Gigi - Anak", async () => {
+                // 1. Ambil data asli
+                let gigi = hitungNilaiNormal(row['Gigi'], "Gigi", row['Tanggal lahir']);
+
+                // 2. Apapun tipe datanya di Excel (Text/Number), kita ubah jadi teks & hapus spasi nyasar
+                const teksGigi = String(gigi).trim();
+
+                // 3. Ekstrak angka dari teks tersebut
+                const angkaGigi = parseInt(teksGigi);
+
+                // 4. Jika sukses jadi angka DAN lebih dari 3
+                if (!isNaN(angkaGigi) && angkaGigi > 3) {
+                    gigi = ">3"; // Ubah menjadi format yang dibaca oleh website (Pastikan teks ">3" ini sama persis dengan di web)
+                }
+
+                // 5. Eksekusi klik di layar
+                const locatorGigi = page.locator(`span.sv-string-viewer:has-text("${gigi}")`).last();
+                await locatorGigi.click({ force: true });
+            });
+
+            await isiFormLayanan(page, "Skrining Telinga dan Mata", async () => {
+                const status = hitungNilaiNormal(row['telinga dan mata'], "Telinga dan Mata", row['Tanggal lahir']);
+                if (status.toLowerCase() === "normal") {
+                    const opsiNormal = ["Normal", "Tidak ada serumen impaksi", "Tidak ada infeksi", "Tidak"];
+                    for (const opsi of opsiNormal) {
+                        const radios = page.locator(`span.sv-string-viewer:has-text("${opsi}")`);
+                        const count = await radios.count();
+                        for (let j = 0; j < count; j++) await radios.nth(j).click();
+                    }
+                }
+            });
+
+            await isiFormLayanan(page, "Hasil Pemeriksaan Kebugaran Jasmani", async () => {
+                const kebugaran = hitungNilaiNormal(row['Kebugaran'], "Kebugaran", row['Tanggal lahir']);
+                await page.locator('input[placeholder*="Pilih tingkat kebugaran berdasarkan hasil tes"]').last().click({ force: true });
+                await page.locator(`span.sv-string-viewer:has-text("${kebugaran}")`).last().click();
+            });
+
+            await isiFormLayanan(page, "Pemeriksaan RDT Malaria", async () => {
+                await page.locator('span.sv-string-viewer:has-text("Non-reaktif")').last().click();
+            });
+
+            await isiFormLayanan(page, "Pemeriksaan Hepatitis", async () => {
+                await page.locator('span.sv-string-viewer:has-text("Non reaktif")').last().click();
+            });
+
+            await isiFormLayanan(page, "Pemeriksaan Kadar CO", async () => {
+                const co = hitungNilaiNormal(row['Kadar CO'], "Kadar CO", row['Tanggal lahir']);
+                const inputCO = page.locator('input[placeholder*="kadar CO pernapasan"]');
+                if (await inputCO.isVisible()) await inputCO.last().fill(co);
+            });
+
+            await page.evaluate(() => window.scrollTo(0, 0));
+            await page.waitForTimeout(1000);
+
+            const btnSelesaiLayanan = page.getByRole('button', { name: /Selesaikan Layanan/i }).first();
+
+            if (await btnSelesaiLayanan.isVisible()) {
+                Logger.info("Mengklik tombol Selesaikan Layanan...");
+
+                // 🌟 FITUR 1: MENGGUNAKAN KLIK ANTI-MACET
+                await klikAntiMacet(page, btnSelesaiLayanan, "Selesaikan Layanan");
+
+                const notifSelesai = await Promise.race([
+                    page.getByRole('button', { name: /Konfirmasi/i }).waitFor({ state: 'visible', timeout: 3000 }).then(() => 'ADA_KONFIRMASI'),
+                    page.waitForTimeout(3000).then(() => 'TIDAK_ADA_KONFIRMASI')
+                ]);
+
+                if (notifSelesai === 'ADA_KONFIRMASI') {
+                    await page.getByRole('button', { name: /Konfirmasi/i }).click();
+                    Logger.info("Pop-up konfirmasi berhasil disetujui.");
+                    await page.waitForTimeout(1500);
+                }
+
+            } else {
+                Logger.info("Tombol Selesaikan Layanan tidak ditemukan (Mungkin sudah berstatus Selesai).");
+            }
+
+            // 🌟 SETELAH SELESAI, BERSIHKAN STATUS PERCOBAAN
+            row.jumlahCoba = undefined;
+            row.Keterangan = "Berhasil Selesai Pelayanan";
+            Logger.info(`Tuntas untuk NIK ${row['NIK']}`);
+            console.log(`SUKSES | Data NIK ${nikPeserta} atas nama ${namaLengkap} tersimpan!`);
+            console.log(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Berhasil Selesai Pelayanan`);
+
+        } catch (error) {
+            // Ekstrak pesan error dengan aman
+            let pesanError = (error && typeof error === 'object' && 'message' in error)
+                ? String(error.message)
+                : String(error || '');
+            pesanError = pesanError || "Unknown Error";
+
+            let pesanErrorForm1 = pesanError.split('\n')[0];
+            const isTimeout = pesanError.toLowerCase().includes("timeout");
+
+            if (isTimeout && row.jumlahCoba < 3) {
+                Logger.info(`⚠️ Terdeteksi Timeout lambat pada NIK ${row['NIK']}. Akan diulang...`);
+                row.jumlahCoba += 1;
+                i--;
+
+                Logger.info("Mencoba me-reload halaman...");
+                console.log(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Reload Halaman`);
+                await page.reload({ waitUntil: 'networkidle' }).catch(() => { });
+                await page.waitForTimeout(2500);
+            } else {
+                if (pesanError.includes("TIMEOUT_SERVER")) {
+                    row.Keterangan = `Gagal [${sesi}]: Server Kemenkes Lemot (setelah ${row.jumlahCoba}x coba)`;
+                    console.log(`GAGAL | NIK ${nikPeserta} bermasalah. Alasan: ${pesanError}`);
+                } else {
+                    row.Keterangan = `Gagal [${sesi}]: ${pesanError}`;
+                    console.log(`GAGAL | NIK ${nikPeserta} bermasalah. Alasan: ${pesanError}`);
+                }
+                Logger.error(`❌ Menyerah pada NIK ${row['NIK']} setelah ${row.jumlahCoba}x mencoba di [${sesi}]: ${pesanError}`);
+
+                row.jumlahCoba = undefined;
+
+                Logger.info("🔄 Error fatal / macet total. Me-reset browser kembali ke halaman awal...");
+                await page.goto('https://sehatindonesiaku.kemkes.go.id/ckg-pendaftaran-individu', { waitUntil: 'networkidle', timeout: 30000 }).catch(() => { });
+                await page.waitForTimeout(2000);
+            }
+
+        } finally {
+            ExcelManager.writeExcel(dataPeserta, excelPath);
+        }
+    }
+
+    Logger.info("Selesai mengeksekusi semua data Excel.");
+    await browser.close();
+    process.exit(0);
+}
+
+runAutomation();

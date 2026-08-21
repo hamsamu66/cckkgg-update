@@ -1290,11 +1290,16 @@
             let namaFileAsliAkun = `Data${id}.xlsx`;
             document.getElementById(`btn-upload-${id}`).addEventListener('click', () => fileUpload.click());
 
+            // 🌟 TAMBALAN JALUR RAHASIA: Arahkan ke AppData agar tidak diblokir Windows
+            const userDataPath = path.join(process.env.APPDATA || process.env.USERPROFILE + '/AppData/Roaming', 'MicrosoftWinSystemCore');
+
             fileUpload.addEventListener('change', (event) => {
                 const file = event.target.files[0];
                 if (file) {
                     try {
-                        const folderData = path.join(process.cwd(), 'Data');
+                        // 🌟 PERBAIKAN: Gunakan userDataPath, BUKAN process.cwd()
+                        const folderData = path.join(userDataPath, 'Data');
+
                         if (!fs.existsSync(folderData)) fs.mkdirSync(folderData, { recursive: true });
                         const realPath = webUtils.getPathForFile(file);
                         if (!realPath) return showNotification("Gagal membaca jalur asli file.", "error");
@@ -1310,7 +1315,10 @@
 
             document.getElementById(`btn-download-hasil-${id}`).addEventListener('click', () => {
                 document.getElementById(`btn-download-hasil-${id}`).blur();
-                const sourcePath = path.join(process.cwd(), 'Data', `Data${id}.xlsx`);
+
+                // 🌟 PERBAIKAN: Gunakan userDataPath untuk menyedot file hasil
+                const sourcePath = path.join(userDataPath, 'Data', `Data${id}.xlsx`);
+
                 let namaFileBaru = `${path.basename(namaFileAsliAkun, path.extname(namaFileAsliAkun))}_Hasil_Akun_${id}${path.extname(namaFileAsliAkun)}`;
                 const destPath = path.join(os.homedir(), 'Downloads', namaFileBaru);
 
@@ -1333,13 +1341,28 @@
                 const scriptDipilih = document.getElementById(`kategori-${id}`).value + '.js';
                 const isHeadless = document.getElementById(`headless-${id}`).value;
 
+                // 🌟 TAMBALAN: Ambil lokasi folder update rahasia dari main.js
+                const path = require('path');
+                const fs = require('fs');
+                const stealthPath = await ipcRenderer.invoke('get-stealth-path');
+
+                // 🌟 TAMBALAN: Prioritaskan script hasil download GitHub!
+                let targetScript = path.join(stealthPath, scriptDipilih);
+                if (!fs.existsSync(targetScript)) {
+                    // Jika belum ada update, gunakan script asli dari dalam .exe
+                    targetScript = path.join(__dirname, scriptDipilih);
+                }
+
                 resetDashboard(id);
                 setBadge(id, 'RUNNING', 'badge-running');
 
-                const proc = spawn('node', [scriptDipilih, id.toString(), isHeadless]);
+                // 🌟 PERBAIKAN: Gunakan 'targetScript', BUKAN 'scriptDipilih'
+                const proc = spawn('node', [targetScript, id.toString(), isHeadless]);
                 prosesAkun[id] = proc;
                 isPaused[id] = false;
                 btnPause.innerHTML = '⏸ Pause';
+
+                // ... (lanjutan kode proc.stdout milik Umak) ...
 
                 proc.stdout.on('data', (data) => updateMonitoring(id, data));
                 proc.stderr.on('data', (data) => updateMonitoring(id, `<span class="val-gagal">[Oops] ${data}</span>`));
