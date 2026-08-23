@@ -2,8 +2,20 @@ const { chromium } = require('playwright-core');
 const path = require('path');
 const fs = require('fs');
 const { app, ipcMain } = require('electron'); // 🌟 TAMBAHAN: Tarik app & ipcMain dari Electron
-const ExcelManager = require('./Utils/excelManager');
-const Logger = require('./utils/logger');
+function panggilModul(jalurRelatif) {
+    const pathUpdate = path.join(app.getPath('userData'), jalurRelatif);
+    if (fs.existsSync(pathUpdate)) {
+        return require(pathUpdate);
+    }
+    // app.getAppPath() akan mengarah ke dalam app.asar (file .exe)
+    return require(path.join(app.getAppPath(), jalurRelatif));
+}
+
+// CONTOH PENGGUNAAN:
+// Hapus ini: const ExcelManager = require('./Utils/excelManager');
+// Ganti jadi ini:
+const ExcelManager = panggilModul('Utils/excelManager.js');
+const Logger = require('./Utils/Logger');
 
 // ==============================================================================
 // 1. KUMPULAN FUNGSI HELPER 

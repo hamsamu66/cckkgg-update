@@ -16,7 +16,7 @@ function panggilModul(jalurRelatif) {
 // Hapus ini: const ExcelManager = require('./Utils/excelManager');
 // Ganti jadi ini:
 const ExcelManager = panggilModul('Utils/excelManager.js');
-const Logger = require('./utils/logger');
+const Logger = require('./Utils/Logger');
 
 // ==============================================================================
 // 1. KUMPULAN FUNGSI HELPER 
