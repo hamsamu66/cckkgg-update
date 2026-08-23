@@ -2,20 +2,7 @@ const { chromium } = require('playwright-core');
 const path = require('path');
 const fs = require('fs');
 const { app, ipcMain } = require('electron'); // 🌟 TAMBAHAN: Tarik app & ipcMain dari Electron
-// Fungsi pintar: Cari di folder Update dulu, kalau gagal cari di bawaan .exe
-function panggilModul(jalurRelatif) {
-    const pathUpdate = path.join(app.getPath('userData'), jalurRelatif);
-    if (fs.existsSync(pathUpdate)) {
-        return require(pathUpdate);
-    }
-    // app.getAppPath() akan mengarah ke dalam app.asar (file .exe)
-    return require(path.join(app.getAppPath(), jalurRelatif));
-}
-
-// CONTOH PENGGUNAAN:
-// Hapus ini: const ExcelManager = require('./Utils/excelManager');
-// Ganti jadi ini:
-const ExcelManager = panggilModul('Utils/excelManager.js');
+const ExcelManager = require('./utils/excelManager');
 const Logger = require('./utils/logger');
 
 // ==============================================================================
@@ -246,9 +233,23 @@ async function isiFormLayanan(page, namaLayanan, actionCallback) {
             await klikAntiMacet(page, btnFallback, `Simpan ${namaLayanan}`);
         }
 
-        // 🌟 PERBAIKAN: dulu nunggu tetap 2500ms. Sekarang nunggu form/modal-nya
-        // beneran tertutup (maks 3 detik) baru lanjut ke layanan berikutnya.
-        await formLayanan.waitFor({ state: 'hidden', timeout: 3000 }).catch(() => { });
+        // 🌟 PERBAIKAN: tunggu form/modal-nya beneran tertutup (tanda submit berhasil).
+        const berhasilTersimpan = await formLayanan.waitFor({ state: 'hidden', timeout: 3000 }).then(() => true).catch(() => false);
+
+        if (!berhasilTersimpan) {
+            // 🌟 PERBAIKAN: form masih terbuka setelah Kirim -> kemungkinan besar ada
+            // jawaban wajib yang kosong (data belum ada di Excel), bukan soal loading
+            // server. Keluar lewat tombol Batal/Kembali, lanjut ke pemeriksaan berikutnya.
+            Logger.info(`⚠️ "${namaLayanan}" sepertinya ada jawaban wajib yang kosong (data belum ada di Excel). Melewati...`);
+            const btnBatal = page.locator('button:has-text("Batal"), button:has-text("Kembali"), .close').filter({ visible: true }).first();
+            if (await btnBatal.count() > 0) {
+                await btnBatal.click({ force: true }).catch(() => { });
+            } else {
+                await page.keyboard.press('Escape');
+            }
+            await page.waitForTimeout(500);
+        }
+
         await page.waitForTimeout(300);
     } else {
         Logger.info(`⏩ Form dilewati: Tombol untuk "${namaLayanan}" tidak ditemukan/dikunci.`);
@@ -892,6 +893,12 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
                 await checkPause();
 
                 let adaMandiri = true;
+                // 🌟 PERBAIKAN: nama pemeriksaan yang gagal kirim karena ada jawaban wajib
+                // yang kosong (data belum ada di Excel) dicatat di sini, supaya tidak
+                // ketemu & diulang-ulang terus (infinite loop) — langsung lanjut ke
+                // pemeriksaan mandiri lain yang belum diproses.
+                const soalMandiriDilewati = new Set();
+
                 const modalMasihBuka = page.locator('.sd-root-modern, .modal-dialog, form').filter({ visible: true });
                 if (await modalMasihBuka.count() > 0 && await page.locator('tr:has-text("Input Data")').count() === 0) {
                     const btnBatal = page.locator('button:has-text("Batal"), button:has-text("Kembali"), .close').filter({ visible: true });
@@ -905,11 +912,25 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
 
                 while (adaMandiri) {
                     await checkPause();
-                    const barisMandiri = page.locator('tr:has(img[src*="icon-success-gray.svg"]):has(button:has-text("Input Data"))').first();
 
-                    if (await cekVisibleTunggu(barisMandiri)) {
-                        const namaPemeriksaan = await barisMandiri.locator('td').first().textContent();
+                    // 🌟 PERBAIKAN: cari baris pending PERTAMA yang namanya belum ada di
+                    // `soalMandiriDilewati` (dulu asal ambil baris pertama tanpa cek ini).
+                    const semuaBarisPending = page.locator('tr:has(img[src*="icon-success-gray.svg"]):has(button:has-text("Input Data"))');
+                    const jumlahPending = await semuaBarisPending.count();
 
+                    let barisMandiri = null;
+                    let namaPemeriksaan = null;
+                    for (let k = 0; k < jumlahPending; k++) {
+                        const kandidat = semuaBarisPending.nth(k);
+                        const namaKandidat = (await kandidat.locator('td').first().textContent() || '').trim();
+                        if (!soalMandiriDilewati.has(namaKandidat)) {
+                            barisMandiri = kandidat;
+                            namaPemeriksaan = namaKandidat;
+                            break;
+                        }
+                    }
+
+                    if (barisMandiri && await cekVisibleTunggu(barisMandiri)) {
                         await barisMandiri.locator('button:has-text("Input Data")').click();
                         // 🌟 PERBAIKAN: dulu nunggu tetap 1500ms, sekarang nunggu form soal
                         // beneran siap (maks 3 detik sbg jaring pengaman) baru isi jawaban.
@@ -967,10 +988,25 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
 
                         const btnKirimMandiri = page.locator('input[title="Kirim"]').last();
                         await klikAntiMacet(page, btnKirimMandiri, `Kirim Mandiri ${namaPemeriksaan.trim()}`);
-                        // 🌟 PERBAIKAN: dulu nunggu tetap 2500ms, sekarang nunggu form/modal-nya
-                        // beneran tertutup (maks 3 detik) baru cari soal mandiri berikutnya.
-                        await page.locator('.sd-root-modern, .modal-dialog, form').filter({ visible: true }).first()
-                            .waitFor({ state: 'hidden', timeout: 3000 }).catch(() => { });
+                        // 🌟 PERBAIKAN: tunggu form/modal-nya beneran tertutup (tanda submit berhasil).
+                        const berhasilTersimpanMandiri = await page.locator('.sd-root-modern, .modal-dialog, form').filter({ visible: true }).first()
+                            .waitFor({ state: 'hidden', timeout: 3000 }).then(() => true).catch(() => false);
+
+                        if (!berhasilTersimpanMandiri) {
+                            // 🌟 PERBAIKAN: form masih terbuka setelah Kirim -> kemungkinan besar ada
+                            // jawaban wajib yang kosong (data belum ada di Excel), bukan soal loading
+                            // server. Keluar lewat tombol Batal/Kembali, catat sebagai dilewati, lanjut.
+                            Logger.info(`⚠️ "${namaPemeriksaan}" sepertinya ada jawaban wajib yang kosong (data belum ada di Excel). Melewati...`);
+                            soalMandiriDilewati.add(namaPemeriksaan);
+                            const btnBatalMandiri = page.locator('button:has-text("Batal"), button:has-text("Kembali"), .close').filter({ visible: true }).first();
+                            if (await btnBatalMandiri.count() > 0) {
+                                await btnBatalMandiri.click({ force: true }).catch(() => { });
+                            } else {
+                                await page.keyboard.press('Escape');
+                            }
+                            await page.waitForTimeout(500);
+                        }
+
                         await page.waitForTimeout(300);
                     } else {
                         adaMandiri = false;
