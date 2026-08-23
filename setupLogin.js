@@ -3,6 +3,19 @@ const path = require('path');
 const fs = require('fs');
 const { app, ipcMain } = require('electron');
 
+// 1. Tambahkan fungsi pencarian Chrome di sini
+function getChromePath() {
+    const paths = [
+        "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+        path.join(process.env.LOCALAPPDATA || '', "Google\\Chrome\\Application\\chrome.exe")
+    ];
+    for (let p of paths) {
+        if (fs.existsSync(p)) return p;
+    }
+    return null;
+}
+
 async function jalankanLogin(idAkun, emailUser, passUser, eventSender) {
     try {
         const userDataPath = app.getPath('userData');
@@ -15,33 +28,18 @@ async function jalankanLogin(idAkun, emailUser, passUser, eventSender) {
 
         eventSender.send('log-update', idAkun, '🌐 Mencari Google Chrome...');
 
-        // Cari Chrome atau Edge Fisik di Windows User
-        const paths = [
-            "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
-            "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
-            path.join(process.env.LOCALAPPDATA || '', "Google\\Chrome\\Application\\chrome.exe"),
-            "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
-            "C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe"
-        ];
-
-        let browserPath = null;
-        for (let p of paths) {
-            if (fs.existsSync(p)) {
-                browserPath = p;
-                break;
-            }
-        }
-
-        if (!browserPath) {
-            eventSender.send('login-failed', idAkun, 'Chrome/Edge tidak ditemukan di PC.');
-            return false;
+        // 2. Gunakan fungsi getChromePath() yang baru
+        const chromePath = getChromePath();
+        if (!chromePath) {
+            throw new Error("Google Chrome tidak terinstal di PC ini!");
         }
 
         eventSender.send('log-update', idAkun, '🚀 Meluncurkan browser...');
 
+        // 3. Launch browser dengan chromePath
         const browser = await chromium.launch({
             headless: true, // Ubah jadi false kalau ingin lihat browsernya bergerak
-            executablePath: browserPath,
+            executablePath: chromePath,
             args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
         });
 
@@ -98,6 +96,7 @@ async function jalankanLogin(idAkun, emailUser, passUser, eventSender) {
         });
 
     } catch (err) {
+        // Error "Google Chrome tidak terinstal" akan ditangkap di sini dan dikirim ke UI
         eventSender.send('login-failed', idAkun, `Error sistem: ${err.message.substring(0, 40)}`);
     }
 }
