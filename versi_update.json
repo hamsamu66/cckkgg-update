@@ -1,14 +1,13 @@
 {
-  "ckgumum.js": 1,
-  "ckgsekolah.js": 1,
-  "ckgbalita.js": 1,
-  "setupLogin.js": 1,
-  "index.html": 1,
-  "login.html": 1,
-  "promoo.json": 1,
-  "Templates/Template_CKGUmum.xlsx": 1,
-  "Templates/Template_CKGSekolah.xlsx": 1,
-  "Templates/Template_CKGBalita.xlsx": 1,
-  "Utils/excelManager.js": 1,
-  "Utils/Logger.js": 1
+  "ckgumum.js": 0,
+  "ckgsekolah.js": 0,
+  "ckgbalita.js": 0,
+  "setupLogin.js": 0,
+  "index.html": 0,
+  "login.html": 0,
+  "promoo.json": 0,
+  "Templates/Template_CKGUmum.xlsx": 0,
+  "Templates/Template_CKGSekolah.xlsx": 0,
+  "Templates/Template_CKGBalita.xlsx": 0,
+  "Utils/excelManager.js": 0
 }
