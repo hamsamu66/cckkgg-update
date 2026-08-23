@@ -2,7 +2,7 @@ const { chromium } = require('playwright-core');
 const path = require('path');
 const fs = require('fs');
 const { app, ipcMain } = require('electron'); // 🌟 TAMBAHAN: Tarik app & ipcMain dari Electron
-const ExcelManager = require('./utils/excelManager');
+const ExcelManager = require('./Utils/excelManager');
 const Logger = require('./utils/logger');
 
 // ==============================================================================
