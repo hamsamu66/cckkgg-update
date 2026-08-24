@@ -663,17 +663,15 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
                                 const kotakJenjang = page.locator('xpath=//*[contains(text(), "Jenjang")]/following::div[contains(@class, "cursor-pointer")][1]');
                                 await kotakJenjang.waitFor({ state: 'visible', timeout: 3000 });
 
+                                // 🌟 FIX: definisikan polaJenjang di awal, pakai untuk SEMUA pengecekan
+                                // (bukan cuma filter tombol) — supaya "Kelas 2" tidak salah dianggap
+                                // "sudah cocok" hanya karena teks saat ini "Kelas 12"/"Kelas 21"/dst
+                                // yang kebetulan sama-sama mengandung karakter "2".
+                                const polaJenjang = new RegExp(`Kelas\\s*${angkaJenjang}(?!\\d)`, 'i');
+
                                 const teksSaatIni = (await kotakJenjang.innerText()).trim();
 
-                                if (!teksSaatIni.includes(angkaJenjang)) {
-                                    // 🌟 PERBAIKAN (laporan user): jenjang kadang sudah "ketemu" pas dicari
-                                    // tapi kotaknya nggak mau ikut berubah/ke-klik. Ada 2 penyebab yang dibenahi:
-                                    // 1) hasText: "Kelas X" adalah substring match -> nyari "Kelas 1" bisa
-                                    //    ke-match juga ke "Kelas 10/11/12", .last() bisa ambil yang salah.
-                                    //    Sekarang pakai regex + negative lookahead supaya "1" tidak diikuti digit lain.
-                                    // 2) Klik cuma dicoba sekali tanpa verifikasi -> sekarang pakai helper
-                                    //    yang mengecek ulang & mengulang proses cari+klik kalau belum berubah.
-                                    const polaJenjang = new RegExp(`Kelas\\s*${angkaJenjang}(?!\\d)`, 'i');
+                                if (!polaJenjang.test(teksSaatIni)) {
                                     await pilihDariDropdownCari(
                                         page,
                                         "Jenjang/Kelas",
@@ -681,12 +679,11 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
                                         page.locator('input[placeholder*="Cari jenjang"]').last(),
                                         angkaJenjang,
                                         () => page.locator('button').filter({ hasText: polaJenjang }).last(),
-                                        async () => (await kotakJenjang.innerText()).trim().includes(angkaJenjang)
+                                        async () => polaJenjang.test((await kotakJenjang.innerText()).trim())
                                     );
                                 }
                             } catch (e) { }
                         }
-
                         try {
                             await page.locator('input[name="sameAddress"]').last().check({ force: true, timeout: 2000 });
                         } catch (e) { }
