@@ -1256,12 +1256,19 @@
             }
         });
 
-        document.getElementById('btn-download').addEventListener('click', () => {
+        document.getElementById('btn-download').addEventListener('click', async () => {
             document.getElementById('kategori-template').blur(); document.getElementById('btn-download').blur();
             const kategoriPilihan = document.getElementById('kategori-template').value;
             let namaFile = kategoriPilihan === 'ckgumum' ? 'Template_CKGUmum.xlsx' : (kategoriPilihan === 'ckgsekolah' ? 'Template_CKGSekolah.xlsx' : 'Template_CKGBalita.xlsx');
-            const sourcePath = path.join(__dirname, 'Templates', namaFile);
+
+            // 🌟 FIX: cek dulu versi hasil OTA update di userData, baru fallback ke bawaan .exe
+            const { ipcRenderer } = require('electron');
+            const userDataPath = await ipcRenderer.invoke('get-stealth-path'); // handler ini sudah ada di main.js
+            const pathUserData = path.join(userDataPath, 'Templates', namaFile);
+            const sourcePath = fs.existsSync(pathUserData) ? pathUserData : path.join(__dirname, 'Templates', namaFile);
+
             const destPath = path.join(os.homedir(), 'Downloads', namaFile);
+            // ... sisa kode copy file kamu tetap sama dari sini
             try {
                 if (fs.existsSync(sourcePath)) {
                     fs.copyFileSync(sourcePath, destPath);
