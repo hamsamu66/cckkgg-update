@@ -847,7 +847,7 @@
 
                     <div class="action-grid">
                         <button class="btn-outline" id="btn-upload-1">Upload Excel ↑</button>
-                        <button class="btn-outline" id="btn-download-hasil-1">Sedot Hasil ↓</button>
+                        <button class="btn-outline" id="btn-download-hasil-1">Download Hasil ↓</button>
                     </div>
                     <div class="execution-grid">
                         <button class="btn-success" id="btn-run-1">▶ RUN AUTO</button>
@@ -976,7 +976,7 @@
 
                     <div class="action-grid">
                         <button class="btn-outline" id="btn-upload-2">Upload Excel ↑</button>
-                        <button class="btn-outline" id="btn-download-hasil-2">Sedot Hasil ↓</button>
+                        <button class="btn-outline" id="btn-download-hasil-2">Download Hasil ↓</button>
                     </div>
                     <div class="execution-grid">
                         <button class="btn-success" id="btn-run-2">▶ RUN AUTO</button>
@@ -1275,7 +1275,7 @@
                     fs.utimesSync(destPath, new Date(), new Date());
                     showNotification(`MANTAP! File ${namaFile} masuk folder Downloads.`, 'success');
                 } else showNotification(`File asli ${namaFile} tidak ketemu.`, 'error');
-            } catch (err) { showNotification(`ERROR SEDOT TEMPLATE! ${err.message}`, 'error'); }
+            } catch (err) { showNotification(`ERROR Download TEMPLATE! ${err.message}`, 'error'); }
         });
 
         // ==========================================
@@ -1355,9 +1355,9 @@
                     if (fs.existsSync(sourcePath)) {
                         fs.copyFileSync(sourcePath, destPath);
                         fs.utimesSync(destPath, new Date(), new Date());
-                        showNotification(`MANTAP! File ${namaFileBaru} disedot ke Downloads.`, 'success');
+                        showNotification(`MANTAP! File ${namaFileBaru} didownload ke folder Downloads.`, 'success');
                     } else showNotification(`Belum ada file hasil di Akun ${id}.`, 'warn');
-                } catch (err) { showNotification(`ERROR SEDOT HASIL! ${err.message}`, 'error'); }
+                } catch (err) { showNotification(`ERROR Download HASIL! ${err.message}`, 'error'); }
             });
 
             btnRun.addEventListener('click', async () => {
