@@ -750,7 +750,7 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
                             if (await popupAktif.count() > 0) {
                                 pesanErrorForm1 = await popupAktif.innerText();
                             } else {
-                                pesanErrorForm1 = await page.locator('div.text-red-500, div:has-text("Data peserta tidak valid"), div:has-text("tidak ditemukan")').filter({ visible: true }).last().innerText();
+                                pesanErrorForm1 = await page.locator('div.text-red-500, div:has-text("Data peserta tidak valid"), div:has-text("tidak ditemukan"), div:has-text("data tidak ditemukan"), div:has-text("Data peserta atau wali tidak valid")').filter({ visible: true }).last().innerText();
                             }
                         } catch (e) { }
 
