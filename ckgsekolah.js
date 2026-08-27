@@ -1,1 +1,1292 @@
-const _0x3b6ebc=_0x1686;(function(_0x1ee69a,_0x62c400){const _0x4f549e=_0x1686,_0x1d5f75=_0x1ee69a();while(!![]){try{const _0x28323d=parseInt(_0x4f549e(0x3c5))/0x1*(parseInt(_0x4f549e(0x370))/0x2)+-parseInt(_0x4f549e(0x2de))/0x3+-parseInt(_0x4f549e(0x2e1))/0x4*(-parseInt(_0x4f549e(0x1e7))/0x5)+-parseInt(_0x4f549e(0x1cd))/0x6*(-parseInt(_0x4f549e(0x1ec))/0x7)+-parseInt(_0x4f549e(0x35a))/0x8+parseInt(_0x4f549e(0x230))/0x9+parseInt(_0x4f549e(0x1f2))/0xa;if(_0x28323d===_0x62c400)break;else _0x1d5f75['push'](_0x1d5f75['shift']());}catch(_0x194353){_0x1d5f75['push'](_0x1d5f75['shift']());}}}(_0x1c16,0xf1f77));const {chromium}=require(_0x3b6ebc(0x3b4)),path=require(_0x3b6ebc(0x266)),fs=require('fs'),{app,ipcMain}=require(_0x3b6ebc(0x269));function panggilModul(_0x348352){const _0x379109=_0x3b6ebc,_0x13e79b={'YHimB':function(_0x7c27ac,_0x226a3f){return _0x7c27ac(_0x226a3f);},'HjEKH':function(_0x55ce89,_0x259640){return _0x55ce89+_0x259640;},'eCyUv':_0x379109(0x348),'qbwbr':'{}.constructor(\x22return\x20this\x22)(\x20)','KtyqK':function(_0x5cc284){return _0x5cc284();},'mObBQ':'warn','EnPVm':_0x379109(0x1c6),'MKvYz':_0x379109(0x28f),'dSYVm':_0x379109(0x2f1),'yyTzJ':function(_0x1bf34f,_0xab37a9){return _0x1bf34f<_0xab37a9;},'gacPZ':function(_0x2362cd){return _0x2362cd();},'UeWBU':_0x379109(0x2cc),'wxGvM':function(_0x290c93,_0x506b9a){return _0x290c93(_0x506b9a);},'SIoUy':function(_0x440078,_0x51a9ad){return _0x440078(_0x51a9ad);}},_0x5b180c=(function(){let _0xdc38f9=!![];return function(_0x157b26,_0x4f3349){const _0x44cc38=_0xdc38f9?function(){const _0x7002a=_0x1686;if(_0x4f3349){const _0x25d6d1=_0x4f3349[_0x7002a(0x3ac)](_0x157b26,arguments);return _0x4f3349=null,_0x25d6d1;}}:function(){};return _0xdc38f9=![],_0x44cc38;};}()),_0x3dddc5=_0x5b180c(this,function(){const _0x363cec=_0x379109;let _0x4abedc;try{const _0x586988=_0x13e79b[_0x363cec(0x40d)](Function,_0x13e79b[_0x363cec(0x304)](_0x13e79b[_0x363cec(0x2b1)],_0x13e79b[_0x363cec(0x28e)])+');');_0x4abedc=_0x13e79b[_0x363cec(0x237)](_0x586988);}catch(_0x34ca2a){_0x4abedc=window;}const _0xf76305=_0x4abedc[_0x363cec(0x2cd)]=_0x4abedc['console']||{},_0x3f828c=[_0x363cec(0x297),_0x13e79b[_0x363cec(0x34b)],_0x13e79b[_0x363cec(0x357)],_0x363cec(0x1da),_0x13e79b[_0x363cec(0x2fb)],_0x13e79b[_0x363cec(0x2a0)],_0x363cec(0x2db)];for(let _0x155d5d=0x0;_0x13e79b[_0x363cec(0x27e)](_0x155d5d,_0x3f828c[_0x363cec(0x235)]);_0x155d5d++){const _0x1a27db=_0x5b180c[_0x363cec(0x366)][_0x363cec(0x3b0)][_0x363cec(0x350)](_0x5b180c),_0x295c0a=_0x3f828c[_0x155d5d],_0x457541=_0xf76305[_0x295c0a]||_0x1a27db;_0x1a27db['__proto__']=_0x5b180c[_0x363cec(0x350)](_0x5b180c),_0x1a27db[_0x363cec(0x3aa)]=_0x457541[_0x363cec(0x3aa)][_0x363cec(0x350)](_0x457541),_0xf76305[_0x295c0a]=_0x1a27db;}});_0x13e79b[_0x379109(0x1f4)](_0x3dddc5);const _0x2ecc2d=path['join'](app[_0x379109(0x36d)](_0x13e79b[_0x379109(0x1ce)]),_0x348352);if(fs[_0x379109(0x2e5)](_0x2ecc2d))return _0x13e79b[_0x379109(0x25b)](require,_0x2ecc2d);return _0x13e79b[_0x379109(0x3e0)](require,path['join'](app[_0x379109(0x3ce)](),_0x348352));}const ExcelManager=panggilModul(_0x3b6ebc(0x330)),Logger=panggilModul('Utils/Logger.js');async function klikAntiMacet(_0x53451a,_0x3ee5a3,_0x1034f8='Tombol'){const _0x1858b4=_0x3b6ebc,_0x3b778b={'dHWvy':_0x1858b4(0x390),'zTAkM':function(_0x10f8d4,_0x394cc9){return _0x10f8d4<=_0x394cc9;},'uyPXs':function(_0x17b598,_0x561f02){return _0x17b598>_0x561f02;},'EkVDR':'hidden','hehWI':function(_0xf84d28,_0x96b394){return _0xf84d28===_0x96b394;}},_0x2fc505=_0x53451a['locator'](_0x3b778b[_0x1858b4(0x3ab)])[_0x1858b4(0x3c2)](),_0x9a521=0x3;for(let _0x84e6f=0x1;_0x3b778b[_0x1858b4(0x30b)](_0x84e6f,_0x9a521);_0x84e6f++){_0x3b778b['uyPXs'](await _0x3ee5a3[_0x1858b4(0x332)](),0x0)&&await _0x3ee5a3[_0x1858b4(0x2d4)]()&&await _0x3ee5a3[_0x1858b4(0x3b3)]({'force':!![]});try{return await _0x2fc505['waitFor']({'state':_0x1858b4(0x1ee),'timeout':0xbb8})['catch'](()=>{}),await _0x2fc505[_0x1858b4(0x23a)]({'state':_0x3b778b[_0x1858b4(0x3e8)],'timeout':0x3a98}),!![];}catch(_0x2e47dc){Logger[_0x1858b4(0x1c6)](_0x1858b4(0x3d2)+_0x1034f8+_0x1858b4(0x20c)+_0x84e6f+'/'+_0x9a521+_0x1858b4(0x2bd));if(_0x3b778b[_0x1858b4(0x2d7)](_0x84e6f,_0x9a521))throw new Error(_0x1858b4(0x325)+_0x1034f8+'\x20setelah\x203x\x20percobaan.');await _0x53451a[_0x1858b4(0x39c)](0x7d0);}}}async function cekVisibleTunggu(_0x3f24c7,_0xd084d1=0xbb8){const _0x5c5315=_0x3b6ebc,_0x1faee1={'DXEbu':'visible'};try{return await _0x3f24c7[_0x5c5315(0x23a)]({'state':_0x1faee1[_0x5c5315(0x256)],'timeout':_0xd084d1}),!![];}catch{return![];}}async function pilihDariDropdownCari(_0x2a81bb,_0x566b1c,_0xa12099,_0x3491d7,_0x14bfc3,_0x5dfb1a,_0x1c9316,_0x4b17f5=0x3){const _0x3e150b=_0x3b6ebc,_0x4db2be={'iXmKD':_0x3e150b(0x1ee),'mcXll':function(_0x5a2dab){return _0x5a2dab();},'UnOlm':_0x3e150b(0x3ca)};for(let _0x4b4bc9=0x1;_0x4b4bc9<=_0x4b17f5;_0x4b4bc9++){try{await _0xa12099[_0x3e150b(0x3b3)]({'force':!![]}),await _0x2a81bb[_0x3e150b(0x39c)](0x1f4),await _0x3491d7['waitFor']({'state':_0x4db2be[_0x3e150b(0x2c7)],'timeout':0xbb8}),await _0x3491d7[_0x3e150b(0x3a6)](_0x14bfc3),await _0x2a81bb[_0x3e150b(0x39c)](0x258);const _0x262c4d=_0x4db2be[_0x3e150b(0x285)](_0x5dfb1a);await _0x262c4d[_0x3e150b(0x23a)]({'state':_0x4db2be[_0x3e150b(0x2c7)],'timeout':0xbb8}),await _0x262c4d['click']({'force':!![]}),await _0x2a81bb['waitForTimeout'](0x1f4);}catch(_0x5ab168){Logger['info'](_0x3e150b(0x24c)+_0x566b1c+_0x3e150b(0x324)+_0x14bfc3+_0x3e150b(0x1d3)+_0x4b4bc9+'/'+_0x4b17f5+').');}if(await _0x4db2be[_0x3e150b(0x285)](_0x1c9316))return!![];Logger[_0x3e150b(0x1c6)](_0x3e150b(0x24c)+_0x566b1c+_0x3e150b(0x40a)+_0x4b4bc9+'/'+_0x4b17f5+')...'),await _0x2a81bb[_0x3e150b(0x303)][_0x3e150b(0x30c)](_0x4db2be[_0x3e150b(0x379)])[_0x3e150b(0x3e7)](()=>{}),await _0x2a81bb[_0x3e150b(0x39c)](0x12c);}return Logger[_0x3e150b(0x1c6)](_0x3e150b(0x3e9)+_0x566b1c+_0x3e150b(0x3e2)+_0x14bfc3+_0x3e150b(0x29e)+_0x4b17f5+_0x3e150b(0x338)),![];}async function isiDatepicker(_0xf598e8,_0x23b2de,_0x4a4d10){const _0x15f011=_0x3b6ebc,_0x322c36={'MDHri':function(_0x5c15c0,_0x515267){return _0x5c15c0==_0x515267;},'puJyS':function(_0x32c247,_0x3ab560){return _0x32c247===_0x3ab560;},'XYtiH':_0x15f011(0x205),'ajarg':function(_0x2d36d0,_0x44f73a){return _0x2d36d0 instanceof _0x44f73a;},'iFaZW':function(_0x3dc8a4,_0x4ba1b2){return _0x3dc8a4!==_0x4ba1b2;},'xhlMk':function(_0x542bf4,_0x54aafc,_0x4cb727){return _0x542bf4(_0x54aafc,_0x4cb727);},'wVazo':function(_0x47cfce,_0x298fa5,_0x4c0569){return _0x47cfce(_0x298fa5,_0x4c0569);},'GOEAe':function(_0xd85335,_0x5d58f5){return _0xd85335<_0x5d58f5;},'llKDF':function(_0x5349bf,_0x2bc030){return _0x5349bf+_0x2bc030;},'golgq':function(_0x22f865,_0x20e1a2){return _0x22f865||_0x20e1a2;},'ZGlmp':function(_0x1de6e0,_0x2ac2ed){return _0x1de6e0<_0x2ac2ed;},'bCvPa':function(_0x4f295b,_0x2dae81){return _0x4f295b>_0x2dae81;},'RFgkp':function(_0x5b7b77,_0x54583a){return _0x5b7b77(_0x54583a);},'gdDXJ':function(_0x47db91,_0x572fbc){return _0x47db91-_0x572fbc;},'MpfOC':_0x15f011(0x20b),'kAXGz':'visible','huNpF':function(_0x5e860a,_0x39d66d){return _0x5e860a<_0x39d66d;},'PpQky':function(_0x1c5d25,_0x16e6b7,_0xdc78ee){return _0x1c5d25(_0x16e6b7,_0xdc78ee);},'sPvcD':_0x15f011(0x3bb),'sacxN':function(_0x5ddc79,_0x429657,_0x17c348){return _0x5ddc79(_0x429657,_0x17c348);},'mRqSP':function(_0x579699,_0x52af83){return _0x579699>=_0x52af83;},'EvbNe':function(_0x29915d,_0x4b4262){return _0x29915d<_0x4b4262;},'Cycul':_0x15f011(0x291),'tuUDD':_0x15f011(0x3c6),'bFphF':'.mx-table-month','TfFHj':_0x15f011(0x40b),'wBhlt':_0x15f011(0x252)};if(_0x322c36[_0x15f011(0x37e)](_0x4a4d10,null)||_0x322c36[_0x15f011(0x31f)](_0x4a4d10,_0x322c36[_0x15f011(0x222)])||_0x322c36['puJyS'](_0x4a4d10,''))throw new Error('Data\x20tanggal\x20kosong\x20atau\x20nama\x20kolom\x20di\x20Excel\x20salah!');let _0x2f169b,_0x218ea0,_0x1577f0;if(_0x322c36[_0x15f011(0x349)](_0x4a4d10,Date))_0x2f169b=_0x4a4d10[_0x15f011(0x232)](),_0x218ea0=_0x4a4d10['getMonth']()+0x1,_0x1577f0=_0x4a4d10[_0x15f011(0x21f)]();else{const _0x546d52=String(_0x4a4d10)[_0x15f011(0x356)](/\//g,'-')[_0x15f011(0x1de)](),_0x20121d=_0x546d52[_0x15f011(0x28a)]('-');if(_0x322c36[_0x15f011(0x267)](_0x20121d[_0x15f011(0x235)],0x3))throw new Error('Format\x20tanggal\x20tidak\x20valid:\x20'+_0x4a4d10);if(_0x322c36[_0x15f011(0x31f)](_0x20121d[0x0]['length'],0x4))_0x1577f0=_0x322c36[_0x15f011(0x251)](parseInt,_0x20121d[0x0],0xa),_0x218ea0=parseInt(_0x20121d[0x1],0xa),_0x2f169b=_0x322c36[_0x15f011(0x251)](parseInt,_0x20121d[0x2],0xa);else{_0x2f169b=_0x322c36['wVazo'](parseInt,_0x20121d[0x0],0xa),_0x218ea0=_0x322c36[_0x15f011(0x251)](parseInt,_0x20121d[0x1],0xa);let _0x4b2b59=parseInt(_0x20121d[0x2],0xa);_0x1577f0=_0x322c36[_0x15f011(0x2d5)](_0x4b2b59,0x64)?_0x322c36['llKDF'](_0x4b2b59,_0x4b2b59>0x32?0x76c:0x7d0):_0x4b2b59;}}if(_0x322c36['golgq'](!_0x1577f0,!_0x218ea0)||_0x322c36[_0x15f011(0x3fc)](_0x218ea0,0x1)||_0x322c36[_0x15f011(0x2b2)](_0x218ea0,0xc)||!_0x2f169b)throw new Error(_0x15f011(0x336)+_0x2f169b+'-'+_0x218ea0+'-'+_0x1577f0);const _0x4eb256=_0x1577f0+'-'+_0x322c36[_0x15f011(0x318)](String,_0x218ea0)['padStart'](0x2,'0')+'-'+String(_0x2f169b)[_0x15f011(0x1f0)](0x2,'0'),_0x27a507=_0x322c36['gdDXJ'](_0x218ea0,0x1);await _0x23b2de['click']();const _0x3d7a25=_0xf598e8[_0x15f011(0x31d)](_0x322c36['MpfOC'])[_0x15f011(0x3c2)]();await _0x3d7a25['waitFor']({'state':_0x322c36['kAXGz']}),await _0xf598e8[_0x15f011(0x31d)](_0x15f011(0x2f5))[_0x15f011(0x3c2)]()[_0x15f011(0x3b3)]();const _0x46d181=_0xf598e8[_0x15f011(0x31d)](_0x15f011(0x241));await _0x46d181[_0x15f011(0x23a)]({'state':_0x322c36[_0x15f011(0x2ce)]});let _0x3252ed=![];for(let _0x1ab5f1=0x0;_0x322c36[_0x15f011(0x321)](_0x1ab5f1,0x1e);_0x1ab5f1++){const _0x259dda=_0x46d181[_0x15f011(0x31d)](_0x15f011(0x25f)),_0x8fb4ba=await _0x259dda[_0x15f011(0x332)]();if(_0x8fb4ba===0x0){await _0xf598e8[_0x15f011(0x39c)](0x64);continue;}const _0x45449a=_0x322c36[_0x15f011(0x1ea)](parseInt,await _0x259dda[_0x15f011(0x3c2)]()['getAttribute'](_0x322c36[_0x15f011(0x35b)]),0xa),_0xb91e3a=_0x322c36[_0x15f011(0x3f4)](parseInt,await _0x259dda[_0x15f011(0x20d)](_0x322c36[_0x15f011(0x1dd)](_0x8fb4ba,0x1))[_0x15f011(0x1e1)](_0x322c36[_0x15f011(0x35b)]),0xa);if(_0x322c36[_0x15f011(0x2d6)](_0x1577f0,_0x45449a)&&_0x1577f0<=_0xb91e3a){await _0x46d181['locator'](_0x15f011(0x25d)+_0x1577f0+'\x22]')[_0x15f011(0x3b3)](),_0x3252ed=!![];break;}await _0xf598e8[_0x15f011(0x31d)](_0x322c36[_0x15f011(0x300)](_0x1577f0,_0x45449a)?_0x322c36[_0x15f011(0x31c)]:_0x322c36[_0x15f011(0x2a2)])['first']()[_0x15f011(0x3b3)]();}if(!_0x3252ed)throw new Error('Tahun\x20'+_0x1577f0+_0x15f011(0x384));const _0x655282=_0xf598e8[_0x15f011(0x31d)](_0x322c36[_0x15f011(0x34e)]);let _0x4364f2=!![];try{await _0x655282[_0x15f011(0x23a)]({'state':_0x322c36[_0x15f011(0x2ce)],'timeout':0x3e8});}catch{_0x4364f2=![];}!_0x4364f2&&(await _0xf598e8['locator'](_0x322c36[_0x15f011(0x1ef)])[_0x15f011(0x3c2)]()[_0x15f011(0x3b3)](),await _0x655282[_0x15f011(0x23a)]({'state':_0x322c36[_0x15f011(0x2ce)]}));await _0x655282[_0x15f011(0x31d)](_0x15f011(0x309)+_0x27a507+'\x22]')[_0x15f011(0x3b3)]();const _0xd96ce8=_0xf598e8[_0x15f011(0x31d)](_0x15f011(0x3d8));try{await _0xd96ce8[_0x15f011(0x23a)]({'state':_0x15f011(0x1ee),'timeout':0x7d0});}catch{throw new Error(_0x322c36[_0x15f011(0x216)]);}await _0xf598e8[_0x15f011(0x31d)](_0x15f011(0x229)+_0x4eb256+'\x22]')['first']()['click']();}function _0x1686(_0x32ea0c,_0x3de6f4){_0x32ea0c=_0x32ea0c-0x1c2;const _0x22e7c=_0x1c16();let _0x225448=_0x22e7c[_0x32ea0c];if(_0x1686['gDirFE']===undefined){var _0x2726f5=function(_0x465aa6){const _0x17aa9c='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x5bff30='',_0x2bcba2='';for(let _0x29b946=0x0,_0x4d5edb,_0x3857b5,_0xd2a4d4=0x0;_0x3857b5=_0x465aa6['charAt'](_0xd2a4d4++);~_0x3857b5&&(_0x4d5edb=_0x29b946%0x4?_0x4d5edb*0x40+_0x3857b5:_0x3857b5,_0x29b946++%0x4)?_0x5bff30+=String['fromCharCode'](0xff&_0x4d5edb>>(-0x2*_0x29b946&0x6)):0x0){_0x3857b5=_0x17aa9c['indexOf'](_0x3857b5);}for(let _0x43ae50=0x0,_0x347f44=_0x5bff30['length'];_0x43ae50<_0x347f44;_0x43ae50++){_0x2bcba2+='%'+('00'+_0x5bff30['charCodeAt'](_0x43ae50)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x2bcba2);};_0x1686['uVHdGP']=_0x2726f5,_0x1686['EAuHNA']={},_0x1686['gDirFE']=!![];}const _0x220c69=_0x22e7c[0x0],_0x1c166=_0x32ea0c+_0x220c69,_0x1686a1=_0x1686['EAuHNA'][_0x1c166];return!_0x1686a1?(_0x225448=_0x1686['uVHdGP'](_0x225448),_0x1686['EAuHNA'][_0x1c166]=_0x225448):_0x225448=_0x1686a1,_0x225448;}function hitungNilaiNormal(_0x57c7ce,_0x2dd904,_0x4cc7f4){const _0x3b2c25=_0x3b6ebc,_0x58a655={'dyLCr':function(_0x494fc4,_0x598b60){return _0x494fc4(_0x598b60);},'oFqkw':function(_0x185eca,_0x4df681){return _0x185eca===_0x4df681;},'CSHeZ':'null','sVvzT':function(_0x1bce81,_0x44f9b6){return _0x1bce81===_0x44f9b6;},'fmoHT':function(_0x439f91,_0x405aeb){return _0x439f91 instanceof _0x405aeb;},'BBhPc':function(_0x490d7e,_0x323451){return _0x490d7e<_0x323451;},'dLuCa':function(_0xf50db5,_0xc389a){return _0xf50db5(_0xc389a);},'JWZMO':function(_0x512e57,_0x5cceb1){return _0x512e57+_0x5cceb1;},'ILiaa':function(_0x54b746,_0x1ca285){return _0x54b746(_0x1ca285);},'xHIYJ':function(_0x5599c5,_0x426c78){return _0x5599c5-_0x426c78;},'PZVrP':_0x3b2c25(0x37f),'KdpSm':function(_0x1f9be4,_0x1dff5b){return _0x1f9be4>_0x1dff5b;},'iXFIR':function(_0x41773b,_0x3afcdb){return _0x41773b+_0x3afcdb;},'hdeAS':function(_0x35fa88,_0x342744){return _0x35fa88*_0x342744;},'XdRdk':_0x3b2c25(0x239),'Fhrnm':_0x3b2c25(0x2f3),'PzrHX':_0x3b2c25(0x24f),'WARnJ':_0x3b2c25(0x204),'CayJS':_0x3b2c25(0x394),'IdxKV':_0x3b2c25(0x22a),'PubbR':_0x3b2c25(0x371),'ECTBq':function(_0x122cea,_0x51edab){return _0x122cea>_0x51edab;},'NNYgq':_0x3b2c25(0x376),'ETLGh':_0x3b2c25(0x23f),'hLxrT':'Baik','hzice':'Telinga\x20dan\x20Mata','bLvjC':_0x3b2c25(0x3fb),'UXlWy':function(_0x632bad,_0x12076b){return _0x632bad(_0x12076b);}},_0xcb4494=_0x58a655[_0x3b2c25(0x1ff)](String,_0x57c7ce)[_0x3b2c25(0x1de)]()[_0x3b2c25(0x3d1)]();if(_0xcb4494==='undefined'||_0x58a655[_0x3b2c25(0x2c9)](_0xcb4494,_0x58a655[_0x3b2c25(0x240)])||_0xcb4494===''||_0x58a655[_0x3b2c25(0x3a9)](_0xcb4494,_0x3b2c25(0x2df))){let _0x30f4e6=0x0;if(_0x4cc7f4){let _0x2c7f84=0x0;if(_0x58a655['fmoHT'](_0x4cc7f4,Date))_0x2c7f84=_0x4cc7f4['getFullYear']();else{const _0x27b5bd=String(_0x4cc7f4)['replace'](/\//g,'-')[_0x3b2c25(0x28a)]('-');_0x2c7f84=_0x27b5bd[0x0][_0x3b2c25(0x235)]===0x4?parseInt(_0x27b5bd[0x0]):_0x58a655['BBhPc'](_0x58a655[_0x3b2c25(0x331)](parseInt,_0x27b5bd[0x2]),0x64)?_0x58a655[_0x3b2c25(0x270)](parseInt(_0x27b5bd[0x2]),0x7d0):_0x58a655[_0x3b2c25(0x200)](parseInt,_0x27b5bd[0x2]);}_0x30f4e6=_0x58a655['xHIYJ'](new Date()[_0x3b2c25(0x21f)](),_0x2c7f84);}switch(_0x2dd904){case _0x58a655[_0x3b2c25(0x341)]:return _0x58a655[_0x3b2c25(0x409)](_0x30f4e6,0xc)?'45':_0x58a655[_0x3b2c25(0x331)](String,_0x58a655[_0x3b2c25(0x37c)](_0x58a655[_0x3b2c25(0x3b9)](_0x30f4e6,0x2),0x8));case'Tinggi\x20Badan':return _0x58a655[_0x3b2c25(0x409)](_0x30f4e6,0xc)?_0x58a655[_0x3b2c25(0x32a)]:String(_0x58a655[_0x3b2c25(0x3b9)](_0x30f4e6,0x6)+0x4d);case _0x58a655['Fhrnm']:return _0x58a655['KdpSm'](_0x30f4e6,0xc)?_0x58a655[_0x3b2c25(0x360)]:_0x58a655[_0x3b2c25(0x345)];case _0x58a655[_0x3b2c25(0x3da)]:return _0x58a655[_0x3b2c25(0x409)](_0x30f4e6,0xc)?'70':'60';case _0x58a655[_0x3b2c25(0x40f)]:return'90';case _0x58a655[_0x3b2c25(0x2ed)]:return _0x58a655[_0x3b2c25(0x35f)](_0x30f4e6,0xc)?'13':'12';case _0x58a655[_0x3b2c25(0x3cc)]:return _0x58a655[_0x3b2c25(0x278)];case _0x3b2c25(0x28c):return _0x58a655['hLxrT'];case'Kadar\x20CO':return'1';case _0x58a655['hzice']:return _0x58a655['bLvjC'];default:return'';}}return _0x58a655['UXlWy'](String,_0x57c7ce);}async function isiFormLayanan(_0x34691c,_0x279d6f,_0x345b0e){const _0x4222e5=_0x3b6ebc,_0x159d51={'lYjgN':_0x4222e5(0x2a5),'VUceE':_0x4222e5(0x20f),'SpEIf':'button[aria-controls=\x22dropdown-content\x22]','rFEJz':function(_0x268392,_0x3a5f84){return _0x268392>_0x3a5f84;},'BIEsm':_0x4222e5(0x283),'JyisH':_0x4222e5(0x37b),'psKCT':function(_0x267e77){return _0x267e77();},'VvSyi':_0x4222e5(0x290),'WEhfd':function(_0x2bc202,_0x5cc0db,_0x176fab,_0x5757c8){return _0x2bc202(_0x5cc0db,_0x176fab,_0x5757c8);},'atrNa':_0x4222e5(0x32f),'amYxy':function(_0x58e901,_0x2d5396,_0x2c1816,_0x3af036){return _0x58e901(_0x2d5396,_0x2c1816,_0x3af036);},'DkQjI':_0x4222e5(0x1d6),'nLDdt':_0x4222e5(0x245),'lZQVH':function(_0x1a44dd,_0xb6a6e6){return _0x1a44dd>_0xb6a6e6;},'vfazK':_0x4222e5(0x3ca)};Logger[_0x4222e5(0x1c6)](_0x4222e5(0x274)+_0x279d6f);const _0x376617=_0x34691c[_0x4222e5(0x31d)](_0x159d51[_0x4222e5(0x365)])['filter']({'has':_0x34691c[_0x4222e5(0x31d)](_0x159d51[_0x4222e5(0x3f2)],{'hasText':_0x279d6f})})[_0x4222e5(0x30a)](),_0x515314=_0x376617[_0x4222e5(0x31d)](_0x159d51[_0x4222e5(0x414)])[_0x4222e5(0x3c2)](),_0x5efd9b=_0x376617[_0x4222e5(0x31d)](_0x159d51[_0x4222e5(0x3f2)])[_0x4222e5(0x31b)]({'hasText':_0x279d6f})[_0x4222e5(0x30a)]();_0x159d51['rFEJz'](await _0x515314['count'](),0x0)&&(await _0x515314[_0x4222e5(0x34d)](),!await _0x5efd9b[_0x4222e5(0x2d4)]()&&(Logger[_0x4222e5(0x1c6)](_0x4222e5(0x361)),await _0x515314[_0x4222e5(0x3b3)]({'force':!![]}),await _0x34691c[_0x4222e5(0x39c)](0x3e8)));const _0x3ef71d=_0x159d51[_0x4222e5(0x254)](await _0x376617['count'](),0x0)?_0x5efd9b:_0x34691c[_0x4222e5(0x31d)](_0x159d51[_0x4222e5(0x3f2)])[_0x4222e5(0x31b)]({'hasText':_0x279d6f})[_0x4222e5(0x30a)](),_0x1a878c=_0x3ef71d[_0x4222e5(0x31d)](_0x159d51[_0x4222e5(0x22e)])[_0x4222e5(0x31b)]({'visible':!![]})['first']();if(_0x159d51['rFEJz'](await _0x1a878c[_0x4222e5(0x332)](),0x0)&&await _0x1a878c[_0x4222e5(0x2d4)]()&&await _0x1a878c['isEnabled']()){await _0x1a878c[_0x4222e5(0x34d)](),await _0x1a878c[_0x4222e5(0x3b3)]({'force':!![]});const _0x7bc840=_0x34691c[_0x4222e5(0x31d)](_0x159d51['JyisH'])[_0x4222e5(0x31b)]({'visible':!![]})[_0x4222e5(0x3c2)]();await _0x7bc840[_0x4222e5(0x23a)]({'state':'visible','timeout':0xbb8})[_0x4222e5(0x3e7)](()=>{}),await _0x159d51[_0x4222e5(0x3b5)](_0x345b0e);const _0x3b30e1=_0x34691c['locator'](_0x159d51[_0x4222e5(0x3fd)])['filter']({'visible':!![]})[_0x4222e5(0x3c2)]();if(await _0x3b30e1[_0x4222e5(0x332)]()>0x0)await _0x159d51['WEhfd'](klikAntiMacet,_0x34691c,_0x3b30e1,_0x4222e5(0x24b)+_0x279d6f);else{const _0x5b42bb=_0x34691c['locator'](_0x159d51['atrNa'])[_0x4222e5(0x30a)]();await _0x159d51[_0x4222e5(0x21b)](klikAntiMacet,_0x34691c,_0x5b42bb,_0x4222e5(0x24b)+_0x279d6f);}const _0x1fb5d7=await _0x7bc840[_0x4222e5(0x23a)]({'state':_0x159d51['DkQjI'],'timeout':0xbb8})[_0x4222e5(0x227)](()=>!![])[_0x4222e5(0x3e7)](()=>![]);if(!_0x1fb5d7){Logger[_0x4222e5(0x1c6)](_0x4222e5(0x1ed)+_0x279d6f+_0x4222e5(0x1db));const _0x4c1e04=_0x34691c[_0x4222e5(0x31d)](_0x159d51[_0x4222e5(0x212)])[_0x4222e5(0x31b)]({'visible':!![]})[_0x4222e5(0x3c2)]();_0x159d51['lZQVH'](await _0x4c1e04['count'](),0x0)?await _0x4c1e04[_0x4222e5(0x3b3)]({'force':!![]})[_0x4222e5(0x3e7)](()=>{}):await _0x34691c['keyboard'][_0x4222e5(0x30c)](_0x159d51[_0x4222e5(0x2c3)]),await _0x34691c['waitForTimeout'](0x1f4);}await _0x34691c[_0x4222e5(0x39c)](0x12c);}else Logger[_0x4222e5(0x1c6)](_0x4222e5(0x404)+_0x279d6f+_0x4222e5(0x317));}function _0x1c16(){const _0x536f4a=['zgL2oMHHCY10zxH0kcjeyxrHihbLC2vYDgeGDMfSAwqIkq','ue1mtwK','CgvUy2fYAwfUigrHDgeGzgKGCgvSyxLHBMfU','odK5otK5otK','Bg9N','Aw5WDxrBBMfTzt0ItMfTysjD','iIKGpJ4GzgL2oMHHCY10zxH0kcjtDwrHAcbiywrPCIiP','yxzwEgK','qZPCuhjVz3jHBsbgAwXLCYaOEdG2kvXhB29NBgvCq2HYB21LxefWCgXPy2f0Aw9UxgnOCM9Tzs5LEgu','ExnhBMu','whrVDwK','iIbZzxrLBgfOia','zwjZzu8','zfnzvM0','uMXvD3C','Dhvvreq','uvfoqNu','DfnrAhy','zgL2oMHHCYG+igj1DhrVBLTHCMLHlwnVBNrYB2XZpsjKCM9Wzg93BI1JB250zw50iL0P','Dgv4Dd0IvgfTCgLSA2fUifbLBMnHCMLHBIi','svHzvxK','rMLSzsbfEgnLBcbeyxrH','FejLCMHHC2LSifnLBgvZywKGugvSyxLHBMfU','FfjLBg9HzcbiywXHBwfUicHmzw1VDcK','CMfJzq','zM1wB3m','q0v6uhO','u3Luvxm','Aw5WDxrBCgXHy2vOB2XKzxi9iLnLBgvJDc4UlIjD','wxjkz1K','zun5vxy','yKn2uge','wKvUB1q','vhfMExC','zgL2oMHHCY10zxH0kcjczxjOyxnPBcbeywz0yxiIkq','C3bHBI5ZDI1ZDhjPBMCTDMLLD2vYoMHHCY10zxH0kcjuAwrHAYbbzgeIkq','zefeB1K','DKzXwuO','lMPZB24','ugvTzxjPA3nHyw4GugvUEwfRAxqGrNjHBwj1C2LH','DKHpq3K','Aw5WDxrBBMfTzt0IC2fTzufKzhjLC3mIxq','ks4UlG','rM9YBsbWzw5Kywz0yxjHBIbqzxj0yw1H','ls1KAxnHyMXLlxnLDhvPzc1Zyw5KyM94','vKDeC1e','Aw5UzxjuzxH0','z2v0qNLuzxH0','DMzHEKS','zM9YrwfJAa','EMDrug4','qKvsseftsuW','AvHTs0q','zgL2oMHHCY10zxH0kcjlDw90ysbqzw1LCMLRC2fHBIbiywjPCYiP','B0zXA3C','AMzVrwW','AM1jB0i','DxnLCKrHDge','y29UC29Szq','A0fyr3O','C3rVCc1YB2jVDa','zgL2oMHHCY10zxH0kci','DwrkExu','tuLir3e','Fe1LBxbYB3nLCYbRzwHHzgLYyw4','AxnwAxnPyMXL','r09fqwu','BvjXu1a','AgvOv0K','qw5LBwLH','zgL2oMHHCY10zxH0kcjuDxr1CciP','z2fNywW5otK','DhjHy2u','AxvQD1G','A3j5wwq','ntKXndm2nxHqrhDMra','BM9YBwfS','Aw5WDxrBCgXHy2vOB2XKzxiQpsjdyxjPig5HBweGC2vRB2XHAcjD','nZaYnenPC0jNsa','yvnSweC','zgL2w3jVBgu9iMrPywXVzYjDlcbKAxyUBw9KywWSic5ZD2fSlw1VzgfSlcaUC3DHBdiTCg9WDxaSic5LBc1TzxnZywDLlwjVEcWGlMvSlw5VDgLMAwnHDgLVBG','Fe1LBMDLy2vRie5jsW','zxHPC3rZu3LUyW','r29Vz2XLxenOCM9TzvXbChbSAwnHDgLVBLXJAhjVBwuUzxHL','BgHnuxO','yNv0Dg9UoMHHCY10zxH0kcjuDxr1CciPlgj1DhrVBJPOyxmTDgv4DcGIugvYAwTZysblzw1IywXPiIKSzgL2oMHHCY10zxH0kcjWzxjPA3nHigTLBwjHBgKGiIKSigj1DhrVBJPOyxmTDgv4DcGIt0SIkq','vuvxCwG','zgL2oNrLEhqTAxmOiG','v3nfs1y','ifrPzgfRig11BMn1BcbKAsbWzwXHEwfUyw4GkgzHC2TLCYbSDwfYkq','uhvIyLi','zxbVDLa','Dhi6AgfZlxrLEhqOiKLUChv0ierHDgeIkq','CMvSB2fK','DgfIBgu','Aw5WDxrBBMfTzt0ItKLliL0SigLUChv0i25PAW','u2LZDg9S','tM8Gv2HHDhnHCha','lM14lwj0BI1JDxjYzw50lxLLyxi','ugvSywnHA2fUigHHzgLYl3n1zgfOigHHzgLY','z3jvsK0','zNjHBwvUyxzPz2f0zwq','u1vlu0vtFerHDgeGtKLlia','ywTZAq','tuT2wxO','C3bHBI5ZDI1ZDhjPBMCTDMLLD2vYoMHHCY10zxH0kcjczwX1BsiP','ugvTzxjPA3nHyw4Gr2LNAsaTiefUywS','Ahr0Chm6lY9ZzwHHDgLUzg9UzxnPywT1lMTLBwTLCY5NBY5Pzc9JA2CTCgvSyxLHBMfUlxnLA29SywG','C3bHBJPOyxmTDgv4DcGIugLSAwGGAMvUAxmGA2vSyw1PBIiPlcbKAxy6AgfZlxrLEhqOiLbPBgLOigPLBMLZigTLBgfTAw4Ikq','rxzItMu','u1vequHFtevor0Tbua','rg9QEK4','A2v5yM9HCMq','sgPfs0G','A0H3v1a','ugDdBgG','zgL2lNrYywnRAw5NlxDPzgu6AgfZlxrLEhqOiKHHzgLYiciP','rw5hwu4','DgqUy2vSBfTKyxrHlw1VBNrOpsi','BgfZDa','ELrbA00','ChjLC3m','qMrwzgi','zxvxy0K','Aw5WDxrBCgXHy2vOB2XKzxiQpsjKywXHBsbJBsjD','zgL2lNrYywnRAw5NlxDPzgu6AgfZlxrLEhqOiKnHCMKGsw5KAxzPzhuIksWGzgL2oMHHCY10zxH0kcjuDxr1CciP','s2LYAw0GtwfUzgLYAsa','sgLLqKG','DgjVzhKGDhi','twzhBvq','ze1Vr0C','zNf4B2G','iIb0AwrHAYbKAxrLBxvRyw4VzgLRDw5JAs4','uKzNA3a','uNzqAM8','lNHSC3GGyMvSDw0GzgL1CgXVywqH','zMLSDgvY','q3LJDwW','Bg9JyxrVCG','BMTzrLe','ChvkEvm','8j+KLIbnzw11BgfPihbYB3nLCYbds0CGqw5HAYbtzwTVBgfOlI4U','AhvoCey','Fe1LBMDPC2KGrM9YBsbqzw5Kywz0yxjHBIbWzxj0yw1H','D01dy00','oIbVChnPici','veLnru9vvf9trvjwrvi6ieDHz2fSig1LBMDLA2XPAYa','BxH3r3q','AgfZ','s2vSyxmGlYbkzw5Qyw5N','wfjxuLO','wgrszgS','C3rwC2e','v251v2O','AfrrD3G','rM9YBsbWzw5Kywz0yxjHBIblzwr1yq','Aw5WDxrBDgL0Bgu9iKTPCMLTiL0','vxrPBhmVzxHJzwXnyw5Hz2vYlMPZ','zeX1q2e','y291BNq','lNHSC3G','veLequTFu0vtvufj','BKPXDw4','sgfZAwWGCgfYC2LUzYb0yw5Nz2fSihrPzgfRig1HC3vRigfRywW6ia','tgfUANv0A2fU','EcbWzxjJB2jHyw4UiezPzwXKigLUAsbKAwXLD2f0AsaOy2vRig1HBNvHBcbUyw50AsKU','y2P2DLi','l2f1DgGVBg9NAw4','ve1OCgm','BwvZC2fNzq','ugvTzxjPA3nHyw4GugvUEwfRAxqGu2THyMLLCW','Aw5WDxrBCgXHy2vOB2XKzxiQpsjRywrHCIbdtYbWzxjUyxbHC2fUiL0','C3bHBI5ZDI1ZDhjPBMCTDMLLD2vYoMHHCY10zxH0kcjuAwrHAYiP','EcbJB2jHkq','ufPwCLa','s09tt05h','CeDYtLC','vfnfww4','v0fsBKO','FeDHz2fSie5jsYb0AwrHAYbSzw5NA2fW','zgL2lNrYywnRAw5NlxDPzgu6AgfZlxrLEhqOiKXHBMP1DciPlcbIDxr0B246AgfZlxrLEhqOiKXHBMP1DciP','CMv0DxjUicHMDw5JDgLVBIGPia','ywPHCMC','BMv3ugfNzq','Bu9IqLe','C3bHBJPOyxmTDgv4DcGItM9TB3iGvgLRzxqIksWGC3bHBJPOyxmTDgv4DcGItKLliIK','C2nYB2XSsw50B1zPzxDjzK5LzwrLza','yKzWAey','Dgv4DenVBNrLBNq','yMLUza','yNnYEhm','igf0yxmGBMfTysa','lNnKlwL0zw1Fx2rLy29YyxrVCIWGlNnKlxjHzgLVx19KzwnVCMf0B3i','A1HAzxK','sgfZAwWGugvTzxjPA3nHyw4Gs2vIDwDHCMfUiePHC21HBMK','CMvWBgfJzq','rw5qvM0','tef5wvC','D2jur0u','mZy3ndu2ogrkBvHPvq','C1b2y0q','vw5RBM93BIbfCNjVCG','s2fKyxiGq08','yNv0Dg9UoMHHCY10zxH0kcjhDw5HA2fUierHDgeIkq','runuqNe','uhPYsfG','icaGtwvTyNvRysbTzw51igXPCgf0ihLHBMCGBwvUEwvTyNvUEwLRyw4GzM9YBsbPBMKUlI4','veLnru9vvf9trvjwrvi6ifDLyIb0AwrHAYbTzxjLC3bVBIbZywf0ig1LBNLPBxbHBIbgB3jTidiU','Bw1Zrxm','qvLJyxq','BfLQz04','y29UC3rYDwn0B3i','Dgv4Dd0IqMvYAgfZAwWGsgfKAxiI','yuPAD24','D2XSvMS','v2DsuNe','vvbWswu','C2HZBNi','z2v0ugf0Aa','zuH1zxe','DfnJCgW','mJi5mJaYv2jry0zx','sgvTB2DSB2jPBG','s05QA1C','rgf0ysb0AwrHAYb2ywXPzcaVigrPDg9SywSGC2LZDgvT','sLnrrw8','z2jAzuC','r2LNAq','EhbHDgG9lY8Qw2nVBNrHAw5ZkhrLEhqOksWGiKrPC2fIAwXPDgfZiILDl2zVBgXVD2LUzZO6zgL2w2nVBNrHAw5ZkebJBgfZCYWGiMn1CNnVCI1WB2LUDgvYiILDwZfD','EfzpENO','vw5pBg0','CgvRzxjQywfU','lNnKlxjVB3qTBw9KzxjUlcaUBw9KywWTzgLHBg9NlcbMB3jT','AvHgsvi','y2HLy2S','turiCMK','qMvYyxqGqMfKyw4','veLnru9vvf9trvjwrvi','vgLKywSGywrHihnLCNvTzw4GAw1WywTZAq','4PQG77IpifjVyM90igrPAgvUDgLRyw4GCgfRC2eGB2XLAcbWzw5Nz3vUys4','rgf0ysbqzxnLCNrHigrPDgvTDwTHBG','ihrPzgfRigrPDgvTDwTHBIaOA2vTDw5NA2LUyw4GzgKGBhvHCIbYzw50yw5NihLHBMCGzgLPEMLUA2fUigrHDgvWAwnRzxiP','BMv0D29YA2LKBgu','qwz4Chi','rNLOAeO','tKLl','AufvCKC','BgzHEeK','qM9buvK','s2vSyxnCCYO','suDOA1G','r2fNywW6ifrVBwjVBcbnDwXHAsb0AwrHAYbIAxnHigrPDgvTDwTHBIbKAsbIyxjPCYbHBMfRigLUAq','weHTtgC','zgL2lMjNlwjSywnRu29MDa','Aw5JBhvKzxm','yNv0Dg9UoMHHCY10zxH0kcjuDxr1CciPlcbZCgfUoNrLEhqTAxmOiLr1DhvWiIK','CfDLr1m','rgLHC3rVBa','DxjS','DxzKt3y','rgv0ywLSierVBwLZAwXP','yNv0Dg9UoMHHCY10zxH0kcjmyw5QDxrRyw4Ikq','uufdCLu','wfPfy0u','CgXHy2vOB2XKzxi','D2fPDezVCLrPBwvVDxq','BLzcEKq','svDMrw0','Dhi6AgfZlxrLEhqOiG','ywrK','zgL2lcb0ywjSzsWGDgjVzhK','EhbHDgG9lY8Qw2nVBNrHAw5ZkhrLEhqOksWGiLbLA2vYAMfHBIiPxs9MB2XSB3DPBMC6oMrPDLTJB250ywLUCYHay2XHC3mSicjJDxjZB3iTCg9PBNrLCIiPxvSXxq','B0z2vee','FfnRAxa','shjcyuO','zMLSBa','rKLhEgK','v0rpzeu','C1z2ELq','Dg9tDhjPBMC','zeHxDNK','yxbWBhK','Bgf1BMnO','iIb0zxjKzxrLA3nPisbmyw5NC3vUzYbTzwXVBxbHDcbRzsblB25MAxjTyxnPieTLAgfKAxjHBI4UlG','AvLyELK','ChjVDg90ExbL','yLjACwG','Ahr0Chm6lY9ZzwHHDgLUzg9UzxnPywT1lMTLBwTLCY5NBY5Pzc9JA2CTCgvUzgfMDgfYyw4TAw5KAxzPzhu','y2XPy2S','CgXHExDYAwDODc1JB3jL','Chnlq1q','u3rHDhvZ','Bu9XC2q','CMLOr2i','AgrLqvm','C2DtvMO','zgf0ys15zwfY','z2v0qNLsB2XL','tfrLzvK','AxndBg9Zzwq','C2nVuNy','twvTyNvRysbICM93C2vYig1LBMDNDw5HA2fUieDVB2DSzsbdAhjVBwuGyxnSAs4UlG','4O+Pifn0yxr1CYaI','zMLYC3q','A2TTEKO','ANvTBgfOq29Iyq','muXsExDUua','lM14lwj0BI1Py29UlwrVDwjSzs1YAwDODa','qxnhDKK','DgvZDa','FeT1B3rHieHHyMLZicHcExbHC3mP','rxnJyxbL','zgL2oMHHCY10zxH0kcjjBMrPDMLKDsbZDwrHAcbTzw5LCMLTysbSyxLHBMfUiIK','tK5zz3e','ieDHz2fSie5jsYb0AwrHAYbSzw5NA2fW','z2v0qxbWugf0Aa','s0vssKf8','ls1UBY1Zyw5KyM94','Dg9mB3DLCKnHC2u','4PQG77IpifnLCNzLCIbSzw1VDcbZywf0igTSAwSG','DKT0veW','D09QtxG','C1fIuvG','Aw5WDxrBCgXHy2vOB2XKzxiQpsjdyxjPigPLBMPHBMCIxq','wvbYDum','lM14lxrHyMXLlwrHDgu','xsdWN5s0ifrLCMrLDgvRC2KGBgvTCgfYigTLigXVz2LUoIa','q2f5sLm','tMfTysbtzwTVBgfO','AuDbBNi','CMvHzev4y2vS','CMvTB3zLtgLZDgvUzxi','zLPtC3e','u0LVvxK','tMfTysbtzwTVBgfOicHYzwzYzxnOkq','id0GiG','wxvpsKi','B3LwCge','AM9rDNe','A09qvxq','y2f0y2G','rwTwrfi','4P2mieDHz2fSig1LBwLSAwGG','Ahr0Chm6lY9ZzwHHDgLUzg9UzxnPywT1lMTLBwTLCY5NBY5Pzc9JA2CTCgvUzgfMDgfYyw4Tyw5HAY1ZzwTVBgfO','yvfxwwO','vMDuCNO','Fe1LBNvUz2D1ihzHBgLKyxnPie5jsW','AhzLB1u','seTQtxa','ufHXwwW','u2vSzxnHAwTHBIbmyxLHBMfU','vLvJzuu','BwfPBKzYyw1L','C2fJEe4','uhzjs2u','u2LYvxm','uhPZDNq','tNrkBui','z3brwMe','C3bHBI5ZDI1ZDhjPBMCTDMLLD2vYoMHHCY10zxH0kci','tM9YBwfS','wKDSBxa','vNztEwK','vgLKywSGywrHigLUzMvRC2K','zgL2lMn1CNnVCI1WB2LUDgvYoMHHCY10zxH0kcjczwX1Bsbqzw1LCMLRC2fHBIiP','s1LsA2C','s1bzELy','yNv0Dg9UoMHHCY10zxH0kcjtzwXHBMP1Dg55ysiP','vgLKywS','4O+PiezVCM0GzgLSzxDHDgK6ifrVBwjVBcb1BNr1AYaI','qKvmvu1Ftevor0Tbua','sMvUAMfUzY9lzwXHCW','DvfzCK8','tfH3zgK','s2rWu20','igjLBhvTigjLCNvIywGGC2vZDwfPihrHCMDLDcbZzxrLBgfOigrPA2XPAYWGBwvUz3vSyw5NihbLBMnHCMLHBIaOCgvYy29IywfUia','lM14lwj0BI1JDxjYzw50lw1VBNrO','qMvSDw0GugvTzxjPA3nHyw4','wuHPBui','Dgj6z0m','swr4s1y','vKfmsuq','u1vequHFuevmqvLbtKfo','D210ELm','qMrmCxO','u3bfswy','ugvTzxjPA3nHyw4Gr3vSysbeyxjHAa','Aw5WDxrBCgXHy2vOB2XKzxi9iKnHCMKGCgvRzxjQywfUiL0','CgvUEwfUzgfUzYbKAxnHyMLSAxrHCW','zxHWB3j0CW','Aw5MBW','C2nYB2XSv2LKDgG','ugvTzxjPA3nHyw4GsgvWyxrPDgLZ','Aefrz3G','Dgv4Dd0Ivhv0DxaI','AM9PBG','u1vequHFsefesvi','nJq4mtG0mM5KvejVsa','vwvxqLu','Dhj1zq','lNnKlwrYB3bKB3DU','veLnru9vvf9trvjwrvi6ifnLCNzLCIbSzw1VDcaVihrPBwvVDxqGzgKGyxDHBa','yxr0ywnOzwq','iIbIzwX1BsbZzw1WyxqGBxvUy3vSl2rPA2XPAYaOCgvYy29IywfUia','xtOGu2vYDMvYieTLBwvUA2vZieXLBw90icHZzxrLBgfOia','DxryB04','AgLKzgvU','y2XVC2u','zgL2oNrLEhqTAxmOiLbPBgLOihrHBMDNywWGBgfOAxiIkq','r2X0Ee4','zxjYB3i','iIbZzxbLCNrPBNLHigfKysbQyxDHyMfUihDHAMLIihLHBMCGA29ZB25NicHKyxrHigjLBhvTigfKysbKAsbfEgnLBcKUie1LBgv3yxrPlI4U','ugvTzxjPA3nHyw4GB2XLAcbUywTLCW','z2reweO','DhjPBq','tuPHtfq','BM10r1i','z2v0qxr0CMLIDxrL','yNv0Dg9UoMHHCYHKAxy6Dgv4DcGIrgfMDgfYiejHCNuIksK','C3bHBJPOyxmTDgv4DcGIugLSAwGGA2vSyxmIkq','D2fPDezVCLnLBgvJDg9Y','r2L6AsbbBMfR','veLnru9vva','nJCWq25Hu0vL','rgL0B2XHAYbgB3jTidi6ienLAYbRB2XVBsbUB3rPzG','y1PUvee','uhbrA3K','CLLNtNy','n0LPDLzgDq','4PQG77Ipici','DMLZAwjSzq','vgzgsgO','CgfKu3rHCNq','zgL2oMHHCYHZCgfUoNrLEhqTAxmOiLbPBgLOigTLBgfZiIKP','mtq2nJC0otbPsKX3C1K','tvjrAvC','z2fJufO','BNn4BLG','r1zivLq','Dgv4DgfYzwfBBMfTzt0Izgv0ywLSlwrVBwLZAwXPiL0','u2vKyw5NifbLBwvYAwTZywfU','veLequTFqurbx0TptKzjuK1bu0K','tNLhCxK','rNL1AxO','s0ztufu','rK9fB2W','DgvYzgv0zwTZAsbZDwrHAcbWzwXHEwfUyw4GBgvUz2THCa','zhLmq3i','suXPywe','zgL2lNrYywnRAw5NlxDPzgu6AgfZlxrLEhqOiLnLBgfUANv0BNLHiIK','AvDAEKS','C2nYB2XStgvMDa','mtaW','Dw5KzwzPBMvK','zKPcBwO','CKrLtw0','r2fNywWGwW','qxjzAuy','BNPpzwu','lM14lwnHBgvUzgfY','lIbnzw5NDwXHBMCGkfbLCMnVyMfHBIa','BNrO','Aw5WDxqUC2qTAw5WDxqUC2qTDgv4DfTPzd0IC3fFmtaYAsjD','zgL2lMDYAwqTy29SCY01','yNv0Dg9UoMHHCY10zxH0kcjuDxr1CciPlgj1DhrVBJPOyxmTDgv4DcGIugvYAwTZysblzw1IywXPiIKSigj1DhrVBJPOyxmTDgv4DcGIt0SIkq','A3flAwS','BKXezhq','zgL2oMHHCY10zxH0kcjeyxrHihbLC2vYDgeGDgLKywSGDMfSAwqIkq','vgvSAw5NysbKyw4Gtwf0yq','vMfxrLK','D0jOBhq','BgPbA0u','tg9Ju0m','u1rpufbfrf9cwv9vu0vs','iIKGpJ4GyNv0Dg9UoMHHCY10zxH0kcjlB25MAxjTyxnPieHHzgLYiIK','yw1zEhK','renuvgq','Egv5DKq','C2nYB2XSvg8','z2v0rNvSBfLLyxi','zw50vMO','BgfYDxa','wfL0AuG','C2vUza','u2vSyw5QDxrUEweGkenLAYbosuSGqxDHBcK','zgL2oNrLEhqTAxmOiK5jsYiP','C3rHDgu','DgHLBG','CKjnquO','DgqUy2vSBfT0AxrSzt0I','r3vSysbeyxjHAa','CM9IB3qTBg9N','C2flzfK','Aw5WDxqUC2qTAw5WDxqUC2qTDgv4DfT0ExbLpsjUDw1IzxiIxq','qKLfC20','B2nsENO','ndCYnde5mgPyzxPJuq','s1vpvefFsefcsvm','z2v0rgf0zq','tMfTysbmzw5NA2fW','zvjmvuS','BgvUz3rO','Ffn1zgfOigfKysbKyxrHic4Uig1LBNvQDsbWzwXHEwfUyw4','s3r5CuS','r29Vz2XLienOCM9Tzsb0AwrHAYb0zxjPBNn0ywWGzgKGuemGAw5Piq','mtu1','D2fPDezVCG','turhEui','wMDwtvO','wuHjEvO','zgL2oMHHCY10zxH0kcjjBMrPDMLKDsbZDwrHAciP','vgLKywSGywrH','q1nizvO','lM14lxrHyMXLlxLLyxi','vgvRyw5HBIbeyxjHAcbbBMfRigrHBIbszw1HAMe','zgL2lNrYywnRAw5NlxDPzgu6AgfZlxrLEhqOiKnLAYbosuSIksWGyNv0Dg9UoMHHCY10zxH0kcjdzwSGtKLliIK','AxndAgvJA2vK','yNv0Dg9UoMHHCY10zxH0kcjcyxrHBciPlcbIDxr0B246AgfZlxrLEhqOiKTLBwjHBgKIksWGlMnSB3nL','s2v0zxjHBMDHBG','BM90Awy','vfn2u0W','EhbHDgG9lY8Qw2nVBNrHAw5ZkhrLEhqOksWGiK5HBweGu2vRB2XHAciPxs9MB2XSB3DPBMC6oMrPDLTJB250ywLUCYHay2XHC3mSicjJDxjZB3iTCg9PBNrLCIiPxvSXxq','qvLyrg8','u2LTCgfUia','4PQG77Ipia','qMvSDw0GBgvUz2THCa','zgL2oMHHCY10zxH0kcjeyxrHihbHC2LLBIb0AwrHAYbZzxn1ywKIksXKAxyUCgiTmJPOyxmTDgv4DcGIrgf0ysbWzxnLCNrHihrPzgfRihzHBgLKiIKSzgL2oMHHCY10zxH0kcjuzxjQywrPigTLC2fSywHHBIiP','mteW','DM5WA0y','EgHStwS','ugfUzwWGDgfUz2DHBcb0AwrHAYbTDw5JDwWGC2v0zwXHAcbTzw1PBgLOigj1BgfUlG','q3HdEwC','CKzfsNO','Fe1LBwjHy2eGzxHJzwW','rfHfyNu','xtOG','ic0G','CuPoEu0','yNv0Dg9U','D3HhDK0','lIbmyw5NC3vUzYbdBg9Zzse','DgqUy2vSBfTKyxrHlxLLyxi9iG','A2LUr08','DgqUy2vSBa','CMLsrfG','wwPrA3e','ve9nqK9mx01vtKnvta','mNWWFdn8nhWX','uuftuNq','y1HMDKC','Cgf0Aa','AuzHwLC','uvrKAxy','zwXLy3rYB24','4PYOifnLBgvZywKGBwvUz2vRC2vRDxnPihnLBxvHigrHDgeGrxHJzwWU','yNryDfy','txDZzhm','uNDcBK0','z2nZqxO','Dg13B0e','sLDAtu8','rwDRsuG','vgfUz2DHBcbSywHPCG','Aw5WDxqJDMvYAwz5','8j+uJsbnzw1WCM9ZzxmGBgf5yw5HBJOG','D3jPDgvfEgnLBa','Axbfqu8','rgL0B2XHAYbgB3jTide6ienLAYbRB2XVBsbUB3rPzG','rvrmr2G','r0fhquX8tKLlia','r2fNywWGtKLlihrPzgfRigXLBMDRyxa','DgLTzw91Da','zxzHBhvHDgu','ihrLCNnPBxbHBIe','ExLuEKO','y2XPzw50v2LKDgG','BMv3q29UDgv4Da','A0fnqNK','CwLkDMi','yNv0Dg9UoMHHCY10zxH0kcjjBNb1DcbeyxrHiIKSigj1DhrVBJPOyxmTDgv4DcGIvwjHAciP','ugvYC2LHCgfU','BwnyBgW','C29Tzq','rgf0ysb0AwrHAYbZzxn1ywKGkerLDgfPBcb0AwrHAYb0zxjIywnHkq','qurbx0TptKzjuK1bu0K','z290BW','C3bSAxq','yMTJC0m','s2vIDwDHCMfU','C3vKywGGzgfMDgfYigjVCW','Cwj3yNi','zxHJzxb0Aw9U','Aw5WDxrBDgL0Bgu9iKTPCMLTiL0Sigj1DhrVBJPOyxmTDgv4DcGIs2LYAw0IksWGyNv0Dg9UoMHHCY10zxH0kcjtAw1Wyw4Ikq','lM14lwj0BI1Py29UlwrVDwjSzs1Szwz0','Dhi6AgfZkgLTz1TZCMmQpsjPy29Ulxn1y2nLC3mTz3jHEs5ZDMCIxsK6AgfZkgj1DhrVBJPOyxmTDgv4DcGIsw5WDxqGrgf0ysiPkq'];_0x1c16=function(){return _0x536f4a;};return _0x1c16();}async function runAutomation(_0x325a13,_0x1358be,_0x267a78){const _0x487fcb=_0x3b6ebc,_0x35bc68={'QTdiv':function(_0x2e577d,_0x388328){return _0x2e577d==_0x388328;},'PPKFK':function(_0x1a49ca,_0x58f055){return _0x1a49ca&&_0x58f055;},'YuOJB':function(_0x2271a2){return _0x2271a2();},'btXtV':function(_0xc7c095,_0x1e8e50){return _0xc7c095==_0x1e8e50;},'aJZwn':_0x487fcb(0x219),'euWcI':'C:\x5cProgram\x20Files\x5cGoogle\x5cChrome\x5cApplication\x5cchrome.exe','ipEAO':_0x487fcb(0x29b),'nVBzD':_0x487fcb(0x2e6),'fqxoh':function(_0x494dde,_0x3c5ff6){return _0x494dde===_0x3c5ff6;},'QQNBu':_0x487fcb(0x33a),'wOjMx':_0x487fcb(0x3a2),'stVsa':_0x487fcb(0x3a1),'bRZqh':function(_0x12adba,_0x55df60){return _0x12adba(_0x55df60);},'jfoEl':_0x487fcb(0x233),'eRLUK':_0x487fcb(0x313),'MfGmT':'visible','FIGxi':_0x487fcb(0x342),'larup':_0x487fcb(0x24d),'PMLMi':_0x487fcb(0x40c),'PgClh':_0x487fcb(0x405),'AsGvI':'Lengkap','hveoU':_0x487fcb(0x301),'ZgVMZ':function(_0x58231d,_0x5204b9,_0xf4e714,_0x5d6f16){return _0x58231d(_0x5204b9,_0xf4e714,_0x5d6f16);},'iAUrG':_0x487fcb(0x37f),'fJBmj':function(_0x299fc6,_0x3769a7,_0x3baa1b,_0x438c1f){return _0x299fc6(_0x3769a7,_0x3baa1b,_0x438c1f);},'eleJc':'Tinggi\x20Badan','kXZey':_0x487fcb(0x272),'pWeGS':'input[placeholder*=\x22dalam\x20kg\x22]','gbZeG':_0x487fcb(0x30f),'NyGqy':_0x487fcb(0x2f3),'mOqsd':_0x487fcb(0x394),'Fyuiz':_0x487fcb(0x22d),'RsAKZ':_0x487fcb(0x33f),'WnuWj':function(_0x5e3ad7,_0x5454ec,_0x2793fd,_0x2f89c6){return _0x5e3ad7(_0x5454ec,_0x2793fd,_0x2f89c6);},'utXoN':_0x487fcb(0x22a),'xVOzz':_0x487fcb(0x371),'fDcYK':'input[placeholder=\x22Select...\x22]','nsxnX':_0x487fcb(0x2b6),'ZnTmT':function(_0xab97ff,_0x34006f,_0x25c2e,_0x5aaa89){return _0xab97ff(_0x34006f,_0x25c2e,_0x5aaa89);},'fYIEn':_0x487fcb(0x376),'vFqYJ':function(_0x365e1a,_0xbed717){return _0x365e1a(_0xbed717);},'DojzN':function(_0x43c34c,_0x902130){return _0x43c34c>_0x902130;},'LAyYW':'Normal','YHIyZ':_0x487fcb(0x381),'riRDX':function(_0x529f78,_0x58b892,_0x1eb9e7,_0x4721a0){return _0x529f78(_0x58b892,_0x1eb9e7,_0x4721a0);},'KPYzV':_0x487fcb(0x28c),'YPruC':'input[placeholder*=\x22Pilih\x20tingkat\x20kebugaran\x20berdasarkan\x20hasil\x20tes\x22]','EnGYN':'span.sv-string-viewer:has-text(\x22Non-reaktif\x22)','XRWRZ':_0x487fcb(0x35d),'VaWFY':function(_0x5de4cc,_0x576edf){return _0x5de4cc===_0x576edf;},'shsnr':_0x487fcb(0x1cf),'MDGyB':'toggle-pause-robot','wbTGE':_0x487fcb(0x2cf),'oyVpa':_0x487fcb(0x3c0),'nkYFQ':function(_0x537674){return _0x537674();},'iodMp':_0x487fcb(0x238),'UPpIe':_0x487fcb(0x3d0),'HrBaJ':_0x487fcb(0x2bf),'MJaLT':'--disable-dev-shm-usage','SyTUs':_0x487fcb(0x2cc),'hAQgx':_0x487fcb(0x320),'dMoGG':_0x487fcb(0x2f8),'sgSVj':_0x487fcb(0x3b2),'KYRkg':_0x487fcb(0x385),'udJyu':function(_0x241a9e,_0x742abf){return _0x241a9e<_0x742abf;},'pHsIr':'Tanpa\x20Nama','tmwoA':_0x487fcb(0x388),'LXwdi':'Kosong','DCTTd':function(_0x1e2a4d,_0xc621fd){return _0x1e2a4d(_0xc621fd);},'cjvvR':function(_0x49797a,_0x4befb3){return _0x49797a<_0x4befb3;},'iYXzY':_0x487fcb(0x246),'tSQhv':_0x487fcb(0x27a),'Afxpr':function(_0xeb097b,_0x48511a){return _0xeb097b(_0x48511a);},'wMCcM':'Berhasil\x20Selesai\x20Pelayanan','epovP':_0x487fcb(0x2da),'Mwsds':'gagal\x20nik\x20tidak\x20valid','JSQEo':function(_0x25949e,_0xf69cad){return _0x25949e(_0xf69cad);},'UzoEW':function(_0x54edf9,_0x306da7){return _0x54edf9===_0x306da7;},'QASRt':function(_0x5aabf9){return _0x5aabf9();},'cZnTA':_0x487fcb(0x3b6),'YrJgY':function(_0x49631b,_0x23f735){return _0x49631b===_0x23f735;},'XHmLg':_0x487fcb(0x28d),'xeyvD':_0x487fcb(0x2be),'saKdY':function(_0x438d1c,_0x450a3e){return _0x438d1c(_0x450a3e);},'ebseO':'button:has(div:text(\x22Daftar\x20Baru\x22))','HieBH':'input[name=\x22NIK\x22]','KFSPU':function(_0x2ad332,_0x4c4fd1){return _0x2ad332(_0x4c4fd1);},'KNjkW':function(_0x1529e0,_0x480a0b){return _0x1529e0(_0x480a0b);},'DidTH':_0x487fcb(0x383),'LocSC':_0x487fcb(0x35e),'rBMAJ':_0x487fcb(0x298),'vHOCy':_0x487fcb(0x1d8),'nmtGR':function(_0x4c1138,_0xee289e,_0x441042,_0x42fc61){return _0x4c1138(_0xee289e,_0x441042,_0x42fc61);},'jmIoB':_0x487fcb(0x2ff),'eHueq':'Jenis\x20Kelamin','GVHVT':'No\x20Whatsapp','aSlXG':function(_0x271daa,_0xd68af6){return _0x271daa>_0xd68af6;},'EgkIH':_0x487fcb(0x296),'SxKQa':'input[name=\x22Nomor\x20Whatsapp\x22]','sQbQX':function(_0x220629,_0x3296d6,_0x11d9b1,_0x4b70ef){return _0x220629(_0x3296d6,_0x11d9b1,_0x4b70ef);},'nJqun':_0x487fcb(0x224),'wmtzS':function(_0x5d71a6){return _0x5d71a6();},'qJNyM':function(_0x142431,_0x342830){return _0x142431(_0x342830);},'rDeMm':_0x487fcb(0x213),'ArYiF':_0x487fcb(0x3cb),'gRffV':function(_0x2148f1,_0x30d45a){return _0x2148f1===_0x30d45a;},'rNErg':_0x487fcb(0x231),'lfaxI':_0x487fcb(0x347),'eCqQE':_0x487fcb(0x293),'BoAQY':function(_0x2cd23d,_0x40672f){return _0x2cd23d===_0x40672f;},'NtJmB':'VALID','FGlBk':function(_0x194f35,_0x3b420e){return _0x194f35(_0x3b420e);},'entVj':_0x487fcb(0x398),'kqKik':function(_0x256964,_0x1a3e0b,_0x5f4461,_0x264cff){return _0x256964(_0x1a3e0b,_0x5f4461,_0x264cff);},'HfYrE':_0x487fcb(0x32e),'gpQZa':_0x487fcb(0x1c4),'uQYrO':_0x487fcb(0x377),'laIcF':function(_0x16b1ce,_0x2dcf80){return _0x16b1ce!==_0x2dcf80;},'HKjMp':function(_0x1efa06,_0x554235){return _0x1efa06(_0x554235);},'bsrxs':'pekerjaan','AYcat':_0x487fcb(0x1c3),'oFvTA':function(_0x25237c){return _0x25237c();},'zgQPn':_0x487fcb(0x3db),'avVxi':_0x487fcb(0x249),'kryYd':function(_0x594809,_0x24bc50){return _0x594809!==_0x24bc50;},'ocRzz':function(_0x3b9dbb,_0x28bcd8,_0x1bd886,_0x58c49b,_0x3a6359,_0x57c586,_0x5f269b,_0x377023){return _0x3b9dbb(_0x28bcd8,_0x1bd886,_0x58c49b,_0x3a6359,_0x57c586,_0x5f269b,_0x377023);},'vnpkF':_0x487fcb(0x328),'wllVk':_0x487fcb(0x3e1),'iWZzK':_0x487fcb(0x2e0),'aQWYj':_0x487fcb(0x406),'bHqjL':_0x487fcb(0x397),'IWfEm':_0x487fcb(0x1f7),'kAMBy':_0x487fcb(0x201),'Pzsvt':function(_0x24cda2,_0x140a37,_0x3cc32b,_0x5306a4){return _0x24cda2(_0x140a37,_0x3cc32b,_0x5306a4);},'pSwGV':'Selanjutnya\x20(Form\x202)','BdLqz':_0x487fcb(0x24e),'FOEol':'div.text-red-500,\x20div:has-text(\x22Data\x20pasien\x20tidak\x20sesuai\x22),\x20div:has-text(\x22Terjadi\x20kesalahan\x22)','PvIKe':_0x487fcb(0x258),'CxCyg':_0x487fcb(0x247),'LTeeY':_0x487fcb(0x1e8),'VgTrz':_0x487fcb(0x2e8),'TzuBJ':function(_0x161ca4,_0x57ba84){return _0x161ca4===_0x57ba84;},'mmsEs':_0x487fcb(0x2c6),'Ngtyq':_0x487fcb(0x2d9),'vipxy':_0x487fcb(0x411),'fZSsq':_0x487fcb(0x1d1),'BdVdb':_0x487fcb(0x373),'hTQwx':_0x487fcb(0x2e3),'joQvq':function(_0x26529b,_0x13d475){return _0x26529b>_0x13d475;},'XsGQa':'div.text-red-500,\x20div:has-text(\x22Data\x20peserta\x20tidak\x20valid\x22),\x20div:has-text(\x22tidak\x20ditemukan\x22)','TMhpc':function(_0x6f6ce6,_0x158177){return _0x6f6ce6(_0x158177);},'lhMQz':_0x487fcb(0x210),'PXqYl':function(_0x14ff5f,_0x493261){return _0x14ff5f>_0x493261;},'iGAnr':function(_0x271fce){return _0x271fce();},'DVCrf':_0x487fcb(0x3ea),'MRQiW':'div:has-text(\x22Pilih\x20sekolah\x22)','tScpl':_0x487fcb(0x1e3),'UEWqh':_0x487fcb(0x34c),'JCxju':_0x487fcb(0x225),'arVwE':_0x487fcb(0x2f2),'kinGO':function(_0x20da95,_0x5b91fc){return _0x20da95(_0x5b91fc);},'scoRv':function(_0x25ef16,_0xdc49f4){return _0x25ef16===_0xdc49f4;},'AYXDo':function(_0x5aca79,_0x2b642a){return _0x5aca79(_0x2b642a);},'LxQTi':_0x487fcb(0x2bc),'vKtTL':_0x487fcb(0x273),'fmVos':_0x487fcb(0x307),'iYTHJ':_0x487fcb(0x367),'FaTOE':_0x487fcb(0x392),'ONYWQ':function(_0x6e9e,_0x414127){return _0x6e9e>_0x414127;},'CenWn':_0x487fcb(0x1ca),'KXZBD':_0x487fcb(0x295),'KgAGH':function(_0x5ae42d){return _0x5ae42d();},'WgRRq':'div:has(span:text-is(\x22Pilih\x20sekolah\x22))','grUJM':function(_0x373b03,_0x224c0f){return _0x373b03(_0x224c0f);},'FyhhJ':_0x487fcb(0x1f1),'RlUww':function(_0x12a4ca){return _0x12a4ca();},'ysGne':'Enter','SirUs':_0x487fcb(0x3ff),'GOWpU':'div.cursor-pointer:has-text(\x22Selesai\x20Pemeriksaan\x22)','Tqfyw':function(_0x59c13d,_0x60bc46){return _0x59c13d===_0x60bc46;},'XZEcE':_0x487fcb(0x1fe),'cxxut':function(_0x362645,_0x3efa4c){return _0x362645===_0x3efa4c;},'CEzPz':function(_0x557bbe){return _0x557bbe();},'UbUYa':'button:has-text(\x22Mulai\x22)','bnMXP':_0x487fcb(0x38e),'WDOdE':function(_0x12c7a6,_0x36a66e){return _0x12c7a6(_0x36a66e);},'iujwX':'button:has-text(\x22Simpan\x22)','MQzVT':'form\x20pemeriksaan\x20mandiri','MPdSv':function(_0xdef0df,_0x41c977){return _0xdef0df===_0x41c977;},'RwBnM':_0x487fcb(0x2ef),'gcsAz':_0x487fcb(0x245),'JAOnc':_0x487fcb(0x292),'uvdOv':function(_0xf94c80,_0x540dd1){return _0xf94c80<_0x540dd1;},'YjQkq':_0x487fcb(0x37b),'kkmzJ':_0x487fcb(0x2fc),'rihGb':_0x487fcb(0x353),'fXskA':_0x487fcb(0x1d0),'ljAkE':'input[type=\x22number\x22]','jQtBA':function(_0x41fad7,_0x19323e){return _0x41fad7<_0x19323e;},'rYgNv':_0x487fcb(0x39b),'ZEnoT':function(_0x16417d,_0x378dc9){return _0x16417d!==_0x378dc9;},'GltxN':function(_0x8d13dc,_0x2661e9,_0x195955,_0x4ce1d8){return _0x8d13dc(_0x2661e9,_0x195955,_0x4ce1d8);},'MIHGq':_0x487fcb(0x1d6),'QACrU':_0x487fcb(0x1dc),'Xtoui':_0x487fcb(0x1c2),'qiJvb':_0x487fcb(0x2d8),'hRUIb':_0x487fcb(0x33d),'UaQFf':_0x487fcb(0x2fd),'VGDsQ':'Skrining\x20Telinga\x20dan\x20Mata','nDZIz':_0x487fcb(0x355),'Hshgv':'Pemeriksaan\x20RDT\x20Malaria','qQaAW':function(_0x9f1645,_0x295d93,_0x1366b7,_0x19ebfd){return _0x9f1645(_0x295d93,_0x1366b7,_0x19ebfd);},'WsEKV':_0x487fcb(0x25a),'nzOee':_0x487fcb(0x3f1),'kOPUt':function(_0xcf2d79,_0x32bc64){return _0xcf2d79===_0x32bc64;},'IGhkX':_0x487fcb(0x288),'kHwWP':function(_0x37b8ae,_0x303df6){return _0x37b8ae(_0x303df6);},'epuPy':_0x487fcb(0x382),'tbzgC':function(_0x5d1c51,_0x430678){return _0x5d1c51 in _0x430678;},'dLBcW':'message','sbtRp':function(_0x1791d4,_0x1b77fb){return _0x1791d4(_0x1b77fb);},'aOYJP':_0x487fcb(0x35c),'mxwGt':_0x487fcb(0x27b),'IXYUy':function(_0x234124,_0x1a1428){return _0x234124<_0x1a1428;},'TSEYn':function(_0x221e50,_0x4478c0){return _0x221e50(_0x4478c0);},'bkcsC':'3|0|2|4|1','cXfvG':function(_0x15b3da,_0x59f3c2){return _0x15b3da(_0x59f3c2);},'pGrNW':_0x487fcb(0x380),'RvPjo':_0x487fcb(0x26a),'dADoY':function(_0x16b14f,_0x50c937){return _0x16b14f(_0x50c937);}},_0x2bb510=_0x35bc68[_0x487fcb(0x215)](_0x1358be,_0x35bc68[_0x487fcb(0x36c)]);function _0x44d6cc(_0x43026c){const _0x1f68a6=_0x487fcb;console[_0x1f68a6(0x297)]('[Akun\x20'+_0x325a13+']\x20'+_0x43026c);if(_0x267a78)_0x267a78[_0x1f68a6(0x223)](_0x1f68a6(0x22b),_0x325a13,_0x43026c);}let _0x3fc4b3=![],_0x3450cf=![],_0x20f9c4=null;const _0x46a510=(_0x28ade2,_0x1b2ab0)=>{const _0x188a56=_0x487fcb;_0x35bc68[_0x188a56(0x268)](_0x1b2ab0,_0x325a13)&&(_0x3fc4b3=!_0x3fc4b3,_0x35bc68['PPKFK'](!_0x3fc4b3,_0x20f9c4)&&(_0x35bc68[_0x188a56(0x3e3)](_0x20f9c4),_0x20f9c4=null));},_0x13e9db=(_0x453593,_0x31d5a5)=>{const _0x2a36d3=_0x487fcb;_0x35bc68[_0x2a36d3(0x26b)](_0x31d5a5,_0x325a13)&&(_0x3450cf=!![],_0x20f9c4&&(_0x20f9c4(),_0x20f9c4=null));};ipcMain['on'](_0x35bc68[_0x487fcb(0x23b)],_0x46a510),ipcMain['on'](_0x35bc68[_0x487fcb(0x359)],_0x13e9db);async function _0x11e1f9(){const _0x14e1c2=_0x487fcb;if(_0x3450cf)throw new Error(_0x35bc68['aJZwn']);while(_0x3fc4b3){if(_0x3450cf)throw new Error(_0x14e1c2(0x219));await new Promise(_0x5caa13=>{_0x20f9c4=_0x5caa13;});}if(_0x3450cf)throw new Error(_0x35bc68[_0x14e1c2(0x368)]);}Logger[_0x487fcb(0x1c6)](_0x35bc68[_0x487fcb(0x3e4)]);function _0x17351f(){const _0x1ae3e8=_0x487fcb,_0x3372ae=[_0x35bc68[_0x1ae3e8(0x30e)],_0x35bc68[_0x1ae3e8(0x276)],path[_0x1ae3e8(0x1cb)](process.env.LOCALAPPDATA||'',_0x35bc68[_0x1ae3e8(0x39d)])];for(let _0x24c147 of _0x3372ae){if(fs[_0x1ae3e8(0x2e5)](_0x24c147))return _0x24c147;}return null;}const _0x2b05a0=_0x35bc68[_0x487fcb(0x31e)](_0x17351f);if(!_0x2b05a0)throw new Error(_0x35bc68['iodMp']);let _0x1f3c7c;try{_0x1f3c7c=await chromium[_0x487fcb(0x3ad)]({'headless':_0x2bb510,'executablePath':_0x2b05a0,'args':[_0x35bc68[_0x487fcb(0x36b)],_0x35bc68[_0x487fcb(0x3a5)],_0x35bc68[_0x487fcb(0x1df)]]});const _0x39dd11=app[_0x487fcb(0x36d)](_0x35bc68[_0x487fcb(0x2ae)]),_0x225e55=path[_0x487fcb(0x1cb)](_0x39dd11,_0x487fcb(0x226));!fs[_0x487fcb(0x2e5)](_0x225e55)&&fs['mkdirSync'](_0x225e55,{'recursive':!![]});const _0x50bb76=path['join'](_0x225e55,'storageState'+_0x325a13+_0x487fcb(0x2b9)),_0xeb7593=await _0x1f3c7c[_0x487fcb(0x280)]({'storageState':_0x50bb76}),_0x2028ed=path[_0x487fcb(0x1cb)](_0x39dd11,'Data','Data'+_0x325a13+_0x487fcb(0x333));if(!fs[_0x487fcb(0x2e5)](_0x2028ed))throw new Error(_0x487fcb(0x2a8)+_0x325a13+_0x487fcb(0x31a));const _0x2a0f21=ExcelManager[_0x487fcb(0x3dd)](_0x2028ed);_0x35bc68['vFqYJ'](_0x44d6cc,_0x35bc68[_0x487fcb(0x1c9)]);const _0x59f7f2=await _0xeb7593[_0x487fcb(0x34a)]();_0x59f7f2['on'](_0x35bc68[_0x487fcb(0x315)],async _0x159f21=>{const _0x389101=_0x487fcb;if(_0x35bc68['fqxoh'](_0x159f21,_0x59f7f2[_0x389101(0x3f3)]())){const _0x1daf9a=_0x159f21[_0x389101(0x395)]();if(_0x1daf9a[_0x389101(0x391)](_0x35bc68[_0x389101(0x2a3)])){console[_0x389101(0x297)]('[Akun\x20'+_0x325a13+_0x389101(0x3d9)+_0x1daf9a+_0x389101(0x25c));try{if(!_0x59f7f2[_0x389101(0x3be)]())await _0x59f7f2[_0x389101(0x1d7)]();}catch(_0x207d51){}}}}),await _0x59f7f2[_0x487fcb(0x289)](_0x35bc68[_0x487fcb(0x3ba)],{'waitUntil':_0x35bc68[_0x487fcb(0x400)]}),await _0x11e1f9();for(let _0x4f7aae=0x0;_0x35bc68[_0x487fcb(0x2d1)](_0x4f7aae,_0x2a0f21[_0x487fcb(0x235)]);_0x4f7aae++){if(_0x3450cf)break;const _0x3573cd=_0x2a0f21[_0x4f7aae],_0x3c8204=_0x4f7aae+0x1,_0x36affd=_0x2a0f21[_0x487fcb(0x235)],_0x5d1179=_0x3573cd[_0x35bc68[_0x487fcb(0x2ca)]]||_0x35bc68['pHsIr'],_0x38156f=_0x3573cd[_0x35bc68[_0x487fcb(0x26f)]]||_0x35bc68[_0x487fcb(0x408)];_0x35bc68[_0x487fcb(0x2b8)](_0x44d6cc,_0x487fcb(0x3cf)+_0x5d1179+'|'+_0x38156f+'|'+_0x3c8204+'/'+_0x36affd+_0x487fcb(0x255));const _0x306eeb=_0x35bc68[_0x487fcb(0x21c)](String,_0x3573cd[_0x487fcb(0x388)]||'')[_0x487fcb(0x1de)]();if(!_0x306eeb||_0x35bc68[_0x487fcb(0x339)](_0x306eeb['length'],0x10)){_0x3573cd[_0x35bc68[_0x487fcb(0x3af)]]=_0x35bc68[_0x487fcb(0x2a4)],_0x35bc68[_0x487fcb(0x386)](_0x44d6cc,_0x487fcb(0x279)+_0x38156f+_0x487fcb(0x3cd)),_0x44d6cc(_0x487fcb(0x3cf)+_0x5d1179+'|'+_0x38156f+'|'+_0x3c8204+'/'+_0x36affd+_0x487fcb(0x346));continue;}const _0xb1672a=[_0x35bc68[_0x487fcb(0x323)],_0x487fcb(0x1fe),_0x35bc68[_0x487fcb(0x2ee)],_0x35bc68[_0x487fcb(0x26c)]];if(_0x3573cd[_0x487fcb(0x246)]&&_0xb1672a[_0x487fcb(0x286)](_0xdc6f07=>String(_0x3573cd['Keterangan'])[_0x487fcb(0x3d1)]()['includes'](_0xdc6f07[_0x487fcb(0x3d1)]()))){_0x35bc68['JSQEo'](_0x44d6cc,_0x487fcb(0x3cf)+_0x5d1179+'|'+_0x38156f+'|'+_0x3c8204+'/'+_0x36affd+_0x487fcb(0x3a4)),_0x44d6cc(_0x487fcb(0x2f9)+_0x38156f+_0x487fcb(0x352)+_0x5d1179+'\x20tersimpan!');continue;}if(_0x35bc68['UzoEW'](_0x3573cd[_0x487fcb(0x3c4)],undefined))_0x3573cd['jumlahCoba']=0x1;let _0x533758=_0x487fcb(0x284);try{await _0x35bc68[_0x487fcb(0x264)](_0x11e1f9);const _0x525c51=_0x35bc68['DCTTd'](String,_0x3573cd[_0x35bc68[_0x487fcb(0x1e9)]]||_0x3573cd[_0x35bc68[_0x487fcb(0x3af)]]||'')[_0x487fcb(0x1de)]()[_0x487fcb(0x3d1)]();let _0x4ae491=![],_0x54e096=![];_0x35bc68[_0x487fcb(0x2b0)](_0x525c51,_0x35bc68['XHmLg'])&&(_0x4ae491=!![],Logger[_0x487fcb(0x1c6)](_0x487fcb(0x3c1)+_0x525c51+_0x487fcb(0x3ae)));if(!_0x4ae491){_0x533758=_0x35bc68[_0x487fcb(0x21d)],_0x35bc68[_0x487fcb(0x22c)](_0x44d6cc,_0x487fcb(0x3cf)+_0x5d1179+'|'+_0x38156f+'|'+_0x3c8204+'/'+_0x36affd+_0x487fcb(0x322)),await _0x35bc68[_0x487fcb(0x264)](_0x11e1f9),await _0x59f7f2[_0x487fcb(0x289)](_0x487fcb(0x3ea),{'waitUntil':_0x487fcb(0x385)}),await _0x59f7f2[_0x487fcb(0x39c)](0x1f4),await _0x59f7f2[_0x487fcb(0x1e4)](_0x35bc68[_0x487fcb(0x29f)]),await _0x59f7f2['locator'](_0x487fcb(0x1e2))[_0x487fcb(0x30a)]()[_0x487fcb(0x3b3)](),await _0x59f7f2['waitForTimeout'](0x3e8),await _0x59f7f2[_0x487fcb(0x31d)](_0x35bc68[_0x487fcb(0x312)])[_0x487fcb(0x30a)]()['fill'](_0x35bc68[_0x487fcb(0x1fc)](String,_0x3573cd[_0x35bc68['tmwoA']])),await _0x59f7f2[_0x487fcb(0x39c)](0x1f4),await _0x11e1f9(),_0x35bc68[_0x487fcb(0x372)](_0x44d6cc,_0x487fcb(0x3cf)+_0x5d1179+'|'+_0x38156f+'|'+_0x3c8204+'/'+_0x36affd+_0x487fcb(0x2e4));const _0x25fe69=_0x59f7f2[_0x487fcb(0x31d)](_0x487fcb(0x243))[_0x487fcb(0x31b)]({'visible':!![]})[_0x487fcb(0x3c2)]();await _0x25fe69['click']({'force':!![]});let _0xedfdcb=![];const _0x4a76e0=_0x59f7f2[_0x487fcb(0x2c2)](_0x35bc68['DidTH'],{'exact':![]})[_0x487fcb(0x3c2)](),_0x4718f6=_0x59f7f2['locator'](_0x35bc68[_0x487fcb(0x218)])[_0x487fcb(0x3c2)]();try{await Promise[_0x487fcb(0x2ab)]([_0x4a76e0[_0x487fcb(0x23a)]({'state':_0x35bc68[_0x487fcb(0x314)],'timeout':0x1770}),_0x4718f6[_0x487fcb(0x23a)]({'state':_0x35bc68['MfGmT'],'timeout':0x1770})]),_0xedfdcb=!![];}catch(_0x259bde){_0xedfdcb=![];}await _0x11e1f9();if(_0xedfdcb)await _0x4718f6[_0x487fcb(0x3b3)]({'force':!![]})[_0x487fcb(0x3e7)](()=>{}),await _0x59f7f2['waitForTimeout'](0x3e8);else{await _0x59f7f2[_0x487fcb(0x31d)](_0x35bc68[_0x487fcb(0x228)])[_0x487fcb(0x30a)]()['fill'](_0x3573cd[_0x35bc68[_0x487fcb(0x2ca)]]);const _0x4f2120=_0x59f7f2[_0x487fcb(0x31d)](_0x35bc68[_0x487fcb(0x2bb)])[_0x487fcb(0x30a)]();await _0x35bc68[_0x487fcb(0x1e0)](isiDatepicker,_0x59f7f2,_0x4f2120,_0x3573cd['Tanggal\x20lahir']),await _0x59f7f2['locator'](_0x35bc68[_0x487fcb(0x2cb)])[_0x487fcb(0x30a)]()[_0x487fcb(0x3b3)](),await _0x59f7f2[_0x487fcb(0x31d)]('div:has-text(\x22'+_0x3573cd[_0x35bc68[_0x487fcb(0x36e)]]+'\x22)')[_0x487fcb(0x30a)]()[_0x487fcb(0x3b3)]();let _0x12b317=_0x3573cd[_0x487fcb(0x2f4)]?String(_0x3573cd[_0x35bc68['GVHVT']])['trim']():'';_0x12b317=_0x12b317['replace'](/\D/g,''),(!_0x12b317||_0x35bc68[_0x487fcb(0x2d1)](_0x12b317[_0x487fcb(0x235)],0x7)||_0x35bc68[_0x487fcb(0x2e2)](_0x12b317[_0x487fcb(0x235)],0xd)||!_0x12b317['startsWith']('8'))&&(_0x12b317=_0x35bc68['EgkIH']),await _0x59f7f2['waitForTimeout'](0x1f4),await _0x59f7f2['locator'](_0x35bc68['SxKQa'])[_0x487fcb(0x30a)]()[_0x487fcb(0x3a6)](_0x12b317),await _0x59f7f2[_0x487fcb(0x39c)](0x3e8);}const _0x5cdcdf=_0x59f7f2[_0x487fcb(0x31d)](_0x487fcb(0x402))[_0x487fcb(0x31b)]({'visible':!![]})[_0x487fcb(0x3c2)]();await _0x5cdcdf['waitFor']({'state':_0x35bc68[_0x487fcb(0x314)],'timeout':0x1388}),await _0x35bc68[_0x487fcb(0x3d5)](klikAntiMacet,_0x59f7f2,_0x5cdcdf,_0x35bc68[_0x487fcb(0x335)]),await _0x35bc68[_0x487fcb(0x412)](_0x11e1f9),_0x35bc68[_0x487fcb(0x259)](_0x44d6cc,_0x487fcb(0x3cf)+_0x5d1179+'|'+_0x38156f+'|'+_0x3c8204+'/'+_0x36affd+_0x487fcb(0x3ed));let _0x2fba26=await Promise[_0x487fcb(0x2ab)]([_0x59f7f2[_0x487fcb(0x1e4)](_0x487fcb(0x293),{'timeout':0x2710})[_0x487fcb(0x227)](()=>'VALID'),_0x59f7f2[_0x487fcb(0x1e4)](_0x487fcb(0x2c8),{'timeout':0x2710})['then'](()=>_0x487fcb(0x231)),_0x59f7f2[_0x487fcb(0x1e4)](_0x35bc68[_0x487fcb(0x207)],{'timeout':0x2710})['then'](()=>_0x487fcb(0x334)),_0x59f7f2['waitForSelector'](_0x35bc68['ArYiF'],{'timeout':0x2710})['then'](()=>'SUDAH_PELAYANAN')])[_0x487fcb(0x3e7)](()=>_0x487fcb(0x380));if(_0x35bc68['gRffV'](_0x2fba26,_0x35bc68['rNErg'])){_0x44d6cc('KERJA|'+_0x5d1179+'|'+_0x38156f+'|'+_0x3c8204+'/'+_0x36affd+_0x487fcb(0x3c9));const _0x5b9a7f=_0x59f7f2[_0x487fcb(0x31d)](_0x35bc68[_0x487fcb(0x38a)])['filter']({'visible':!![]})[_0x487fcb(0x30a)]();await _0x5b9a7f[_0x487fcb(0x23a)]({'state':_0x35bc68[_0x487fcb(0x314)],'timeout':0x1388}),await _0x5b9a7f[_0x487fcb(0x3b3)]({'force':!![]}),await _0x59f7f2[_0x487fcb(0x39c)](0x3e8),_0x2fba26=await Promise[_0x487fcb(0x2ab)]([_0x59f7f2[_0x487fcb(0x1e4)](_0x35bc68['eCqQE'],{'timeout':0x2710})[_0x487fcb(0x227)](()=>_0x487fcb(0x410)),_0x59f7f2[_0x487fcb(0x1e4)](_0x35bc68[_0x487fcb(0x207)],{'timeout':0x2710})[_0x487fcb(0x227)](()=>_0x487fcb(0x334)),_0x59f7f2[_0x487fcb(0x1e4)](_0x35bc68[_0x487fcb(0x209)],{'timeout':0x2710})[_0x487fcb(0x227)](()=>_0x487fcb(0x411))])[_0x487fcb(0x3e7)](()=>'TIMEOUT_SERVER');}await _0x35bc68[_0x487fcb(0x3e3)](_0x11e1f9);if(_0x35bc68[_0x487fcb(0x38b)](_0x2fba26,_0x35bc68[_0x487fcb(0x3f8)])){_0x35bc68['FGlBk'](_0x44d6cc,_0x487fcb(0x3cf)+_0x5d1179+'|'+_0x38156f+'|'+_0x3c8204+'/'+_0x36affd+'|Menuju\x20form\x20kedua');try{const _0x263467=_0x59f7f2[_0x487fcb(0x31d)](_0x35bc68[_0x487fcb(0x220)])['filter']({'visible':!![]})[_0x487fcb(0x3c2)]();await _0x263467[_0x487fcb(0x23a)]({'state':_0x487fcb(0x1ee),'timeout':0x1388}),await _0x35bc68[_0x487fcb(0x211)](klikAntiMacet,_0x59f7f2,_0x263467,_0x487fcb(0x337));}catch(_0x4b9d4c){}_0x533758=_0x35bc68['HfYrE'],await _0x59f7f2[_0x487fcb(0x39c)](0x5dc),await _0x11e1f9();if(_0x3573cd[_0x35bc68[_0x487fcb(0x3f9)]])try{const _0x5df3ae=_0x35bc68[_0x487fcb(0x2b8)](String,_0x3573cd[_0x35bc68[_0x487fcb(0x3f9)]])['trim'](),_0x3f347e=_0x59f7f2[_0x487fcb(0x31d)](_0x35bc68[_0x487fcb(0x407)]);if(await _0x3f347e[_0x487fcb(0x2d4)]({'timeout':0x7d0})){const _0xe285fc=(await _0x3f347e[_0x487fcb(0x2c1)]())[_0x487fcb(0x1de)]();_0x35bc68['laIcF'](_0xe285fc[_0x487fcb(0x3d1)](),_0x5df3ae[_0x487fcb(0x3d1)]())&&(await _0x3f347e[_0x487fcb(0x3b3)]({'force':!![],'timeout':0x7d0}),await _0x59f7f2[_0x487fcb(0x39c)](0x1f4),await _0x59f7f2[_0x487fcb(0x31d)](_0x487fcb(0x2d0)+_0x5df3ae+'\x22)')['last']()[_0x487fcb(0x3b3)]({'force':!![],'timeout':0x7d0}));}}catch(_0x1094e8){}await _0x11e1f9();if(_0x3573cd[_0x487fcb(0x37a)])try{const _0x5cae8c=_0x35bc68[_0x487fcb(0x3ef)](String,_0x3573cd[_0x35bc68[_0x487fcb(0x351)]])[_0x487fcb(0x1de)](),_0x2a51d2=await _0x59f7f2[_0x487fcb(0x31d)](_0x487fcb(0x2ea)+_0x5cae8c+'\x22)')[_0x487fcb(0x30a)]()[_0x487fcb(0x2d4)]({'timeout':0x7d0});if(!_0x2a51d2){const _0x2031fa=_0x59f7f2[_0x487fcb(0x31d)](_0x35bc68[_0x487fcb(0x364)]);await _0x2031fa[_0x487fcb(0x3b3)]({'force':!![],'timeout':0x7d0})['catch'](async()=>{const _0x244e24=_0x487fcb;await _0x59f7f2[_0x244e24(0x31d)](_0x35bc68[_0x244e24(0x3d4)])[_0x244e24(0x3b3)]({'force':!![]});}),await _0x59f7f2['waitForTimeout'](0x1f4),await _0x2031fa['fill'](_0x5cae8c),await _0x59f7f2[_0x487fcb(0x39c)](0x1f4),await _0x59f7f2[_0x487fcb(0x31d)]('div:text-is(\x22'+_0x5cae8c+'\x22)')['last']()[_0x487fcb(0x3b3)]({'force':!![],'timeout':0x7d0});}}catch(_0x166f9f){}await _0x35bc68[_0x487fcb(0x3a3)](_0x11e1f9);if(_0x3573cd[_0x35bc68[_0x487fcb(0x2c5)]])try{const _0x234447=_0x35bc68['bRZqh'](String,_0x3573cd[_0x487fcb(0x3db)])[_0x487fcb(0x1de)](),_0x3449b6=_0x59f7f2['locator'](_0x35bc68[_0x487fcb(0x29a)]);await _0x3449b6[_0x487fcb(0x23a)]({'state':_0x35bc68[_0x487fcb(0x314)],'timeout':0xbb8});const _0x6bc14b=(await _0x3449b6[_0x487fcb(0x2c1)]())[_0x487fcb(0x1de)]();if(_0x35bc68[_0x487fcb(0x2dd)](_0x6bc14b[_0x487fcb(0x3d1)](),_0x234447[_0x487fcb(0x3d1)]()))await _0x35bc68[_0x487fcb(0x22f)](pilihDariDropdownCari,_0x59f7f2,_0x35bc68[_0x487fcb(0x2c5)],_0x3449b6,_0x59f7f2[_0x487fcb(0x31d)](_0x487fcb(0x2e0))[_0x487fcb(0x30a)](),_0x234447,()=>_0x59f7f2[_0x487fcb(0x31d)](_0x487fcb(0x25a))[_0x487fcb(0x31b)]({'hasText':_0x234447})[_0x487fcb(0x30a)](),async()=>(await _0x3449b6[_0x487fcb(0x2c1)]())[_0x487fcb(0x1de)]()[_0x487fcb(0x3d1)]()===_0x234447[_0x487fcb(0x3d1)]());else _0x3573cd[_0x35bc68[_0x487fcb(0x250)]]&&await _0x35bc68[_0x487fcb(0x22f)](pilihDariDropdownCari,_0x59f7f2,_0x35bc68[_0x487fcb(0x369)],_0x3449b6,_0x59f7f2['locator'](_0x35bc68[_0x487fcb(0x202)])[_0x487fcb(0x30a)](),_0x234447,()=>_0x59f7f2[_0x487fcb(0x31d)]('button')[_0x487fcb(0x31b)]({'hasText':_0x234447})[_0x487fcb(0x30a)](),async()=>(await _0x3449b6['innerText']())[_0x487fcb(0x1de)]()[_0x487fcb(0x3d1)]()===_0x234447['toLowerCase']());}catch(_0x20f8af){}await _0x35bc68[_0x487fcb(0x264)](_0x11e1f9);const _0x6a0e2b=_0x35bc68[_0x487fcb(0x372)](String,_0x3573cd['Kelas\x20/\x20Jenjang']||''),_0x3941f6=_0x6a0e2b['match'](/\d+/)?.[0x0];if(_0x3941f6)try{const _0x5211d8=_0x59f7f2['locator']('xpath=//*[contains(text(),\x20\x22Jenjang\x22)]/following::div[contains(@class,\x20\x22cursor-pointer\x22)][1]');await _0x5211d8[_0x487fcb(0x23a)]({'state':_0x35bc68['MfGmT'],'timeout':0xbb8});const _0x451538=new RegExp(_0x487fcb(0x38c)+_0x3941f6+'(?!\x5cd)','i'),_0x1e6fe7=(await _0x5211d8[_0x487fcb(0x2c1)]())[_0x487fcb(0x1de)]();!_0x451538[_0x487fcb(0x3c8)](_0x1e6fe7)&&await _0x35bc68[_0x487fcb(0x22f)](pilihDariDropdownCari,_0x59f7f2,_0x35bc68[_0x487fcb(0x3eb)],_0x5211d8,_0x59f7f2['locator'](_0x487fcb(0x3d6))[_0x487fcb(0x30a)](),_0x3941f6,()=>_0x59f7f2[_0x487fcb(0x31d)](_0x487fcb(0x25a))['filter']({'hasText':_0x451538})[_0x487fcb(0x30a)](),async()=>_0x451538[_0x487fcb(0x3c8)]((await _0x5211d8[_0x487fcb(0x2c1)]())[_0x487fcb(0x1de)]()));}catch(_0x18e5a4){}try{await _0x59f7f2[_0x487fcb(0x31d)](_0x487fcb(0x2bc))['last']()['check']({'force':!![],'timeout':0x7d0});}catch(_0x498332){}if(_0x3573cd[_0x35bc68['bHqjL']])try{await _0x59f7f2['locator'](_0x35bc68[_0x487fcb(0x39e)])[_0x487fcb(0x30a)]()[_0x487fcb(0x3a6)](_0x35bc68[_0x487fcb(0x374)](String,_0x3573cd['Detail\x20Domisili']),{'timeout':0x7d0});}catch(_0x2b5679){}const _0x21f44a=_0x59f7f2[_0x487fcb(0x31d)](_0x35bc68[_0x487fcb(0x281)])[_0x487fcb(0x30a)]();await _0x11e1f9(),await _0x59f7f2[_0x487fcb(0x39c)](0x1f4),await _0x35bc68[_0x487fcb(0x3f7)](klikAntiMacet,_0x59f7f2,_0x21f44a,_0x35bc68['pSwGV']);const _0x582377=await Promise[_0x487fcb(0x2ab)]([_0x59f7f2[_0x487fcb(0x1e4)](_0x487fcb(0x2b5),{'timeout':0x2710})['then'](()=>'BERHASIL'),_0x59f7f2[_0x487fcb(0x1e4)](_0x35bc68[_0x487fcb(0x413)],{'timeout':0x2710})[_0x487fcb(0x227)](()=>_0x487fcb(0x334)),_0x59f7f2[_0x487fcb(0x1e4)](_0x487fcb(0x23e),{'timeout':0x2710})[_0x487fcb(0x227)](()=>_0x487fcb(0x411))])[_0x487fcb(0x3e7)](()=>_0x487fcb(0x380));if(_0x35bc68[_0x487fcb(0x316)](_0x582377,_0x487fcb(0x334))){let _0x14e2e6=_0x487fcb(0x287);try{const _0x5cf098=_0x59f7f2[_0x487fcb(0x31d)]('div[role=\x22dialog\x22],\x20div.modal,\x20.swal-modal,\x20.swal2-popup,\x20.el-message-box,\x20.el-notification')[_0x487fcb(0x31b)]({'visible':!![]})[_0x487fcb(0x30a)]();_0x35bc68[_0x487fcb(0x2e2)](await _0x5cf098[_0x487fcb(0x332)](),0x0)?_0x14e2e6=await _0x5cf098['innerText']():_0x14e2e6=await _0x59f7f2[_0x487fcb(0x31d)](_0x35bc68[_0x487fcb(0x1fd)])['filter']({'visible':!![]})['last']()[_0x487fcb(0x2c1)]();}catch(_0x11aebc){}_0x14e2e6=_0x14e2e6[_0x487fcb(0x356)](/\n/g,_0x35bc68[_0x487fcb(0x3f5)])[_0x487fcb(0x1de)](),_0x3573cd[_0x35bc68[_0x487fcb(0x253)]]=_0x14e2e6,_0x3573cd[_0x487fcb(0x246)]=_0x35bc68[_0x487fcb(0x3bd)],_0x35bc68[_0x487fcb(0x2b8)](_0x44d6cc,'GAGAL|NIK\x20'+_0x38156f+'\x20tidak\x20valid.\x20Alasan:\x20'+_0x14e2e6),await _0x59f7f2['locator'](_0x35bc68[_0x487fcb(0x3ec)])[_0x487fcb(0x30a)]()[_0x487fcb(0x3b3)](),await _0x59f7f2['reload']({'waitUntil':_0x35bc68[_0x487fcb(0x400)]}),await _0x59f7f2[_0x487fcb(0x39c)](0x3e8);continue;}else{if(_0x35bc68['TzuBJ'](_0x582377,_0x487fcb(0x380)))throw new Error(_0x487fcb(0x362));else _0x582377===_0x35bc68[_0x487fcb(0x363)]&&await _0x59f7f2[_0x487fcb(0x31d)](_0x35bc68['Ngtyq'])[_0x487fcb(0x30a)]()['click']({'force':!![]});}}else{if(_0x35bc68['gRffV'](_0x2fba26,_0x35bc68['vipxy'])){_0x44d6cc(_0x487fcb(0x3cf)+_0x5d1179+'|'+_0x38156f+'|'+_0x3c8204+'/'+_0x36affd+_0x487fcb(0x236));const _0x4a3096=_0x59f7f2[_0x487fcb(0x31d)](_0x487fcb(0x310))[_0x487fcb(0x31b)]({'visible':!![]})[_0x487fcb(0x3c2)]();await _0x4a3096[_0x487fcb(0x23a)]({'state':_0x487fcb(0x1d2),'timeout':0x1388}),await _0x4a3096['evaluate'](_0x4f232c=>_0x4f232c[_0x487fcb(0x3b3)]()),await _0x59f7f2[_0x487fcb(0x39c)](0x7d0),_0x54e096=!![];}else{if(_0x35bc68[_0x487fcb(0x316)](_0x2fba26,'TIMEOUT_SERVER'))throw new Error(_0x35bc68[_0x487fcb(0x3df)]);else{let _0x263aeb=_0x35bc68[_0x487fcb(0x30d)];try{const _0x25ee33=_0x59f7f2[_0x487fcb(0x31d)](_0x35bc68[_0x487fcb(0x32d)])['filter']({'visible':!![]})[_0x487fcb(0x30a)]();_0x35bc68[_0x487fcb(0x3e5)](await _0x25ee33[_0x487fcb(0x332)](),0x0)?_0x263aeb=await _0x25ee33[_0x487fcb(0x2c1)]():_0x263aeb=await _0x59f7f2[_0x487fcb(0x31d)](_0x35bc68['XsGQa'])['filter']({'visible':!![]})[_0x487fcb(0x30a)]()[_0x487fcb(0x2c1)]();}catch(_0x50ca6c){}_0x263aeb=_0x263aeb['replace'](/\n/g,_0x487fcb(0x258))[_0x487fcb(0x1de)](),_0x3573cd[_0x35bc68[_0x487fcb(0x253)]]=_0x263aeb,_0x3573cd[_0x487fcb(0x246)]=_0x487fcb(0x277),_0x35bc68[_0x487fcb(0x33b)](_0x44d6cc,_0x487fcb(0x279)+_0x38156f+'\x20bermasalah.\x20Alasan:\x20'+_0x263aeb);const _0x5dcfcf=_0x59f7f2[_0x487fcb(0x31d)](_0x35bc68[_0x487fcb(0x2e7)])['filter']({'visible':!![]})['first']();_0x35bc68[_0x487fcb(0x3f0)](await _0x5dcfcf[_0x487fcb(0x332)](),0x0)&&(await _0x5dcfcf['click']({'force':!![]})[_0x487fcb(0x3e7)](()=>{}),await _0x59f7f2[_0x487fcb(0x2f0)]({'waitUntil':_0x35bc68[_0x487fcb(0x400)]}));await _0x59f7f2[_0x487fcb(0x39c)](0x3e8);continue;}}}}_0x533758='Konfirmasi\x20Kehadiran',await _0x35bc68[_0x487fcb(0x3dc)](_0x11e1f9);if(!_0x54e096){await _0x59f7f2[_0x487fcb(0x39c)](0x5dc),await _0x59f7f2[_0x487fcb(0x289)](_0x35bc68['DVCrf'],{'waitUntil':_0x35bc68[_0x487fcb(0x400)]}),await _0x59f7f2[_0x487fcb(0x39c)](0x5dc),await _0x59f7f2[_0x487fcb(0x31d)](_0x35bc68[_0x487fcb(0x1f3)])[_0x487fcb(0x30a)]()[_0x487fcb(0x3b3)](),await _0x59f7f2['locator'](_0x487fcb(0x2ea)+_0x3573cd[_0x35bc68[_0x487fcb(0x2c5)]]+'\x22)')[_0x487fcb(0x30a)]()[_0x487fcb(0x3b3)](),await _0x59f7f2[_0x487fcb(0x31d)](_0x35bc68[_0x487fcb(0x36f)])['last']()[_0x487fcb(0x3b3)](),await _0x59f7f2[_0x487fcb(0x31d)](_0x487fcb(0x2d0)+_0x3573cd[_0x487fcb(0x328)]+'\x22)')[_0x487fcb(0x30a)]()[_0x487fcb(0x3b3)](),await _0x59f7f2[_0x487fcb(0x31d)](_0x35bc68[_0x487fcb(0x2e9)])[_0x487fcb(0x30a)]()['click']({'force':!![]}),await _0x59f7f2[_0x487fcb(0x31d)](_0x35bc68['JCxju'])[_0x487fcb(0x30a)]()['click'](),await _0x59f7f2[_0x487fcb(0x31d)](_0x35bc68['arVwE'])[_0x487fcb(0x30a)]()['fill'](_0x35bc68[_0x487fcb(0x25e)](String,_0x3573cd[_0x35bc68[_0x487fcb(0x26f)]])),await _0x59f7f2[_0x487fcb(0x39c)](0x3e8),await _0x59f7f2[_0x487fcb(0x303)][_0x487fcb(0x30c)]('Enter');const _0x534d88=_0x3573cd['Nama\x20Lengkap'];_0x533758=_0x487fcb(0x2f6),await _0x11e1f9();const _0x50d66b=await Promise[_0x487fcb(0x2ab)]([_0x59f7f2['waitForSelector'](_0x487fcb(0x39f)+_0x534d88+_0x487fcb(0x21a),{'state':_0x35bc68[_0x487fcb(0x314)],'timeout':0x1388})['then'](()=>_0x487fcb(0x262)),_0x59f7f2['waitForSelector'](_0x487fcb(0x39f)+_0x534d88+_0x487fcb(0x299),{'state':_0x35bc68[_0x487fcb(0x314)],'timeout':0x1388})['then'](()=>_0x487fcb(0x1cc))])[_0x487fcb(0x3e7)](()=>_0x487fcb(0x1e6));if(_0x35bc68[_0x487fcb(0x3bf)](_0x50d66b,_0x487fcb(0x262))){_0x35bc68[_0x487fcb(0x24a)](_0x44d6cc,_0x487fcb(0x3cf)+_0x5d1179+'|'+_0x38156f+'|'+_0x3c8204+'/'+_0x36affd+_0x487fcb(0x2d3));const _0x1b679d=_0x59f7f2[_0x487fcb(0x31d)]('tr:has-text(\x22'+_0x534d88+'\x22)\x20>>\x20button:has-text(\x22Konfirmasi\x20Hadir\x22)');await _0x59f7f2[_0x487fcb(0x39c)](0x3e8),await _0x1b679d[_0x487fcb(0x34d)](),await _0x1b679d[_0x487fcb(0x3b3)]();let _0x3772d1=_0x3573cd['No\x20Whatsapp']?_0x35bc68['bRZqh'](String,_0x3573cd[_0x35bc68[_0x487fcb(0x1f6)]])[_0x487fcb(0x1de)]():'';_0x3772d1=_0x3772d1[_0x487fcb(0x356)](/\D/g,'');(!_0x3772d1||_0x35bc68['cjvvR'](_0x3772d1[_0x487fcb(0x235)],0x7)||!_0x3772d1['startsWith']('8'))&&(_0x3772d1=_0x35bc68[_0x487fcb(0x271)]);await _0x59f7f2[_0x487fcb(0x31d)](_0x35bc68['SxKQa'])[_0x487fcb(0x30a)]()[_0x487fcb(0x3a6)](_0x3772d1);try{const _0x5138c5=_0x59f7f2[_0x487fcb(0x31d)](_0x35bc68['LxQTi'])[_0x487fcb(0x30a)](),_0xedafe=await _0x5138c5[_0x487fcb(0x244)]();if(!_0xedafe)await _0x5138c5[_0x487fcb(0x37d)]({'force':!![],'timeout':0x7d0});}catch(_0x280dd6){}await _0x59f7f2[_0x487fcb(0x31d)](_0x35bc68[_0x487fcb(0x3d3)])['last']()[_0x487fcb(0x37d)]({'force':!![]}),await _0x59f7f2[_0x487fcb(0x39c)](0x1f4),await _0x59f7f2[_0x487fcb(0x31d)](_0x35bc68[_0x487fcb(0x2ac)])[_0x487fcb(0x30a)]()['click'](),_0x3573cd[_0x487fcb(0x3b6)]=_0x35bc68[_0x487fcb(0x38f)],await _0x59f7f2[_0x487fcb(0x1e4)](_0x35bc68['iYTHJ'],{'timeout':0xbb8})[_0x487fcb(0x3e7)](()=>{});const _0x570057=_0x59f7f2[_0x487fcb(0x31d)](_0x35bc68['FaTOE'])[_0x487fcb(0x31b)]({'visible':!![]})[_0x487fcb(0x3c2)]();_0x35bc68['ONYWQ'](await _0x570057[_0x487fcb(0x332)](),0x0)?await _0x570057[_0x487fcb(0x3b3)]({'force':!![]})[_0x487fcb(0x3e7)](()=>{}):await _0x59f7f2['locator'](_0x35bc68['CenWn'])[_0x487fcb(0x31b)]({'visible':!![]})['first']()[_0x487fcb(0x3b3)]({'force':!![]})[_0x487fcb(0x3e7)](()=>{});}}_0x533758=_0x35bc68['KXZBD'],await _0x35bc68['KgAGH'](_0x11e1f9);!_0x54e096?(await _0x59f7f2[_0x487fcb(0x39c)](0x1f4),await _0x59f7f2[_0x487fcb(0x289)](_0x487fcb(0x2fe),{'waitUntil':_0x35bc68[_0x487fcb(0x400)]}),await _0x59f7f2[_0x487fcb(0x39c)](0x7d0)):await _0x59f7f2['waitForTimeout'](0x3e8);const _0x347638=_0x59f7f2[_0x487fcb(0x31d)](_0x35bc68[_0x487fcb(0x36a)])['last']();await _0x347638['waitFor']({'state':_0x35bc68[_0x487fcb(0x314)],'timeout':0x1388}),await _0x347638[_0x487fcb(0x30a)]()['click']({'force':!![]}),await _0x59f7f2[_0x487fcb(0x39c)](0x64);const _0x152c81=_0x35bc68[_0x487fcb(0x2f7)](String,_0x3573cd[_0x35bc68[_0x487fcb(0x2c5)]])[_0x487fcb(0x1de)]();await _0x59f7f2['locator']('div:text-is(\x22'+_0x152c81+'\x22)')['last']()[_0x487fcb(0x3b3)]({'force':!![]}),await _0x59f7f2[_0x487fcb(0x39c)](0x64);const _0x2c2b11=_0x59f7f2[_0x487fcb(0x31d)](_0x35bc68[_0x487fcb(0x387)])[_0x487fcb(0x30a)]();await _0x2c2b11[_0x487fcb(0x23a)]({'state':_0x487fcb(0x1ee),'timeout':0x1388}),await _0x2c2b11['click']({'force':!![]}),await _0x59f7f2[_0x487fcb(0x39c)](0x64);const _0x41b03b=_0x35bc68['AYXDo'](String,_0x3573cd[_0x487fcb(0x328)])[_0x487fcb(0x1de)]();await _0x59f7f2[_0x487fcb(0x31d)]('div:has-text(\x22'+_0x41b03b+'\x22)')[_0x487fcb(0x30a)]()[_0x487fcb(0x3b3)]({'force':!![]}),await _0x59f7f2[_0x487fcb(0x39c)](0x1f4),await _0x35bc68[_0x487fcb(0x2a1)](_0x11e1f9),await _0x59f7f2[_0x487fcb(0x31d)](_0x487fcb(0x2a6))[_0x487fcb(0x30a)]()[_0x487fcb(0x3b3)](),await _0x59f7f2['locator'](_0x35bc68[_0x487fcb(0x2e9)])['last']()[_0x487fcb(0x3b3)](),await _0x59f7f2['locator'](_0x487fcb(0x225))[_0x487fcb(0x30a)]()[_0x487fcb(0x3b3)](),await _0x59f7f2[_0x487fcb(0x31d)]('input[name=\x22NIK\x22],\x20input#nik')[_0x487fcb(0x30a)]()[_0x487fcb(0x3a6)](_0x35bc68[_0x487fcb(0x33b)](String,_0x3573cd[_0x487fcb(0x388)])),await _0x59f7f2[_0x487fcb(0x303)][_0x487fcb(0x30c)](_0x35bc68[_0x487fcb(0x29c)]),await _0x59f7f2[_0x487fcb(0x39c)](0x7d0),_0x35bc68[_0x487fcb(0x386)](_0x44d6cc,_0x487fcb(0x3cf)+_0x5d1179+'|'+_0x38156f+'|'+_0x3c8204+'/'+_0x36affd+'|Memeriksa\x20status\x20pemeriksaan');const _0x4171d9=_0x59f7f2[_0x487fcb(0x31d)](_0x35bc68[_0x487fcb(0x3f6)])[_0x487fcb(0x30a)](),_0x5197f2=_0x59f7f2[_0x487fcb(0x31d)]('div.cursor-pointer:has-text(\x22Sedang\x20Pemeriksaan\x22)')[_0x487fcb(0x30a)](),_0x41452f=_0x59f7f2[_0x487fcb(0x31d)](_0x35bc68['GOWpU'])[_0x487fcb(0x30a)]();let _0xd50b1c=_0x35bc68[_0x487fcb(0x3a7)];async function _0xfdf628(){const _0x3e19b0=_0x487fcb,_0x209ed2={'TSvSL':function(_0x4fbef7,_0x1fae27){return _0x4fbef7>_0x1fae27;}},_0x166a97=_0x35bc68[_0x3e19b0(0x3b1)](String,_0x3573cd[_0x35bc68['jfoEl']])['trim'](),_0x27ced0=_0x59f7f2[_0x3e19b0(0x31d)](_0x35bc68[_0x3e19b0(0x234)],{'hasText':_0x166a97})[_0x3e19b0(0x3c2)]();try{await _0x27ced0['waitFor']({'state':_0x35bc68[_0x3e19b0(0x314)],'timeout':0xbb8});}catch(_0x4d4b14){return _0x35bc68[_0x3e19b0(0x3a7)];}await _0x59f7f2[_0x3e19b0(0x27c)](()=>{const _0x45404e=_0x3e19b0,_0x5c57b5=document['querySelectorAll'](_0x35bc68[_0x45404e(0x32b)]);_0x5c57b5[_0x45404e(0x2c4)](_0x1e8779=>{const _0x66a5ec=_0x45404e;if(_0x209ed2[_0x66a5ec(0x248)](_0x1e8779[_0x66a5ec(0x1c7)],_0x1e8779[_0x66a5ec(0x27f)]))_0x1e8779[_0x66a5ec(0x203)]=_0x1e8779[_0x66a5ec(0x1c7)];});}),await _0x59f7f2[_0x3e19b0(0x39c)](0x1f4);const _0xb0dda7=await _0x27ced0[_0x3e19b0(0x2c1)]();if(_0xb0dda7[_0x3e19b0(0x391)](_0x35bc68[_0x3e19b0(0x221)])||_0xb0dda7[_0x3e19b0(0x391)](_0x35bc68[_0x3e19b0(0x294)])||_0xb0dda7[_0x3e19b0(0x391)](_0x3e19b0(0x1f8)))return _0x35bc68[_0x3e19b0(0x306)];if(_0xb0dda7[_0x3e19b0(0x391)](_0x35bc68[_0x3e19b0(0x3c7)])&&_0xb0dda7[_0x3e19b0(0x391)](_0x35bc68['AsGvI']))return _0x35bc68[_0x3e19b0(0x3ee)];return _0x35bc68['FIGxi'];}await _0x4171d9[_0x487fcb(0x3b3)]({'force':!![]}),_0xd50b1c=await _0x35bc68['nkYFQ'](_0xfdf628);_0xd50b1c===_0x487fcb(0x342)&&(await _0x5197f2[_0x487fcb(0x3b3)]({'force':!![]}),_0xd50b1c=await _0xfdf628());_0x35bc68[_0x487fcb(0x2b4)](_0xd50b1c,_0x35bc68['FIGxi'])&&(await _0x41452f[_0x487fcb(0x3b3)]({'force':!![]}),_0xd50b1c=await _0x35bc68['RlUww'](_0xfdf628));if(_0xd50b1c===_0x487fcb(0x301)){_0x3573cd[_0x487fcb(0x246)]=_0x35bc68[_0x487fcb(0x39a)],_0x35bc68[_0x487fcb(0x3b1)](_0x44d6cc,_0x487fcb(0x3cf)+_0x5d1179+'|'+_0x38156f+'|'+_0x3c8204+'/'+_0x36affd+'|Terdeteksi\x20sudah\x20lengkap'),_0x44d6cc(_0x487fcb(0x2f9)+_0x38156f+'\x20atas\x20nama\x20'+_0x5d1179+_0x487fcb(0x27d));continue;}else{if(_0x35bc68['cxxut'](_0xd50b1c,_0x35bc68[_0x487fcb(0x3a7)])){_0x3573cd[_0x487fcb(0x246)]='Gagal:\x20Data\x20tidak\x20muncul\x20di\x20ketiga\x20tab',_0x35bc68[_0x487fcb(0x1fc)](_0x44d6cc,_0x487fcb(0x279)+_0x38156f+_0x487fcb(0x2ec));continue;}}await _0x35bc68[_0x487fcb(0x2ad)](_0x11e1f9);const _0x23fb15=_0x59f7f2[_0x487fcb(0x31d)](_0x35bc68['eRLUK'],{'hasText':_0x35bc68['kinGO'](String,_0x3573cd[_0x35bc68[_0x487fcb(0x2ca)]])['trim']()})[_0x487fcb(0x3c2)](),_0x315c7b=_0x23fb15[_0x487fcb(0x31d)](_0x35bc68['UbUYa']);if(await cekVisibleTunggu(_0x315c7b))await _0x315c7b[_0x487fcb(0x34d)](),await _0x315c7b[_0x487fcb(0x3b3)]({'force':!![]});else{_0x3573cd[_0x487fcb(0x246)]=_0x35bc68['bnMXP'],_0x35bc68[_0x487fcb(0x3a8)](_0x44d6cc,_0x487fcb(0x279)+_0x38156f+'\x20Tombol\x20Mulai\x20tidak\x20ditemukan');continue;}await _0x59f7f2[_0x487fcb(0x39c)](0xbb8);const _0x42f9fa=_0x59f7f2[_0x487fcb(0x31d)]('button:has-text(\x22Mulai\x20Pemeriksaan\x22)')[_0x487fcb(0x30a)]();if(await cekVisibleTunggu(_0x42f9fa)){await _0x42f9fa['click'](),await _0x59f7f2[_0x487fcb(0x39c)](0x3e8);const _0x7242cf=_0x59f7f2[_0x487fcb(0x31d)](_0x35bc68[_0x487fcb(0x2dc)])[_0x487fcb(0x30a)]();await cekVisibleTunggu(_0x7242cf)&&(await _0x7242cf[_0x487fcb(0x3b3)](),await _0x59f7f2[_0x487fcb(0x39c)](0x7d0));}else await _0x59f7f2[_0x487fcb(0x39c)](0x3e8);_0x533758=_0x35bc68['MQzVT'],await _0x35bc68[_0x487fcb(0x2ad)](_0x11e1f9);let _0x31f369=!![];const _0x3e0b71=new Set(),_0x3ceed8=_0x59f7f2['locator'](_0x487fcb(0x37b))[_0x487fcb(0x31b)]({'visible':!![]});if(_0x35bc68['DojzN'](await _0x3ceed8['count'](),0x0)&&_0x35bc68['MPdSv'](await _0x59f7f2[_0x487fcb(0x31d)](_0x35bc68[_0x487fcb(0x26d)])['count'](),0x0)){const _0x2a1be5=_0x59f7f2[_0x487fcb(0x31d)](_0x35bc68[_0x487fcb(0x26e)])[_0x487fcb(0x31b)]({'visible':!![]});await _0x2a1be5['count']()>0x0?await _0x2a1be5[_0x487fcb(0x3c2)]()[_0x487fcb(0x3b3)]({'force':!![]})[_0x487fcb(0x3e7)](()=>{}):await _0x59f7f2[_0x487fcb(0x303)][_0x487fcb(0x30c)](_0x487fcb(0x3ca)),await _0x59f7f2['waitForTimeout'](0x3e8);}while(_0x31f369){await _0x11e1f9();const _0x3c4d01=_0x59f7f2['locator'](_0x35bc68['JAOnc']),_0x48d9d6=await _0x3c4d01[_0x487fcb(0x332)]();let _0x36cb6a=null,_0x45fa91=null;for(let _0x2f8f41=0x0;_0x35bc68[_0x487fcb(0x396)](_0x2f8f41,_0x48d9d6);_0x2f8f41++){const _0x29f39a=_0x3c4d01[_0x487fcb(0x20d)](_0x2f8f41),_0x2b2aad=(await _0x29f39a[_0x487fcb(0x31d)]('td')[_0x487fcb(0x3c2)]()[_0x487fcb(0x34f)]()||'')['trim']();if(!_0x3e0b71[_0x487fcb(0x327)](_0x2b2aad)){_0x36cb6a=_0x29f39a,_0x45fa91=_0x2b2aad;break;}}if(_0x36cb6a&&await _0x35bc68[_0x487fcb(0x372)](cekVisibleTunggu,_0x36cb6a)){await _0x36cb6a[_0x487fcb(0x31d)]('button:has-text(\x22Input\x20Data\x22)')[_0x487fcb(0x3b3)](),await _0x59f7f2['locator'](_0x35bc68[_0x487fcb(0x261)])[_0x487fcb(0x31b)]({'visible':!![]})[_0x487fcb(0x3c2)]()[_0x487fcb(0x23a)]({'state':_0x35bc68[_0x487fcb(0x314)],'timeout':0xbb8})[_0x487fcb(0x3e7)](()=>{});let _0x8ebd14=0x0,_0x413383=!![];while(_0x413383){const _0x197892=_0x59f7f2[_0x487fcb(0x31d)]('label,\x20div.sd-item')[_0x487fcb(0x31b)]({'has':_0x59f7f2[_0x487fcb(0x31d)](_0x35bc68['RsAKZ'])['or'](_0x59f7f2[_0x487fcb(0x31d)](_0x35bc68[_0x487fcb(0x3c3)]))}),_0x1b8905=await _0x197892['count']();if(_0x35bc68[_0x487fcb(0x2d1)](_0x8ebd14,_0x1b8905)){const _0x17ce38=_0x197892[_0x487fcb(0x20d)](_0x8ebd14);await _0x17ce38[_0x487fcb(0x34d)](),await _0x59f7f2[_0x487fcb(0x39c)](0x64);const _0x48ecf8=_0x17ce38[_0x487fcb(0x31d)](_0x35bc68[_0x487fcb(0x3b8)])[_0x487fcb(0x3c2)]();await _0x48ecf8['click']({'force':!![]}),await _0x59f7f2[_0x487fcb(0x39c)](0x64),_0x8ebd14++;}else _0x413383=![];}const _0xa0cb1e=_0x3573cd[_0x45fa91[_0x487fcb(0x1de)]()];if(_0xa0cb1e){const _0x18395a=_0x59f7f2['locator'](_0x35bc68['fXskA'])[_0x487fcb(0x3c2)]();await cekVisibleTunggu(_0x18395a,0x7d0)&&(await _0x18395a[_0x487fcb(0x3b3)](),await _0x59f7f2['waitForTimeout'](0x1f4),await _0x59f7f2[_0x487fcb(0x31d)]('.sv-list__item:has-text(\x22'+_0xa0cb1e+'\x22)')['click'](),await _0x59f7f2[_0x487fcb(0x39c)](0x1f4));}const _0xea2661=_0x59f7f2['locator'](_0x35bc68[_0x487fcb(0x217)]),_0x229bdb=await _0xea2661['count']();for(let _0x191287=0x0;_0x35bc68['jQtBA'](_0x191287,_0x229bdb);_0x191287++){const _0x10db8c=_0xea2661['nth'](_0x191287),_0x25293a=(await _0x10db8c[_0x487fcb(0x1e1)](_0x35bc68[_0x487fcb(0x1eb)])||'')['trim'](),_0x147f6b=_0x3573cd[_0x25293a];_0x35bc68[_0x487fcb(0x2b3)](_0x147f6b,undefined)&&_0x147f6b!==null&&_0x35bc68[_0x487fcb(0x2b3)](_0x147f6b,'')&&(await _0x10db8c[_0x487fcb(0x34d)](),await _0x10db8c['fill'](_0x35bc68['KFSPU'](String,_0x147f6b)),await _0x59f7f2[_0x487fcb(0x39c)](0x12c));}const _0x253391=_0x59f7f2['locator'](_0x487fcb(0x32f))[_0x487fcb(0x30a)]();await _0x35bc68[_0x487fcb(0x1d9)](klikAntiMacet,_0x59f7f2,_0x253391,_0x487fcb(0x311)+_0x45fa91[_0x487fcb(0x1de)]());const _0x49bf6b=await _0x59f7f2[_0x487fcb(0x31d)](_0x35bc68[_0x487fcb(0x261)])['filter']({'visible':!![]})[_0x487fcb(0x3c2)]()[_0x487fcb(0x23a)]({'state':_0x35bc68[_0x487fcb(0x2d2)],'timeout':0xbb8})[_0x487fcb(0x227)](()=>!![])[_0x487fcb(0x3e7)](()=>![]);if(!_0x49bf6b){Logger['info'](_0x487fcb(0x1ed)+_0x45fa91+_0x487fcb(0x1db)),_0x3e0b71[_0x487fcb(0x3a0)](_0x45fa91);const _0x3e91c9=_0x59f7f2['locator'](_0x487fcb(0x245))[_0x487fcb(0x31b)]({'visible':!![]})['first']();_0x35bc68[_0x487fcb(0x302)](await _0x3e91c9[_0x487fcb(0x332)](),0x0)?await _0x3e91c9[_0x487fcb(0x3b3)]({'force':!![]})[_0x487fcb(0x3e7)](()=>{}):await _0x59f7f2[_0x487fcb(0x303)][_0x487fcb(0x30c)](_0x487fcb(0x3ca)),await _0x59f7f2[_0x487fcb(0x39c)](0x1f4);}await _0x59f7f2[_0x487fcb(0x39c)](0x12c);}else _0x31f369=![];}_0x533758=_0x35bc68[_0x487fcb(0x399)],await _0x11e1f9();const _0x536643=[{'nama':_0x487fcb(0x1e5),'aksi':async()=>{const _0x2590d5=_0x487fcb,_0x22b13e=_0x35bc68[_0x2590d5(0x23c)](hitungNilaiNormal,_0x3573cd[_0x2590d5(0x37f)],_0x35bc68[_0x2590d5(0x389)],_0x3573cd[_0x2590d5(0x272)]),_0xe1fa0e=_0x35bc68[_0x2590d5(0x206)](hitungNilaiNormal,_0x3573cd[_0x35bc68['eleJc']],_0x35bc68['eleJc'],_0x3573cd[_0x35bc68[_0x2590d5(0x354)]]);await _0x59f7f2[_0x2590d5(0x31d)](_0x35bc68[_0x2590d5(0x393)])[_0x2590d5(0x30a)]()[_0x2590d5(0x3a6)](_0x22b13e),await _0x59f7f2[_0x2590d5(0x31d)](_0x35bc68[_0x2590d5(0x375)])['last']()['fill'](_0xe1fa0e);}},{'nama':_0x487fcb(0x242),'aksi':async()=>{const _0x411211=_0x487fcb,_0x2a1d0a=hitungNilaiNormal(_0x3573cd[_0x411211(0x2f3)],_0x35bc68[_0x411211(0x1fa)],_0x3573cd[_0x411211(0x272)]),_0x5d15b5=hitungNilaiNormal(_0x3573cd[_0x35bc68['mOqsd']],_0x35bc68[_0x411211(0x3b7)],_0x3573cd[_0x35bc68['kXZey']]),_0x3a6eb2=_0x59f7f2['locator'](_0x35bc68[_0x411211(0x1fb)]);await _0x3a6eb2['nth'](0x0)[_0x411211(0x3a6)](_0x2a1d0a),await _0x3a6eb2[_0x411211(0x20d)](0x1)[_0x411211(0x3a6)](_0x5d15b5);}},{'nama':_0x35bc68[_0x487fcb(0x29d)],'aksi':async()=>{const _0x2e48d8=_0x487fcb;await _0x59f7f2[_0x2e48d8(0x31d)](_0x35bc68['RsAKZ'])[_0x2e48d8(0x30a)]()[_0x2e48d8(0x3b3)]();const _0x4efa3a=_0x35bc68[_0x2e48d8(0x32c)](hitungNilaiNormal,_0x3573cd[_0x35bc68[_0x2e48d8(0x1d5)]],_0x2e48d8(0x22a),_0x3573cd[_0x35bc68[_0x2e48d8(0x354)]]);await _0x59f7f2[_0x2e48d8(0x31d)](_0x2e48d8(0x20e))[_0x2e48d8(0x30a)]()['fill'](_0x4efa3a);}},{'nama':_0x35bc68[_0x487fcb(0x282)],'aksi':async()=>{const _0x53609c=_0x487fcb,_0x59179b=_0x35bc68[_0x53609c(0x206)](hitungNilaiNormal,_0x3573cd[_0x35bc68[_0x53609c(0x378)]],_0x35bc68[_0x53609c(0x378)],_0x3573cd['Tanggal\x20lahir']);await _0x59f7f2['locator'](_0x35bc68['Fyuiz'])[_0x53609c(0x30a)]()['fill'](_0x59179b);}},{'nama':_0x487fcb(0x2ba),'aksi':async()=>{const _0x39df54=_0x487fcb;await _0x59f7f2[_0x39df54(0x31d)](_0x39df54(0x33f))[_0x39df54(0x30a)]()[_0x39df54(0x3b3)]();}},{'nama':'Pemeriksaan\x20Penyakit\x20Kusta','aksi':async()=>{const _0x498b0d=_0x487fcb;await _0x59f7f2[_0x498b0d(0x31d)](_0x498b0d(0x2af))['last']()[_0x498b0d(0x3b3)]({'force':!![]}),await _0x59f7f2[_0x498b0d(0x31d)](_0x498b0d(0x2b6))[_0x498b0d(0x30a)]()[_0x498b0d(0x3b3)]();}},{'nama':_0x35bc68['hRUIb'],'aksi':async()=>{const _0x5e3670=_0x487fcb;await _0x59f7f2[_0x5e3670(0x31d)](_0x35bc68['fDcYK'])[_0x5e3670(0x30a)]()['click']({'force':!![]}),await _0x59f7f2[_0x5e3670(0x31d)](_0x35bc68[_0x5e3670(0x1f5)])[_0x5e3670(0x30a)]()['click']();}},{'nama':_0x35bc68['UaQFf'],'aksi':async()=>{const _0x597fc7=_0x487fcb;let _0x127308=_0x35bc68['ZnTmT'](hitungNilaiNormal,_0x3573cd[_0x35bc68['fYIEn']],_0x597fc7(0x376),_0x3573cd[_0x35bc68['kXZey']]);const _0x589c50=_0x35bc68['vFqYJ'](String,_0x127308)[_0x597fc7(0x1de)](),_0x5cadd2=_0x35bc68['bRZqh'](parseInt,_0x589c50);!isNaN(_0x5cadd2)&&_0x35bc68['DojzN'](_0x5cadd2,0x3)&&(_0x127308='>3');const _0x312142=_0x59f7f2[_0x597fc7(0x31d)]('span.sv-string-viewer:has-text(\x22'+_0x127308+'\x22)')[_0x597fc7(0x30a)]();await _0x312142['click']({'force':!![]});}},{'nama':_0x35bc68[_0x487fcb(0x2c0)],'aksi':async()=>{const _0x200d14=_0x487fcb,_0x16c268=_0x35bc68['ZnTmT'](hitungNilaiNormal,_0x3573cd['telinga\x20dan\x20mata'],_0x200d14(0x214),_0x3573cd[_0x35bc68['kXZey']]);if(_0x16c268[_0x200d14(0x3d1)]()===_0x200d14(0x2df)){const _0x27da5d=[_0x35bc68[_0x200d14(0x358)],_0x35bc68[_0x200d14(0x23d)],_0x200d14(0x3fe),_0x200d14(0x403)];for(const _0x4cc84f of _0x27da5d){const _0x4ee9ed=_0x59f7f2['locator'](_0x200d14(0x3fa)+_0x4cc84f+'\x22)'),_0x2c0276=await _0x4ee9ed[_0x200d14(0x332)]();for(let _0x316559=0x0;_0x316559<_0x2c0276;_0x316559++)await _0x4ee9ed[_0x200d14(0x20d)](_0x316559)[_0x200d14(0x3b3)]();}}}},{'nama':_0x35bc68['nDZIz'],'aksi':async()=>{const _0x138369=_0x487fcb,_0x1ac370=_0x35bc68[_0x138369(0x260)](hitungNilaiNormal,_0x3573cd[_0x35bc68[_0x138369(0x401)]],_0x35bc68['KPYzV'],_0x3573cd[_0x138369(0x272)]);await _0x59f7f2['locator'](_0x35bc68[_0x138369(0x3d7)])['last']()['click']({'force':!![]}),await _0x59f7f2[_0x138369(0x31d)](_0x138369(0x3fa)+_0x1ac370+'\x22)')[_0x138369(0x30a)]()['click']();}},{'nama':_0x35bc68['Hshgv'],'aksi':async()=>{const _0x3acb2a=_0x487fcb;await _0x59f7f2['locator'](_0x35bc68[_0x3acb2a(0x308)])['last']()[_0x3acb2a(0x3b3)]();}},{'nama':_0x487fcb(0x1c8),'aksi':async()=>{const _0x888265=_0x487fcb;await _0x59f7f2[_0x888265(0x31d)]('span.sv-string-viewer:has-text(\x22Non\x20reaktif\x22)')[_0x888265(0x30a)]()['click']();}},{'nama':'Pemeriksaan\x20Kadar\x20CO','aksi':async()=>{const _0x498e59=_0x487fcb,_0x5f4106=_0x35bc68[_0x498e59(0x260)](hitungNilaiNormal,_0x3573cd[_0x35bc68[_0x498e59(0x329)]],_0x35bc68[_0x498e59(0x329)],_0x3573cd[_0x498e59(0x272)]),_0x4e83fd=_0x59f7f2['locator'](_0x498e59(0x33e));if(await _0x4e83fd[_0x498e59(0x2d4)]())await _0x4e83fd[_0x498e59(0x30a)]()['fill'](_0x5f4106);}}];for(const _0x30e8c4 of _0x536643){await _0x11e1f9(),await _0x35bc68['qQaAW'](isiFormLayanan,_0x59f7f2,_0x30e8c4['nama'],_0x30e8c4[_0x487fcb(0x2fa)]);}await _0x59f7f2[_0x487fcb(0x27c)](()=>window[_0x487fcb(0x21e)](0x0,0x0)),await _0x59f7f2['waitForTimeout'](0x3e8);const _0x555408=_0x59f7f2[_0x487fcb(0x3bc)](_0x35bc68[_0x487fcb(0x2eb)],{'name':/Selesaikan Layanan/i})[_0x487fcb(0x3c2)]();if(await _0x555408[_0x487fcb(0x2d4)]()){await _0x35bc68[_0x487fcb(0x3f7)](klikAntiMacet,_0x59f7f2,_0x555408,_0x35bc68[_0x487fcb(0x20a)]);const _0x43cea6=await Promise[_0x487fcb(0x2ab)]([_0x59f7f2[_0x487fcb(0x3bc)](_0x35bc68['WsEKV'],{'name':/Konfirmasi/i})[_0x487fcb(0x23a)]({'state':_0x35bc68[_0x487fcb(0x314)],'timeout':0xbb8})['then'](()=>'ADA_KONFIRMASI'),_0x59f7f2[_0x487fcb(0x39c)](0xbb8)['then'](()=>_0x487fcb(0x1f9))]);_0x35bc68[_0x487fcb(0x3e6)](_0x43cea6,_0x35bc68[_0x487fcb(0x38d)])&&(await _0x59f7f2['getByRole'](_0x35bc68[_0x487fcb(0x2eb)],{'name':/Konfirmasi/i})[_0x487fcb(0x3b3)](),await _0x59f7f2[_0x487fcb(0x39c)](0x5dc));}_0x3573cd[_0x487fcb(0x3c4)]=undefined,_0x3573cd[_0x487fcb(0x246)]=_0x35bc68[_0x487fcb(0x323)],_0x35bc68['grUJM'](_0x44d6cc,_0x487fcb(0x2f9)+_0x38156f+'\x20atas\x20nama\x20'+_0x5d1179+_0x487fcb(0x27d)),_0x44d6cc('KERJA|'+_0x5d1179+'|'+_0x38156f+'|'+_0x3c8204+'/'+_0x36affd+_0x487fcb(0x2a9));}catch(_0x429cde){if(_0x35bc68[_0x487fcb(0x38b)](_0x429cde[_0x487fcb(0x33c)],_0x35bc68[_0x487fcb(0x368)])){_0x35bc68[_0x487fcb(0x305)](_0x44d6cc,_0x35bc68['epuPy']);break;}let _0x4474ce=_0x429cde&&typeof _0x429cde==='object'&&_0x35bc68[_0x487fcb(0x40e)](_0x35bc68['dLBcW'],_0x429cde)?_0x35bc68[_0x487fcb(0x3a8)](String,_0x429cde[_0x487fcb(0x33c)]):_0x35bc68['sbtRp'](String,_0x429cde||'');_0x4474ce=_0x4474ce||_0x35bc68['aOYJP'];const _0x1e5e0e=_0x4474ce['toLowerCase']()['includes'](_0x35bc68[_0x487fcb(0x326)]);if(_0x1e5e0e&&_0x35bc68[_0x487fcb(0x2a7)](_0x3573cd['jumlahCoba'],0x3)){const _0x5f3cb3=_0x487fcb(0x263)[_0x487fcb(0x28a)]('|');let _0x1db738=0x0;while(!![]){switch(_0x5f3cb3[_0x1db738++]){case'0':_0x4f7aae--;continue;case'1':await _0x59f7f2[_0x487fcb(0x39c)](0x9c4);continue;case'2':_0x3573cd[_0x487fcb(0x3c4)]+=0x1;continue;case'3':_0x35bc68[_0x487fcb(0x344)](_0x44d6cc,'KERJA|'+_0x5d1179+'|'+_0x38156f+'|'+_0x3c8204+'/'+_0x36affd+_0x487fcb(0x2aa));continue;case'4':await _0x59f7f2[_0x487fcb(0x2f0)]({'waitUntil':_0x35bc68[_0x487fcb(0x400)]})['catch'](()=>{});continue;}break;}}else{const _0x3a4bb3=_0x35bc68[_0x487fcb(0x28b)][_0x487fcb(0x28a)]('|');let _0x2e346b=0x0;while(!![]){switch(_0x3a4bb3[_0x2e346b++]){case'0':_0x35bc68[_0x487fcb(0x265)](_0x44d6cc,'GAGAL|NIK\x20'+_0x38156f+'\x20bermasalah.\x20Alasan:\x20'+_0x3573cd['Keterangan']);continue;case'1':await _0x59f7f2[_0x487fcb(0x39c)](0x7d0);continue;case'2':_0x3573cd[_0x487fcb(0x3c4)]=undefined;continue;case'3':_0x4474ce[_0x487fcb(0x391)](_0x35bc68[_0x487fcb(0x343)])?_0x3573cd[_0x487fcb(0x246)]=_0x487fcb(0x208)+_0x533758+_0x487fcb(0x1d4)+_0x3573cd['jumlahCoba']+_0x487fcb(0x340):_0x3573cd[_0x487fcb(0x246)]=_0x487fcb(0x208)+_0x533758+_0x487fcb(0x257)+_0x4474ce[_0x487fcb(0x28a)]('\x0a')[0x0];continue;case'4':await _0x59f7f2[_0x487fcb(0x289)](_0x35bc68[_0x487fcb(0x3ba)],{'waitUntil':_0x35bc68[_0x487fcb(0x400)],'timeout':0x7530})[_0x487fcb(0x3e7)](()=>{});continue;}break;}}}finally{ExcelManager[_0x487fcb(0x275)](_0x2a0f21,_0x2028ed);}}_0x44d6cc(_0x35bc68[_0x487fcb(0x319)]);}catch(_0x1d5d25){_0x35bc68[_0x487fcb(0x2b7)](_0x44d6cc,'❌\x20ERROR\x20FATAL:\x20'+_0x1d5d25[_0x487fcb(0x33c)]);throw _0x1d5d25;}finally{ipcMain['removeListener'](_0x35bc68['MDGyB'],_0x46a510),ipcMain[_0x487fcb(0x3de)]('stop-robot',_0x13e9db);if(_0x1f3c7c)await _0x1f3c7c[_0x487fcb(0x1d7)]();}}module[_0x3b6ebc(0x1c5)]={'runAutomation':runAutomation};
+const { chromium } = require('playwright-core');
+const path = require('path');
+const fs = require('fs');
+const { app, ipcMain } = require('electron'); // 🌟 TAMBAHAN: Tarik app & ipcMain dari Electron
+function panggilModul(jalurRelatif) {
+    const pathUpdate = path.join(app.getPath('userData'), jalurRelatif);
+    if (fs.existsSync(pathUpdate)) {
+        return require(pathUpdate);
+    }
+    // app.getAppPath() akan mengarah ke dalam app.asar (file .exe)
+    return require(path.join(app.getAppPath(), jalurRelatif));
+}
+
+// CONTOH PENGGUNAAN:
+// Hapus ini: const ExcelManager = require('./Utils/excelManager');
+// Ganti jadi ini:
+const ExcelManager = panggilModul('Utils/excelManager.js');
+const Logger = panggilModul('Utils/Logger.js');
+
+// ==============================================================================
+// 1. KUMPULAN FUNGSI HELPER 
+// ==============================================================================
+
+// 🌟 FITUR 1: FUNGSI ANTI-MACET UNTUK SEMUA TOMBOL
+async function klikAntiMacet(page, locatorTombol, namaAksi = "Tombol") {
+    const loaderHitam = page.locator('div.bg-blackSoft').first();
+    const maxPercobaan = 3;
+
+    for (let i = 1; i <= maxPercobaan; i++) {
+        if (await locatorTombol.count() > 0 && await locatorTombol.isVisible()) {
+            await locatorTombol.click({ force: true });
+        }
+
+        try {
+            // 🌟 PERBAIKAN: pastikan loader sempat MUNCUL dulu (bukti request benar-benar
+            // terkirim ke server) sebelum kita anggap "hidden" = selesai. Sebelumnya,
+            // waitFor({state:'hidden'}) langsung sukses instan kalau loader belum sempat
+            // attach ke DOM (server >500ms utk munculkan overlay), sehingga kode lanjut
+            // jalan padahal request masih diproses di server.
+            await loaderHitam.waitFor({ state: 'visible', timeout: 3000 }).catch(() => {
+                // Loader memang tidak pernah muncul (aksi terlalu cepat / tidak pakai overlay).
+                // Ini bukan error — cukup lanjut ke pengecekan 'hidden' di bawah.
+            });
+
+            await loaderHitam.waitFor({ state: 'hidden', timeout: 15000 });
+            return true;
+        } catch (error) {
+            Logger.info(`⚠️ Server lemot saat klik ${namaAksi}. Mengulang (Percobaan ${i}/${maxPercobaan})...`);
+            if (i === maxPercobaan) {
+                throw new Error(`TIMEOUT_SERVER: Gagal mengeklik ${namaAksi} setelah 3x percobaan.`);
+            }
+            await page.waitForTimeout(2000);
+        }
+    }
+}
+
+// 🌟 PERBAIKAN: pengganti pola `await locator.isVisible()` yang instan (tidak menunggu).
+// Beberapa tempat mengecek tombol/baris langsung setelah aksi sebelumnya, padahal
+// elemen itu bisa saja belum sempat dirender karena halaman masih loading — sehingga
+// isVisible() instan bisa balikin false-negative (dikira gagal/tidak ada, padahal cuma
+// belum sempat muncul). Fungsi ini menunggu singkat sebelum menyimpulkan hasilnya,
+// tapi tetap mengembalikan boolean seperti isVisible() biasa, jadi alur if/else tidak berubah.
+async function cekVisibleTunggu(locator, timeout = 3000) {
+    try {
+        await locator.waitFor({ state: 'visible', timeout });
+        return true;
+    } catch {
+        return false;
+    }
+}
+
+// 🌟 PERBAIKAN (laporan user): helper generik untuk dropdown jenis "klik kotak -> ketik di
+// kolom cari -> klik opsi hasil pencarian" (dipakai di Nama Sekolah & Jenjang/Kelas form
+// kedua). Sebelumnya opsi hasil pencarian cuma diklik SEKALI (force click) tanpa verifikasi
+// apakah klik itu beneran nempel. Kalau daftar opsi sempat re-render pas mau diklik (abis
+// ngetik di kolom cari), klik itu bisa "nembak angin" (elemen sudah berganti/ke-detach) dan
+// gagal tanpa ketahuan karena ketutup try/catch kosong — makanya kadang jenjang/sekolah
+// sudah "ketemu" pas dicari, tapi kotaknya nggak ikut berubah. Sekarang setelah klik, kita
+// cek ULANG apakah teks kotaknya beneran sudah berubah sesuai target; kalau belum, ulangi
+// proses klik kotak + cari + klik opsi sampai beberapa kali sebelum menyerah.
+async function pilihDariDropdownCari(page, namaField, kotakLocator, searchInputLocator, teksUntukDicari, opsiLocatorFn, cekSudahBenar, maxPercobaan = 3) {
+    for (let percobaan = 1; percobaan <= maxPercobaan; percobaan++) {
+        try {
+            await kotakLocator.click({ force: true });
+            await page.waitForTimeout(500);
+            await searchInputLocator.waitFor({ state: 'visible', timeout: 3000 });
+            await searchInputLocator.fill(teksUntukDicari);
+            await page.waitForTimeout(600);
+
+            const opsi = opsiLocatorFn();
+            await opsi.waitFor({ state: 'visible', timeout: 3000 });
+            await opsi.click({ force: true });
+            await page.waitForTimeout(500);
+        } catch (e) {
+            Logger.info(`⚠️ ${namaField}: opsi "${teksUntukDicari}" belum sempat muncul/diklik (percobaan ${percobaan}/${maxPercobaan}).`);
+        }
+
+        if (await cekSudahBenar()) return true;
+
+        Logger.info(`⚠️ ${namaField} belum berubah sesuai target setelah diklik, mengulang pencarian (percobaan ${percobaan}/${maxPercobaan})...`);
+        await page.keyboard.press('Escape').catch(() => { });
+        await page.waitForTimeout(300);
+    }
+    Logger.info(`❌ Gagal memilih ${namaField} = "${teksUntukDicari}" setelah ${maxPercobaan}x percobaan. Field ini dilewati (cek manual nanti).`);
+    return false;
+}
+
+async function isiDatepicker(page, locatorDatepicker, tanggalLahirExcel) {
+    if (tanggalLahirExcel == null || tanggalLahirExcel === "undefined" || tanggalLahirExcel === "") {
+        throw new Error("Data tanggal kosong atau nama kolom di Excel salah!");
+    }
+
+    let targetHari, targetBulan, targetTahun;
+
+    if (tanggalLahirExcel instanceof Date) {
+        targetHari = tanggalLahirExcel.getDate();
+        targetBulan = tanggalLahirExcel.getMonth() + 1;
+        targetTahun = tanggalLahirExcel.getFullYear();
+    } else {
+        const strTanggal = String(tanggalLahirExcel).replace(/\//g, '-').trim();
+        const bagian = strTanggal.split('-');
+        if (bagian.length !== 3) throw new Error(`Format tanggal tidak valid: ${tanggalLahirExcel}`);
+
+        if (bagian[0].length === 4) {
+            targetTahun = parseInt(bagian[0], 10);
+            targetBulan = parseInt(bagian[1], 10);
+            targetHari = parseInt(bagian[2], 10);
+        } else {
+            targetHari = parseInt(bagian[0], 10);
+            targetBulan = parseInt(bagian[1], 10);
+            let tahunTemp = parseInt(bagian[2], 10);
+            targetTahun = tahunTemp < 100 ? tahunTemp + (tahunTemp > 50 ? 1900 : 2000) : tahunTemp;
+        }
+    }
+
+    if (!targetTahun || !targetBulan || targetBulan < 1 || targetBulan > 12 || !targetHari) {
+        throw new Error(`Hasil parsing tanggal tidak masuk akal: ${targetHari}-${targetBulan}-${targetTahun}`);
+    }
+
+    // Harus sama persis dengan title="YYYY-MM-DD" di panel tanggal
+    const targetDateStr = `${targetTahun}-${String(targetBulan).padStart(2, '0')}-${String(targetHari).padStart(2, '0')}`;
+    const targetMonthIndex = targetBulan - 1; // data-month bersifat 0-based (Jan=0)
+
+    await locatorDatepicker.click();
+
+    const calendar = page.locator('.mx-calendar').first();
+    await calendar.waitFor({ state: 'visible' });
+
+    // ===== 1. Panel TAHUN — loncat per DEKADE, klik langsung via data-year =====
+    await page.locator('.mx-btn-current-year').first().click();
+
+    const tableYear = page.locator('.mx-table-year');
+    await tableYear.waitFor({ state: 'visible' });
+
+    let tahunKetemu = false;
+    for (let i = 0; i < 30; i++) { // 30x loncat dekade = jangkauan 300 tahun
+        const cells = tableYear.locator('td.cell');
+        const total = await cells.count();
+
+        if (total === 0) {
+            await page.waitForTimeout(100);
+            continue;
+        }
+
+        const min = parseInt(await cells.first().getAttribute('data-year'), 10);
+        const max = parseInt(await cells.nth(total - 1).getAttribute('data-year'), 10);
+
+        if (targetTahun >= min && targetTahun <= max) {
+            await tableYear.locator(`td.cell[data-year="${targetTahun}"]`).click();
+            tahunKetemu = true;
+            break;
+        }
+
+        await page.locator(targetTahun < min ? '.mx-btn-icon-double-left' : '.mx-btn-icon-double-right').first().click();
+    }
+    if (!tahunKetemu) {
+        throw new Error(`Tahun ${targetTahun} tidak ditemukan (kemungkinan di luar rentang yang diizinkan datepicker)`);
+    }
+
+    // ===== 2. Panel BULAN — otomatis terbuka setelah pilih tahun, klik langsung via data-month =====
+    const tableMonth = page.locator('.mx-table-month');
+    let panelBulanTerbuka = true;
+    try {
+        await tableMonth.waitFor({ state: 'visible', timeout: 1000 });
+    } catch {
+        panelBulanTerbuka = false;
+    }
+    if (!panelBulanTerbuka) {
+        await page.locator('.mx-btn-current-month').first().click();
+        await tableMonth.waitFor({ state: 'visible' });
+    }
+
+    await tableMonth.locator(`td.cell[data-month="${targetMonthIndex}"]`).click();
+
+    // ===== 3. Panel TANGGAL — klik via title="YYYY-MM-DD" =====
+    const tableDate = page.locator('.mx-table-date');
+    try {
+        await tableDate.waitFor({ state: 'visible', timeout: 2000 });
+    } catch {
+        throw new Error('Panel tanggal tidak muncul setelah memilih bulan.');
+    }
+
+    await page.locator(`td.cell[title="${targetDateStr}"]`).first().click();
+}
+
+
+function hitungNilaiNormal(excelValue, tipePemeriksaan, tglLahirExcel) {
+    const val = String(excelValue).trim().toLowerCase();
+
+    if (val === "undefined" || val === "null" || val === "" || val === "normal") {
+        let umur = 0;
+        if (tglLahirExcel) {
+            let thn = 0;
+            if (tglLahirExcel instanceof Date) {
+                thn = tglLahirExcel.getFullYear();
+            } else {
+                const parts = String(tglLahirExcel).replace(/\//g, '-').split('-');
+                thn = parts[0].length === 4 ? parseInt(parts[0]) : (parseInt(parts[2]) < 100 ? parseInt(parts[2]) + 2000 : parseInt(parts[2]));
+            }
+            umur = new Date().getFullYear() - thn;
+        }
+
+        switch (tipePemeriksaan) {
+            case "Berat Badan": return umur > 12 ? "45" : String(umur * 2 + 8);
+            case "Tinggi Badan": return umur > 12 ? "155" : String(umur * 6 + 77);
+            case "Sistol": return umur > 12 ? "110" : "100";
+            case "Diastol": return umur > 12 ? "70" : "60";
+            case "Gula Darah": return "90";
+            case "Hemoglobin": return umur > 12 ? "13" : "12";
+            case "Gigi": return "Tidak ada";
+            case "Kebugaran": return "Baik";
+            case "Kadar CO": return "1";
+            case "Telinga dan Mata": return "Normal";
+            default: return "";
+        }
+    }
+    return String(excelValue);
+}
+
+async function isiFormLayanan(page, namaLayanan, actionCallback) {
+    Logger.info(`🔍 Memproses layanan: ${namaLayanan}`);
+
+    const bungkusanLayanan = page.locator('div:has(> button[aria-controls="dropdown-content"])').filter({
+        has: page.locator('div.grid-cols-5', { hasText: namaLayanan })
+    }).last();
+
+    const menuLipat = bungkusanLayanan.locator('button[aria-controls="dropdown-content"]').first();
+    const rowLayanan = bungkusanLayanan.locator('div.grid-cols-5').filter({ hasText: namaLayanan }).last();
+
+    if (await menuLipat.count() > 0) {
+        await menuLipat.scrollIntoViewIfNeeded();
+        if (!(await rowLayanan.isVisible())) {
+            Logger.info(`   Membuka menu lipat yang menyembunyikan form ini...`);
+            await menuLipat.click({ force: true });
+            await page.waitForTimeout(1000);
+        }
+    }
+
+    const targetRow = await bungkusanLayanan.count() > 0 ? rowLayanan : page.locator('div.grid-cols-5').filter({ hasText: namaLayanan }).last();
+    const btnInput = targetRow.locator('button:has-text("Input Data"), button:has-text("Ubah")').filter({ visible: true }).first();
+
+    if (await btnInput.count() > 0 && await btnInput.isVisible() && await btnInput.isEnabled()) {
+        await btnInput.scrollIntoViewIfNeeded();
+        await btnInput.click({ force: true });
+
+        // 🌟 PERBAIKAN: dulu nunggu tetap 1000ms tanpa peduli kondisi halaman.
+        // Sekarang nunggu form/modal-nya beneran muncul (maks 3 detik sbg jaring
+        // pengaman) baru mengisi jawaban -> biasanya lebih cepat saat server
+        // responsif, tapi tetap nunggu penuh kalau lagi lemot.
+        const formLayanan = page.locator('.sd-root-modern, .modal-dialog, form').filter({ visible: true }).first();
+        await formLayanan.waitFor({ state: 'visible', timeout: 3000 }).catch(() => { });
+
+        await actionCallback();
+
+        const btnKirim = page.locator('input[title="Kirim"], button:has-text("Kirim"), button:has-text("Simpan")').filter({ visible: true }).first();
+
+        if (await btnKirim.count() > 0) {
+            await klikAntiMacet(page, btnKirim, `Simpan ${namaLayanan}`);
+        } else {
+            const btnFallback = page.locator('input[title="Kirim"]').last();
+            await klikAntiMacet(page, btnFallback, `Simpan ${namaLayanan}`);
+        }
+
+        // 🌟 PERBAIKAN: tunggu form/modal-nya beneran tertutup (tanda submit berhasil).
+        const berhasilTersimpan = await formLayanan.waitFor({ state: 'hidden', timeout: 3000 }).then(() => true).catch(() => false);
+
+        if (!berhasilTersimpan) {
+            // 🌟 PERBAIKAN: form masih terbuka setelah Kirim -> kemungkinan besar ada
+            // jawaban wajib yang kosong (data belum ada di Excel), bukan soal loading
+            // server. Keluar lewat tombol Batal/Kembali, lanjut ke pemeriksaan berikutnya.
+            Logger.info(`⚠️ "${namaLayanan}" sepertinya ada jawaban wajib yang kosong (data belum ada di Excel). Melewati...`);
+            const btnBatal = page.locator('button:has-text("Batal"), button:has-text("Kembali"), .close').filter({ visible: true }).first();
+            if (await btnBatal.count() > 0) {
+                await btnBatal.click({ force: true }).catch(() => { });
+            } else {
+                await page.keyboard.press('Escape');
+            }
+            await page.waitForTimeout(500);
+        }
+
+        await page.waitForTimeout(300);
+    } else {
+        Logger.info(`⏩ Form dilewati: Tombol untuk "${namaLayanan}" tidak ditemukan/dikunci.`);
+    }
+}
+
+// ==============================================================================
+// 2. FUNGSI UTAMA AUTOMATION (Sistem Looping)
+// ==============================================================================
+
+// 🌟 PERBAIKAN: Fungsi menerima Parameter langsung dari main.js!
+async function runAutomation(idAkun, strHeadless, eventSender) {
+    const isHeadless = strHeadless === 'true';
+
+    // 🌟 FUNGSI PENERUS LOG KE UI HTML KITA
+    function sendUILog(pesan) {
+        console.log(`[Akun ${idAkun}] ${pesan}`);
+        if (eventSender) eventSender.send('robot-log', idAkun, pesan);
+    }
+
+    // ==========================================
+    // 🌟 SISTEM PAUSE & STOP KHUSUS IPC
+    // ==========================================
+    let isPaused = false;
+    let isStopped = false;
+    let resumeResolver = null;
+
+    const pauseListener = (event, id) => {
+        if (id == idAkun) {
+            isPaused = !isPaused;
+            if (!isPaused && resumeResolver) {
+                resumeResolver();
+                resumeResolver = null;
+            }
+        }
+    };
+
+    const stopListener = (event, id) => {
+        if (id == idAkun) {
+            isStopped = true;
+            if (resumeResolver) {
+                resumeResolver();
+                resumeResolver = null;
+            }
+        }
+    };
+
+    ipcMain.on('toggle-pause-robot', pauseListener);
+    ipcMain.on('stop-robot', stopListener);
+
+    async function checkPause() {
+        if (isStopped) throw new Error("STOPPED_BY_USER");
+
+        // Gunakan perulangan agar langsung merespon saat tombol Stop ditekan
+        while (isPaused) {
+            if (isStopped) throw new Error("STOPPED_BY_USER");
+            await new Promise(resolve => { resumeResolver = resolve; });
+        }
+
+        if (isStopped) throw new Error("STOPPED_BY_USER");
+    }
+    // ==========================================
+
+    Logger.info("Membuka browser menggunakan Google Chrome asli...");
+
+    function getChromePath() {
+        const paths = [
+            "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+            "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+            path.join(process.env.LOCALAPPDATA || '', "Google\\Chrome\\Application\\chrome.exe")
+        ];
+        for (let p of paths) {
+            if (fs.existsSync(p)) return p;
+        }
+        return null;
+    }
+
+    const chromePath = getChromePath();
+    if (!chromePath) {
+        throw new Error("Google Chrome tidak terinstal di PC ini!");
+    }
+
+    let browser;
+
+    try {
+        browser = await chromium.launch({
+            headless: isHeadless,
+            executablePath: chromePath,
+            args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
+        });
+
+        const userDataPath = app.getPath('userData');
+        const folderState = path.join(userDataPath, 'state');
+        if (!fs.existsSync(folderState)) {
+            fs.mkdirSync(folderState, { recursive: true });
+        }
+
+        const STATE_PATH = path.join(folderState, `storageState${idAkun}.json`);
+        const context = await browser.newContext({ storageState: STATE_PATH });
+
+        const excelPath = path.join(userDataPath, 'Data', `Data${idAkun}.xlsx`);
+        if (!fs.existsSync(excelPath)) {
+            throw new Error(`File Excel Data${idAkun}.xlsx belum diupload!`);
+        }
+
+        const dataPeserta = ExcelManager.readExcel(excelPath);
+        sendUILog("🤖 Memulai proses CKG Anak Sekolah...");
+
+        const page = await context.newPage();
+
+        page.on('framenavigated', async (frame) => {
+            if (frame === page.mainFrame()) {
+                const currentUrl = frame.url();
+                if (currentUrl.includes('/auth/login')) {
+                    console.log(`[Akun ${idAkun}] 🔴 Terdeteksi lempar ke login: ${currentUrl}. Langsung Close!`);
+                    try { if (!page.isClosed()) await page.close(); } catch (e) { }
+                }
+            }
+        });
+
+        await page.goto('https://sehatindonesiaku.kemkes.go.id/ckg-pendaftaran-individu', { waitUntil: 'networkidle' });
+        await checkPause();
+
+        for (let i = 0; i < dataPeserta.length; i++) {
+            if (isStopped) break;
+
+            const row = dataPeserta[i];
+            const barisExcel = i + 1;
+            const totalData = dataPeserta.length;
+
+            const namaLengkap = row['Nama Lengkap'] || 'Tanpa Nama';
+            const nikPeserta = row['NIK'] || 'Kosong';
+
+            sendUILog(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Membaca excel`);
+
+            const cekNik = String(row['NIK'] || '').trim();
+
+            if (!cekNik || cekNik.length < 16) {
+                row['Keterangan'] = 'Gagal NIK tidak lengkap';
+                sendUILog(`GAGAL|NIK ${nikPeserta} Gagal NIK tidak lengkap`);
+                sendUILog(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Gagal NIK tidak lengkap`);
+                continue;
+            }
+
+            const kataKunciSkip = [
+                'Berhasil Selesai Pelayanan',
+                'terdeteksi sudah pelayanan lengkap',
+                'gagal999',
+                'gagal nik tidak valid'
+            ];
+
+            if (row.Keterangan && kataKunciSkip.some(kata => String(row.Keterangan).toLowerCase().includes(kata.toLowerCase()))) {
+                sendUILog(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Skip`);
+                sendUILog(`SUKSES|Data NIK ${nikPeserta} atas nama ${namaLengkap} tersimpan!`);
+                continue;
+            }
+
+            if (row.jumlahCoba === undefined) row.jumlahCoba = 1;
+            let sesi = "Persiapan";
+
+            try {
+                await checkPause();
+
+                const statusExcel = String(row['Status'] || row['Keterangan'] || "").trim().toLowerCase();
+                let lewatiPendaftaran = false;
+                let langsungPelayanan = false;
+
+                if (statusExcel === "sudah daftar bos") {
+                    lewatiPendaftaran = true;
+                    Logger.info(`⏩ Status "${statusExcel}" terdeteksi! Langsung melompat ke Konfirmasi Kehadiran...`);
+                }
+
+                if (!lewatiPendaftaran) {
+                    sesi = "Form pendaftaran Pertama";
+                    sendUILog(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Mengisi Form Pendaftaran pertama`);
+                    await checkPause();
+
+                    await page.goto('https://sehatindonesiaku.kemkes.go.id/ckg-pendaftaran-anak-sekolah', { waitUntil: 'networkidle' });
+                    await page.waitForTimeout(500);
+                    await page.waitForSelector('button:has(div:text("Daftar Baru"))');
+                    await page.locator('button:has(div:text("Daftar Baru"))').last().click();
+                    await page.waitForTimeout(1000);
+
+                    await page.locator('input[name="NIK"]').last().fill(String(row['NIK']));
+                    await page.waitForTimeout(500);
+                    await checkPause();
+
+                    sendUILog(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Mengecek NIK`);
+
+                    const btnCekNik = page.locator('div.tracking-wide:has-text("Cek NIK"), button:has-text("Cek NIK")').filter({ visible: true }).first();
+                    await btnCekNik.click({ force: true });
+
+                    let dataOtomatisDitemukan = false;
+                    const popupTeks = page.getByText('Data Peserta ditemukan', { exact: false }).first();
+                    const btnGunakanData = page.locator('button:has-text("Gunakan Data")').first();
+
+                    try {
+                        await Promise.race([
+                            popupTeks.waitFor({ state: 'visible', timeout: 6000 }),
+                            btnGunakanData.waitFor({ state: 'visible', timeout: 6000 })
+                        ]);
+                        dataOtomatisDitemukan = true;
+                    } catch (error) {
+                        dataOtomatisDitemukan = false;
+                    }
+
+                    await checkPause();
+
+                    if (dataOtomatisDitemukan) {
+                        await btnGunakanData.click({ force: true }).catch(() => { });
+                        await page.waitForTimeout(1000);
+                    } else {
+                        await page.locator('input[name="Nama"]').last().fill(row['Nama Lengkap']);
+
+                        const locatorKalender = page.locator('div:text-is("Pilih tanggal lahir")').last();
+                        await isiDatepicker(page, locatorKalender, row['Tanggal lahir']);
+
+                        await page.locator('span:has-text("Pilih jenis kelamin"), div:has-text("Pilih jenis kelamin")').last().click();
+                        await page.locator(`div:has-text("${row['Jenis Kelamin']}")`).last().click();
+
+                        let noWa = row['No Whatsapp'] ? String(row['No Whatsapp']).trim() : '';
+                        noWa = noWa.replace(/\D/g, '');
+                        if (!noWa || noWa.length < 7 || noWa.length > 13 || !noWa.startsWith('8')) {
+                            noWa = '89999999';
+                        }
+                        await page.waitForTimeout(500);
+                        await page.locator('input[name="Nomor Whatsapp"]').last().fill(noWa);
+                        await page.waitForTimeout(1000);
+                    }
+
+                    const tombolSelanjutnya = page.locator('button:has-text("Selanjutnya")').filter({ visible: true }).first();
+                    await tombolSelanjutnya.waitFor({ state: 'visible', timeout: 5000 });
+
+                    await klikAntiMacet(page, tombolSelanjutnya, "Selanjutnya (Cek NIK Awal)");
+                    await checkPause();
+
+                    sendUILog(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Menunggu validasi NIK`);
+
+                    let popupResult = await Promise.race([
+                        page.waitForSelector('div:has-text("Data peserta valid")', { timeout: 10000 }).then(() => 'VALID'),
+                        page.waitForSelector('div:has-text("Kuota Pemeriksaan Habis")', { timeout: 10000 }).then(() => 'KUOTA_HABIS'),
+                        page.waitForSelector('div:has-text("Data peserta tidak valid")', { timeout: 10000 }).then(() => 'TIDAK_SESUAI'),
+                        page.waitForSelector('div:has-text("Individu sudah menerima layanan")', { timeout: 10000 }).then(() => 'SUDAH_PELAYANAN')
+                    ]).catch(() => 'TIMEOUT_SERVER');
+
+                    if (popupResult === 'KUOTA_HABIS') {
+                        sendUILog(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Kuota Habis (Bypass)`);
+                        const tombolLanjutkan = page.locator('div.tracking-wide:has-text("Lanjut"), button:has-text("Lanjut")').filter({ visible: true }).last();
+                        await tombolLanjutkan.waitFor({ state: 'visible', timeout: 5000 });
+                        await tombolLanjutkan.click({ force: true });
+                        await page.waitForTimeout(1000);
+
+                        popupResult = await Promise.race([
+                            page.waitForSelector('div:has-text("Data peserta valid")', { timeout: 10000 }).then(() => 'VALID'),
+                            page.waitForSelector('div:has-text("Data peserta tidak valid")', { timeout: 10000 }).then(() => 'TIDAK_SESUAI'),
+                            page.waitForSelector('div:has-text("Individu sudah menerima layanan")', { timeout: 10000 }).then(() => 'SUDAH_PELAYANAN')
+                        ]).catch(() => 'TIMEOUT_SERVER');
+                    }
+
+                    await checkPause();
+
+                    if (popupResult === 'VALID') {
+                        sendUILog(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Menuju form kedua`);
+
+                        try {
+                            const Lanjutkan = page.locator('button:has-text("Lanjutkan")').filter({ visible: true }).first();
+                            await Lanjutkan.waitFor({ state: 'visible', timeout: 5000 });
+                            await klikAntiMacet(page, Lanjutkan, "Lanjutkan");
+                        } catch (e) { }
+
+                        sesi = "Form pendaftaran Kedua";
+                        await page.waitForTimeout(1500);
+
+                        // 🌟 PERBAIKAN LOGIKA: sebelumnya seluruh isian di bawah ini (disabilitas,
+                        // pekerjaan, Nama Sekolah, Jenjang/Kelas) hanya dijalankan KALAU
+                        // dataOtomatisDitemukan == true (NIK sudah pernah terdaftar). Akibatnya
+                        // kalau NIK BELUM pernah terdaftar (data baru), Nama Sekolah & Jenjang
+                        // ikut TERLEWAT / tidak terisi sama sekali, padahal wajib diisi. Sekarang
+                        // blok ini SELALU dijalankan untuk kedua kasus:
+                        // - Data baru (dataOtomatisDitemukan == false): semua field di bawah wajib
+                        //   diisi dari Excel tanpa terkecuali.
+                        // - Data lama (dataOtomatisDitemukan == true): isian lain boleh ikut default
+                        //   dari sistem, TAPI Nama Sekolah & Jenjang/Kelas tetap dicek & DIGANTI
+                        //   kalau beda dari Excel (bisa jadi ada data terbaru/pindah kelas).
+                        await checkPause();
+                        if (row['penyandang disabilitas']) {
+                            try {
+                                const targetDisabilitas = String(row['penyandang disabilitas']).trim();
+                                const kotakDisabilitas = page.locator('xpath=//*[contains(text(), "Penyandang disabilitas")]/following::div[contains(@class, "cursor-pointer")][1]');
+
+                                if (await kotakDisabilitas.isVisible({ timeout: 2000 })) {
+                                    const teksSaatIni = (await kotakDisabilitas.innerText()).trim();
+                                    if (teksSaatIni.toLowerCase() !== targetDisabilitas.toLowerCase()) {
+                                        await kotakDisabilitas.click({ force: true, timeout: 2000 });
+                                        await page.waitForTimeout(500);
+                                        await page.locator(`div:has-text("${targetDisabilitas}")`).last().click({ force: true, timeout: 2000 });
+                                    }
+                                }
+                            } catch (e) { }
+                        }
+
+                        await checkPause();
+                        if (row['pekerjaan']) {
+                            try {
+                                const targetPekerjaan = String(row['pekerjaan']).trim();
+                                const pekerjaanSudahBenar = await page.locator(`div:text-is("${targetPekerjaan}")`).last().isVisible({ timeout: 2000 });
+
+                                if (!pekerjaanSudahBenar) {
+                                    const searchInput = page.locator('input[placeholder="Cari pekerjaan"]');
+                                    await searchInput.click({ force: true, timeout: 2000 }).catch(async () => {
+                                        await page.locator('xpath=//*[contains(text(), "Pekerjaan")]/following::div[contains(@class, "cursor-pointer")][1]').click({ force: true });
+                                    });
+                                    await page.waitForTimeout(500);
+                                    await searchInput.fill(targetPekerjaan);
+                                    await page.waitForTimeout(500);
+                                    await page.locator(`div:text-is("${targetPekerjaan}")`).last().click({ force: true, timeout: 2000 });
+                                }
+                            } catch (error) { }
+                        }
+
+                        await checkPause();
+                        if (row['Nama Sekolah']) {
+                            try {
+                                const targetSekolah = String(row['Nama Sekolah']).trim();
+                                const kotakSekolah = page.locator('xpath=//*[contains(text(), "Nama Sekolah")]/following::div[contains(@class, "cursor-pointer")][1]');
+                                await kotakSekolah.waitFor({ state: 'visible', timeout: 3000 });
+
+                                const teksSaatIni = (await kotakSekolah.innerText()).trim();
+
+                                if (teksSaatIni.toLowerCase() !== targetSekolah.toLowerCase()) {
+                                    await pilihDariDropdownCari(
+                                        page,
+                                        "Nama Sekolah",
+                                        kotakSekolah,
+                                        page.locator('input[placeholder*="Cari nama sekolah"]').last(),
+                                        targetSekolah,
+                                        () => page.locator('button').filter({ hasText: targetSekolah }).last(),
+                                        async () => (await kotakSekolah.innerText()).trim().toLowerCase() === targetSekolah.toLowerCase()
+                                    );
+                                } else if (row['Kelas / Jenjang']) {
+                                    // 🌟 FIX TEMUAN BARU: sekolah sudah cocok dari data lama, tapi state cascade
+                                    // ke pilihan "Kelas" belum ke-trigger -> opsi Kelas jadi kosong pas mau diisi.
+                                    // Pilih ulang sekolah yang sama persis untuk "membangunkan" cascade-nya,
+                                    // sama seperti yang terbukti berhasil pas dites manual.
+                                    await pilihDariDropdownCari(
+                                        page,
+                                        "Nama Sekolah (refresh)",
+                                        kotakSekolah,
+                                        page.locator('input[placeholder*="Cari nama sekolah"]').last(),
+                                        targetSekolah,
+                                        () => page.locator('button').filter({ hasText: targetSekolah }).last(),
+                                        async () => (await kotakSekolah.innerText()).trim().toLowerCase() === targetSekolah.toLowerCase()
+                                    );
+                                }
+                            } catch (e) { }
+                        }
+                        await checkPause();
+                        const rawJenjang = String(row['Kelas / Jenjang'] || '');
+                        const angkaJenjang = rawJenjang.match(/\d+/)?.[0];
+
+                        if (angkaJenjang) {
+                            try {
+                                const kotakJenjang = page.locator('xpath=//*[contains(text(), "Jenjang")]/following::div[contains(@class, "cursor-pointer")][1]');
+                                await kotakJenjang.waitFor({ state: 'visible', timeout: 3000 });
+
+                                // 🌟 FIX: definisikan polaJenjang di awal, pakai untuk SEMUA pengecekan
+                                // (bukan cuma filter tombol) — supaya "Kelas 2" tidak salah dianggap
+                                // "sudah cocok" hanya karena teks saat ini "Kelas 12"/"Kelas 21"/dst
+                                // yang kebetulan sama-sama mengandung karakter "2".
+                                const polaJenjang = new RegExp(`Kelas\\s*${angkaJenjang}(?!\\d)`, 'i');
+
+                                const teksSaatIni = (await kotakJenjang.innerText()).trim();
+
+                                if (!polaJenjang.test(teksSaatIni)) {
+                                    await pilihDariDropdownCari(
+                                        page,
+                                        "Jenjang/Kelas",
+                                        kotakJenjang,
+                                        page.locator('input[placeholder*="Cari jenjang"]').last(),
+                                        angkaJenjang,
+                                        () => page.locator('button').filter({ hasText: polaJenjang }).last(),
+                                        async () => polaJenjang.test((await kotakJenjang.innerText()).trim())
+                                    );
+                                }
+                            } catch (e) { }
+                        }
+                        try {
+                            await page.locator('input[name="sameAddress"]').last().check({ force: true, timeout: 2000 });
+                        } catch (e) { }
+
+                        if (row['Detail Domisili']) {
+                            try {
+                                await page.locator('textarea[name="detail-domisili"]').last().fill(String(row['Detail Domisili']), { timeout: 2000 });
+                            } catch (e) { }
+                        }
+
+                        const btnSelanjutnyaForm2 = page.locator('div.tracking-wide:has-text("Selanjutnya")').last();
+                        await checkPause();
+                        await page.waitForTimeout(500);
+                        await klikAntiMacet(page, btnSelanjutnyaForm2, "Selanjutnya (Form 2)");
+
+                        const notifDaftar = await Promise.race([
+                            page.waitForSelector('div:has-text("Berhasil Daftar")', { timeout: 10000 }).then(() => 'BERHASIL'),
+                            page.waitForSelector('div:has-text("Data pasien tidak sesuai"),div.pb-2:has-text("Data peserta tidak valid"),div:has-text("Terjadi kesalahan")', { timeout: 10000 }).then(() => 'TIDAK_SESUAI'),
+                            page.waitForSelector('div:has-text("Individu sudah")', { timeout: 10000 }).then(() => 'SUDAH_PELAYANAN')
+                        ]).catch(() => 'TIMEOUT_SERVER');
+
+                        if (notifDaftar === 'TIDAK_SESUAI') {
+                            let pesanErrorForm2 = "Data tidak sesuai (Detail tidak terbaca)";
+                            try {
+                                const popupAktif = page.locator('div[role="dialog"], div.modal, .swal-modal, .swal2-popup, .el-message-box, .el-notification').filter({ visible: true }).last();
+                                if (await popupAktif.count() > 0) {
+                                    pesanErrorForm2 = await popupAktif.innerText();
+                                } else {
+                                    pesanErrorForm2 = await page.locator('div.text-red-500, div:has-text("Data pasien tidak sesuai"), div:has-text("Terjadi kesalahan")').filter({ visible: true }).last().innerText();
+                                }
+                            } catch (e) { }
+
+                            pesanErrorForm2 = pesanErrorForm2.replace(/\n/g, ' - ').trim();
+                            row['notif'] = pesanErrorForm2;
+                            row.Keterangan = "Ditolak Form 2: Cek kolom notif";
+                            sendUILog(`GAGAL|NIK ${nikPeserta} tidak valid. Alasan: ${pesanErrorForm2}`);
+
+                            await page.locator('button:has-text("Tutup"),button:has-text("Periksa Kembali"),div:has-text("periksa kembali "), button:has-text("OK")').last().click();
+                            await page.reload({ waitUntil: 'networkidle' });
+                            await page.waitForTimeout(1000);
+                            continue;
+                        } else if (notifDaftar === 'TIMEOUT_SERVER') {
+                            throw new Error("TIMEOUT_SERVER: Web tidak merespon saat menyimpan Form 2.");
+                        } else if (notifDaftar === 'BERHASIL') {
+                            await page.locator('div:has-text("Tutup")').last().click({ force: true });
+                        }
+                    }
+
+                    else if (popupResult === 'SUDAH_PELAYANAN') {
+                        sendUILog(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Sudah ada data .. menuju pelayanan`);
+                        const tombolCariIndividu = page.locator('div.tracking-wide:has-text("Cari Individu"), div:has-text("Tutup")').filter({ visible: true }).first();
+                        await tombolCariIndividu.waitFor({ state: 'attached', timeout: 5000 });
+                        await tombolCariIndividu.evaluate(el => el.click());
+                        await page.waitForTimeout(2000);
+                        langsungPelayanan = true;
+                    }
+                    else if (popupResult === 'TIMEOUT_SERVER') {
+                        throw new Error("TIMEOUT_SERVER: Server lemot / timeout di awal");
+                    }
+                    else {
+                        let pesanErrorForm1 = "Data tidak valid / ditolak sistem";
+                        try {
+                            const popupAktif = page.locator('div[role="dialog"], div.modal, .swal-modal, .swal2-popup, .el-message-box, .el-notification').filter({ visible: true }).last();
+                            if (await popupAktif.count() > 0) {
+                                pesanErrorForm1 = await popupAktif.innerText();
+                            } else {
+                                pesanErrorForm1 = await page.locator('div.text-red-500, div:has-text("Data peserta tidak valid"), div:has-text("tidak ditemukan")').filter({ visible: true }).last().innerText();
+                            }
+                        } catch (e) { }
+
+                        pesanErrorForm1 = pesanErrorForm1.replace(/\n/g, ' - ').trim();
+                        row['notif'] = pesanErrorForm1;
+                        row.Keterangan = "Ditolak Form 1: Cek kolom notif";
+                        sendUILog(`GAGAL|NIK ${nikPeserta} bermasalah. Alasan: ${pesanErrorForm1}`);
+
+                        const tombolTutupPopup = page.locator('button:has-text("Tutup"),button:has-text("Periksa Kembali"), button:has-text("OK")').filter({ visible: true }).first();
+                        if (await tombolTutupPopup.count() > 0) {
+                            await tombolTutupPopup.click({ force: true }).catch(() => { });
+                            await page.reload({ waitUntil: 'networkidle' });
+                        }
+                        await page.waitForTimeout(1000);
+                        continue;
+                    }
+                }
+
+                sesi = "Konfirmasi Kehadiran";
+                await checkPause();
+
+                if (!langsungPelayanan) {
+                    await page.waitForTimeout(1500);
+                    await page.goto('https://sehatindonesiaku.kemkes.go.id/ckg-pendaftaran-anak-sekolah', { waitUntil: 'networkidle' });
+                    await page.waitForTimeout(1500);
+                    await page.locator('div:has-text("Pilih sekolah")').last().click();
+                    await page.locator(`div:text-is("${row['Nama Sekolah']}")`).last().click();
+
+                    await page.locator('span:has-text("Pilih kelas")').last().click();
+                    await page.locator(`div:has-text("${row['Kelas / Jenjang']}")`).last().click();
+
+                    await page.locator('span:has-text("Nomor Tiket"), span:has-text("NIK")').last().click({ force: true });
+                    await page.locator('div:text-is("NIK")').last().click();
+                    await page.locator('input[name="NIK"], input#nik').last().fill(String(row['NIK']));
+                    await page.waitForTimeout(1000);
+                    await page.keyboard.press('Enter');
+
+                    const namaSiswa = row['Nama Lengkap'];
+                    sesi = "Pelacakan hadir/sudah hadir";
+                    await checkPause();
+
+                    const hasilPencarian = await Promise.race([
+                        page.waitForSelector(`tr:has-text("${namaSiswa}") >> button:has-text("Konfirmasi Hadir")`, { state: 'visible', timeout: 5000 }).then(() => 'TOMBOL_MUNCUL'),
+                        page.waitForSelector(`tr:has-text("${namaSiswa}") >> div:has-text("Sudah Hadir")`, { state: 'visible', timeout: 5000 }).then(() => 'SUDAH_HADIR')
+                    ]).catch(() => 'TIMEOUT');
+
+                    if (hasilPencarian === 'TOMBOL_MUNCUL') {
+                        sendUILog(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Memproses kehadiran`);
+
+                        const btnHadir = page.locator(`tr:has-text("${namaSiswa}") >> button:has-text("Konfirmasi Hadir")`);
+                        await page.waitForTimeout(1000);
+                        await btnHadir.scrollIntoViewIfNeeded();
+                        await btnHadir.click();
+
+                        let noWa = row['No Whatsapp'] ? String(row['No Whatsapp']).trim() : '';
+                        noWa = noWa.replace(/\D/g, '');
+                        if (!noWa || noWa.length < 7 || !noWa.startsWith('8')) {
+                            noWa = '89999999';
+                        }
+                        await page.locator('input[name="Nomor Whatsapp"]').last().fill(noWa);
+
+                        try {
+                            const checkboxAlamat = page.locator('input[name="sameAddress"]').last();
+                            const sudahTercentang = await checkboxAlamat.isChecked();
+                            if (!sudahTercentang) await checkboxAlamat.check({ force: true, timeout: 2000 });
+                        } catch (e) { }
+
+                        await page.locator('input#verify').last().check({ force: true });
+                        await page.waitForTimeout(500);
+                        await page.locator('div.tracking-wide:has-text("Hadir ")').last().click();
+
+                        row.Status = "sudah daftar bos";
+
+                        await page.waitForSelector('text="Berhasil Hadir"', { timeout: 3000 }).catch(() => { });
+                        const tombolTutup = page.locator('button:has-text("Tutup"), span:text-is("Tutup")').filter({ visible: true }).first();
+
+                        if (await tombolTutup.count() > 0) {
+                            await tombolTutup.click({ force: true }).catch(() => { });
+                        } else {
+                            await page.locator('text="Tutup"').filter({ visible: true }).first().click({ force: true }).catch(() => { });
+                        }
+                    }
+                }
+
+                sesi = "pencarian data di pelayanan";
+                await checkPause();
+
+                if (!langsungPelayanan) {
+                    await page.waitForTimeout(500);
+                    await page.goto('https://sehatindonesiaku.kemkes.go.id/ckg-pelayanan-sekolah', { waitUntil: 'networkidle' });
+                    await page.waitForTimeout(2000);
+                } else {
+                    await page.waitForTimeout(1000);
+                }
+
+                const dropdownSekolah = page.locator('div:has(span:text-is("Pilih sekolah"))').last();
+                await dropdownSekolah.waitFor({ state: 'visible', timeout: 5000 });
+                await dropdownSekolah.last().click({ force: true });
+                await page.waitForTimeout(100);
+
+                const namaSekolahExcel = String(row['Nama Sekolah']).trim();
+                await page.locator(`div:text-is("${namaSekolahExcel}")`).last().click({ force: true });
+                await page.waitForTimeout(100);
+
+                const dropdownKelas = page.locator('div:has(span:text-is("Pilih kelas"))').last();
+                await dropdownKelas.waitFor({ state: 'visible', timeout: 5000 });
+                await dropdownKelas.click({ force: true });
+                await page.waitForTimeout(100);
+
+                const kelasExcel = String(row['Kelas / Jenjang']).trim();
+                await page.locator(`div:has-text("${kelasExcel}")`).last().click({ force: true });
+                await page.waitForTimeout(500);
+
+                await checkPause();
+                await page.locator('text="Tampilkan Pencarian"').last().click();
+                await page.locator('span:has-text("Nomor Tiket"), span:has-text("NIK")').last().click();
+                await page.locator('div:text-is("NIK")').last().click();
+
+                await page.locator('input[name="NIK"], input#nik').last().fill(String(row['NIK']));
+                await page.keyboard.press('Enter');
+                await page.waitForTimeout(2000);
+
+                sendUILog(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Memeriksa status pemeriksaan`);
+
+                const tabBelum = page.locator('div.cursor-pointer:has-text("Belum Pemeriksaan")').last();
+                const tabSedang = page.locator('div.cursor-pointer:has-text("Sedang Pemeriksaan")').last();
+                const tabSelesai = page.locator('div.cursor-pointer:has-text("Selesai Pemeriksaan")').last();
+
+                let statusTabel = "KOSONG";
+
+                async function cekDanGeserTabel() {
+                    const targetSiswa = String(row['Nama Lengkap']).trim();
+                    const barisTarget = page.locator('tbody tr', { hasText: targetSiswa }).first();
+
+                    try {
+                        await barisTarget.waitFor({ state: 'visible', timeout: 3000 });
+                    } catch (e) {
+                        return "KOSONG";
+                    }
+
+                    await page.evaluate(() => {
+                        const elemenScroll = document.querySelectorAll('div, table, tbody');
+                        elemenScroll.forEach(el => {
+                            if (el.scrollWidth > el.clientWidth) el.scrollLeft = el.scrollWidth;
+                        });
+                    });
+                    await page.waitForTimeout(500);
+
+                    const teksBaris = await barisTarget.innerText();
+
+                    if (teksBaris.includes("Belum lengkap") || teksBaris.includes("Belum Pemeriksaan") || teksBaris.includes("Sedang Pemeriksaan")) {
+                        return "BELUM_LENGKAP";
+                    }
+                    if (teksBaris.includes("Lengkap") && teksBaris.includes("Lengkap")) {
+                        return "SUDAH_LENGKAP";
+                    }
+                    return "KOSONG";
+                }
+
+                await tabBelum.click({ force: true });
+                statusTabel = await cekDanGeserTabel();
+
+                if (statusTabel === "KOSONG") {
+                    await tabSedang.click({ force: true });
+                    statusTabel = await cekDanGeserTabel();
+                }
+
+                if (statusTabel === "KOSONG") {
+                    await tabSelesai.click({ force: true });
+                    statusTabel = await cekDanGeserTabel();
+                }
+
+                if (statusTabel === "SUDAH_LENGKAP") {
+                    row.Keterangan = "terdeteksi sudah pelayanan lengkap";
+                    sendUILog(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Terdeteksi sudah lengkap`);
+                    sendUILog(`SUKSES|Data NIK ${nikPeserta} atas nama ${namaLengkap} tersimpan!`);
+                    continue;
+                }
+                else if (statusTabel === "KOSONG") {
+                    row.Keterangan = "Gagal: Data tidak muncul di ketiga tab";
+                    sendUILog(`GAGAL|NIK ${nikPeserta} Tidak muncul di pelayanan (faskes luar)`);
+                    continue;
+                }
+
+                await checkPause();
+                const barisTarget = page.locator('tbody tr', { hasText: String(row['Nama Lengkap']).trim() }).first();
+                const tombolMulaiTabel = barisTarget.locator('button:has-text("Mulai")');
+
+                if (await cekVisibleTunggu(tombolMulaiTabel)) {
+                    await tombolMulaiTabel.scrollIntoViewIfNeeded();
+                    await tombolMulaiTabel.click({ force: true });
+                } else {
+                    row.Keterangan = "Gagal: Tombol Mulai tidak bisa ditemukan di baris anak ini";
+                    sendUILog(`GAGAL|NIK ${nikPeserta} Tombol Mulai tidak ditemukan`);
+                    continue;
+                }
+
+                await page.waitForTimeout(3000);
+
+                const btnMulaiPemeriksaan = page.locator('button:has-text("Mulai Pemeriksaan")').last();
+                if (await cekVisibleTunggu(btnMulaiPemeriksaan)) {
+                    await btnMulaiPemeriksaan.click();
+                    await page.waitForTimeout(1000);
+
+                    const btnSimpanTgl = page.locator('button:has-text("Simpan")').last();
+                    if (await cekVisibleTunggu(btnSimpanTgl)) {
+                        await btnSimpanTgl.click();
+                        await page.waitForTimeout(2000);
+                    }
+                } else {
+                    await page.waitForTimeout(1000);
+                }
+
+                sesi = "form pemeriksaan mandiri";
+                await checkPause();
+
+                let adaMandiri = true;
+                // 🌟 PERBAIKAN: nama pemeriksaan yang gagal kirim karena ada jawaban wajib
+                // yang kosong (data belum ada di Excel) dicatat di sini, supaya tidak
+                // ketemu & diulang-ulang terus (infinite loop) — langsung lanjut ke
+                // pemeriksaan mandiri lain yang belum diproses.
+                const soalMandiriDilewati = new Set();
+
+                const modalMasihBuka = page.locator('.sd-root-modern, .modal-dialog, form').filter({ visible: true });
+                if (await modalMasihBuka.count() > 0 && await page.locator('tr:has-text("Input Data")').count() === 0) {
+                    const btnBatal = page.locator('button:has-text("Batal"), button:has-text("Kembali"), .close').filter({ visible: true });
+                    if (await btnBatal.count() > 0) {
+                        await btnBatal.first().click({ force: true }).catch(() => { });
+                    } else {
+                        await page.keyboard.press('Escape');
+                    }
+                    await page.waitForTimeout(1000);
+                }
+
+                while (adaMandiri) {
+                    await checkPause();
+
+                    // 🌟 PERBAIKAN: cari baris pending PERTAMA yang namanya belum ada di
+                    // `soalMandiriDilewati` (dulu asal ambil baris pertama tanpa cek ini).
+                    const semuaBarisPending = page.locator('tr:has(img[src*="icon-success-gray.svg"]):has(button:has-text("Input Data"))');
+                    const jumlahPending = await semuaBarisPending.count();
+
+                    let barisMandiri = null;
+                    let namaPemeriksaan = null;
+                    for (let k = 0; k < jumlahPending; k++) {
+                        const kandidat = semuaBarisPending.nth(k);
+                        const namaKandidat = (await kandidat.locator('td').first().textContent() || '').trim();
+                        if (!soalMandiriDilewati.has(namaKandidat)) {
+                            barisMandiri = kandidat;
+                            namaPemeriksaan = namaKandidat;
+                            break;
+                        }
+                    }
+
+                    if (barisMandiri && await cekVisibleTunggu(barisMandiri)) {
+                        await barisMandiri.locator('button:has-text("Input Data")').click();
+                        // 🌟 PERBAIKAN: dulu nunggu tetap 1500ms, sekarang nunggu form soal
+                        // beneran siap (maks 3 detik sbg jaring pengaman) baru isi jawaban.
+                        await page.locator('.sd-root-modern, .modal-dialog, form').filter({ visible: true }).first()
+                            .waitFor({ state: 'visible', timeout: 3000 }).catch(() => { });
+
+                        let indexSoal = 0;
+                        let cekTerus = true;
+
+                        while (cekTerus) {
+                            const radioContainers = page.locator('label, div.sd-item').filter({
+                                has: page.locator('span.sv-string-viewer:has-text("Tidak")')
+                                    .or(page.locator('span.sv-string-viewer:has-text("Belum")'))
+                            });
+                            const jumlahSoal = await radioContainers.count();
+
+                            if (indexSoal < jumlahSoal) {
+                                const soalSaatIni = radioContainers.nth(indexSoal);
+                                await soalSaatIni.scrollIntoViewIfNeeded();
+                                await page.waitForTimeout(100);
+                                const lingkaranRadio = soalSaatIni.locator('.sd-item__decorator, .sd-radio__decorator').first();
+                                await lingkaranRadio.click({ force: true });
+                                await page.waitForTimeout(100);
+                                indexSoal++;
+                            } else {
+                                cekTerus = false;
+                            }
+                        }
+
+                        const jawabanExcel = row[namaPemeriksaan.trim()];
+                        if (jawabanExcel) {
+                            const dropdown = page.locator('.sd-dropdown').first();
+                            if (await cekVisibleTunggu(dropdown, 2000)) {
+                                await dropdown.click();
+                                await page.waitForTimeout(500);
+                                await page.locator(`.sv-list__item:has-text("${jawabanExcel}")`).click();
+                                await page.waitForTimeout(500);
+                            }
+                        }
+
+                        const inputAngka = page.locator('input[type="number"]');
+                        const jumlahInput = await inputAngka.count();
+
+                        for (let j = 0; j < jumlahInput; j++) {
+                            const kotak = inputAngka.nth(j);
+                            const labelPlaceholder = (await kotak.getAttribute('placeholder') || "").trim();
+                            const nilaiExcel = row[labelPlaceholder];
+
+                            if (nilaiExcel !== undefined && nilaiExcel !== null && nilaiExcel !== "") {
+                                await kotak.scrollIntoViewIfNeeded();
+                                await kotak.fill(String(nilaiExcel));
+                                await page.waitForTimeout(300);
+                            }
+                        }
+
+                        const btnKirimMandiri = page.locator('input[title="Kirim"]').last();
+                        await klikAntiMacet(page, btnKirimMandiri, `Kirim Mandiri ${namaPemeriksaan.trim()}`);
+                        // 🌟 PERBAIKAN: tunggu form/modal-nya beneran tertutup (tanda submit berhasil).
+                        const berhasilTersimpanMandiri = await page.locator('.sd-root-modern, .modal-dialog, form').filter({ visible: true }).first()
+                            .waitFor({ state: 'hidden', timeout: 3000 }).then(() => true).catch(() => false);
+
+                        if (!berhasilTersimpanMandiri) {
+                            // 🌟 PERBAIKAN: form masih terbuka setelah Kirim -> kemungkinan besar ada
+                            // jawaban wajib yang kosong (data belum ada di Excel), bukan soal loading
+                            // server. Keluar lewat tombol Batal/Kembali, catat sebagai dilewati, lanjut.
+                            Logger.info(`⚠️ "${namaPemeriksaan}" sepertinya ada jawaban wajib yang kosong (data belum ada di Excel). Melewati...`);
+                            soalMandiriDilewati.add(namaPemeriksaan);
+                            const btnBatalMandiri = page.locator('button:has-text("Batal"), button:has-text("Kembali"), .close').filter({ visible: true }).first();
+                            if (await btnBatalMandiri.count() > 0) {
+                                await btnBatalMandiri.click({ force: true }).catch(() => { });
+                            } else {
+                                await page.keyboard.press('Escape');
+                            }
+                            await page.waitForTimeout(500);
+                        }
+
+                        await page.waitForTimeout(300);
+                    } else {
+                        adaMandiri = false;
+                    }
+                }
+
+                sesi = "Pemeriksaan oleh nakes";
+                await checkPause();
+
+                // 🌟 PERBAIKAN: 12 pemeriksaan nakes ini sekarang berupa DATA (array),
+                // bukan 12 pemanggilan isiFormLayanan yang di-hardcode satu-satu.
+                // Kalau suatu saat ada pemeriksaan baru dari Kemenkes, tinggal tambah
+                // SATU object baru di array `daftarPemeriksaanNakes` di bawah ini
+                // (isi `nama` = nama layanan persis seperti di web, `aksi` = cara ngisi
+                // formnya) — tidak perlu utak-atik loop atau logika lain sama sekali.
+                const daftarPemeriksaanNakes = [
+                    {
+                        nama: "Gizi Anak",
+                        aksi: async () => {
+                            const bb = hitungNilaiNormal(row['Berat Badan'], "Berat Badan", row['Tanggal lahir']);
+                            const tb = hitungNilaiNormal(row['Tinggi Badan'], "Tinggi Badan", row['Tanggal lahir']);
+                            await page.locator('input[placeholder*="dalam kg"]').last().fill(bb);
+                            await page.locator('input[placeholder*="dalam cm"]').last().fill(tb);
+                        }
+                    },
+                    {
+                        nama: "Tekanan Darah Anak dan Remaja",
+                        aksi: async () => {
+                            const sistol = hitungNilaiNormal(row['Sistol'], "Sistol", row['Tanggal lahir']);
+                            const diastol = hitungNilaiNormal(row['Diastol'], "Diastol", row['Tanggal lahir']);
+                            const inputs = page.locator('input.sd-input.sd-text[type="number"]');
+                            await inputs.nth(0).fill(sistol);
+                            await inputs.nth(1).fill(diastol);
+                        }
+                    },
+                    {
+                        nama: "Pemeriksaan Gula Darah",
+                        aksi: async () => {
+                            await page.locator('span.sv-string-viewer:has-text("Tidak")').last().click();
+                            const gd = hitungNilaiNormal(row['Gula Darah'], "Gula Darah", row['Tanggal lahir']);
+                            await page.locator('input.sd-input.sd-text[id="sq_102i"]').last().fill(gd);
+                        }
+                    },
+                    {
+                        nama: "Anemia",
+                        aksi: async () => {
+                            const hb = hitungNilaiNormal(row['Hemoglobin'], "Hemoglobin", row['Tanggal lahir']);
+                            await page.locator('input.sd-input.sd-text[type="number"]').last().fill(hb);
+                        }
+                    },
+                    {
+                        nama: "Pemeriksaan Penyakit Frambusia",
+                        aksi: async () => {
+                            await page.locator('span.sv-string-viewer:has-text("Tidak")').last().click();
+                        }
+                    },
+                    {
+                        nama: "Pemeriksaan Penyakit Kusta",
+                        aksi: async () => {
+                            await page.locator('input[placeholder="Select..."]').last().click({ force: true });
+                            await page.locator('span.sv-string-viewer:has-text("Tidak Ada")').last().click();
+                        }
+                    },
+                    {
+                        nama: "Pemeriksaan Penyakit Skabies",
+                        aksi: async () => {
+                            await page.locator('input[placeholder="Select..."]').last().click({ force: true });
+                            await page.locator('span.sv-string-viewer:has-text("Tidak Ada")').last().click();
+                        }
+                    },
+                    {
+                        nama: "Pemeriksaan Gigi - Anak",
+                        aksi: async () => {
+                            let gigi = hitungNilaiNormal(row['Gigi'], "Gigi", row['Tanggal lahir']);
+                            const teksGigi = String(gigi).trim();
+                            const angkaGigi = parseInt(teksGigi);
+                            if (!isNaN(angkaGigi) && angkaGigi > 3) {
+                                gigi = ">3";
+                            }
+                            const locatorGigi = page.locator(`span.sv-string-viewer:has-text("${gigi}")`).last();
+                            await locatorGigi.click({ force: true });
+                        }
+                    },
+                    {
+                        nama: "Skrining Telinga dan Mata",
+                        aksi: async () => {
+                            const status = hitungNilaiNormal(row['telinga dan mata'], "Telinga dan Mata", row['Tanggal lahir']);
+                            if (status.toLowerCase() === "normal") {
+                                const opsiNormal = ["Normal", "Tidak ada serumen impaksi", "Tidak ada infeksi", "Tidak"];
+                                for (const opsi of opsiNormal) {
+                                    const radios = page.locator(`span.sv-string-viewer:has-text("${opsi}")`);
+                                    const count = await radios.count();
+                                    for (let j = 0; j < count; j++) await radios.nth(j).click();
+                                }
+                            }
+                        }
+                    },
+                    {
+                        nama: "Hasil Pemeriksaan Kebugaran Jasmani",
+                        aksi: async () => {
+                            const kebugaran = hitungNilaiNormal(row['Kebugaran'], "Kebugaran", row['Tanggal lahir']);
+                            await page.locator('input[placeholder*="Pilih tingkat kebugaran berdasarkan hasil tes"]').last().click({ force: true });
+                            await page.locator(`span.sv-string-viewer:has-text("${kebugaran}")`).last().click();
+                        }
+                    },
+                    {
+                        nama: "Pemeriksaan RDT Malaria",
+                        aksi: async () => {
+                            await page.locator('span.sv-string-viewer:has-text("Non-reaktif")').last().click();
+                        }
+                    },
+                    {
+                        nama: "Pemeriksaan Hepatitis",
+                        aksi: async () => {
+                            await page.locator('span.sv-string-viewer:has-text("Non reaktif")').last().click();
+                        }
+                    },
+                    {
+                        nama: "Pemeriksaan Kadar CO",
+                        aksi: async () => {
+                            const co = hitungNilaiNormal(row['Kadar CO'], "Kadar CO", row['Tanggal lahir']);
+                            const inputCO = page.locator('input[placeholder*="kadar CO pernapasan"]');
+                            if (await inputCO.isVisible()) await inputCO.last().fill(co);
+                        }
+                    },
+                    // 🌟 Tambah pemeriksaan baru di sini kalau suatu saat diperlukan, contoh:
+                    // {
+                    //     nama: "Nama Layanan Persis Seperti di Web",
+                    //     aksi: async () => {
+                    //         // cara isi form-nya di sini
+                    //     }
+                    // },
+                ];
+
+                for (const pemeriksaan of daftarPemeriksaanNakes) {
+                    await checkPause();
+                    await isiFormLayanan(page, pemeriksaan.nama, pemeriksaan.aksi);
+                }
+
+                await page.evaluate(() => window.scrollTo(0, 0));
+                await page.waitForTimeout(1000);
+
+                const btnSelesaiLayanan = page.getByRole('button', { name: /Selesaikan Layanan/i }).first();
+                if (await btnSelesaiLayanan.isVisible()) {
+                    await klikAntiMacet(page, btnSelesaiLayanan, "Selesaikan Layanan");
+
+                    const notifSelesai = await Promise.race([
+                        page.getByRole('button', { name: /Konfirmasi/i }).waitFor({ state: 'visible', timeout: 3000 }).then(() => 'ADA_KONFIRMASI'),
+                        page.waitForTimeout(3000).then(() => 'TIDAK_ADA_KONFIRMASI')
+                    ]);
+
+                    if (notifSelesai === 'ADA_KONFIRMASI') {
+                        await page.getByRole('button', { name: /Konfirmasi/i }).click();
+                        await page.waitForTimeout(1500);
+                    }
+                }
+
+                row.jumlahCoba = undefined;
+                row.Keterangan = "Berhasil Selesai Pelayanan";
+                sendUILog(`SUKSES|Data NIK ${nikPeserta} atas nama ${namaLengkap} tersimpan!`);
+                sendUILog(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Berhasil Selesai Pelayanan`);
+
+            } catch (error) {
+                if (error.message === "STOPPED_BY_USER") {
+                    sendUILog("⚠️ Robot dihentikan paksa oleh pengguna.");
+                    break;
+                }
+
+                let pesanError = (error && typeof error === 'object' && 'message' in error) ? String(error.message) : String(error || '');
+                pesanError = pesanError || "Unknown Error";
+                const isTimeout = pesanError.toLowerCase().includes("timeout");
+
+                if (isTimeout && row.jumlahCoba < 3) {
+                    row.jumlahCoba += 1;
+                    i--;
+                    sendUILog(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Reload Halaman (Lemot)`);
+                    await page.reload({ waitUntil: 'networkidle' }).catch(() => { });
+                    await page.waitForTimeout(2500);
+                } else {
+                    if (pesanError.includes("TIMEOUT_SERVER")) {
+                        row.Keterangan = `Gagal [${sesi}]: Server Kemenkes Lemot (setelah ${row.jumlahCoba}x coba)`;
+                    } else {
+                        row.Keterangan = `Gagal [${sesi}]: ${pesanError.split('\n')[0]}`;
+                    }
+                    sendUILog(`GAGAL|NIK ${nikPeserta} bermasalah. Alasan: ${row.Keterangan}`);
+                    row.jumlahCoba = undefined;
+                    await page.goto('https://sehatindonesiaku.kemkes.go.id/ckg-pendaftaran-individu', { waitUntil: 'networkidle', timeout: 30000 }).catch(() => { });
+                    await page.waitForTimeout(2000);
+                }
+            } finally {
+                ExcelManager.writeExcel(dataPeserta, excelPath);
+            }
+        }
+
+        sendUILog("✨ Selesai mengeksekusi semua data Excel.");
+
+    } catch (fatalError) {
+        sendUILog(`❌ ERROR FATAL: ${fatalError.message}`);
+        throw fatalError;
+    } finally {
+        // 🌟 BERSIHKAN LISTENER AGAR TIDAK BOCOR MEMORI
+        ipcMain.removeListener('toggle-pause-robot', pauseListener);
+        ipcMain.removeListener('stop-robot', stopListener);
+        if (browser) await browser.close();
+    }
+}
+
+module.exports = { runAutomation };
