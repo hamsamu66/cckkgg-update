@@ -539,7 +539,7 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
                     let popupResult = await Promise.race([
                         page.waitForSelector('div:has-text("Data peserta valid")', { timeout: 10000 }).then(() => 'VALID'),
                         page.waitForSelector('div:has-text("Kuota Pemeriksaan Habis")', { timeout: 10000 }).then(() => 'KUOTA_HABIS'),
-                        page.waitForSelector('div:has-text("Data peserta tidak valid")', { timeout: 10000 }).then(() => 'TIDAK_SESUAI'),
+                        page.waitForSelector('div:has-text("tidak valid")', { timeout: 10000 }).then(() => 'TIDAK_SESUAI'),
                         page.waitForSelector('div:has-text("Individu sudah menerima layanan")', { timeout: 10000 }).then(() => 'SUDAH_PELAYANAN')
                     ]).catch(() => 'TIMEOUT_SERVER');
 
