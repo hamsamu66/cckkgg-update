@@ -567,7 +567,7 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
                     let popupResult = await Promise.race([
                         page.waitForSelector('div:has-text("Data peserta valid")', { timeout: 10000 }).then(() => 'VALID'),
                         page.waitForSelector('div:has-text("Kuota Pemeriksaan Habis")', { timeout: 10000 }).then(() => 'KUOTA_HABIS'),
-                        page.waitForSelector('div:has-text("Data peserta tidak valid")', { timeout: 10000 }).then(() => 'TIDAK_SESUAI'),
+                        page.waitForSelector('div:has-text("tidak valid")', { timeout: 10000 }).then(() => 'TIDAK_SESUAI'),
                         page.waitForSelector('div:has-text("Individu sudah menerima layanan")', { timeout: 10000 }).then(() => 'SUDAH_PELAYANAN')
                     ]).catch(() => 'TIMEOUT_SERVER');
 
@@ -581,7 +581,7 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
 
                         popupResult = await Promise.race([
                             page.waitForSelector('div:has-text("Data peserta valid")', { timeout: 10000 }).then(() => 'VALID'),
-                            page.waitForSelector('div:has-text("Data peserta tidak valid")', { timeout: 10000 }).then(() => 'TIDAK_SESUAI'),
+                            page.waitForSelector('div:has-text("tidak valid")', { timeout: 10000 }).then(() => 'TIDAK_SESUAI'),
                             page.waitForSelector('div:has-text("Individu sudah menerima layanan")', { timeout: 10000 }).then(() => 'SUDAH_PELAYANAN')
                         ]).catch(() => 'TIMEOUT_SERVER');
                     }
@@ -750,7 +750,7 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
 
                         const notifDaftar = await Promise.race([
                             page.waitForSelector('div:has-text("Berhasil Daftar")', { timeout: 10000 }).then(() => 'BERHASIL'),
-                            page.waitForSelector('div:has-text("Data pasien tidak sesuai"),div.pb-2:has-text("Data peserta tidak valid"),div:has-text("Terjadi kesalahan")', { timeout: 10000 }).then(() => 'TIDAK_SESUAI'),
+                            page.waitForSelector('div:has-text("tidak sesuai"),div.pb-2:has-text("tidak valid"),div:has-text("Terjadi kesalahan")', { timeout: 10000 }).then(() => 'TIDAK_SESUAI'),
                             page.waitForSelector('div:has-text("Individu sudah")', { timeout: 10000 }).then(() => 'SUDAH_PELAYANAN')
                         ]).catch(() => 'TIMEOUT_SERVER');
 
@@ -803,7 +803,7 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
                             if (await popupAktif.count() > 0) {
                                 pesanErrorForm1 = await popupAktif.innerText();
                             } else {
-                                const popupAlternatif = page.locator('div.text-red-500, div:has-text("Data peserta tidak valid"), div:has-text("tidak ditemukan")').filter({ visible: true }).last();
+                                const popupAlternatif = page.locator('div.text-red-500, div:has-text("tidak valid"), div:has-text("tidak ditemukan")').filter({ visible: true }).last();
                                 if (await popupAlternatif.count() > 0) pesanErrorForm1 = await popupAlternatif.innerText();
                             }
                         } catch (e) { }
