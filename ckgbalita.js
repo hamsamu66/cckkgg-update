@@ -177,7 +177,13 @@ async function isiDatepicker(page, locatorDatepicker, tanggalLahirExcel) {
 function hitungNilaiNormal(excelValue, tipePemeriksaan, tglLahirExcel) {
     const val = String(excelValue).trim().toLowerCase();
 
-    if (val === "undefined" || val === "null" || val === "" || val === "normal") {
+    // 🌟 JIKA KOSONG = JANGAN DIISI
+    if (val === "undefined" || val === "null" || val === "") {
+        return "";
+    }
+
+    // 🌟 JIKA DITULIS 'NORMAL' = PAKAI RUMUS BAWAAN
+    if (val === "normal") {
         let umur = 0;
         if (tglLahirExcel) {
             let thn = 0;
@@ -205,6 +211,8 @@ function hitungNilaiNormal(excelValue, tipePemeriksaan, tglLahirExcel) {
             default: return "";
         }
     }
+
+    // 🌟 JIKA DITULIS ANGKA / TEKS LAIN, PAKAI NILAI DARI EXCEL TERSEBUT
     return String(excelValue);
 }
 
@@ -1034,94 +1042,170 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
                 sesi = "form pemeriksaan mandiri";
                 await checkPause();
 
-                let cekStatus = String(row['Status Pernikahan'] || '').trim();
-                if (!cekStatus || cekStatus === 'undefined' || cekStatus === 'null') {
-                    Logger.info("⚠️ Kolom Status Pernikahan KOSONG di Pemeriksaan Mandiri! Menghitung dari umur...");
-                    let tahunLahir = 0;
-                    const tanggalLahirAsli = row['Tanggal lahir'];
-
-                    if (tanggalLahirAsli instanceof Date) {
-                        tahunLahir = tanggalLahirAsli.getFullYear();
-                    } else if (typeof tanggalLahirAsli === 'string' && tanggalLahirAsli.includes('-')) {
-                        const bagian = tanggalLahirAsli.split('-');
-                        if (bagian.length === 3) tahunLahir = (bagian[0].length === 4) ? parseInt(bagian[0], 10) : parseInt(bagian[2], 10);
-                    }
-
-                    if (tahunLahir > 0) {
-                        const umur = new Date().getFullYear() - tahunLahir;
-                        row['Status Pernikahan'] = umur < 19 ? "Belum Menikah" : "Menikah";
-                        Logger.info(`=> Memutuskan status otomatis form mandiri: ${row['Status Pernikahan']} (Umur: ${umur} tahun)`);
-                    }
-                }
-                await checkPause();
+                // 🌟 Nilai bantu (dihitung sekali per anak) buat isi beberapa pemeriksaan secara
+                // wajar kalau kolom Excel-nya kosong -- pakai rumus baku yang sudah ada di
+                // hitungNilaiNormal() (dipakai juga oleh form Gizi di sesi Nakes).
+                const gdsAnakDefault = hitungNilaiNormal(row['Gula Darah Anak'], "Gula Darah", row['Tanggal lahir']);
+                const bbBalitaDefault = hitungNilaiNormal(row['Berat Badan'], "Berat Badan", row['Tanggal lahir']);
+                const tbBalitaDefault = hitungNilaiNormal(row['Tinggi Badan'], "Tinggi Badan", row['Tanggal lahir']);
 
                 const kamusPintar = [
-                    { kolom: 'Status Pernikahan', kataKunci: 'Status Perkawinan' },
-                    { kolom: 'Disabilitas', kataKunci: 'apakah anda penyandang disabilitas' },
-                    { kolom: 'Hamil', kataKunci: 'apakah anda sedang hamil' }
+                    // 🌟 Balita tidak punya soal "Status Perkawinan" / "Apakah anda sedang hamil" --
+                    // itu soal punya form dewasa/catin, bukan Balita. Cukup 1 soal umum yang memang
+                    // ada di form Balita (Demografi Anak), sisanya sudah lebih presisi lewat
+                    // kamusLayananKhusus di bawah (termasuk soal disabilitas juga, jadi dobel jaring).
+                    { kolom: 'Disabilitas', kataKunci: 'apakah anda penyandang disabilitas' }
                 ];
 
+                // 🌟 Kamus soal Pemeriksaan Mandiri BALITA -- disusun ulang berdasarkan hasil
+                // scraping soal & percabangan asli (hasilscrapersoal.txt / hasilscrapersoal1.txt).
+                // Kamus versi lama isinya soal-soal DEWASA (Kanker Usus, Kesehatan Jiwa dewasa,
+                // Merokok, dll) yang TIDAK PERNAH muncul di form Balita, sehingga semua pemeriksaan
+                // mandiri Balita gagal cocok dan selalu tercatat "dilewati (data kosong)".
+                //
+                // PRINSIP SEDERHANA: 1 pemeriksaan = 1 kolom Excel = 1 kata kunci ('NORMAL'/'TIDAK'/dst),
+                // otomatis mengembang jadi semua jawaban yang dibutuhkan pada form itu.
+                // Kalau kolom Excel-nya KOSONG dan rumus punya kunci 'NORMAL', robot otomatis
+                // pakai jalur NORMAL (anak sehat) -- jadi TIDAK WAJIB diisi untuk kasus normal,
+                // cukup isi kolom kalau memang ada temuan tidak normal.
                 const kamusLayananKhusus = [
                     {
-                        kataKunciLayanan: 'Faktor Risiko Kanker Usus',
-                        kolomExcel: 'Faktor Risiko Kanker Usus',
+                        // Soal: "Apakah Anda penyandang disabilitas?" (Non disabilitas / Penyandang disabilitas)
+                        kataKunciLayanan: 'Demografi Anak',
+                        kolomExcel: 'Disabilitas',
                         rumus: {
-                            'TIDAK': ["Tidak", "Tidak"],
-                            'IYA': ["Ya", "Tidak"]
+                            'NORMAL': ["Non disabilitas"],
+                            'TIDAK': ["Non disabilitas"],
+                            'YA': ["Penyandang disabilitas"]
                         }
                     },
                     {
-                        kataKunciLayanan: 'Faktor Risiko TB - Dewasa & Lansia',
-                        kolomExcel: 'Faktor Risiko TB - Dewasa & Lansia',
-                        rumus: { 'TIDAK': ["Tidak"] }
-                    },
-                    {
-                        kataKunciLayanan: 'Hati',
-                        kolomExcel: 'Hati',
-                        rumus: { 'NORMAL': ["Tidak", "Tidak", "Tidak", "Tidak", "Tidak", "Tidak", "Tidak", "Tidak", "Tidak"] }
-                    },
-                    {
-                        kataKunciLayanan: 'Kanker Leher Rahim',
-                        kolomExcel: 'Kanker Leher Rahim',
+                        // 5 soal skrining gejala diabetes anak. Kalau Excel kosong/"Tidak" -> semua
+                        // pertanyaan gejala dijawab "Tidak" (anak tidak diabetes, tidak ada gejala).
+                        // Cabang "Ya" (anak sudah didiagnosis) cuma isi soal pertama; soal "sudah
+                        // berapa bulan" perlu dilengkapi manual lewat kamusRinciPerLayanan kalau kasusnya muncul.
+                        kataKunciLayanan: 'Faktor Risiko Gula Darah Anak',
+                        kolomExcel: 'Faktor Risiko Gula Darah Anak',
                         rumus: {
-                            'IYA': ["Ya"],
+                            'NORMAL': ["Tidak", "Tidak", "Tidak", "Tidak", "Tidak"],
+                            'TIDAK': ["Tidak", "Tidak", "Tidak", "Tidak", "Tidak"],
+                            'YA': ["Ya"]
+                        }
+                    },
+                    {
+                        // Skrining gejala TBC anak lewat X-Ray: batuk, BB turun, demam, lesu, kelenjar
+                        // getah bening, radiografi toraks, hasil rontgen. Default = tidak ada gejala.
+                        kataKunciLayanan: 'Skrining X-Ray TB',
+                        kolomExcel: 'Skrining TB Anak',
+                        rumus: {
+                            'NORMAL': ["Tidak batuk", "Tidak", "Tidak", "Tidak", "Tidak", "Tidak", "Normal"],
+                            'TIDAK': ["Tidak batuk", "Tidak", "Tidak", "Tidak", "Tidak", "Tidak", "Normal"]
+                        }
+                    },
+                    {
+                        // Kuesioner GPPH -- 1 soal dropdown, default hasil normal (<13).
+                        kataKunciLayanan: 'Gangguan Pemusatan Perhatian dan Hiperaktivitas (GPPH)',
+                        kolomExcel: 'GPPH',
+                        rumus: { 'NORMAL': ["Nilai total <13"] }
+                    },
+                    {
+                        // Kuesioner KMPE -- 1 soal dropdown, default tidak ada jawaban 'Ya'.
+                        // PENTING: tanda kutip di opsi web pakai kutip miring (‘ ’), bukan kutip lurus.
+                        kataKunciLayanan: 'Masalah Perilaku dan Emosional (KMPE)',
+                        kolomExcel: 'KMPE',
+                        rumus: { 'NORMAL': ["Tidak ada jawaban ‘Ya’"] }
+                    },
+                    {
+                        // KPSP -- 1 soal dropdown, default perkembangan sesuai usia.
+                        kataKunciLayanan: 'Pra Skrining Perkembangan',
+                        kolomExcel: 'KPSP',
+                        rumus: { 'NORMAL': ["Perkembangan sesuai usia"] }
+                    },
+                    {
+                        // Pemeriksaan Gigi -- 1 soal jumlah gigi karies, default "Tidak ada".
+                        kataKunciLayanan: 'Pemeriksaan Gigi',
+                        kolomExcel: 'Gigi',
+                        rumus: {
+                            'NORMAL': ["Tidak ada"],
+                            'TIDAK ADA': ["Tidak ada"]
+                        }
+                    },
+                    {
+                        // Pemeriksaan Gula Darah Anak (beda dari "Faktor Risiko" di atas -- ini
+                        // pengukuran GDS asli). Default: tidak diabetes + nilai GDS wajar sesuai umur.
+                        kataKunciLayanan: 'Pemeriksaan Gula Darah Anak',
+                        kolomExcel: 'Pemeriksaan Gula Darah Anak',
+                        rumus: {
+                            'NORMAL': ["Tidak", gdsAnakDefault],
+                            'TIDAK': ["Tidak", gdsAnakDefault]
+                        }
+                    },
+                    {
+                        // Frambusia -- hanya relevan di daerah endemis, default "Tidak Ada".
+                        kataKunciLayanan: 'Penyakit Frambusia',
+                        kolomExcel: 'Frambusia',
+                        rumus: { 'NORMAL': ["Tidak Ada"], 'TIDAK ADA': ["Tidak Ada"] }
+                    },
+                    {
+                        // Kusta -- default "Tidak Ada".
+                        kataKunciLayanan: 'Penyakit Kusta',
+                        kolomExcel: 'Kusta',
+                        rumus: { 'NORMAL': ["Tidak Ada"], 'TIDAK ADA': ["Tidak Ada"] }
+                    },
+                    {
+                        // Skabies -- default "Tidak Ada".
+                        kataKunciLayanan: 'Penyakit Skabies',
+                        kolomExcel: 'Skabies',
+                        rumus: { 'NORMAL': ["Tidak Ada"], 'TIDAK ADA': ["Tidak Ada"] }
+                    },
+                    {
+                        // Pemeriksaan TBC (kontak dengan pasien TBC) -- default tidak ada kontak,
+                        // metode pemeriksaan "Tidak dilakukan".
+                        kataKunciLayanan: 'Pemeriksaan Tuberkulosis (Anak)',
+                        kolomExcel: 'TBC Anak',
+                        rumus: {
+                            'NORMAL': ["Tidak ada", "Tidak dilakukan"],
+                            'TIDAK': ["Tidak ada", "Tidak dilakukan"]
+                        }
+                    },
+                    {
+                        // Penapisan awal KMPE & GPPH -- 1 soal, default "Normal" (tidak ada indikasi
+                        // masalah perilaku/emosi, jadi tidak lanjut ke soal ke-2).
+                        kataKunciLayanan: 'Penapisan KMPE dan GPPH',
+                        kolomExcel: 'Penapisan KMPE GPPH',
+                        rumus: { 'NORMAL': ["Normal"] }
+                    },
+                    {
+                        // Riwayat Imunisasi Rutin Balita -- default "Ya" pernah imunisasi + bawa
+                        // catatan "Ya". Isi 'TIDAK' di Excel kalau memang belum pernah imunisasi.
+                        kataKunciLayanan: 'Riwayat Imunisasi Rutin Balita',
+                        kolomExcel: 'Imunisasi Balita',
+                        rumus: {
+                            'NORMAL': ["Ya", "Ya"],
+                            'YA': ["Ya", "Ya"],
                             'TIDAK': ["Tidak"]
                         }
                     },
                     {
-                        kataKunciLayanan: 'Kesehatan Jiwa',
-                        kolomExcel: 'Kesehatan Jiwa',
+                        // Soal BB & TB diprioritaskan lewat kamusRinciPerLayanan (ambil langsung
+                        // dari kolom Excel 'Berat Badan' / 'Tinggi Badan' yang sudah ada). Slot 0
+                        // dan 1 di sini cuma fallback kalau kolom itu kosong, supaya urutan index
+                        // soal tetap pas dan tidak ikut ke-skip gara-gara BB/TB tidak terisi.
+                        // Posisi ukur default "Berdiri"; ganti ke "Telentang" di Excel untuk anak
+                        // yang diukur berbaring (biasanya usia <2 tahun).
+                        kataKunciLayanan: 'Skrining Pertumbuhan',
+                        kolomExcel: 'Posisi Ukur Balita',
                         rumus: {
-                            'BAIK': ["Tidak sama sekali", "Tidak sama sekali", "Tidak sama sekali", "Tidak sama sekali"],
-                            'KURANG BAIK': ["Tidak sama sekali", "Kurang dari 1 minggu", "Tidak sama sekali", "Tidak sama sekali"]
+                            'NORMAL': [bbBalitaDefault, tbBalitaDefault, "Berdiri", "Normal"],
+                            'TELENTANG': [bbBalitaDefault, tbBalitaDefault, "Telentang", "Normal"]
                         }
                     },
                     {
-                        kataKunciLayanan: 'Penapisan Risiko Kanker Paru',
-                        kolomExcel: 'Penapisan Risiko Kanker Paru',
-                        rumus: { 'NORMAL': ["Tidak", "Tidak", "Tidak", "Tidak", "Tidak", "Tidak"] }
-                    },
-                    {
-                        kataKunciLayanan: 'Perilaku Merokok',
-                        kolomExcel: 'Perilaku Merokok',
+                        // Skrining Telinga & Mata -- 5 soal, default semua hasil normal/sesuai umur.
+                        kataKunciLayanan: 'Skrining Telinga dan Mata',
+                        kolomExcel: 'Telinga dan Mata',
                         rumus: {
-                            'TIDAK': ["Tidak", "Tidak", "Tidak"],
-                            'IYA': ["ya", "Keduanya", "1", "5", "Ya"]
-                        }
-                    },
-                    {
-                        kataKunciLayanan: 'Tingkat Aktivitas Fisik (sedang dan berat)',
-                        kolomExcel: 'Tingkat Aktivitas Fisik (sedang dan berat)',
-                        rumus: {
-                            'BAIK': ["Ya", "4", "60", "Tidak", "Ya", "3", "60", "Tidak", "Tidak", "Tidak"],
-                            'SANGAT BAIK': ["Ya", "7", "120", "Ya", "Ya", "5", "120", "Ya", "Ya", "Tidak"]
-                        }
-                    },
-                    {
-                        kataKunciLayanan: 'Riwayat Imunisasi Tetanus(Status T) - Hanya untuk Catin',
-                        kolomExcel: 'TT Catin',
-                        rumus: {
-                            'TIDAK TAHU': ["Tidak tahu atau tidak ingat"]
+                            'NORMAL': ["Sesuai Umur", "Sesuai Umur", "Tidak ada serumen impaksi", "Tidak ada infeksi telinga", "Normal"]
                         }
                     }
                 ];
@@ -1132,7 +1216,13 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
                 // Kosongkan/isi belakangan sesuai kebutuhan -- tidak perlu ubah logika loop di bawah,
                 // cukup tambah entri baru di sini kapan pun ada layanan yang butuh detail.
                 const kamusRinciPerLayanan = {
-                    // Contoh format (isi kalau sudah siap):
+                    // Skrining Pertumbuhan Balita: ambil BB/TB langsung dari kolom Excel yang
+                    // sudah dipakai juga oleh form Gizi di sesi Nakes, biar tidak perlu kolom baru.
+                    'Skrining Pertumbuhan': [
+                        { kataKunci: 'berat badan balita', kolom: 'Berat Badan' },
+                        { kataKunci: 'pengukuran tinggi badan', kolom: 'Tinggi Badan' },
+                    ],
+                    // Contoh format buat nambah layanan lain nanti:
                     // 'Perilaku Merokok': [
                     //     { kataKunci: 'apakah anda merokok', kolom: 'Merokok - Status' },
                     //     { kataKunci: 'jenis rokok', kolom: 'Merokok - Jenis' },
@@ -1255,10 +1345,22 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
                     for (let layanan of kamusLayananKhusus) {
                         if (namaBersih.toLowerCase().includes(layanan.kataKunciLayanan.toLowerCase())) {
                             let statusDiExcel = String(row[layanan.kolomExcel] || "").trim();
-                            let keyRumus = statusDiExcel.toUpperCase();
-                            if (layanan.rumus[keyRumus]) {
-                                rumusBakuTerditeksi = layanan.rumus[keyRumus];
-                                Logger.info(`⚡ Jalur Pintas Aktif! Menggunakan rumus [${keyRumus}]`);
+
+                            // Jika Excel kosong, lewati pengisian (jangan pakai kunci NORMAL)
+                            if (statusDiExcel === "" || statusDiExcel.toLowerCase() === "undefined") {
+                                Logger.info(`Data Excel kosong untuk ${namaBersih}, melewati pengisian (skip).`);
+                                rumusBakuTerditeksi = null;
+                            } else {
+                                let keyRumus = statusDiExcel.toUpperCase();
+                                // Cek apakah diketik kunci spesifik (NORMAL, TIDAK, dll)
+                                if (layanan.rumus[keyRumus]) {
+                                    rumusBakuTerditeksi = layanan.rumus[keyRumus];
+                                    Logger.info(`⚡ Menggunakan rumus [${keyRumus}] untuk "${namaBersih}"`);
+                                } else {
+                                    // Jika diisi manual (nilai spesifik), jadikan array agar terinput
+                                    rumusBakuTerditeksi = [statusDiExcel];
+                                    Logger.info(`⚡ Menggunakan nilai manual [${statusDiExcel}] dari Excel untuk "${namaBersih}"`);
+                                }
                             }
                             break;
                         }
@@ -1475,30 +1577,35 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
                             const tb = hitungNilaiNormal(row['Tinggi Badan'], "Tinggi Badan", row['Tanggal lahir']);
                             const lp = hitungNilaiNormal(row['Lingkar Perut'], "Lingkar Perut", row['Tanggal lahir']);
 
-                            await page.locator('input[placeholder*="isikan dalam satuan kg, dengan koma diisi dengan (.)"]').last().fill(bb);
-                            await page.locator('input[placeholder*="Isi sesuai hasil pengukuran tinggi badan dalam cm"]').last().fill(tb);
-                            await page.locator('input[placeholder*="Isi sesuai hasil pengukuran"]').last().fill(lp);
+                            if (bb) await page.locator('input[placeholder*="isikan dalam satuan kg, dengan koma diisi dengan (.)"]').last().fill(bb);
+                            if (tb) await page.locator('input[placeholder*="Isi sesuai hasil pengukuran tinggi badan dalam cm"]').last().fill(tb);
+                            if (lp) await page.locator('input[placeholder*="Isi sesuai hasil pengukuran"]').last().fill(lp);
                         }
                     },
                     {
                         nama: "Tekanan Darah",
                         isi: async () => {
-                            await page.locator('span.sv-string-viewer:has-text("Tidak")').last().click();
                             const sistol = hitungNilaiNormal(row['Sistol'], "Sistol", row['Tanggal lahir']);
                             const diastol = hitungNilaiNormal(row['Diastol'], "Diastol", row['Tanggal lahir']);
-                            const inputs = page.locator('input.sd-input.sd-text[type="number"]');
-                            await inputs.nth(0).fill(sistol);
-                            await inputs.nth(1).fill(diastol);
+                            if (sistol && diastol) {
+                                await page.locator('span.sv-string-viewer:has-text("Tidak")').last().click().catch(() => { });
+                                const inputs = page.locator('input.sd-input.sd-text[type="number"]');
+                                await inputs.nth(0).fill(sistol);
+                                await inputs.nth(1).fill(diastol);
+                            }
                         }
                     },
                     {
                         nama: "Pemeriksaan Gula Darah",
                         isi: async () => {
-                            await page.locator('span.sv-string-viewer:has-text("Tidak")').last().click();
                             const gd = hitungNilaiNormal(row['Gula Darah'], "Gula Darah", row['Tanggal lahir']);
-                            await page.locator('input.sd-input.sd-text[id="sq_102i"]').last().fill(gd);
+                            if (gd) {
+                                await page.locator('span.sv-string-viewer:has-text("Tidak")').last().click().catch(() => { });
+                                await page.locator('input.sd-input.sd-text[id="sq_102i"]').last().fill(gd);
+                            }
                         }
                     }
+
                     // 🌟 Contoh menambah form nakes baru di kemudian hari:
                     // {
                     //     nama: "Nama Layanan Baru",
