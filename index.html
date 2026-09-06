@@ -251,6 +251,29 @@
             letter-spacing: 1px;
         }
 
+        /* STATUS MASA BERLAKU LISENSI */
+        .license-expiry-value {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--accent-green);
+        }
+
+        .license-expiry-countdown {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 10px;
+            color: var(--text-muted);
+            margin-top: 3px;
+            white-space: nowrap;
+        }
+
+        .license-expiry-expired {
+            color: var(--accent-red) !important;
+        }
+
+        .license-expiry-warning {
+            color: var(--accent-yellow) !important;
+        }
+
         .profile-bar {
             background: var(--bg-panel);
             border: 1px solid var(--border-color);
@@ -762,8 +785,8 @@
                     </div>
                     <div style="border-left: 1px solid var(--border-color); padding-left: 20px;">
                         <div style="font-size: 12px; color: var(--text-muted);">Masa Berlaku</div>
-                        <div id="display-expired"
-                            style="font-size: 15px; font-weight: 700; color: var(--accent-green);">-</div>
+                        <div class="license-expiry-value" id="display-expiry">-</div>
+                        <div class="license-expiry-countdown" id="display-expiry-countdown">Memeriksa...</div>
                     </div>
                     <div style="border-left: 1px solid var(--border-color); padding-left: 20px;">
                         <div style="font-size: 12px; color: var(--text-muted);">Sisa Kuota Hari Ini</div>
@@ -1035,12 +1058,190 @@
 
         let windowSession = null;
         let globalUserDataPath = ""; // Variabel global agar dinamis
-        let licenseExpired = false;
-        let expiryTimer = null;
 
         let stats = { 1: { success: 0, error: 0, startTime: null }, 2: { success: 0, error: 0, startTime: null } };
         let isPaused = { 1: false, 2: false };
         let isBotRunning = { 1: false, 2: false };
+
+        // ==========================================
+        // LISENSI - EXPIRY LANGSUNG DARI FIREBASE
+        // ==========================================
+        const FIREBASE_CONFIG_UI = {
+            apiKey: "AIzaSyBnp72CooPhCOkB-dyi9j-dBJaSBWyLqbo",
+            databaseURL: "https://cckkgg-d5107-default-rtdb.firebaseio.com",
+            projectId: "cckkgg-d5107"
+        };
+
+        let firebaseDbUI = null;
+        let expiryTimer = null;
+        let expiryRefreshTimer = null;
+        let licenseExpired = false;
+
+        function formatUsernameFirebaseUI(inputEmail) {
+            return String(inputEmail || '').trim().replace(/\./g, ',').replace(/[$#[\]\/]/g, '_');
+        }
+
+        function normalisasiTanggalExpiredUI(value) {
+            if (value == null || value === '') return null;
+
+            if (typeof value === 'object') {
+                if (typeof value.seconds === 'number') return new Date(value.seconds * 1000);
+                if (typeof value._seconds === 'number') return new Date(value._seconds * 1000);
+            }
+
+            if (typeof value === 'number') {
+                // Dukungan Unix timestamp detik / milidetik.
+                return new Date(value < 1e12 ? value * 1000 : value);
+            }
+
+            const raw = String(value).trim();
+            if (!raw) return null;
+
+            // ISO / format yang bisa dipahami JS.
+            const parsed = new Date(raw);
+            if (!Number.isNaN(parsed.getTime())) return parsed;
+
+            // Format umum: DD-MM-YYYY atau DD/MM/YYYY [HH:mm[:ss]]
+            const match = raw.match(/^(\d{1,2})[-\/](\d{1,2})[-\/](\d{4})(?:[ T](\d{1,2}):(\d{2})(?::(\d{2}))?)?$/);
+            if (match) {
+                const [, dd, mm, yyyy, hh = '23', mi = '59', ss = '59'] = match;
+                return new Date(Number(yyyy), Number(mm) - 1, Number(dd), Number(hh), Number(mi), Number(ss));
+            }
+
+            return null;
+        }
+
+        function formatTanggalExpiredUI(date) {
+            return new Intl.DateTimeFormat('id-ID', {
+                day: '2-digit', month: '2-digit', year: 'numeric',
+                hour: '2-digit', minute: '2-digit', second: '2-digit'
+            }).format(date);
+        }
+
+        function hitungCountdownUI(ms) {
+            if (ms <= 0) return 'EXPIRED';
+            const total = Math.floor(ms / 1000);
+            const hari = Math.floor(total / 86400);
+            const jam = Math.floor((total % 86400) / 3600);
+            const menit = Math.floor((total % 3600) / 60);
+            const detik = total % 60;
+            return `Sisa ${hari}h ${jam}j ${menit}m ${detik}d`;
+        }
+
+        function setTampilanExpiredUI(date) {
+            const elDate = document.getElementById('display-expiry');
+            const elCountdown = document.getElementById('display-expiry-countdown');
+            if (!elDate || !elCountdown) return;
+
+            if (!date || Number.isNaN(date.getTime())) {
+                elDate.textContent = 'Tidak tersedia';
+                elDate.classList.remove('license-expiry-warning', 'license-expiry-expired');
+                elCountdown.textContent = 'Firebase tidak mengirim tanggal expired';
+                return;
+            }
+
+            elDate.textContent = formatTanggalExpiredUI(date);
+
+            const update = () => {
+                const sisaMs = date.getTime() - Date.now();
+                elCountdown.textContent = hitungCountdownUI(sisaMs);
+                elDate.classList.remove('license-expiry-warning', 'license-expiry-expired');
+                elCountdown.classList.remove('license-expiry-warning', 'license-expiry-expired');
+
+                if (sisaMs <= 0) {
+                    licenseExpired = true;
+                    elDate.classList.add('license-expiry-expired');
+                    elCountdown.classList.add('license-expiry-expired');
+                    terapkanKunciExpiredUI(true);
+                } else {
+                    licenseExpired = false;
+                    if (sisaMs <= 3 * 24 * 60 * 60 * 1000) {
+                        elDate.classList.add('license-expiry-warning');
+                        elCountdown.classList.add('license-expiry-warning');
+                    }
+                    terapkanKunciExpiredUI(false);
+                }
+            };
+
+            update();
+            if (expiryTimer) clearInterval(expiryTimer);
+            expiryTimer = setInterval(update, 1000);
+        }
+
+        function terapkanKunciExpiredUI(expired) {
+            const ids = [
+                'btn-get-1', 'btn-submit-1', 'btn-upload-1', 'btn-download-hasil-1', 'btn-run-1', 'btn-pause-1', 'btn-stop-1',
+                'btn-get-2', 'btn-submit-2', 'btn-upload-2', 'btn-download-hasil-2', 'btn-run-2', 'btn-pause-2', 'btn-stop-2'
+            ];
+            ids.forEach(id => {
+                const el = document.getElementById(id);
+                if (!el) return;
+                if (expired) {
+                    if (!el.dataset.expiryDisabled) {
+                        el.dataset.expiryWasDisabled = el.disabled ? '1' : '0';
+                        el.dataset.expiryDisabled = '1';
+                    }
+                    el.disabled = true;
+                    el.title = 'Lisensi sudah expired. Hubungi admin untuk perpanjangan.';
+                } else if (el.dataset.expiryDisabled) {
+                    el.disabled = el.dataset.expiryWasDisabled === '1';
+                    delete el.dataset.expiryDisabled;
+                    delete el.dataset.expiryWasDisabled;
+                    el.title = '';
+                }
+            });
+
+            const status = document.getElementById('display-status');
+            if (expired && status) {
+                status.textContent = 'EXPIRED';
+                status.style.color = 'var(--accent-red)';
+            } else if (status && windowSession) {
+                status.textContent = windowSession.status || '-';
+                status.style.color = 'var(--accent-yellow)';
+            }
+        }
+
+        async function ambilExpiredDariFirebaseUI(username) {
+            try {
+                if (!firebaseDbUI) {
+                    const { initializeApp } = require('firebase/app');
+                    const { getDatabase } = require('firebase/database');
+                    const firebaseAppUI = initializeApp(FIREBASE_CONFIG_UI, 'dashboard-ui');
+                    firebaseDbUI = getDatabase(firebaseAppUI);
+                }
+
+                const { ref, get } = require('firebase/database');
+                const usernameAman = formatUsernameFirebaseUI(username);
+                const snapshot = await get(ref(firebaseDbUI, `users/${usernameAman}`));
+
+                if (!snapshot.exists()) {
+                    setTampilanExpiredUI(null);
+                    return null;
+                }
+
+                const data = snapshot.val() || {};
+                const rawExpiry = data.tanggal_expired ?? data.expiredAt ?? data.expiresAt ?? data.expiryDate ?? data.expiry ?? data.exp;
+                const expiryDate = normalisasiTanggalExpiredUI(rawExpiry);
+                setTampilanExpiredUI(expiryDate);
+                return expiryDate;
+            } catch (error) {
+                console.error('[FIREBASE] Gagal mengambil masa berlaku:', error);
+                setTampilanExpiredUI(null);
+                return null;
+            }
+        }
+
+        async function refreshStatusLisensiUI() {
+            try {
+                const sess = await ipcRenderer.invoke('get-session');
+                if (!sess || !sess.username) return;
+                windowSession = sess;
+                await ambilExpiredDariFirebaseUI(sess.username);
+            } catch (error) {
+                console.error('[LICENSE] Gagal refresh status lisensi:', error);
+            }
+        }
+
 
         // ==========================================
         // INISIALISASI SAAT APLIKASI DIBUKA (SESSION)
@@ -1051,12 +1252,11 @@
 
             windowSession = await ipcRenderer.invoke('get-session');
             if (windowSession) {
-                document.getElementById('display-username').innerText = windowSession.username || '-';
-                document.getElementById('display-status').innerText = windowSession.status || '-';
-                document.getElementById('display-limit').innerText = windowSession.sisaLimit ?? '-';
-                updateExpiryDisplay(windowSession);
+                document.getElementById('display-username').innerText = windowSession.username;
+                document.getElementById('display-status').innerText = windowSession.status;
+                document.getElementById('display-limit').innerText = windowSession.sisaLimit;
 
-                document.getElementById('user-1').value = windowSession.username || '';
+                document.getElementById('user-1').value = windowSession.username;
                 document.getElementById('user-2').value = windowSession.username;
 
                 if (windowSession.status === 'DEVELOPER') {
@@ -1075,108 +1275,17 @@
                 // Panggil setup Akun HANYA SETELAH globalUserDataPath terisi
                 setupAkun(1);
                 setupAkun(2);
-                startExpiryWatcher();
+
+                // Ambil masa berlaku langsung dari Firebase.
+                await refreshStatusLisensiUI();
+                if (expiryRefreshTimer) clearInterval(expiryRefreshTimer);
+                expiryRefreshTimer = setInterval(refreshStatusLisensiUI, 30000);
             }
         };
 
         async function refreshSisaLimit() {
             const sess = await ipcRenderer.invoke('get-session');
-            if (sess) {
-                windowSession = sess;
-                document.getElementById('display-limit').innerText = sess.sisaLimit ?? '-';
-                document.getElementById('display-status').innerText = sess.status || '-';
-                updateExpiryDisplay(sess);
-            }
-        }
-
-        function parseExpiryDate(value) {
-            if (value === null || value === undefined || value === '') return null;
-            if (typeof value === 'object' && typeof value.seconds === 'number') return new Date(value.seconds * 1000);
-            if (typeof value === 'object' && typeof value._seconds === 'number') return new Date(value._seconds * 1000);
-            if (typeof value === 'number') return new Date(value < 100000000000 ? value * 1000 : value);
-            const date = new Date(value);
-            return Number.isNaN(date.getTime()) ? null : date;
-        }
-
-        function getExpiryValue(session) {
-            if (!session || typeof session !== 'object') return null;
-            for (const value of [session.expiredAt, session.expiresAt, session.expiryDate, session.expiry, session.exp]) {
-                const parsed = parseExpiryDate(value);
-                if (parsed) return parsed;
-            }
-            return null;
-        }
-
-        function setDashboardLocked(locked) {
-            licenseExpired = locked;
-            const expiryEl = document.getElementById('display-expired');
-            const statusEl = document.getElementById('display-status');
-            if (locked) {
-                expiryEl.innerText = 'EXPIRED';
-                expiryEl.style.color = 'var(--accent-red)';
-                statusEl.style.color = 'var(--accent-red)';
-                for (const id of [1, 2]) {
-                    for (const key of ['btn-get-', 'btn-submit-', 'btn-upload-', 'btn-download-hasil-', 'btn-run-']) {
-                        const el = document.getElementById(`${key}${id}`);
-                        if (el) el.disabled = true;
-                    }
-                    setBadge(id, 'LISENSI EXPIRED', 'badge-error');
-                }
-            } else {
-                for (const id of [1, 2]) {
-                    for (const key of ['btn-get-', 'btn-submit-', 'btn-upload-', 'btn-download-hasil-', 'btn-run-']) {
-                        const el = document.getElementById(`${key}${id}`);
-                        if (el) el.disabled = false;
-                    }
-                }
-            }
-        }
-
-        function updateExpiryDisplay(session) {
-            const expiryEl = document.getElementById('display-expired');
-            if (!expiryEl) return;
-            const expiryDate = getExpiryValue(session);
-            if (!expiryDate) {
-                expiryEl.innerText = 'Tidak ada data';
-                expiryEl.style.color = 'var(--text-muted)';
-                licenseExpired = false;
-                return;
-            }
-            if (expiryDate.getTime() <= Date.now()) {
-                setDashboardLocked(true);
-                return;
-            }
-            const dd = String(expiryDate.getDate()).padStart(2, '0');
-            const mm = String(expiryDate.getMonth() + 1).padStart(2, '0');
-            const yyyy = expiryDate.getFullYear();
-            expiryEl.innerText = `${dd}-${mm}-${yyyy}`;
-            expiryEl.style.color = 'var(--accent-green)';
-            setDashboardLocked(false);
-        }
-
-        function ensureLicenseActive() {
-            if (licenseExpired) {
-                showNotification('Lisensi akun sudah EXPIRED. Silakan perpanjang lisensi.', 'error');
-                return false;
-            }
-            return true;
-        }
-
-        function startExpiryWatcher() {
-            if (expiryTimer) clearInterval(expiryTimer);
-            expiryTimer = setInterval(async () => {
-                try {
-                    const sess = await ipcRenderer.invoke('get-session');
-                    if (sess) {
-                        windowSession = sess;
-                        document.getElementById('display-status').innerText = sess.status || '-';
-                        document.getElementById('display-limit').innerText = sess.sisaLimit ?? '-';
-                        updateExpiryDisplay(sess);
-                    }
-                } catch (error) {
-                    console.error('Gagal memperbarui status lisensi:', error);
-                }
-            }, 30000);
+            if (sess) document.getElementById('display-limit').innerText = sess.sisaLimit;
         }
 
         // ==========================================
@@ -1396,9 +1505,11 @@
             const btnStop = document.getElementById(`btn-stop-${id}`);
 
             btnGet.addEventListener('click', async () => {
-                if (!ensureLicenseActive()) return;
                 const limitCheck = await ipcRenderer.invoke('cek-limit');
                 if (!limitCheck.allowed) return showNotification(limitCheck.message, 'error');
+
+                await refreshStatusLisensiUI();
+                if (licenseExpired) return showNotification('Lisensi sudah expired. Hubungi admin untuk perpanjangan.', 'error');
 
                 const pass = passInput.value;
                 const usernameYangDiketik = userInput.value;
@@ -1416,7 +1527,6 @@
             });
 
             btnSubmit.addEventListener('click', () => {
-                if (!ensureLicenseActive()) return;
                 const textCaptcha = inputCap.value;
                 if (!textCaptcha) return showNotification('Captcha kosong!', 'warn');
 
@@ -1429,10 +1539,7 @@
             const fileUpload = document.getElementById(`file-upload-${id}`);
             let namaFileAsliAkun = `Data${id}.xlsx`;
 
-            document.getElementById(`btn-upload-${id}`).addEventListener('click', () => {
-                if (!ensureLicenseActive()) return;
-                fileUpload.click();
-            });
+            document.getElementById(`btn-upload-${id}`).addEventListener('click', () => fileUpload.click());
 
             fileUpload.addEventListener('change', (event) => {
                 const file = event.target.files[0];
@@ -1455,7 +1562,6 @@
             });
 
             document.getElementById(`btn-download-hasil-${id}`).addEventListener('click', () => {
-                if (!ensureLicenseActive()) return;
                 document.getElementById(`btn-download-hasil-${id}`).blur();
                 const sourcePath = path.join(globalUserDataPath, 'Data', `Data${id}.xlsx`);
                 let namaFileBaru = `${path.basename(namaFileAsliAkun, path.extname(namaFileAsliAkun))}_Hasil_Akun_${id}${path.extname(namaFileAsliAkun)}`;
@@ -1471,9 +1577,11 @@
             });
 
             btnRun.addEventListener('click', async () => {
-                if (!ensureLicenseActive()) return;
                 const limitCheck = await ipcRenderer.invoke('cek-limit');
                 if (!limitCheck.allowed) return showNotification(limitCheck.message, 'error');
+
+                await refreshStatusLisensiUI();
+                if (licenseExpired) return showNotification('Lisensi sudah expired. Hubungi admin untuk perpanjangan.', 'error');
 
                 const scriptDipilih = document.getElementById(`kategori-${id}`).value;
                 const isHeadless = document.getElementById(`headless-${id}`).value;
