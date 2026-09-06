@@ -251,36 +251,6 @@ async function isiFormLayanan(page, namaLayanan, actionCallback) {
     }
 }
 
-// 🌟 KHUSUS BALITA: form alamat pakai input pencarian TERPISAH per level wilayah
-// (Cari Provinsi / Cari Kabupaten-Kota / Cari Kecamatan / Cari Kelurahan), berbeda
-// dari CKG Umum yang pakai 1 modal "Pilih alamat domisili" untuk semua level.
-async function isiDropdown(page, placeholderText, valueToType) {
-    if (!valueToType || valueToType.trim() === "" || valueToType === "undefined") return;
-
-    const inputArea = page.locator(`input[placeholder="${placeholderText}"]`).last();
-    await inputArea.scrollIntoViewIfNeeded().catch(() => { });
-    await inputArea.click({ force: true }).catch(() => { });
-    await inputArea.fill(valueToType);
-    await page.waitForTimeout(800);
-
-    const opsiStrict = page.locator('div.modal-content button, div.modal-content div').filter({ hasText: new RegExp(`^\\s*${valueToType}\\s*$`, 'i') }).filter({ visible: true }).last();
-
-    try {
-        await opsiStrict.waitFor({ state: 'visible', timeout: 4000 });
-        await opsiStrict.click({ force: true });
-        Logger.info(`🎯 Wilayah "${valueToType}" ditemukan & dipilih (Persis Sama).`);
-    } catch {
-        Logger.info(`⚠️ "${valueToType}" tidak ditemukan persis. Mengambil opsi teratas yang muncul...`);
-        const opsiCadangan = page.locator('div.modal-content button, div.modal-content div').filter({ visible: true }).last();
-        if (await opsiCadangan.count() > 0) {
-            await opsiCadangan.click({ force: true }).catch(() => { });
-        } else {
-            Logger.info(`❌ Tidak ada opsi wilayah yang muncul sama sekali untuk "${valueToType}".`);
-        }
-    }
-    await page.waitForTimeout(300);
-}
-
 // ==============================================================================
 // 2. FUNGSI UTAMA AUTOMATION (Sistem Looping)
 // ==============================================================================
@@ -479,34 +449,61 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
                     await page.locator('button:has(div:text("Daftar Baru"))').last().click();
                     await page.waitForTimeout(1000);
 
-                    // 🌟 KHUSUS BALITA: tidak ada tahap "Cek NIK" terpisah seperti CKG Umum —
-                    // semua field (anak + wali) diisi langsung lalu divalidasi sekaligus lewat
-                    // tombol "Selanjutnya" di bawah. (Kalau ternyata di lapangan balita JUGA
-                    // punya tombol "Cek NIK"+"Gunakan Data" seperti umum, kasih tahu saya, nanti
-                    // saya tambahkan wrapper-nya seperti di ckgumum.js).
                     await page.locator('input[name="NIK"]').last().fill(String(row['NIK']));
-                    await page.locator('input[name="Nama"]').last().fill(String(row['Nama Lengkap']));
-                    await page.waitForTimeout(300);
+                    await page.waitForTimeout(500);
+                    await checkPause();
+
+                    Logger.info(`Mengecek NIK: ${row['NIK']}...`);
+                    sendUILog(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Mengecek NIK`);
+
+                    const btnCekNik = page.locator('div.tracking-wide:has-text("Cek NIK"), button:has-text("Cek NIK")').filter({ visible: true }).first();
+                    await btnCekNik.click({ force: true });
+
+                    let dataOtomatisDitemukan = false;
+                    const popupTeks = page.getByText('Data Peserta ditemukan', { exact: false }).first();
+                    const btnGunakanData = page.locator('button:has-text("Gunakan Data")').first();
+
+                    try {
+                        await Promise.race([
+                            popupTeks.waitFor({ state: 'visible', timeout: 6000 }),
+                            btnGunakanData.waitFor({ state: 'visible', timeout: 6000 })
+                        ]);
+                        dataOtomatisDitemukan = true;
+                        Logger.info("✅ Data Peserta ditemukan!");
+                    } catch (error) {
+                        dataOtomatisDitemukan = false;
+                        Logger.info("⚠️ Data belum terdaftar di server. Beralih ke mode ISI MANUAL...");
+                    }
                     await checkPause();
 
                     // --- DATA ANAK (BALITA) ---
-                    Logger.info(`📅 Mengisi Tanggal Lahir Anak: ${row['Tanggal lahir']}`);
-                    const elTglAnak = page.locator('[id="Tanggal Lahir"]').first();
-                    await isiDatepicker(page, elTglAnak, row['Tanggal lahir']);
+                    if (dataOtomatisDitemukan) {
+                        await btnGunakanData.click({ force: true }).catch(() => { });
+                        await page.waitForTimeout(1000);
+                        Logger.info("Menggunakan data anak dari server Kemenkes...");
+                    } else {
+                        Logger.info("Mengisi data anak secara manual dari Excel...");
 
-                    await page.locator('span', { hasText: /Pilih Jenis Kelamin/i }).first().click().catch(() => { });
-                    await page.waitForTimeout(300);
-                    const genderAnak = String(row['Jenis Kelamin']).trim().toUpperCase().startsWith('L') ? 'Laki-laki' : 'Perempuan';
-                    await page.locator(`div:text-is("${genderAnak}")`).filter({ visible: true }).first().click();
+                        await page.locator('input[name="Nama"]').last().fill(String(row['Nama Lengkap']));
 
-                    let noWa = row['No Whatsapp'] ? String(row['No Whatsapp']).trim() : '';
-                    noWa = noWa.replace(/\D/g, '');
-                    if (!noWa || noWa.length < 7 || noWa.length > 13 || !noWa.startsWith('8')) {
-                        noWa = '89999999';
+                        Logger.info(`📅 Mengisi Tanggal Lahir Anak: ${row['Tanggal lahir']}`);
+                        const elTglAnak = page.locator('[id="Tanggal Lahir"]').first();
+                        await isiDatepicker(page, elTglAnak, row['Tanggal lahir']);
+
+                        await page.locator('span', { hasText: /Pilih Jenis Kelamin/i }).first().click().catch(() => { });
+                        await page.waitForTimeout(300);
+                        const genderAnak = String(row['Jenis Kelamin']).trim().toUpperCase().startsWith('L') ? 'Laki-laki' : 'Perempuan';
+                        await page.locator(`div:text-is("${genderAnak}")`).filter({ visible: true }).first().click();
+
+                        let noWa = row['No Whatsapp'] ? String(row['No Whatsapp']).trim() : '';
+                        noWa = noWa.replace(/\D/g, '');
+                        if (!noWa || noWa.length < 7 || noWa.length > 13 || !noWa.startsWith('8')) {
+                            noWa = '89999999';
+                        }
+                        await page.waitForTimeout(500);
+                        await page.locator('input[name="Nomor Whatsapp"]').last().fill(noWa);
+                        await page.waitForTimeout(1000);
                     }
-                    await page.waitForTimeout(500);
-                    await page.locator('input[name="Nomor Whatsapp"]').last().fill(noWa);
-                    await page.waitForTimeout(1000);
                     await checkPause();
 
                     // --- VALIDASI: FORM WALI HARUS MUNCUL, KALAU TIDAK => BUKAN BALITA ---
@@ -516,6 +513,8 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
                     }
 
                     // --- DATA WALI ---
+                    // 🌟 Data wali SELALU diisi manual dari Excel (tidak ikut ter-auto-fill oleh
+                    // "Gunakan Data", karena itu hanya untuk data si anak/peserta utama).
                     Logger.info('✍️ Mengisi data Wali...');
                     await page.locator('input[name="NIK wali"]').last().fill(String(row['NIK Wali']));
                     await page.locator('input[name="Nama Lengkap Wali"]').last().fill(String(row['Nama Wali']));
@@ -568,7 +567,7 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
                     let popupResult = await Promise.race([
                         page.waitForSelector('div:has-text("Data peserta valid")', { timeout: 10000 }).then(() => 'VALID'),
                         page.waitForSelector('div:has-text("Kuota Pemeriksaan Habis")', { timeout: 10000 }).then(() => 'KUOTA_HABIS'),
-                        page.waitForSelector('div:has-text("tidak valid")', { timeout: 10000 }).then(() => 'TIDAK_SESUAI'),
+                        page.waitForSelector('div:has-text("Data peserta tidak valid")', { timeout: 10000 }).then(() => 'TIDAK_SESUAI'),
                         page.waitForSelector('div:has-text("Individu sudah menerima layanan")', { timeout: 10000 }).then(() => 'SUDAH_PELAYANAN')
                     ]).catch(() => 'TIMEOUT_SERVER');
 
@@ -582,7 +581,7 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
 
                         popupResult = await Promise.race([
                             page.waitForSelector('div:has-text("Data peserta valid")', { timeout: 10000 }).then(() => 'VALID'),
-                            page.waitForSelector('div:has-text("tidak valid")', { timeout: 10000 }).then(() => 'TIDAK_SESUAI'),
+                            page.waitForSelector('div:has-text("Data peserta tidak valid")', { timeout: 10000 }).then(() => 'TIDAK_SESUAI'),
                             page.waitForSelector('div:has-text("Individu sudah menerima layanan")', { timeout: 10000 }).then(() => 'SUDAH_PELAYANAN')
                         ]).catch(() => 'TIMEOUT_SERVER');
                     }
@@ -698,17 +697,43 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
                         }
                         await checkPause();
 
-                        // 🌟 KHUSUS BALITA: alamat pakai 4 input pencarian TERPISAH di halaman
-                        // (Cari Provinsi / Cari Kabupaten-Kota / Cari Kecamatan / Cari Kelurahan),
-                        // bukan 1 tombol "Pilih alamat domisili" seperti CKG Umum.
-                        Logger.info('🔄 Mengisi Alamat Domisili (Provinsi → Kelurahan)...');
-                        await isiDropdown(page, 'Cari Provinsi', String(row['Provinsi'] || '').trim().toUpperCase());
-                        await checkPause();
-                        await isiDropdown(page, 'Cari Kabupaten/Kota', String(row['Kota'] || '').trim().toUpperCase());
-                        await checkPause();
-                        await isiDropdown(page, 'Cari Kecamatan', String(row['Kecamatan'] || '').trim().toUpperCase());
-                        await checkPause();
-                        await isiDropdown(page, 'Cari Kelurahan', String(row['Kelurahan'] || '').trim().toUpperCase());
+                        const isAlamatKosong = await page.locator('div, span').filter({ hasText: new RegExp('^\\s*Pilih alamat domisili\\s*$', 'i') }).filter({ visible: true }).count() > 0;
+                        if (!isAlamatKosong) {
+                            Logger.info(`✅ Alamat Domisili sudah terisi dari sistem Kemenkes. Dilewati...`);
+                        } else {
+                            Logger.info(`🔄 Kolom Alamat Domisili kosong. Mulai mengeksekusi pengisian...`);
+                            const daftarAlamat = [row['Provinsi'], row['Kota'], row['Kecamatan'], row['Kelurahan']];
+
+                            await page.locator('div.cursor-pointer:has-text("Pilih alamat domisili")').last().click({ force: true });
+                            await page.waitForTimeout(500);
+                            const modalInput = page.locator('div.modal-content input[type="text"]').last();
+
+                            for (let i = 0; i < daftarAlamat.length; i++) {
+                                let daerah = daftarAlamat[i];
+                                if (!daerah || daerah.trim() === "") continue;
+
+                                daerah = String(daerah).trim().toUpperCase();
+                                Logger.info(`Mencari wilayah: ${daerah}...`);
+
+                                await modalInput.clear().catch(() => { });
+                                await page.waitForTimeout(300);
+                                await modalInput.fill(daerah);
+                                await page.waitForTimeout(100);
+
+                                const tombolPilihan = page.locator('div.modal-content button').filter({ hasText: new RegExp(`^\\s*${daerah}\\s*$`, 'i') }).filter({ visible: true }).last();
+
+                                try {
+                                    await tombolPilihan.waitFor({ state: 'visible', timeout: 5000 });
+                                    await tombolPilihan.click({ force: true });
+                                } catch (error) {
+                                    Logger.info(`⚠️ "${daerah}" tidak ditemukan! Mengambil hasil paling mirip...`);
+                                    await page.waitForTimeout(1000);
+                                    const tombolCadangan = page.locator('div.modal-content button').filter({ visible: true }).last();
+                                    if (await tombolCadangan.isVisible()) await tombolCadangan.click({ force: true });
+                                }
+                                await page.waitForTimeout(100);
+                            }
+                        }
                         await checkPause();
 
                         await page.locator('textarea[name="detail-domisili"], textarea#detail-domisili').last().fill(String(row['Detail Domisili']));
@@ -725,7 +750,7 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
 
                         const notifDaftar = await Promise.race([
                             page.waitForSelector('div:has-text("Berhasil Daftar")', { timeout: 10000 }).then(() => 'BERHASIL'),
-                            page.waitForSelector('div:has-text("tidak sesuai"),div.pb-2:has-text("tidak valid"),div:has-text("Terjadi kesalahan")', { timeout: 10000 }).then(() => 'TIDAK_SESUAI'),
+                            page.waitForSelector('div:has-text("Data pasien tidak sesuai"),div.pb-2:has-text("Data peserta tidak valid"),div:has-text("Terjadi kesalahan")', { timeout: 10000 }).then(() => 'TIDAK_SESUAI'),
                             page.waitForSelector('div:has-text("Individu sudah")', { timeout: 10000 }).then(() => 'SUDAH_PELAYANAN')
                         ]).catch(() => 'TIMEOUT_SERVER');
 
@@ -778,7 +803,7 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
                             if (await popupAktif.count() > 0) {
                                 pesanErrorForm1 = await popupAktif.innerText();
                             } else {
-                                const popupAlternatif = page.locator('div.text-red-500, div:has-text("tidak valid"), div:has-text("tidak ditemukan")').filter({ visible: true }).last();
+                                const popupAlternatif = page.locator('div.text-red-500, div:has-text("Data peserta tidak valid"), div:has-text("tidak ditemukan")').filter({ visible: true }).last();
                                 if (await popupAlternatif.count() > 0) pesanErrorForm1 = await popupAlternatif.innerText();
                             }
                         } catch (e) { }
