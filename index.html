@@ -761,6 +761,11 @@
                             id="display-status">-</div>
                     </div>
                     <div style="border-left: 1px solid var(--border-color); padding-left: 20px;">
+                        <div style="font-size: 12px; color: var(--text-muted);">Masa Berlaku</div>
+                        <div id="display-expired"
+                            style="font-size: 15px; font-weight: 700; color: var(--accent-green);">-</div>
+                    </div>
+                    <div style="border-left: 1px solid var(--border-color); padding-left: 20px;">
                         <div style="font-size: 12px; color: var(--text-muted);">Sisa Kuota Hari Ini</div>
                         <div style="font-size: 15px; font-weight: 700; color: var(--accent-green);" id="display-limit">-
                         </div>
@@ -1030,6 +1035,8 @@
 
         let windowSession = null;
         let globalUserDataPath = ""; // Variabel global agar dinamis
+        let licenseExpired = false;
+        let expiryTimer = null;
 
         let stats = { 1: { success: 0, error: 0, startTime: null }, 2: { success: 0, error: 0, startTime: null } };
         let isPaused = { 1: false, 2: false };
@@ -1044,11 +1051,12 @@
 
             windowSession = await ipcRenderer.invoke('get-session');
             if (windowSession) {
-                document.getElementById('display-username').innerText = windowSession.username;
-                document.getElementById('display-status').innerText = windowSession.status;
-                document.getElementById('display-limit').innerText = windowSession.sisaLimit;
+                document.getElementById('display-username').innerText = windowSession.username || '-';
+                document.getElementById('display-status').innerText = windowSession.status || '-';
+                document.getElementById('display-limit').innerText = windowSession.sisaLimit ?? '-';
+                updateExpiryDisplay(windowSession);
 
-                document.getElementById('user-1').value = windowSession.username;
+                document.getElementById('user-1').value = windowSession.username || '';
                 document.getElementById('user-2').value = windowSession.username;
 
                 if (windowSession.status === 'DEVELOPER') {
@@ -1067,12 +1075,108 @@
                 // Panggil setup Akun HANYA SETELAH globalUserDataPath terisi
                 setupAkun(1);
                 setupAkun(2);
+                startExpiryWatcher();
             }
         };
 
         async function refreshSisaLimit() {
             const sess = await ipcRenderer.invoke('get-session');
-            if (sess) document.getElementById('display-limit').innerText = sess.sisaLimit;
+            if (sess) {
+                windowSession = sess;
+                document.getElementById('display-limit').innerText = sess.sisaLimit ?? '-';
+                document.getElementById('display-status').innerText = sess.status || '-';
+                updateExpiryDisplay(sess);
+            }
+        }
+
+        function parseExpiryDate(value) {
+            if (value === null || value === undefined || value === '') return null;
+            if (typeof value === 'object' && typeof value.seconds === 'number') return new Date(value.seconds * 1000);
+            if (typeof value === 'object' && typeof value._seconds === 'number') return new Date(value._seconds * 1000);
+            if (typeof value === 'number') return new Date(value < 100000000000 ? value * 1000 : value);
+            const date = new Date(value);
+            return Number.isNaN(date.getTime()) ? null : date;
+        }
+
+        function getExpiryValue(session) {
+            if (!session || typeof session !== 'object') return null;
+            for (const value of [session.expiredAt, session.expiresAt, session.expiryDate, session.expiry, session.exp]) {
+                const parsed = parseExpiryDate(value);
+                if (parsed) return parsed;
+            }
+            return null;
+        }
+
+        function setDashboardLocked(locked) {
+            licenseExpired = locked;
+            const expiryEl = document.getElementById('display-expired');
+            const statusEl = document.getElementById('display-status');
+            if (locked) {
+                expiryEl.innerText = 'EXPIRED';
+                expiryEl.style.color = 'var(--accent-red)';
+                statusEl.style.color = 'var(--accent-red)';
+                for (const id of [1, 2]) {
+                    for (const key of ['btn-get-', 'btn-submit-', 'btn-upload-', 'btn-download-hasil-', 'btn-run-']) {
+                        const el = document.getElementById(`${key}${id}`);
+                        if (el) el.disabled = true;
+                    }
+                    setBadge(id, 'LISENSI EXPIRED', 'badge-error');
+                }
+            } else {
+                for (const id of [1, 2]) {
+                    for (const key of ['btn-get-', 'btn-submit-', 'btn-upload-', 'btn-download-hasil-', 'btn-run-']) {
+                        const el = document.getElementById(`${key}${id}`);
+                        if (el) el.disabled = false;
+                    }
+                }
+            }
+        }
+
+        function updateExpiryDisplay(session) {
+            const expiryEl = document.getElementById('display-expired');
+            if (!expiryEl) return;
+            const expiryDate = getExpiryValue(session);
+            if (!expiryDate) {
+                expiryEl.innerText = 'Tidak ada data';
+                expiryEl.style.color = 'var(--text-muted)';
+                licenseExpired = false;
+                return;
+            }
+            if (expiryDate.getTime() <= Date.now()) {
+                setDashboardLocked(true);
+                return;
+            }
+            const dd = String(expiryDate.getDate()).padStart(2, '0');
+            const mm = String(expiryDate.getMonth() + 1).padStart(2, '0');
+            const yyyy = expiryDate.getFullYear();
+            expiryEl.innerText = `${dd}-${mm}-${yyyy}`;
+            expiryEl.style.color = 'var(--accent-green)';
+            setDashboardLocked(false);
+        }
+
+        function ensureLicenseActive() {
+            if (licenseExpired) {
+                showNotification('Lisensi akun sudah EXPIRED. Silakan perpanjang lisensi.', 'error');
+                return false;
+            }
+            return true;
+        }
+
+        function startExpiryWatcher() {
+            if (expiryTimer) clearInterval(expiryTimer);
+            expiryTimer = setInterval(async () => {
+                try {
+                    const sess = await ipcRenderer.invoke('get-session');
+                    if (sess) {
+                        windowSession = sess;
+                        document.getElementById('display-status').innerText = sess.status || '-';
+                        document.getElementById('display-limit').innerText = sess.sisaLimit ?? '-';
+                        updateExpiryDisplay(sess);
+                    }
+                } catch (error) {
+                    console.error('Gagal memperbarui status lisensi:', error);
+                }
+            }, 30000);
         }
 
         // ==========================================
@@ -1292,6 +1396,7 @@
             const btnStop = document.getElementById(`btn-stop-${id}`);
 
             btnGet.addEventListener('click', async () => {
+                if (!ensureLicenseActive()) return;
                 const limitCheck = await ipcRenderer.invoke('cek-limit');
                 if (!limitCheck.allowed) return showNotification(limitCheck.message, 'error');
 
@@ -1311,6 +1416,7 @@
             });
 
             btnSubmit.addEventListener('click', () => {
+                if (!ensureLicenseActive()) return;
                 const textCaptcha = inputCap.value;
                 if (!textCaptcha) return showNotification('Captcha kosong!', 'warn');
 
@@ -1323,7 +1429,10 @@
             const fileUpload = document.getElementById(`file-upload-${id}`);
             let namaFileAsliAkun = `Data${id}.xlsx`;
 
-            document.getElementById(`btn-upload-${id}`).addEventListener('click', () => fileUpload.click());
+            document.getElementById(`btn-upload-${id}`).addEventListener('click', () => {
+                if (!ensureLicenseActive()) return;
+                fileUpload.click();
+            });
 
             fileUpload.addEventListener('change', (event) => {
                 const file = event.target.files[0];
@@ -1346,6 +1455,7 @@
             });
 
             document.getElementById(`btn-download-hasil-${id}`).addEventListener('click', () => {
+                if (!ensureLicenseActive()) return;
                 document.getElementById(`btn-download-hasil-${id}`).blur();
                 const sourcePath = path.join(globalUserDataPath, 'Data', `Data${id}.xlsx`);
                 let namaFileBaru = `${path.basename(namaFileAsliAkun, path.extname(namaFileAsliAkun))}_Hasil_Akun_${id}${path.extname(namaFileAsliAkun)}`;
@@ -1361,6 +1471,7 @@
             });
 
             btnRun.addEventListener('click', async () => {
+                if (!ensureLicenseActive()) return;
                 const limitCheck = await ipcRenderer.invoke('cek-limit');
                 if (!limitCheck.allowed) return showNotification(limitCheck.message, 'error');
 
