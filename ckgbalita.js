@@ -1125,6 +1125,84 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
                         }
                     }
                 ];
+
+                // 🌟 Dictionary detail per-layanan: soal TERTENTU bisa diisi rinci dari kolom Excel
+                // spesifik, dan ini akan OVERRIDE rumus baku (kamusLayananKhusus) hanya untuk soal
+                // itu saja -- soal lain di layanan yang sama tetap boleh pakai rumus baku seperti biasa.
+                // Kosongkan/isi belakangan sesuai kebutuhan -- tidak perlu ubah logika loop di bawah,
+                // cukup tambah entri baru di sini kapan pun ada layanan yang butuh detail.
+                const kamusRinciPerLayanan = {
+                    // Contoh format (isi kalau sudah siap):
+                    // 'Perilaku Merokok': [
+                    //     { kataKunci: 'apakah anda merokok', kolom: 'Merokok - Status' },
+                    //     { kataKunci: 'jenis rokok', kolom: 'Merokok - Jenis' },
+                    //     { kataKunci: 'berapa batang', kolom: 'Merokok - Jumlah Batang' },
+                    // ],
+                };
+
+                // 🌟 Cocokkan nama layanan (namaBersih) ke key kamusRinciPerLayanan (substring,
+                // case-insensitive, sama pola dengan kataKunciLayanan di kamusLayananKhusus),
+                // lalu cocokkan teks soal ke kataKunci-nya. Kembalikan null kalau tidak ada
+                // mapping atau kolom Excel-nya kosong, supaya jalur prioritas berikutnya (rumus
+                // baku / kamusPintar) tetap jalan seperti biasa.
+                function cariJawabanRinci(namaBersih, teksSoalWeb, row) {
+                    const keyLayanan = Object.keys(kamusRinciPerLayanan).find(k =>
+                        namaBersih.toLowerCase().includes(k.toLowerCase())
+                    );
+                    if (!keyLayanan) return null;
+
+                    for (const item of kamusRinciPerLayanan[keyLayanan]) {
+                        if (teksSoalWeb.toLowerCase().includes(item.kataKunci.toLowerCase())) {
+                            const nilai = row[item.kolom];
+                            if (nilai !== undefined && nilai !== null && String(nilai).trim() !== "") {
+                                Logger.info(`🎯 Detail rinci! Web "${item.kataKunci}" -> Excel "${item.kolom}" (${nilai})`);
+                                return String(nilai).trim();
+                            }
+                            return null; // ketemu soalnya tapi kolom Excel kosong -> jangan lanjut cari, biar fallback ke rumus/kamusPintar
+                        }
+                    }
+                    return null;
+                }
+
+                // 🌟 Dedupe: satu kombinasi layanan+teks soal cukup dicatat sekali per sesi run,
+                // supaya file referensi tidak membengkak walau diproses ratusan anak.
+                const soalSudahDicatat = new Set();
+
+                // 🌟 Mode "dump soal": mencatat setiap soal yang ketemu (nama layanan, index,
+                // teks soal, tipe input, dan daftar opsi kalau radio/dropdown) ke file referensi
+                // di folder userData. Tujuannya: kalau nanti mau tambah pengisian rinci untuk
+                // suatu layanan, tinggal buka file ini untuk lihat teks soal & opsi jawaban yang
+                // valid -- tidak perlu inspect element manual lagi di browser. Best-effort, tidak
+                // boleh sampai menghentikan proses utama kalau gagal.
+                async function catatSoalUntukReferensi(namaBersih, indexSoal, teksSoalWeb, kotakSoal, tipe) {
+                    const kunci = `${namaBersih}|||${teksSoalWeb}`;
+                    if (soalSudahDicatat.has(kunci)) return;
+                    soalSudahDicatat.add(kunci);
+
+                    try {
+                        let daftarOpsi = [];
+                        if (tipe.adaRadio || tipe.adaDropdown) {
+                            const opsiElemen = tipe.adaDropdown
+                                ? kotakSoal.locator('.sv-list__item, .sd-dropdown__item').filter({ visible: true })
+                                : kotakSoal.locator('label').filter({ visible: true });
+                            const totalOpsi = await opsiElemen.count();
+                            for (let o = 0; o < Math.min(totalOpsi, 20); o++) {
+                                const teks = await bacaTeksAman(opsiElemen.nth(o));
+                                if (teks) daftarOpsi.push(teks);
+                            }
+                        }
+
+                        const tipeSoal = tipe.adaDropdown ? "Dropdown" : tipe.adaRadio ? "Radio" : tipe.adaInput ? "Input Teks/Angka" : "Tidak Diketahui";
+                        const baris = `[${namaBersih}] soal#${indexSoal} (${tipeSoal}): "${teksSoalWeb}"` +
+                            (daftarOpsi.length > 0 ? ` | Opsi: ${daftarOpsi.join(' / ')}` : '') + '\n';
+
+                        const jalurLog = path.join(app.getPath('userData'), 'referensi-soal-mandiri-nakes.log');
+                        fs.appendFileSync(jalurLog, baris, 'utf8');
+                    } catch {
+                        // Diamkan: fitur pencatatan referensi tidak boleh mengganggu jalannya pengisian utama.
+                    }
+                }
+
                 await checkPause();
 
                 Logger.info("Mengecek status Pemeriksaan Mandiri...");
@@ -1209,11 +1287,27 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
                         sabukPengamanLoading = 0;
                         const kotakSoal = page.locator('.sd-question').filter({ visible: true }).nth(indexSoal);
                         let teksSoalWeb = await bacaTeksAman(kotakSoal.locator('.sd-question__title'));
-                        let jawabanTarget = null;
 
-                        if (rumusBakuTerditeksi && indexSoal < rumusBakuTerditeksi.length) {
+                        // 🌟 Deteksi tipe soal LEBIH AWAL (sebelum menentukan jawaban) supaya bisa
+                        // dipakai baik untuk pengisian maupun untuk mencatat referensi (dump mode).
+                        const adaRadio = await kotakSoal.locator('.sd-radio').count() > 0;
+                        const adaDropdown = await kotakSoal.locator('.sd-dropdown, .sv-dropdown').count() > 0;
+                        const adaInput = await kotakSoal.locator('input[type="text"], input[type="number"]').count() > 0;
+
+                        // 🌟 Catat soal ke file referensi (sekali per teks unik per layanan) --
+                        // best-effort, tidak akan mengganggu proses utama walau gagal.
+                        await catatSoalUntukReferensi(namaBersih, indexSoal, teksSoalWeb, kotakSoal, { adaRadio, adaDropdown, adaInput });
+
+                        // 🌟 Urutan prioritas jawaban:
+                        // 1. Mapping RINCI per-layanan (kamusRinciPerLayanan) -- paling presisi,
+                        //    bisa override rumus baku untuk soal tertentu saja kalau kolom Excel-nya terisi.
+                        // 2. Rumus baku/kategori (kamusLayananKhusus) -- cepat untuk kasus umum.
+                        // 3. kamusPintar global -- fallback untuk soal-soal umum lintas layanan.
+                        let jawabanTarget = cariJawabanRinci(namaBersih, teksSoalWeb, row);
+
+                        if (!jawabanTarget && rumusBakuTerditeksi && indexSoal < rumusBakuTerditeksi.length) {
                             jawabanTarget = String(rumusBakuTerditeksi[indexSoal]).trim();
-                        } else if (!rumusBakuTerditeksi) {
+                        } else if (!jawabanTarget) {
                             for (let item of kamusPintar) {
                                 if (teksSoalWeb.toLowerCase().includes(item.kataKunci.toLowerCase())) {
                                     if (row[item.kolom]) {
@@ -1228,10 +1322,6 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
                         if (jawabanTarget) {
                             await kotakSoal.scrollIntoViewIfNeeded().catch(() => { });
                             await page.waitForTimeout(200);
-
-                            const adaRadio = await kotakSoal.locator('.sd-radio').count() > 0;
-                            const adaDropdown = await kotakSoal.locator('.sd-dropdown, .sv-dropdown').count() > 0;
-                            const adaInput = await kotakSoal.locator('input[type="text"], input[type="number"]').count() > 0;
 
                             let daftarJawaban = jawabanTarget.split(/[/,]/).map(j => j.trim()).filter(j => j !== "");
                             let berhasilTerisi = false;
