@@ -76,6 +76,36 @@ async function bacaTeksAman(locator, percobaan = 2, jedaMs = 150) {
     return "";
 }
 
+// 🌟 FITUR BARU: Deteksi nilai kolom NIK yang menandakan "tidak punya NIK"
+// (mis. diisi "Tidak ada nik" di Excel, oleh anak ataupun wali).
+function nikKosongAtauTidakAda(nilaiNik) {
+    const bersih = String(nilaiNik || '').trim().toLowerCase();
+    if (!bersih) return false; // kosong total ditangani terpisah oleh validasi NIK utama
+    return bersih === 'tidak ada nik' || bersih === 'tidak ada' || bersih === 'tidak punya nik';
+}
+
+// 🌟 FITUR BARU: Centang checkbox "Tidak Punya NIK" di form pendaftaran.
+// posisi = 'first' untuk data Anak, 'last' untuk data Wali (mengikuti pola locator
+// lain di form ini, karena kedua checkbox sama-sama muncul di halaman yang sama).
+async function centangTidakPunyaNik(page, posisi = 'first', konteks = 'Anak') {
+    Logger.info(`✅ Kolom NIK ${konteks} = "Tidak ada nik" -> Mencentang checkbox "Tidak Punya NIK"...`);
+    const kandidat = page.locator(
+        'label:has-text("Tidak Punya NIK"), div:has-text("Tidak Punya NIK") input[type="checkbox"], text=/Tidak\\s*Punya\\s*NIK/i'
+    ).filter({ visible: true });
+
+    const elemen = posisi === 'last' ? kandidat.last() : kandidat.first();
+
+    if (await elemen.count() > 0) {
+        await elemen.scrollIntoViewIfNeeded().catch(() => { });
+        await elemen.click({ force: true }).catch(() => { });
+        await page.waitForTimeout(800);
+        return true;
+    }
+
+    Logger.info(`⚠️ Checkbox "Tidak Punya NIK" (${konteks}) tidak ditemukan di halaman!`);
+    return false;
+}
+
 // ==============================================================================
 // 🌟 ENGINE TERPADU: PEMERIKSAAN MANDIRI/NAKES (berbasis Hasil_scraping.txt)
 // ==============================================================================
@@ -592,30 +622,42 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
                     await page.locator('button:has(div:text("Daftar Baru"))').last().click();
                     await page.waitForTimeout(1000);
 
-                    await page.locator('input[name="NIK"]').last().fill(String(row['NIK']));
-                    await page.waitForTimeout(500);
-                    await checkPause();
-
-                    Logger.info(`Mengecek NIK: ${row['NIK']}...`);
-                    sendUILog(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Mengecek NIK`);
-
-                    const btnCekNik = page.locator('div.tracking-wide:has-text("Cek NIK"), button:has-text("Cek NIK")').filter({ visible: true }).first();
-                    await btnCekNik.click({ force: true });
-
+                    // 🌟 Deteksi kolom NIK anak berisi "Tidak ada nik" -> centang checkbox
+                    // "Tidak Punya NIK" dan lewati alur isi-NIK + Cek NIK sama sekali,
+                    // langsung menuju pengisian manual (Nama Lengkap, Tanggal Lahir, dst).
+                    const anakTanpaNik = nikKosongAtauTidakAda(row['NIK']);
                     let dataOtomatisDitemukan = false;
-                    const popupTeks = page.getByText('Data Peserta ditemukan', { exact: false }).first();
                     const btnGunakanData = page.locator('button:has-text("Gunakan Data")').first();
 
-                    try {
-                        await Promise.race([
-                            popupTeks.waitFor({ state: 'visible', timeout: 6000 }),
-                            btnGunakanData.waitFor({ state: 'visible', timeout: 6000 })
-                        ]);
-                        dataOtomatisDitemukan = true;
-                        Logger.info("✅ Data Peserta ditemukan!");
-                    } catch (error) {
-                        dataOtomatisDitemukan = false;
-                        Logger.info("⚠️ Data belum terdaftar di server. Beralih ke mode ISI MANUAL...");
+                    if (anakTanpaNik) {
+                        await centangTidakPunyaNik(page, 'first', 'Anak');
+                        await page.waitForTimeout(500);
+                        sendUILog(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Tidak Punya NIK (Anak) dicentang`);
+                        dataOtomatisDitemukan = false; // paksa ke jalur isi manual di bawah
+                    } else {
+                        await page.locator('input[name="NIK"]').last().fill(String(row['NIK']));
+                        await page.waitForTimeout(500);
+                        await checkPause();
+
+                        Logger.info(`Mengecek NIK: ${row['NIK']}...`);
+                        sendUILog(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Mengecek NIK`);
+
+                        const btnCekNik = page.locator('div.tracking-wide:has-text("Cek NIK"), button:has-text("Cek NIK")').filter({ visible: true }).first();
+                        await btnCekNik.click({ force: true });
+
+                        const popupTeks = page.getByText('Data Peserta ditemukan', { exact: false }).first();
+
+                        try {
+                            await Promise.race([
+                                popupTeks.waitFor({ state: 'visible', timeout: 6000 }),
+                                btnGunakanData.waitFor({ state: 'visible', timeout: 6000 })
+                            ]);
+                            dataOtomatisDitemukan = true;
+                            Logger.info("✅ Data Peserta ditemukan!");
+                        } catch (error) {
+                            dataOtomatisDitemukan = false;
+                            Logger.info("⚠️ Data belum terdaftar di server. Beralih ke mode ISI MANUAL...");
+                        }
                     }
                     await checkPause();
 
@@ -656,31 +698,53 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
                     await checkPause();
 
                     // --- DATA WALI ---
-                    // 🌟 Data wali SELALU diisi manual dari Excel (tidak ikut ter-auto-fill oleh
-                    // "Gunakan Data", karena itu hanya untuk data si anak/peserta utama).
-                    Logger.info('✍️ Mengisi data Wali...');
-                    await page.locator('input[name="NIK wali"]').last().fill(String(row['NIK Wali']));
-                    await page.locator('input[name="Nama Lengkap Wali"]').last().fill(String(row['Nama Wali']));
-                    await page.waitForTimeout(500);
-                    await checkPause();
+                    // 🌟 KOREKSI: jika data sudah DITEMUKAN otomatis dari server (setelah Cek NIK
+                    // + Gunakan Data), maka data Wali JUGA sudah ikut ter-auto-fill oleh sistem —
+                    // BUKAN cuma data anak saja seperti asumsi sebelumnya. Kalau tetap dipaksa
+                    // isi manual di sini, prosesnya nyangkut/error karena field Wali sudah
+                    // terisi/tersembunyi. Jadi kalau dataOtomatisDitemukan == true, LEWATI
+                    // seluruh pengisian data Wali di bawah ini, tanpa terkecuali.
+                    if (dataOtomatisDitemukan) {
+                        Logger.info("ℹ️ Data Peserta (termasuk Wali) sudah ditemukan otomatis. Melewati seluruh pengisian data Wali...");
+                        sendUILog(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Data Wali sudah ada dari server, dilewati`);
+                    } else {
+                        // 🌟 Data wali diisi manual dari Excel HANYA ketika data BELUM ditemukan
+                        // otomatis di server (mode isi manual penuh).
+                        // 🌟 Kalau kolom NIK Wali berisi "Tidak ada nik", centang checkbox
+                        // "Tidak Punya NIK" (posisi kedua di halaman) dan lewati pengisian
+                        // input NIK Wali, langsung ke Nama/Tanggal Lahir/dst.
+                        Logger.info('✍️ Mengisi data Wali...');
+                        const waliTanpaNik = nikKosongAtauTidakAda(row['NIK Wali']);
 
-                    Logger.info(`📅 Mengisi Tanggal Lahir Wali: ${row['Tanggal Lahir Wali']}`);
-                    const elTglWali = page.locator('[id="Tanggal Lahir"]').last();
-                    await elTglWali.scrollIntoViewIfNeeded();
-                    await page.waitForTimeout(500);
-                    await isiDatepicker(page, elTglWali, row['Tanggal Lahir Wali']);
+                        if (waliTanpaNik) {
+                            await centangTidakPunyaNik(page, 'last', 'Wali');
+                            await page.waitForTimeout(500);
+                            sendUILog(`KERJA|${namaLengkap}|${nikPeserta}|${barisExcel}/${totalData}|Tidak Punya NIK (Wali) dicentang`);
+                        } else {
+                            await page.locator('input[name="NIK wali"]').last().fill(String(row['NIK Wali']));
+                        }
+                        await page.locator('input[name="Nama Lengkap Wali"]').last().fill(String(row['Nama Wali']));
+                        await page.waitForTimeout(500);
+                        await checkPause();
 
-                    Logger.info('✍️ Memilih Jenis Kelamin Wali...');
-                    const btnPilihKelaminWali = page.locator('span', { hasText: /Pilih Jenis Kelamin/i }).last();
-                    await btnPilihKelaminWali.scrollIntoViewIfNeeded();
-                    await page.waitForTimeout(500);
-                    await btnPilihKelaminWali.click();
-                    await page.waitForTimeout(300);
+                        Logger.info(`📅 Mengisi Tanggal Lahir Wali: ${row['Tanggal Lahir Wali']}`);
+                        const elTglWali = page.locator('[id="Tanggal Lahir"]').last();
+                        await elTglWali.scrollIntoViewIfNeeded();
+                        await page.waitForTimeout(500);
+                        await isiDatepicker(page, elTglWali, row['Tanggal Lahir Wali']);
 
-                    const kelaminWali = String(row['Jenis Kelamin Wali']).trim().toUpperCase().startsWith('L') ? 'Laki-laki' : 'Perempuan';
-                    const pilihanKelaminWali = page.locator(`div:text-is("${kelaminWali}")`).filter({ visible: true }).last();
-                    await pilihanKelaminWali.scrollIntoViewIfNeeded();
-                    await pilihanKelaminWali.click();
+                        Logger.info('✍️ Memilih Jenis Kelamin Wali...');
+                        const btnPilihKelaminWali = page.locator('span', { hasText: /Pilih Jenis Kelamin/i }).last();
+                        await btnPilihKelaminWali.scrollIntoViewIfNeeded();
+                        await page.waitForTimeout(500);
+                        await btnPilihKelaminWali.click();
+                        await page.waitForTimeout(300);
+
+                        const kelaminWali = String(row['Jenis Kelamin Wali']).trim().toUpperCase().startsWith('L') ? 'Laki-laki' : 'Perempuan';
+                        const pilihanKelaminWali = page.locator(`div:text-is("${kelaminWali}")`).filter({ visible: true }).last();
+                        await pilihanKelaminWali.scrollIntoViewIfNeeded();
+                        await pilihanKelaminWali.click();
+                    }
                     await checkPause();
 
                     // --- CENTANG "NOMOR WA SAMA DENGAN PENDAFTAR" (khusus balita) ---
