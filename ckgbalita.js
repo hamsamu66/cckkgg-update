@@ -655,19 +655,6 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
                     }
                     await checkPause();
 
-                    // --- VALIDASI: FORM WALI HARUS MUNCUL, KALAU TIDAK => BUKAN BALITA ---
-                    // 🌟 Kalau NIK sudah pernah daftar (dataOtomatisDitemukan = true), munculnya
-                    // tombol "Gunakan Data" itu sendiri sudah jadi bukti bahwa NIK ini terdaftar
-                    // sebagai balita di sistem. Jadi validasi form Wali (yang rawan salah deteksi
-                    // karena readonly/lazy-render) CUKUP dilakukan untuk jalur isi manual saja.
-                    if (!dataOtomatisDitemukan) {
-                        const inputNikWali = page.locator('input[name="NIK wali"]').last();
-                        const formWaliMuncul = await inputNikWali.isVisible({ timeout: 4000 }).catch(() => false);
-                        if (!formWaliMuncul) {
-                            throw new Error("BUKAN_BALITA");
-                        }
-                    }
-
                     // --- DATA WALI ---
                     // 🌟 Data wali SELALU diisi manual dari Excel (tidak ikut ter-auto-fill oleh
                     // "Gunakan Data", karena itu hanya untuk data si anak/peserta utama).
