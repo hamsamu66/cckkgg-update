@@ -656,13 +656,26 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
                     await checkPause();
 
                     // --- VALIDASI: FORM WALI HARUS MUNCUL, KALAU TIDAK => BUKAN BALITA ---
-                    // 🌟 Kalau NIK sudah pernah daftar (dataOtomatisDitemukan = true), form Wali
-                    // butuh waktu lebih lama untuk render karena ikut di-auto-fill dari data lama.
-                    // Beri timeout lebih panjang khusus untuk kasus ini supaya tidak salah
-                    // dianggap "bukan balita" gara-gara belum selesai render, bukan karena
-                    // memang tidak ada form Wali-nya.
-                    const timeoutCekWali = dataOtomatisDitemukan ? 10000 : 4000;
-                    const formWaliMuncul = await page.locator('input[name="NIK wali"]').isVisible({ timeout: timeoutCekWali }).catch(() => false);
+                    // 🌟 Elemen "NIK wali" berada di bagian bawah halaman. Playwright isVisible()
+                    // TIDAK otomatis scroll ke elemen, jadi kalau elemen baru dirender/dianggap
+                    // "visible" setelah masuk viewport (lazy render), cek langsung bisa gagal
+                    // walau form Wali sebenarnya ADA. Solusinya: pastikan dulu elemennya ada di
+                    // DOM (attached), scroll ke sana biar ter-render sempurna, baru cek visible-nya.
+                    const inputNikWali = page.locator('input[name="NIK wali"]').last();
+                    let formWaliMuncul = false;
+                    try {
+                        await inputNikWali.waitFor({ state: 'attached', timeout: dataOtomatisDitemukan ? 10000 : 4000 });
+                        await inputNikWali.scrollIntoViewIfNeeded();
+                        await page.waitForTimeout(500);
+                        formWaliMuncul = await inputNikWali.isVisible().catch(() => false);
+                    } catch {
+                        // 🌟 Fallback terakhir: scroll manual ke paling bawah halaman (jaga-jaga
+                        // kalau scrollIntoViewIfNeeded gagal karena container scroll custom),
+                        // lalu cek sekali lagi sebelum benar-benar menyerah.
+                        await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+                        await page.waitForTimeout(1000);
+                        formWaliMuncul = await inputNikWali.isVisible({ timeout: 3000 }).catch(() => false);
+                    }
                     if (!formWaliMuncul) {
                         throw new Error("BUKAN_BALITA");
                     }
