@@ -656,28 +656,16 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
                     await checkPause();
 
                     // --- VALIDASI: FORM WALI HARUS MUNCUL, KALAU TIDAK => BUKAN BALITA ---
-                    // 🌟 Elemen "NIK wali" berada di bagian bawah halaman. Playwright isVisible()
-                    // TIDAK otomatis scroll ke elemen, jadi kalau elemen baru dirender/dianggap
-                    // "visible" setelah masuk viewport (lazy render), cek langsung bisa gagal
-                    // walau form Wali sebenarnya ADA. Solusinya: pastikan dulu elemennya ada di
-                    // DOM (attached), scroll ke sana biar ter-render sempurna, baru cek visible-nya.
-                    const inputNikWali = page.locator('input[name="NIK wali"]').last();
-                    let formWaliMuncul = false;
-                    try {
-                        await inputNikWali.waitFor({ state: 'attached', timeout: dataOtomatisDitemukan ? 10000 : 4000 });
-                        await inputNikWali.scrollIntoViewIfNeeded();
-                        await page.waitForTimeout(500);
-                        formWaliMuncul = await inputNikWali.isVisible().catch(() => false);
-                    } catch {
-                        // 🌟 Fallback terakhir: scroll manual ke paling bawah halaman (jaga-jaga
-                        // kalau scrollIntoViewIfNeeded gagal karena container scroll custom),
-                        // lalu cek sekali lagi sebelum benar-benar menyerah.
-                        await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-                        await page.waitForTimeout(1000);
-                        formWaliMuncul = await inputNikWali.isVisible({ timeout: 3000 }).catch(() => false);
-                    }
-                    if (!formWaliMuncul) {
-                        throw new Error("BUKAN_BALITA");
+                    // 🌟 Kalau NIK sudah pernah daftar (dataOtomatisDitemukan = true), munculnya
+                    // tombol "Gunakan Data" itu sendiri sudah jadi bukti bahwa NIK ini terdaftar
+                    // sebagai balita di sistem. Jadi validasi form Wali (yang rawan salah deteksi
+                    // karena readonly/lazy-render) CUKUP dilakukan untuk jalur isi manual saja.
+                    if (!dataOtomatisDitemukan) {
+                        const inputNikWali = page.locator('input[name="NIK wali"]').last();
+                        const formWaliMuncul = await inputNikWali.isVisible({ timeout: 4000 }).catch(() => false);
+                        if (!formWaliMuncul) {
+                            throw new Error("BUKAN_BALITA");
+                        }
                     }
 
                     // --- DATA WALI ---
