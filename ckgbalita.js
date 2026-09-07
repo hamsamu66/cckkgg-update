@@ -622,7 +622,13 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
                     // --- DATA ANAK (BALITA) ---
                     if (dataOtomatisDitemukan) {
                         await btnGunakanData.click({ force: true }).catch(() => { });
-                        await page.waitForTimeout(1000);
+                        // 🌟 Setelah "Gunakan Data" diklik, sistem butuh waktu ekstra untuk
+                        // menarik & merender data Wali yang sudah ada (bukan cuma data anak).
+                        // Kalau langsung dicek dalam waktu singkat, form Wali bisa dianggap
+                        // "tidak muncul" padahal cuma belum selesai render (race condition),
+                        // sehingga salah dilaporkan sebagai BUKAN_BALITA.
+                        await tungguLoadingSelesai(page);
+                        await page.waitForTimeout(2000);
                         Logger.info("Menggunakan data anak dari server Kemenkes...");
                     } else {
                         Logger.info("Mengisi data anak secara manual dari Excel...");
@@ -650,7 +656,13 @@ async function runAutomation(idAkun, strHeadless, eventSender) {
                     await checkPause();
 
                     // --- VALIDASI: FORM WALI HARUS MUNCUL, KALAU TIDAK => BUKAN BALITA ---
-                    const formWaliMuncul = await page.locator('input[name="NIK wali"]').isVisible({ timeout: 4000 }).catch(() => false);
+                    // 🌟 Kalau NIK sudah pernah daftar (dataOtomatisDitemukan = true), form Wali
+                    // butuh waktu lebih lama untuk render karena ikut di-auto-fill dari data lama.
+                    // Beri timeout lebih panjang khusus untuk kasus ini supaya tidak salah
+                    // dianggap "bukan balita" gara-gara belum selesai render, bukan karena
+                    // memang tidak ada form Wali-nya.
+                    const timeoutCekWali = dataOtomatisDitemukan ? 10000 : 4000;
+                    const formWaliMuncul = await page.locator('input[name="NIK wali"]').isVisible({ timeout: timeoutCekWali }).catch(() => false);
                     if (!formWaliMuncul) {
                         throw new Error("BUKAN_BALITA");
                     }
